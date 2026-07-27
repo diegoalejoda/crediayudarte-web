@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrediAyudarte | Asesoría financiera para pensionados y empleados del gobierno</title>
+  <meta name="description" content="Asesoría financiera independiente en créditos por libranza para pensionados, docentes del estado, empleados del gobierno y Fuerza Pública. Analizamos tu caso sin costo. Si no te conviene, también te lo decimos." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== SPRITE DE ICONOS ===================== -->
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+    <symbol id="i-trending" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.94.56 3.76 1.55 5.3L2 22l4.94-1.56a9.9 9.9 0 0 0 5.1 1.4h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.05c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.16-4.93-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.29-.13.57.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.05.18-.18.74-.86.94-1.15.2-.29.4-.24.66-.14.27.1 1.71.81 2 .96.29.14.49.21.56.33.07.12.07.7-.17 1.39z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="i-thumb" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></symbol>
+    <symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M12 1l2.6 1.9 3.2-.3 1.2 3 2.9 1.4-1 3.1 1 3.1-2.9 1.4-1.2 3-3.2-.3L12 23l-2.6-1.9-3.2.3-1.2-3L2.1 17l1-3.1-1-3.1 2.9-1.4 1.2-3 3.2.3z" fill="currentColor"/><polyline points="8.5 12 11 14.5 15.5 9.5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="header__logo" aria-label="CrediAyudarte - inicio">
+        <img src="assets/logo.png" alt="CrediAyudarte — Te ayudamos de verdad" />
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#para-quien">Para quién</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="header__actions">
+        <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="btn-wa" aria-label="Escríbenos por WhatsApp">
+          <svg class="ico"><use href="#i-whatsapp"/></svg>
+          <span>Escríbenos<small>Te orientamos</small></span>
+        </a>
+        <a href="solicitar.html" class="btn btn-primary header__cta">Solicita tu crédito</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <span class="blob blob--green anim-drift" aria-hidden="true"></span>
+    <span class="blob blob--yellow anim-float2" aria-hidden="true"></span>
+    <span class="brand-circle bc1 anim-float" aria-hidden="true"></span>
+    <span class="brand-circle bc2 anim-float2" aria-hidden="true"></span>
+    <span class="brand-circle bc3 anim-float" aria-hidden="true"></span>
+    <span class="dots dots--tl" aria-hidden="true"></span>
+
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow">Asesoría financiera independiente · Cúcuta y toda Colombia</span>
+        <h1>Antes de tomar otro crédito, <mark class="mk-yellow">asegúrate de hacerlo bien.</mark></h1>
+        <p class="hero__lead">
+          Somos especialistas en <strong>crédito por libranza</strong> para pensionados, docentes del estado,
+          empleados del gobierno y Fuerza Pública. Analizamos tu caso con calma y te decimos la verdad:
+          <strong>si no te conviene, también te lo decimos.</strong>
+        </p>
+
+        <ul class="hero__points">
+          <li><svg class="ico"><use href="#i-check"/></svg> Analizamos tu caso <strong>sin costo</strong> y sin compromiso</li>
+          <li><svg class="ico"><use href="#i-check"/></svg> Te mostramos opciones <strong>reales y seguras</strong></li>
+          <li><svg class="ico"><use href="#i-check"/></svg> No pedimos <strong>anticipos ni pagos por adelantado</strong></li>
+        </ul>
+
+        <div class="hero__cta">
+          <a href="solicitar.html" class="btn btn-primary btn-lg">Solicita tu crédito</a>
+          <a href="testimonios.html" class="btn btn-ghost">Ver testimonios reales</a>
+        </div>
+        <p class="hero__note"><svg class="ico"><use href="#i-shield"/></svg> La aprobación final la define la entidad. Aquí te ayudamos a decidir con calma.</p>
+      </div>
+
+      <aside class="hero__card reveal reveal--right">
+        <span class="hero__card-dots" aria-hidden="true"></span>
+        <div class="hero__badge"><svg class="ico"><use href="#i-heart"/></svg></div>
+        <p class="hero__quote">“Nuestro compromiso no es prestarte más, <span>es ayudarte mejor.</span>”</p>
+        <div class="hero__mini">
+          <div><strong>+10</strong><small>años acompañando</small></div>
+          <div><strong>4</strong><small>perfiles que atendemos</small></div>
+          <div><strong>0</strong><small>anticipos para empezar</small></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===================== TIRA DE CONFIANZA ===================== -->
+  <div class="trust-strip">
+    <div class="container trust-strip__inner">
+      <span><svg class="ico"><use href="#i-shield"/></svg> Sin anticipos</span>
+      <span><svg class="ico"><use href="#i-search"/></svg> Preanálisis sin costo</span>
+      <span><svg class="ico"><use href="#i-check"/></svg> Costos claros antes de decidir</span>
+      <span><svg class="ico"><use href="#i-users"/></svg> Acompañamiento humano</span>
+    </div>
+  </div>
+
+  <!-- ===================== PARA QUIÉN ===================== -->
+  <section class="section" id="para-quien">
+    <span class="dots dots--br dots--soft" aria-hidden="true"></span>
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="tag">Para quién trabajamos</span>
+        <h2>Asesoría pensada para quienes <span class="hl-green">sirven al país</span></h2>
+        <p>Nos especializamos en el crédito por libranza del sector público. Conocemos tu pagaduría, tus descuentos y tu realidad.</p>
+      </header>
+
+      <div class="grid grid-4">
+        <article class="who-card reveal">
+          <div class="who-card__ico"><svg class="ico"><use href="#i-users"/></svg></div>
+          <h3>Pensionados</h3>
+          <p>Colpensiones, FOPEP, Fiduprevisora, CASUR, CREMIL y otras pagadurías compatibles.</p>
+        </article>
+        <article class="who-card reveal">
+          <div class="who-card__ico"><svg class="ico"><use href="#i-file"/></svg></div>
+          <h3>Docentes del estado</h3>
+          <p>Vinculados a las Secretarías de Educación municipales, distritales y departamentales.</p>
+        </article>
+        <article class="who-card reveal">
+          <div class="who-card__ico"><svg class="ico"><use href="#i-shield"/></svg></div>
+          <h3>Empleados del gobierno</h3>
+          <p>Alcaldías, gobernaciones, ministerios, Rama Judicial, DIAN, ICBF y más entidades.</p>
+        </article>
+        <article class="who-card reveal">
+          <div class="who-card__ico"><svg class="ico"><use href="#i-check"/></svg></div>
+          <h3>Fuerza Pública</h3>
+          <p>Policía, Ejército, Armada y Fuerza Aérea, en actividad o pensionados.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICIOS ===================== -->
+  <section class="section section--cream" id="servicios">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="tag">Lo que revisamos contigo</span>
+        <h2>Opciones de crédito, <span class="hl-green">evaluadas con criterio</span></h2>
+        <p>No prometemos montos ni tasas. Estudiamos tu perfil y tu pagaduría, y te explicamos qué opción realmente te conviene.</p>
+      </header>
+
+      <div class="grid grid-3">
+        <article class="svc-card reveal">
+          <div class="svc-card__ico"><svg class="ico"><use href="#i-trending"/></svg></div>
+          <h3>Crédito por libranza</h3>
+          <p>Financiación con descuento por nómina o pensión, según tu capacidad y las políticas de cada entidad.</p>
+        </article>
+        <article class="svc-card reveal">
+          <div class="svc-card__ico"><svg class="ico"><use href="#i-layers"/></svg></div>
+          <h3>Libre inversión</h3>
+          <p>Liquidez para lo que necesites, comparando siempre plazo, costo total y cuota antes de avanzar.</p>
+        </article>
+        <article class="svc-card reveal">
+          <div class="svc-card__ico"><svg class="ico"><use href="#i-refresh"/></svg></div>
+          <h3>Compra de cartera</h3>
+          <p>Unir deudas puede ayudar… o no. Revisamos si de verdad mejoras después de costos y plazo.</p>
+        </article>
+        <article class="svc-card reveal">
+          <div class="svc-card__ico"><svg class="ico"><use href="#i-file"/></svg></div>
+          <h3>Refinanciación e incremento</h3>
+          <p>Ajustar o aumentar un crédito solo tiene sentido si mejora tu situación, no si la empeora.</p>
+        </article>
+        <article class="svc-card reveal">
+          <div class="svc-card__ico"><svg class="ico"><use href="#i-search"/></svg></div>
+          <h3>Casos con reporte</h3>
+          <p>Estar reportado no siempre cierra las puertas. Revisamos tu caso; nunca prometemos un resultado.</p>
+        </article>
+        <article class="svc-card reveal">
+          <div class="svc-card__ico"><svg class="ico"><use href="#i-shield"/></svg></div>
+          <h3>Segunda opinión honesta</h3>
+          <p>¿Ya te ofrecieron algo? Lo revisamos contigo y te decimos si realmente vale la pena firmar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESO ===================== -->
+  <section class="section" id="proceso">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="tag">Cómo funciona</span>
+        <h2>Un proceso <span class="hl-green">claro, sin presión</span></h2>
+        <p>Damos claridad para que tú tomes la mejor decisión. Estos son los pasos, sin sorpresas.</p>
+      </header>
+
+      <ol class="steps">
+        <li class="step reveal"><span class="step__num">1</span><h3>Nos escribes</h3><p>Nos cuentas tu situación por WhatsApp. Sin formularios largos ni datos sensibles en frío.</p></li>
+        <li class="step reveal"><span class="step__num">2</span><h3>Analizamos tu caso</h3><p>Revisamos tu perfil y tu pagaduría sin costo. Cuando corresponda, te pedimos un desprendible legible.</p></li>
+        <li class="step reveal"><span class="step__num">3</span><h3>Te decimos la verdad</h3><p>Te mostramos costos, plazo y consecuencias. Si te conviene, avanzamos; si no, también te lo decimos.</p></li>
+        <li class="step reveal"><span class="step__num">4</span><h3>Te acompañamos</h3><p>Si decides continuar, gestionamos con la entidad y te acompañamos hasta el final.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIOS (teaser) ===================== -->
+  <section class="section testimonios" id="testimonios">
+    <span class="blob blob--mint anim-float" style="width:320px;height:320px;top:-120px;left:-100px" aria-hidden="true"></span>
+    <div class="container testimonios__grid">
+      <div class="testimonios__copy reveal reveal--left">
+        <span class="tag">Testimonios reales</span>
+        <h2>Personas reales, <span class="hl-green">alivio real</span></h2>
+        <p>Pensionados y empleados del gobierno que confiaron en nosotros y hoy respiran tranquilos. Fotos y videos tomados en nuestra oficina de Cúcuta, con su permiso.</p>
+        <div class="testimonios__stats">
+          <div><strong>+10</strong><small>años ayudando</small></div>
+          <div><strong>100%</strong><small>casos revisados con honestidad</small></div>
+        </div>
+        <a href="testimonios.html" class="btn btn-primary btn-lg">Ver testimonios <svg class="ico"><use href="#i-arrow-right"/></svg></a>
+      </div>
+
+      <a href="testimonios.html" class="collage reveal reveal--right" aria-label="Ver galería de testimonios">
+        <figure class="tc1"><img src="assets/testigos/foto-1.jpeg" alt="Clientes de CrediAyudarte en la oficina" loading="lazy"></figure>
+        <figure class="tc2"><img src="assets/testigos/foto-3.jpeg" alt="Cliente frente al aviso de CrediAyudarte" loading="lazy"></figure>
+        <figure class="tc3"><img src="assets/testigos/foto-2.jpeg" alt="Cliente agradecida con CrediAyudarte" loading="lazy"></figure>
+        <span class="tc-badge"><svg class="ico"><use href="#i-heart"/></svg> Historias con permiso</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== FACEBOOK ===================== -->
+  <section class="section fb" id="facebook">
+    <span class="dots dots--tl dots--soft" aria-hidden="true"></span>
+    <div class="container fb__grid">
+      <div class="fb__copy reveal reveal--left">
+        <span class="tag">Síguenos en Facebook</span>
+        <h2>Aprende a decidir mejor, <span class="hl-green">un post a la vez</span></h2>
+        <p>Publicamos consejos claros, casos reales y todo lo que deberías revisar antes de firmar un crédito. Contenido pensado para pensionados y empleados del gobierno.</p>
+        <ul class="fb__perks">
+          <li><svg class="ico"><use href="#i-check"/></svg> Tips para no endeudarte de más</li>
+          <li><svg class="ico"><use href="#i-check"/></svg> Historias y aprendizajes reales</li>
+          <li><svg class="ico"><use href="#i-check"/></svg> Alertas sobre costos que nadie te explica</li>
+        </ul>
+        <a href="https://www.facebook.com/crediayudarte" target="_blank" rel="noopener" class="btn btn-fb btn-lg">
+          <svg class="ico solid"><use href="#i-facebook"/></svg> Seguir en Facebook
+        </a>
+      </div>
+
+      <div class="reveal reveal--right">
+        <div class="fb-card">
+          <div class="fb-card__cover"><span class="dots" aria-hidden="true"></span></div>
+          <div class="fb-card__avatar"><img src="assets/logo.png" alt="CrediAyudarte"></div>
+          <div class="fb-card__body">
+            <div class="fb-card__name">CrediAyudarte <svg class="ico verified solid"><use href="#i-badge-check"/></svg></div>
+            <div class="fb-card__handle">@crediayudarte · Servicio financiero</div>
+            <div class="fb-card__meta"><svg class="ico"><use href="#i-heart"/></svg> Educación financiera honesta para el sector público</div>
+            <div class="fb-card__posts">
+              <a href="https://www.facebook.com/crediayudarte" target="_blank" rel="noopener"><img src="assets/post-tranquilidad.jpeg" alt="Publicación de CrediAyudarte" loading="lazy"></a>
+              <a href="https://www.facebook.com/crediayudarte" target="_blank" rel="noopener"><img src="assets/post-cuota.jpeg" alt="Publicación de CrediAyudarte" loading="lazy"></a>
+              <a href="https://www.facebook.com/crediayudarte" target="_blank" rel="noopener"><img src="assets/post-masdinero.jpeg" alt="Publicación de CrediAyudarte" loading="lazy"></a>
+            </div>
+            <div class="fb-card__actions">
+              <a href="https://www.facebook.com/crediayudarte" target="_blank" rel="noopener" class="btn btn-fb"><svg class="ico"><use href="#i-thumb"/></svg> Seguir</a>
+              <a href="https://www.facebook.com/crediayudarte" target="_blank" rel="noopener" class="btn btn-ghost">Ver página</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CÓDIGO ===================== -->
+  <section class="section codigo" id="codigo">
+    <span class="dots dots--tl" aria-hidden="true"></span>
+    <span class="dots dots--br" aria-hidden="true"></span>
+    <div class="container codigo__grid">
+      <div class="codigo__intro reveal reveal--left">
+        <span class="tag">El Código CrediAyudarte</span>
+        <h2>Por qué la gente <span class="hl-green">confía en nosotros</span></h2>
+        <p>No competimos por la tasa más baja ni por el desembolso más rápido. Lideramos algo más importante: <strong>decisiones financieras conscientes.</strong></p>
+        <a href="solicitar.html" class="btn btn-primary btn-lg">Quiero que revisen mi caso</a>
+      </div>
+      <ul class="codigo__list reveal reveal--right">
+        <li><svg class="ico"><use href="#i-check"/></svg> Si no te conviene, te lo decimos.</li>
+        <li><svg class="ico"><use href="#i-check"/></svg> Los costos reales se explican antes que los beneficios.</li>
+        <li><svg class="ico"><use href="#i-check"/></svg> Tú decides con información completa.</li>
+        <li><svg class="ico"><use href="#i-check"/></svg> No recomendamos algo que suba tus costos sin mejorar tu situación.</li>
+        <li><svg class="ico"><use href="#i-check"/></svg> La urgencia nunca elimina la claridad.</li>
+        <li><svg class="ico"><use href="#i-check"/></svg> No cobramos por adelantado.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== ANTES DE FIRMAR ===================== -->
+  <section class="section section--cream" id="antes">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="tag">Antes de firmar</span>
+        <h2>Antes de pedir más dinero, <span class="hl-green">hazte estas preguntas</span></h2>
+        <p>Un crédito no se mide solo por la cuota, sino por lo que realmente te deja al final.</p>
+      </header>
+
+      <div class="grid grid-3">
+        <article class="q-card reveal svc-card">
+          <div class="svc-card__ico"><svg class="ico"><use href="#i-file"/></svg></div>
+          <h3>¿Realmente necesitas otro crédito?</h3>
+          <p>A veces la mejor decisión es no tomar uno nuevo. Lo revisamos contigo con calma.</p>
+        </article>
+        <article class="q-card reveal svc-card">
+          <div class="svc-card__ico"><svg class="ico"><use href="#i-calendar"/></svg></div>
+          <h3>¿Cumplirás las cuotas sin perder tu tranquilidad?</h3>
+          <p>Una cuota más baja no siempre significa un crédito mejor si te alarga la deuda.</p>
+        </article>
+        <article class="q-card reveal svc-card">
+          <div class="svc-card__ico"><svg class="ico"><use href="#i-trending"/></svg></div>
+          <h3>¿Sabes cuánto terminarás pagando en total?</h3>
+          <p>Miramos plazo, costo total y descuentos antes de que tomes una decisión.</p>
+        </article>
+      </div>
+
+      <div class="callout reveal">
+        <svg class="ico callout__ico"><use href="#i-alert"/></svg>
+        <p>En CrediAyudarte te damos <strong>claridad</strong> para que tomes la mejor decisión.
+          <strong>Si no te conviene, también te lo decimos.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PREGUNTAS (paginado) ===================== -->
+  <section class="section" id="preguntas">
+    <div class="container container--narrow">
+      <header class="section__head reveal">
+        <span class="tag">Preguntas</span>
+        <h2>Resolvemos tus dudas <span class="hl-green">con transparencia</span></h2>
+        <p>Reunimos las preguntas más frecuentes. Léelas con calma, están organizadas por páginas.</p>
+      </header>
+
+      <div class="faq-pages" id="faqPages">
+        <!-- Página 1 -->
+        <div class="faq" data-faq-page="1">
+          <details class="faq__item"><summary>¿CrediAyudarte presta el dinero?</summary><div class="faq__body"><p>No. Somos una asesoría financiera independiente. No somos un banco ni desembolsamos dinero: analizamos tu caso, identificamos entidades con opciones compatibles con tu perfil y pagaduría, y te acompañamos. La aprobación final siempre la define la entidad.</p></div></details>
+          <details class="faq__item"><summary>¿Cuánto cuesta que revisen mi caso?</summary><div class="faq__body"><p>El preanálisis se hace sin costo y sin compromiso. Si una gestión tuviera costos u honorarios, te los explicamos con claridad antes de que decidas avanzar.</p></div></details>
+          <details class="faq__item"><summary>¿Piden anticipos o pagos por adelantado?</summary><div class="faq__body"><p>Nunca. No pedimos anticipos, seguros anticipados ni pagos que condicionen un desembolso. Si alguien lo hace en nuestro nombre, desconfía y avísanos.</p></div></details>
+          <details class="faq__item"><summary>¿Me garantizan que me aprueban el crédito?</summary><div class="faq__body"><p>No. Nadie serio puede garantizarte una aprobación. La decisión depende de tu perfil, pagaduría, capacidad, reporte y las políticas de cada entidad. Te decimos con honestidad qué tan viable se ve tu caso.</p></div></details>
+          <details class="faq__item"><summary>Estoy reportado(a), ¿tengo opciones?</summary><div class="faq__body"><p>En muchos casos sí, pero depende de tu perfil, tu pagaduría, el tipo de reporte y las políticas de la entidad. Revisamos tu caso con honestidad; lo que nunca hacemos es prometerte un resultado que no está asegurado.</p></div></details>
+          <details class="faq__item"><summary>¿Qué es un crédito por libranza?</summary><div class="faq__body"><p>Es un crédito cuya cuota se descuenta directamente de tu nómina o pensión. Suele tener condiciones más ordenadas, pero igual conviene revisar plazo, costo total y descuentos antes de decidir.</p></div></details>
+          <details class="faq__item"><summary>¿Para quién trabaja CrediAyudarte?</summary><div class="faq__body"><p>Para pensionados, docentes del estado, empleados del gobierno y miembros de la Fuerza Pública. Es el sector que conocemos a fondo y donde podemos orientarte mejor.</p></div></details>
+          <details class="faq__item"><summary>¿Qué datos me van a pedir?</summary><div class="faq__body"><p>Solo lo necesario para orientarte, como tu pagaduría o entidad y tu situación general. No pedimos número de cédula, fecha de nacimiento, cuentas bancarias ni claves en el primer contacto.</p></div></details>
+          <details class="faq__item"><summary>¿Es seguro darles mi información?</summary><div class="faq__body"><p>Sí. Pedimos solo lo indispensable y no compartimos tu información con terceros ajenos al proceso. Los datos sensibles, si algún día se requieren, los gestiona el equipo humano en el momento adecuado.</p></div></details>
+          <details class="faq__item"><summary>¿La compra de cartera siempre conviene?</summary><div class="faq__body"><p>No siempre. Puede ser útil, pero también puede alargar la deuda o subir el costo total. Por eso la comparamos contra otras opciones: plazo, costo total, liquidez real y cuota.</p></div></details>
+        </div>
+
+        <!-- Página 2 -->
+        <div class="faq" data-faq-page="2" hidden>
+          <details class="faq__item"><summary>¿En cuánto tiempo sale el crédito?</summary><div class="faq__body"><p>Depende de la entidad, tu pagaduría, los documentos y las validaciones. Por eso no manejamos tiempos como promesa. Te contamos de forma realista en qué va tu caso.</p></div></details>
+          <details class="faq__item"><summary>¿Qué es la pagaduría y por qué la preguntan?</summary><div class="faq__body"><p>La pagaduría es la entidad que te paga la pensión o la nómina. Es clave porque define qué opciones y qué entidades son compatibles con tu perfil.</p></div></details>
+          <details class="faq__item"><summary>¿Qué es un desprendible y para qué lo necesitan?</summary><div class="faq__body"><p>Es tu comprobante de pago de pensión o nómina. Cuando corresponda, te pediremos una foto o PDF legible para revisar tu caso con precisión. Solo lo pedimos en el momento adecuado.</p></div></details>
+          <details class="faq__item"><summary>¿Pueden ayudarme si tengo embargos?</summary><div class="faq__body"><p>Algunos casos con embargo tienen opciones, pero requieren revisión con restricciones, especialmente los embargos de alimentos o familia. No prometemos resultado; lo revisamos con honestidad.</p></div></details>
+          <details class="faq__item"><summary>¿Me pueden ayudar a bajar la cuota?</summary><div class="faq__body"><p>A veces sí, pero recuerda: una cuota más baja no siempre es un mejor crédito si te agregan años de deuda. Revisamos si realmente te deja mejor después de costos y plazo.</p></div></details>
+          <details class="faq__item"><summary>¿Cómo sé cuánto voy a pagar en total?</summary><div class="faq__body"><p>Te ayudamos a mirar el panorama completo: cuota, plazo, costo total y descuentos. Lo importante no es solo cuánto recibes, sino cuánto pagas y por cuánto tiempo.</p></div></details>
+          <details class="faq__item"><summary>¿Atienden en todo el país o solo en Cúcuta?</summary><div class="faq__body"><p>Tenemos oficina en Cúcuta y atendemos a todo el país de forma virtual por WhatsApp. Si estás en otra ciudad, te atendemos virtualmente. Escríbenos y coordinamos.</p></div></details>
+          <details class="faq__item"><summary>¿Debo ir a la oficina para que me atiendan?</summary><div class="faq__body"><p>No es obligatorio. La mayor parte de la atención es virtual por WhatsApp. Si estás en Cúcuta y prefieres, podemos coordinar atención presencial.</p></div></details>
+          <details class="faq__item"><summary>¿Atienden a empleados privados o independientes?</summary><div class="faq__body"><p>Nuestro foco es el sector público. Si es tu caso, te orientamos de forma transparente y, cuando aplica, revisamos si un familiar pensionado o empleado del gobierno puede ser el titular.</p></div></details>
+          <details class="faq__item"><summary>¿Qué pasa después de que les escribo?</summary><div class="faq__body"><p>Te orientamos, entendemos tu perfil y, cuando corresponde, hacemos el preanálisis. Con eso te decimos si vale la pena avanzar o si es mejor no hacerlo porque no te conviene.</p></div></details>
+        </div>
+
+        <div class="pager" id="faqPager">
+          <button class="pager__btn" data-go="prev" disabled>Anterior</button>
+          <button class="pager__num is-active" data-page="1">1</button>
+          <button class="pager__num" data-page="2">2</button>
+          <button class="pager__btn" data-go="next">Siguiente <svg class="ico"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BAND ===================== -->
+  <section class="cta-band">
+    <span class="dots dots--tl" aria-hidden="true"></span>
+    <span class="dots dots--br" aria-hidden="true"></span>
+    <div class="container cta-band__inner">
+      <div class="cta-band__chat"><svg class="ico"><use href="#i-chat"/></svg></div>
+      <div class="cta-band__copy">
+        <h2>Cuéntanos tu caso <span>y lo revisamos contigo.</span></h2>
+        <p>Sin compromiso y sin costo por el preanálisis. Te orientamos con la verdad.</p>
+      </div>
+      <a href="solicitar.html" class="btn btn-yellow btn-lg">Solicita tu crédito</a>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACTO ===================== -->
+  <section class="section contacto" id="contacto">
+    <span class="dots dots--br dots--soft" aria-hidden="true"></span>
+    <div class="container contacto__grid">
+      <div class="contacto__copy reveal reveal--left">
+        <span class="tag">Contacto</span>
+        <h2>Da el primer paso <span class="hl-green">con tranquilidad</span></h2>
+        <p>Escríbenos por WhatsApp o déjanos tus datos. Te orientamos con calma, sin presión y sin costo por el preanálisis.</p>
+        <ul class="contacto__list">
+          <li><span class="contacto__ico"><svg class="ico solid"><use href="#i-whatsapp"/></svg></span><div><strong>WhatsApp</strong><a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener">315 247 4348</a></div></li>
+          <li><span class="contacto__ico"><svg class="ico"><use href="#i-map"/></svg></span><div><strong>Oficina en Cúcuta</strong><span>Calle 12 # 4–47, Local 4 · C.C. International</span></div></li>
+          <li><span class="contacto__ico"><svg class="ico"><use href="#i-users"/></svg></span><div><strong>Atención nacional</strong><span>Virtual por WhatsApp. Escríbenos para coordinar.</span></div></li>
+        </ul>
+      </div>
+
+      <div class="contacto__card reveal reveal--right">
+        <h3>Solicita tu crédito</h3>
+        <p>Completa un formulario corto y te contactamos por WhatsApp con la mejor opción según tu perfil.</p>
+        <a href="solicitar.html" class="btn btn-primary btn-block btn-lg"><svg class="ico solid"><use href="#i-whatsapp"/></svg> Empezar solicitud</a>
+        <p class="contacto__fine">No cobramos por adelantado. Al escribirnos podrás autorizar el tratamiento de tus datos solo para orientarte.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="CrediAyudarte" />
+        <p>Asesoría financiera independiente especializada en crédito por libranza para el sector público. Te ayudamos a decidir con información completa.</p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/crediayudarte" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico solid"><use href="#i-facebook"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+          <a href="https://wa.me/573152474348" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico solid"><use href="#i-whatsapp"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navegación</h4>
+        <a href="#para-quien">Para quién</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="#preguntas">Preguntas</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573152474348" target="_blank" rel="noopener">WhatsApp: 315 247 4348</a>
+        <span>Calle 12 # 4–47, Local 4</span>
+        <span>C.C. International — Cúcuta</span>
+        <span>Atención nacional virtual</span>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <div class="container">
+        <p>CrediAyudarte no es una entidad financiera y no aprueba ni desembolsa créditos. La aprobación y las condiciones dependen de cada entidad y de tu perfil, pagaduría, capacidad y reporte. El preanálisis se realiza sin costo y sin compromiso.</p>
+        <p>© <span id="year"></span> CrediAyudarte · Te ayudamos de verdad. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+    <svg class="ico"><use href="#i-whatsapp"/></svg>
+    <span class="wa-float__pulse"></span>
+  </a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
