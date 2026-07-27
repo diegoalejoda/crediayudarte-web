@@ -205,6 +205,7 @@
             numero: telDigits,
             nombres: nombre,
             apellidos: apellido,
+            edad: edadNum,
             perfil: perfil,
             vida_crediticia: reporte,
             origen: 'landing-web',
