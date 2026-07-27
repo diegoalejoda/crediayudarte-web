@@ -36,6 +36,10 @@
     <symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M12 1l2.6 1.9 3.2-.3 1.2 3 2.9 1.4-1 3.1 1 3.1-2.9 1.4-1.2 3-3.2-.3L12 23l-2.6-1.9-3.2.3-1.2-3L2.1 17l1-3.1-1-3.1 2.9-1.4 1.2-3 3.2.3z" fill="currentColor"/><polyline points="8.5 12 11 14.5 15.5 9.5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></symbol>
   </svg>
 
   <!-- ===================== HEADER ===================== -->
@@ -82,6 +86,15 @@
           <li><svg class="ico"><use href="#i-check"/></svg> Si no te conviene, también te lo decimos</li>
         </ul>
         <span class="form-aside__seal"><svg class="ico"><use href="#i-shield"/></svg> No cobramos ningún dinero por adelantado</span>
+
+        <a href="testimonios.html" class="doubt-cta">
+          <span class="doubt-cta__ico"><svg class="ico"><use href="#i-heart"/></svg></span>
+          <span class="doubt-cta__txt">
+            <strong>¿Tienes dudas antes de escribir?</strong>
+            Mira historias reales de pensionados y empleados del gobierno que ya confiaron en nosotros.
+            <span class="doubt-cta__link">Ver testimonios <svg class="ico"><use href="#i-arrow-right"/></svg></span>
+          </span>
+        </a>
       </div>
 
       <div class="form-card reveal reveal--right">
@@ -131,11 +144,38 @@
             </label>
           </div>
 
+          <p class="choice-label">Desprendible de pago <span class="opt">(opcional)</span></p>
+          <label class="dropzone" id="dropzone" for="desprendible">
+            <input type="file" id="desprendible" name="desprendible" accept="image/*,application/pdf,video/*" hidden>
+            <span class="dropzone__ico"><svg class="ico"><use href="#i-upload"/></svg></span>
+            <span class="dropzone__txt"><strong>Toca aquí para adjuntar</strong><small>Foto, PDF o video de tu desprendible</small></span>
+          </label>
+          <div class="dropzone__preview" id="dropPreview" hidden>
+            <span class="dropzone__thumb" id="dropThumb"><svg class="ico"><use href="#i-file"/></svg></span>
+            <span class="dropzone__info"><strong id="dropName">archivo</strong><small id="dropSize"></small></span>
+            <button type="button" class="dropzone__remove" id="dropRemove" aria-label="Quitar archivo"><svg class="ico"><use href="#i-x"/></svg></button>
+          </div>
+
+          <div class="trust-box">
+            <span class="trust-box__ico"><svg class="ico"><use href="#i-lock"/></svg></span>
+            <div class="trust-box__body">
+              <strong>Tu información está protegida</strong>
+              <ul>
+                <li>Nunca pedimos cédula, claves ni cuentas bancarias.</li>
+                <li>Tu desprendible viaja por tu WhatsApp privado y cifrado. <b>No se guarda en esta página.</b></li>
+                <li>Solo usamos tus datos para orientar tu caso, con tu permiso.</li>
+              </ul>
+            </div>
+          </div>
+
           <p class="form-error" id="formError">Por favor completa todos los campos para continuar.</p>
 
           <button type="submit" class="btn btn-primary btn-block btn-lg btn-submit">
             <svg class="ico solid"><use href="#i-whatsapp"/></svg> Enviar por WhatsApp
           </button>
+          <a href="testimonios.html" class="btn btn-ghost btn-block doubt-btn">
+            <svg class="ico"><use href="#i-heart"/></svg> ¿Aún dudas? Mira los testimonios
+          </a>
           <p class="form-note">No cobramos ningún dinero por adelantado</p>
           <p class="form-fine">Al enviar aceptas que un asesor te contacte por WhatsApp para orientarte. No compartimos tu información con terceros ajenos al proceso.</p>
         </form>
@@ -363,6 +403,11 @@
     <svg class="ico"><use href="#i-whatsapp"/></svg>
     <span class="wa-float__pulse"></span>
   </a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg class="ico"><use href="#i-whatsapp"/></svg>
+    <span>Se abrió WhatsApp. Si adjuntaste tu desprendible, envíalo en el chat 📎</span>
+  </div>
 
   <script src="js/script.js"></script>
   <script src="js/solicitar.js"></script>
