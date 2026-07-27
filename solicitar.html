@@ -115,9 +115,15 @@
             </div>
           </div>
 
-          <div class="field">
-            <label for="edad">Edad <span class="req">*</span></label>
-            <input type="number" id="edad" name="edad" placeholder="Ej: 62" min="18" max="100" inputmode="numeric" required>
+          <div class="field-row">
+            <div class="field">
+              <label for="edad">Edad <span class="req">*</span></label>
+              <input type="number" id="edad" name="edad" placeholder="Ej: 62" min="18" max="100" inputmode="numeric" required>
+            </div>
+            <div class="field">
+              <label for="telefono">WhatsApp / Teléfono <span class="req">*</span></label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567" inputmode="numeric" autocomplete="tel" required>
+            </div>
           </div>
 
           <p class="choice-label">¿Cuál es tu situación laboral? <span class="req">*</span></p>
@@ -144,16 +150,29 @@
             </label>
           </div>
 
-          <p class="choice-label">Desprendible de pago <span class="opt">(opcional)</span></p>
-          <label class="dropzone" id="dropzone" for="desprendible">
-            <input type="file" id="desprendible" name="desprendible" accept="image/*,application/pdf,video/*" hidden>
-            <span class="dropzone__ico"><svg class="ico"><use href="#i-upload"/></svg></span>
-            <span class="dropzone__txt"><strong>Toca aquí para adjuntar</strong><small>Foto, PDF o video de tu desprendible</small></span>
-          </label>
-          <div class="dropzone__preview" id="dropPreview" hidden>
-            <span class="dropzone__thumb" id="dropThumb"><svg class="ico"><use href="#i-file"/></svg></span>
-            <span class="dropzone__info"><strong id="dropName">archivo</strong><small id="dropSize"></small></span>
-            <button type="button" class="dropzone__remove" id="dropRemove" aria-label="Quitar archivo"><svg class="ico"><use href="#i-x"/></svg></button>
+          <p class="choice-label">¿Tienes a la mano tu desprendible de pago? <span class="req">*</span></p>
+          <div class="choices" data-group="desprendible">
+            <label class="choice">
+              <input type="radio" name="desprendible" value="Sí" required>
+              <span class="choice__box"><svg class="ico"><use href="#i-check"/></svg><strong>Sí</strong></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="desprendible" value="No">
+              <span class="choice__box"><svg class="ico"><use href="#i-file"/></svg><strong>No</strong></span>
+            </label>
+          </div>
+
+          <div id="uploadPanel" hidden>
+            <label class="dropzone" id="dropzone" for="archivoDesprendible">
+              <input type="file" id="archivoDesprendible" name="archivoDesprendible" accept="image/*,application/pdf" hidden>
+              <span class="dropzone__ico"><svg class="ico"><use href="#i-upload"/></svg></span>
+              <span class="dropzone__txt"><strong>Toca aquí para adjuntar</strong><small>Foto o PDF de tu desprendible</small></span>
+            </label>
+            <div class="dropzone__preview" id="dropPreview" hidden>
+              <span class="dropzone__thumb" id="dropThumb"><svg class="ico"><use href="#i-file"/></svg></span>
+              <span class="dropzone__info"><strong id="dropName">archivo</strong><small id="dropSize"></small></span>
+              <button type="button" class="dropzone__remove" id="dropRemove" aria-label="Quitar archivo"><svg class="ico"><use href="#i-x"/></svg></button>
+            </div>
           </div>
 
           <div class="trust-box">
@@ -162,7 +181,7 @@
               <strong>Tu información está protegida</strong>
               <ul>
                 <li>Nunca pedimos cédula, claves ni cuentas bancarias.</li>
-                <li>Tu desprendible viaja por tu WhatsApp privado y cifrado. <b>No se guarda en esta página.</b></li>
+                <li>Tu desprendible se envía cifrado y solo lo revisa el equipo autorizado de CrediAyudarte.</li>
                 <li>Solo usamos tus datos para orientar tu caso, con tu permiso.</li>
               </ul>
             </div>
@@ -406,7 +425,7 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite">
     <svg class="ico"><use href="#i-whatsapp"/></svg>
-    <span>Se abrió WhatsApp. Si adjuntaste tu desprendible, envíalo en el chat 📎</span>
+    <span>Subiendo tu desprendible de forma segura… 📎</span>
   </div>
 
   <script src="js/script.js"></script>
