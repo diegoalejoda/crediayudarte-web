@@ -121,12 +121,11 @@
     var nombre = val('nombre');
     var apellido = val('apellido');
     var edad = val('edad');
-    var telefono = val('telefono');
     var perfil = checked('perfil');
     var reporte = checked('reporte');
     var desprendible = checked('desprendible');
 
-    if (!nombre || !apellido || !edad || !telefono || !perfil || !reporte || !desprendible) {
+    if (!nombre || !apellido || !edad || !perfil || !reporte || !desprendible) {
       showError('Por favor completa todos los campos obligatorios (*) para continuar.');
       return;
     }
@@ -134,12 +133,6 @@
     if (isNaN(edadNum) || edadNum < 18 || edadNum > 100) {
       showError('Por favor escribe una edad válida (entre 18 y 100 años).');
       document.getElementById('edad').focus();
-      return;
-    }
-    var telDigits = telefono.replace(/[^0-9]/g, '');
-    if (telDigits.length < 7) {
-      showError('Por favor escribe un número de WhatsApp válido.');
-      document.getElementById('telefono').focus();
       return;
     }
     var tieneFile = desprendible === 'Sí';
@@ -160,7 +153,6 @@
           nombres: nombre,
           apellido: apellido,
           edad: edadNum,
-          telefono: telDigits,
           perfil: perfil,
           vida_crediticia: reporte,
           tiene_desprendible: tieneFile,
@@ -202,7 +194,6 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            numero: telDigits,
             nombres: nombre,
             apellidos: apellido,
             edad: edadNum,
