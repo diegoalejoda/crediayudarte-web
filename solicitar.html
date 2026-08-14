@@ -40,6 +40,11 @@
     <symbol id="i-lock" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
     <symbol id="i-image" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+    <symbol id="i-volume-x" viewBox="0 0 24 24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.3"/><rect x="14" y="5" width="4" height="14" rx="1.3"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></symbol>
+    <symbol id="i-cc" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 10.5a2.2 2.2 0 1 0 0 3"/><path d="M17 10.5a2.2 2.2 0 1 0 0 3"/></symbol>
   </svg>
 
   <!-- ===================== HEADER ===================== -->
@@ -68,17 +73,67 @@
     </div>
   </header>
 
-  <!-- ===================== HERO + FORMULARIO ===================== -->
+  <!-- ===================== HERO + VIDEO + FORMULARIO ===================== -->
   <section class="form-wrap">
     <span class="blob blob--green anim-drift" aria-hidden="true"></span>
     <span class="blob blob--yellow anim-float2" aria-hidden="true"></span>
     <span class="dots dots--br dots--soft" aria-hidden="true"></span>
 
-    <div class="container form-grid">
-      <div class="form-aside reveal reveal--left">
+    <div class="container">
+      <div class="pitch-head">
         <span class="tag">Solicita tu crédito</span>
         <h1>Cuéntanos tu caso y <span>te contactamos hoy mismo</span></h1>
-        <p class="form-aside__lead">Completa este formulario corto. Al enviarlo se abrirá WhatsApp con tus datos listos para que un asesor te explique la mejor opción según tu perfil.</p>
+        <p class="pitch-head__lead">Mira el video mientras llenas el formulario. Al enviarlo se abrirá WhatsApp con tus datos listos para que un asesor te explique la mejor opción según tu perfil.</p>
+      </div>
+
+      <div class="form-grid">
+      <div class="form-aside">
+        <!-- ---------- Video de presentación ---------- -->
+        <figure class="vpitch" id="vpitch">
+          <div class="vpitch__slot" id="vpitchSlot">
+            <div class="vpitch__stage" id="vpitchStage">
+              <video id="pitchVideo"
+                     poster="assets/video/poster.jpg"
+                     preload="auto" playsinline webkit-playsinline muted autoplay
+                     disablepictureinpicture disableremoteplayback
+                     aria-label="Mensaje de CrediAyudarte">
+                <source src="assets/video/mensaje.mp4" type="video/mp4">
+                Tu navegador no puede reproducir este video.
+              </video>
+
+              <!-- capa para activar el sonido cuando el navegador bloquea el autoplay -->
+              <button type="button" class="vpitch__sound" id="vpitchSound" hidden>
+                <span class="vpitch__sound-ico"><svg class="ico"><use href="#i-volume"/></svg></span>
+                <span class="vpitch__sound-txt"><strong>Toca para escuchar</strong><small>Tu navegador silenció el video al abrir</small></span>
+              </button>
+
+              <!-- controles mínimos, siempre visibles -->
+              <div class="vpitch__ui">
+                <button type="button" class="vpitch__btn" id="vpitchPlay" aria-label="Pausar el video"><svg class="ico solid"><use href="#i-pause"/></svg></button>
+                <div class="vpitch__track" id="vpitchTrack" role="progressbar" aria-label="Avance del video" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                  <span class="vpitch__bar" id="vpitchBar"></span>
+                </div>
+                <span class="vpitch__time" id="vpitchTime">0:51</span>
+                <button type="button" class="vpitch__btn" id="vpitchMute" aria-label="Activar el sonido"><svg class="ico"><use href="#i-volume-x"/></svg></button>
+              </div>
+
+              <!-- tarjeta final -->
+              <div class="vpitch__end" id="vpitchEnd" hidden>
+                <strong>¿Te suena tu caso?</strong>
+                <p>Escribe tus datos y una persona real te responde por WhatsApp.</p>
+                <button type="button" class="btn btn-primary btn-sm" id="vpitchToForm">Llenar el formulario <svg class="ico"><use href="#i-arrow-right"/></svg></button>
+                <button type="button" class="vpitch__replay" id="vpitchReplay">Ver el video otra vez</button>
+              </div>
+
+              <button type="button" class="vpitch__close" id="vpitchClose" aria-label="Cerrar el video"><svg class="ico"><use href="#i-x"/></svg></button>
+            </div>
+          </div>
+        </figure>
+
+        <a href="#creditForm" class="pitch-jump" id="pitchJump">
+          <svg class="ico"><use href="#i-arrow-down"/></svg> Llenar el formulario
+        </a>
+
         <ul class="form-aside__list">
           <li><svg class="ico"><use href="#i-check"/></svg> Respuesta por WhatsApp, con una persona real</li>
           <li><svg class="ico"><use href="#i-check"/></svg> Evaluación sin costo y sin compromiso</li>
@@ -101,6 +156,13 @@
         <div class="form-card__head">
           <svg class="ico"><use href="#i-file"/></svg>
           <h2>Tus datos</h2>
+          <span class="form-card__mins">2 minutos</span>
+        </div>
+
+        <div class="secure-strip">
+          <span><svg class="ico"><use href="#i-lock"/></svg> Conexión segura</span>
+          <span><svg class="ico"><use href="#i-shield"/></svg> Datos cifrados</span>
+          <span><svg class="ico"><use href="#i-check"/></svg> Nunca pedimos claves</span>
         </div>
 
         <form id="creditForm" novalidate>
@@ -119,6 +181,10 @@
             <div class="field">
               <label for="edad">Edad <span class="req">*</span></label>
               <input type="number" id="edad" name="edad" placeholder="Ej: 62" min="18" max="100" inputmode="numeric" required>
+            </div>
+            <div class="field">
+              <label for="telefono">WhatsApp / Teléfono <span class="req">*</span></label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567" inputmode="numeric" autocomplete="tel" required>
             </div>
           </div>
 
@@ -192,8 +258,9 @@
             <svg class="ico"><use href="#i-heart"/></svg> ¿Aún dudas? Mira los testimonios
           </a>
           <p class="form-note">No cobramos ningún dinero por adelantado</p>
-          <p class="form-fine">Al enviar aceptas que un asesor te contacte por WhatsApp para orientarte. No compartimos tu información con terceros ajenos al proceso.</p>
+          <p class="form-fine">Al enviar autorizas que un asesor de CrediAyudarte te contacte por WhatsApp para orientar tu caso, conforme a la Ley 1581 de 2012 (Habeas Data). No compartimos tu información con terceros ajenos al proceso y puedes pedirnos que la eliminemos cuando quieras.</p>
         </form>
+      </div>
       </div>
     </div>
   </section>
@@ -426,6 +493,7 @@
     <span>Subiendo tu desprendible de forma segura… 📎</span>
   </div>
 
+  <script src="js/pitch.js"></script>
   <script src="js/script.js"></script>
   <script src="js/solicitar.js"></script>
 </body>
