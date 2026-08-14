@@ -80,14 +80,7 @@
     <span class="dots dots--br dots--soft" aria-hidden="true"></span>
 
     <div class="container">
-      <div class="pitch-head">
-        <span class="tag">Solicita tu crédito</span>
-        <h1>Cuéntanos tu caso y <span>te contactamos hoy mismo</span></h1>
-        <p class="pitch-head__lead">Mira el video mientras llenas el formulario. Al enviarlo se abrirá WhatsApp con tus datos listos para que un asesor te explique la mejor opción según tu perfil.</p>
-      </div>
-
-      <div class="form-grid">
-      <div class="form-aside">
+      <div class="pitch-grid">
         <!-- ---------- Video de presentación ---------- -->
         <figure class="vpitch" id="vpitch">
           <div class="vpitch__slot" id="vpitchSlot">
@@ -130,29 +123,48 @@
           </div>
         </figure>
 
-        <a href="#creditForm" class="pitch-jump" id="pitchJump">
-          <svg class="ico"><use href="#i-arrow-down"/></svg> Llenar el formulario
-        </a>
+        <!-- ---------- Qué es CrediAyudarte (breve) ---------- -->
+        <div class="pitch-info">
+          <span class="tag">Solicita tu crédito</span>
+          <h1>Cuéntanos tu caso y <span>te contactamos hoy mismo</span></h1>
+          <p class="pitch-info__lead">Somos una <strong>asesoría financiera independiente</strong> con más de 10 años acompañando a pensionados y empleados del gobierno. No somos un banco: estudiamos tu caso, buscamos las entidades que sí encajan con tu pagaduría y te explicamos el costo real antes de que firmes.</p>
+          <ul class="pitch-info__list">
+            <li><svg class="ico"><use href="#i-check"/></svg> Te responde una persona real por WhatsApp, no un bot</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Evaluación sin costo y sin compromiso</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Te atendemos aunque estés reportado o embargado</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Si no te conviene, también te lo decimos</li>
+          </ul>
+          <span class="pitch-info__seal"><svg class="ico"><use href="#i-shield"/></svg> No cobramos ningún dinero por adelantado</span>
+        </div>
 
-        <ul class="form-aside__list">
-          <li><svg class="ico"><use href="#i-check"/></svg> Respuesta por WhatsApp, con una persona real</li>
-          <li><svg class="ico"><use href="#i-check"/></svg> Evaluación sin costo y sin compromiso</li>
-          <li><svg class="ico"><use href="#i-check"/></svg> Atención para pensionados y empleados del gobierno</li>
-          <li><svg class="ico"><use href="#i-check"/></svg> Si no te conviene, también te lo decimos</li>
-        </ul>
-        <span class="form-aside__seal"><svg class="ico"><use href="#i-shield"/></svg> No cobramos ningún dinero por adelantado</span>
-
-        <a href="testimonios.html" class="doubt-cta">
-          <span class="doubt-cta__ico"><svg class="ico"><use href="#i-heart"/></svg></span>
-          <span class="doubt-cta__txt">
-            <strong>¿Tienes dudas antes de escribir?</strong>
-            Mira historias reales de pensionados y empleados del gobierno que ya confiaron en nosotros.
-            <span class="doubt-cta__link">Ver testimonios <svg class="ico"><use href="#i-arrow-right"/></svg></span>
-          </span>
-        </a>
+        <!-- ---------- Clientes reales atendidos ---------- -->
+        <aside class="proof">
+          <div class="proof__head">
+            <svg class="ico"><use href="#i-users"/></svg>
+            <div>
+              <strong>Personas como tú, en nuestra oficina</strong>
+              <small>Fotos reales de Cúcuta, compartidas con su permiso</small>
+            </div>
+          </div>
+          <div class="proof__grid">
+            <a href="testimonios.html" class="proof__item"><img src="assets/testigos/foto-1.jpeg" alt="Clienta atendida por una asesora de CrediAyudarte" loading="lazy"></a>
+            <a href="testimonios.html" class="proof__item"><img src="assets/testigos/poster-4.jpg" alt="Pensionado esperando su turno en la oficina" loading="lazy"></a>
+            <a href="testimonios.html" class="proof__item"><img src="assets/testigos/poster-6.jpg" alt="Asesora revisando el caso de una clienta" loading="lazy"></a>
+            <a href="testimonios.html" class="proof__item"><img src="assets/testigos/poster-1.jpg" alt="Cliente firmando su solicitud con una asesora" loading="lazy"></a>
+            <a href="testimonios.html" class="proof__item"><img src="assets/testigos/foto-2.jpeg" alt="Clienta pensionada de CrediAyudarte" loading="lazy"></a>
+            <a href="testimonios.html" class="proof__item proof__item--wide"><img src="assets/testigos/foto-3.jpeg" alt="Clientas frente a la oficina de CrediAyudarte en Cúcuta" loading="lazy"></a>
+          </div>
+          <a href="testimonios.html" class="proof__link">Ver todas las historias <svg class="ico"><use href="#i-arrow-right"/></svg></a>
+        </aside>
       </div>
 
-      <div class="form-card reveal reveal--right">
+      <a href="#creditForm" class="pitch-jump" id="pitchJump">
+        <span>Ahora sí, llena el formulario</span>
+        <svg class="ico"><use href="#i-arrow-down"/></svg>
+      </a>
+
+      <div class="form-shell">
+      <div class="form-card">
         <div class="form-card__head">
           <svg class="ico"><use href="#i-file"/></svg>
           <h2>Tus datos</h2>

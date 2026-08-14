@@ -397,16 +397,6 @@ mark.mk-yellow{
 .form-wrap .blob{width:360px;height:360px}
 .form-wrap .blob--green{top:-160px;left:-120px}
 .form-wrap .blob--yellow{bottom:-180px;right:-120px}
-.form-grid{position:relative;z-index:2;display:grid;grid-template-columns:.95fr 1.15fr;gap:clamp(2rem,5vw,3.5rem);align-items:start}
-.form-aside .tag{margin-bottom:1rem}
-.form-aside h1{font-size:clamp(2rem,4.2vw,2.9rem);line-height:1.08;color:var(--tinta);margin-bottom:1rem;letter-spacing:-.03em}
-.form-aside h1 span{color:var(--verde-brillante)}
-.form-aside__lead{font-size:1.05rem;margin-bottom:1.6rem}
-.form-aside__list{display:grid;gap:.8rem;margin-bottom:1.6rem}
-.form-aside__list li{display:flex;align-items:center;gap:.7rem;font-weight:500;color:var(--tinta)}
-.form-aside__list .ico{width:1.4rem;height:1.4rem;color:#fff;stroke:#fff;stroke-width:2.6;background:var(--verde-marca);border-radius:50%;padding:5px;flex:none}
-.form-aside__seal{display:inline-flex;align-items:center;gap:.6rem;background:var(--verde-menta);color:var(--verde-texto);font-weight:700;padding:.7rem 1.1rem;border-radius:14px;font-size:.92rem}
-.form-aside__seal .ico{width:1.3rem;height:1.3rem;stroke:var(--verde-texto)}
 .form-card{background:#fff;border:1px solid var(--linea);border-radius:26px;padding:clamp(1.5rem,3vw,2.4rem);box-shadow:var(--shadow);position:sticky;top:90px}
 .form-card__head{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem}
 .form-card__head .ico{width:1.6rem;height:1.6rem;color:var(--verde-texto);stroke:var(--verde-texto)}
@@ -464,16 +454,6 @@ mark.mk-yellow{
 .doubt-btn{margin-top:.7rem;font-size:.95rem}
 .doubt-btn .ico{width:1.15rem;height:1.15rem;color:#e0607a;stroke:#e0607a}
 
-/* CTA anti-dudas (columna izquierda) */
-.doubt-cta{display:flex;align-items:flex-start;gap:.9rem;margin-top:1.4rem;padding:1.1rem 1.2rem;border-radius:18px;background:#fff;border:1px solid var(--linea);box-shadow:var(--shadow-sm);transition:transform .2s var(--ease),box-shadow .2s;max-width:460px}
-.doubt-cta:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.doubt-cta__ico{width:46px;height:46px;border-radius:14px;background:var(--verde-menta);display:grid;place-items:center;flex:none}
-.doubt-cta__ico .ico{width:1.4rem;height:1.4rem;color:#e0607a;stroke:#e0607a}
-.doubt-cta__txt{font-size:.9rem;color:var(--gris-texto);line-height:1.45}
-.doubt-cta__txt strong{display:block;color:var(--tinta);font-size:1rem;margin-bottom:.15rem}
-.doubt-cta__link{display:inline-flex;align-items:center;gap:.35rem;color:var(--verde-texto);font-weight:700;margin-top:.4rem}
-.doubt-cta__link .ico{width:1rem;height:1rem}
-
 /* Toast */
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140%);z-index:90;display:flex;align-items:center;gap:.7rem;background:var(--tinta);color:#fff;padding:.9rem 1.3rem;border-radius:50px;box-shadow:0 20px 50px -18px rgba(0,0,0,.5);font-size:.92rem;font-weight:500;max-width:calc(100% - 2rem);transition:transform .4s var(--ease-back)}
 .toast.is-visible{transform:translate(-50%,0)}
@@ -518,12 +498,40 @@ mark.mk-yellow{
 /* ===================================================================
    VIDEO DE PRESENTACIÓN (página de solicitud)
    =================================================================== */
-.pitch-head{position:relative;z-index:2;max-width:780px;margin-bottom:clamp(1.6rem,3vw,2.4rem)}
-.pitch-head h1{font-size:clamp(2rem,4.2vw,2.9rem);line-height:1.08;color:var(--tinta);margin-bottom:1rem;letter-spacing:-.03em}
-.pitch-head h1 span{color:var(--verde-brillante)}
-.pitch-head__lead{font-size:1.05rem}
+/* Encabezado: video a la izquierda, y a su lado el qué somos
+   arriba y las fotos de clientes reales abajo. */
+.pitch-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(280px,330px) 1fr;grid-template-areas:"video info" "video proof";gap:clamp(1.5rem,3vw,2.6rem);align-items:start}
+.vpitch{grid-area:video;margin:0;position:sticky;top:90px}
+.pitch-info{grid-area:info}
+.proof{grid-area:proof}
 
-.vpitch{margin:0 0 1.1rem}
+.pitch-info h1{font-size:clamp(1.75rem,3.2vw,2.5rem);line-height:1.1;color:var(--tinta);margin-bottom:.9rem;letter-spacing:-.03em}
+.pitch-info h1 span{color:var(--verde-brillante)}
+.pitch-info__lead{font-size:1rem;margin-bottom:1.2rem}
+.pitch-info__lead strong{color:var(--verde-texto);font-weight:700}
+.pitch-info__list{display:grid;gap:.65rem;margin-bottom:1.2rem}
+.pitch-info__list li{display:flex;align-items:center;gap:.7rem;font-weight:500;color:var(--tinta);font-size:.97rem}
+.pitch-info__list .ico{width:1.35rem;height:1.35rem;color:#fff;stroke:#fff;stroke-width:2.6;background:var(--verde-marca);border-radius:50%;padding:5px;flex:none}
+.pitch-info__seal{display:inline-flex;align-items:center;gap:.6rem;background:var(--verde-menta);color:var(--verde-texto);font-weight:700;padding:.7rem 1.1rem;border-radius:14px;font-size:.9rem}
+.pitch-info__seal .ico{width:1.25rem;height:1.25rem;stroke:var(--verde-texto)}
+
+/* Prueba social: caras reales de gente ya atendida */
+.proof{background:#fff;border:1px solid var(--linea);border-radius:22px;padding:1.2rem 1.3rem;box-shadow:var(--shadow-sm)}
+.proof__head{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
+.proof__head .ico{width:1.5rem;height:1.5rem;color:var(--verde-texto);stroke:var(--verde-texto);flex:none}
+.proof__head strong{display:block;color:var(--tinta);font-family:var(--f-head);font-weight:800;font-size:1.02rem;line-height:1.2}
+.proof__head small{color:var(--gris-suave);font-size:.8rem}
+.proof__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));grid-auto-flow:dense;gap:.55rem}
+.proof__item{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--verde-menta);border:1px solid var(--linea);transition:transform .25s var(--ease),box-shadow .25s}
+.proof__item--wide{grid-column:span 2;aspect-ratio:2/1}
+.proof__item img{width:100%;height:100%;object-fit:cover;display:block}
+.proof__item:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.proof__link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;color:var(--verde-texto);font-weight:700;font-size:.9rem}
+.proof__link .ico{width:1rem;height:1rem}
+
+/* Formulario, ya abajo: es "el formulario de abajo" del que habla el video */
+.form-shell{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.form-shell .form-card{position:static}
 .vpitch__slot{position:relative;aspect-ratio:9/16;height:min(58vh,540px);width:auto;margin-inline:auto;max-width:100%}
 .vpitch__stage{position:absolute;inset:0;border-radius:24px;overflow:hidden;background:#0e1408;box-shadow:0 26px 60px -26px rgba(30,42,25,.65);border:1px solid rgba(255,255,255,.5);isolation:isolate}
 .vpitch__stage video{width:100%;height:100%;object-fit:cover;display:block;background:#0e1408;cursor:pointer}
@@ -581,10 +589,12 @@ mark.mk-yellow{
 .vpitch.is-mini .vpitch__time{display:none}
 @keyframes pitchMini{from{opacity:0;transform:translateY(22px) scale(.9)}to{opacity:1;transform:none}}
 
-/* botón para bajar al formulario (móvil) */
-.pitch-jump{display:none;align-items:center;justify-content:center;gap:.5rem;width:100%;max-width:340px;margin:0 auto 1.4rem;padding:.85rem 1.2rem;border-radius:50px;background:var(--verde-menta);color:var(--verde-texto);font-weight:700;font-size:.95rem;border:1.5px solid rgba(124,180,29,.4)}
-.pitch-jump .ico{width:1.1rem;height:1.1rem;stroke:var(--verde-texto);animation:pitchDown 1.8s ease-in-out infinite}
-@keyframes pitchDown{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+/* Puente hacia el formulario: el video dice "llena el formulario de
+   abajo", así que este es el paso que lo conecta. */
+.pitch-jump{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:.7rem;width:max-content;max-width:100%;margin:clamp(2rem,4vw,3rem) auto clamp(1.4rem,3vw,2rem);padding:1rem 1.9rem;border-radius:50px;background:var(--verde-marca);color:#fff;font-family:var(--f-head);font-weight:800;font-size:1.05rem;box-shadow:0 18px 34px -16px rgba(124,180,29,1);transition:transform .2s var(--ease),box-shadow .25s}
+.pitch-jump:hover{transform:translateY(-3px);box-shadow:0 24px 44px -16px rgba(124,180,29,1)}
+.pitch-jump .ico{width:1.2rem;height:1.2rem;stroke:#fff;animation:pitchDown 1.8s ease-in-out infinite}
+@keyframes pitchDown{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
 /* franja de seguridad del formulario */
 .form-card__mins{margin-left:auto;font-size:.75rem;font-weight:700;color:var(--verde-texto);background:var(--verde-menta);padding:.28rem .7rem;border-radius:50px;white-space:nowrap}
@@ -603,24 +613,18 @@ mark.mk-yellow{
   .steps{grid-template-columns:repeat(2,1fr);gap:2.4rem 1.4rem}
   .hero__grid{grid-template-columns:1fr;gap:2.4rem}
   .hero__card{max-width:480px}
-  .codigo__grid,.contacto__grid,.testimonios__grid,.form-grid,.fb__grid,.mapa__grid,.perfil-cards,.grid-2{grid-template-columns:1fr}
+  .codigo__grid,.contacto__grid,.testimonios__grid,.fb__grid,.mapa__grid,.perfil-cards,.grid-2{grid-template-columns:1fr}
   .collage{max-width:480px;margin-inline:auto}
   .footer__grid{grid-template-columns:1fr 1fr;gap:1.8rem}
   .masonry{columns:2}
   .form-card{position:static}
   .tstrip{grid-template-columns:repeat(2,1fr)}
-  /* Video arriba, formulario enseguida y la confianza debajo:
-     así el cliente ve el video y el inicio del formulario sin perder
-     los mensajes de garantía, que quedan a un scroll de distancia. */
-  .form-grid{gap:1.6rem}
-  .form-aside{display:contents}
-  .vpitch{order:1;margin-bottom:.9rem}
+  /* Todo en una columna: video, qué somos, caras reales y el
+     formulario al final, que es el orden que narra el video. */
+  .pitch-grid{grid-template-columns:1fr;grid-template-areas:"video" "info" "proof";gap:1.6rem}
+  .vpitch{position:static}
   .vpitch__slot{height:min(58vh,460px)}
-  .pitch-jump{order:2;display:flex}
-  .form-card{order:3}
-  .form-aside__list{order:4;margin:.6rem 0 0}
-  .form-aside__seal{order:5;justify-self:start}
-  .doubt-cta{order:6;margin-top:0}
+  .pitch-info{text-align:left}
 }
 @media (max-width:760px){
   .nav{position:fixed;inset:70px 0 auto 0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--linea);padding:.5rem 1.2rem 1rem;margin:0;transform:translateY(-160%);transition:transform .35s var(--ease);box-shadow:var(--shadow-sm)}
