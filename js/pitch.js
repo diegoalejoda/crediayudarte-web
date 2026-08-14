@@ -2,7 +2,9 @@
    CrediAyudarte — Video de presentación en la página de solicitud
    Arranca solo al entrar. Los navegadores bloquean el sonido si el
    cliente todavía no ha tocado nada, así que: intentamos con audio,
-   caemos a silencio + aviso grande, y lo activamos apenas toque algo.
+   caemos a silencio + aviso grande, y lo activamos con el primer
+   toque en la página. Ese toque global vale una sola vez; después,
+   pausar y reanudar es hacer clic sobre el video.
    Al bajar al formulario el video se encoge a una ventanita para que
    lo siga viendo mientras escribe sus datos.
    =================================================================== */
@@ -79,12 +81,18 @@
   reproducir();
   setTimeout(confirmar, 400);
 
-  /* ---- 2. Activar el sonido apenas el cliente toque algo ----------
-     No soltamos los escuchas hasta que el sonido esté sonando de
-     verdad: si un toque no alcanza, el siguiente lo vuelve a intentar. */
+  /* ---- 2. El primer toque en la página, y solo ese ----------------
+     Un único toque en cualquier parte arranca el video con sonido.
+     Después de ese toque soltamos los escuchas para siempre: el resto
+     de la página deja de mandar sobre el video, y para pausarlo o
+     reanudarlo hay que hacer clic sobre el video mismo. */
   var GESTOS = ['pointerdown', 'touchend', 'click', 'keydown'];
+  var globalUsado = false;
 
   function alPrimerToque() {
+    if (globalUsado) return;
+    globalUsado = true;
+    quitarGestos(); // una sola oportunidad, pase lo que pase
     if (silencedByUser || finished || sonidoListo) return;
     activarSonido();
   }
