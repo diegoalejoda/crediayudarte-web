@@ -1,0 +1,14 @@
+# robots.txt — CrediAyudarte
+# Todo el sitio es público: no se bloquea ninguna página importante.
+
+User-agent: *
+Allow: /
+
+# Los rastreadores de IA/redes también pueden leer la página (quítalos si algún día no lo quieres)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://crediayudarte.com/sitemap.xml

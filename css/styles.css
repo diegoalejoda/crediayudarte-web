@@ -42,7 +42,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--f-body);color:var(--gris-texto);background:var(--blanco);line-height:1.65;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+img{max-width:100%;display:block;width:auto;height:auto}
 a{text-decoration:none;color:inherit}
 ul,ol{list-style:none}
 .ico{width:1.15em;height:1.15em;flex:none}
@@ -369,7 +369,7 @@ mark.mk-yellow{
 .masonry{columns:3;column-gap:1.2rem}
 .masonry__item{break-inside:avoid;margin-bottom:1.2rem;position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--linea);background:#000;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s}
 .masonry__item:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.masonry__item img,.masonry__item video{width:100%;display:block;background:#e9ece3}
+.masonry__item img,.masonry__item video{width:100%;height:auto;display:block;background:#e9ece3}
 .masonry__item.is-hidden{display:none}
 .media-tag{position:absolute;top:12px;left:12px;z-index:3;display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.92);color:var(--verde-texto);font-weight:700;font-size:.72rem;padding:.32rem .7rem;border-radius:50px;text-transform:uppercase;letter-spacing:.04em;backdrop-filter:blur(4px)}
 .media-tag .ico{width:.9rem;height:.9rem;stroke:var(--verde-texto)}
@@ -521,7 +521,10 @@ mark.mk-yellow{
 .proof__head .ico{width:1.5rem;height:1.5rem;color:var(--verde-texto);stroke:var(--verde-texto);flex:none}
 .proof__head strong{display:block;color:var(--tinta);font-family:var(--f-head);font-weight:800;font-size:1.02rem;line-height:1.2}
 .proof__head small{color:var(--gris-suave);font-size:.8rem}
-.proof__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));grid-auto-flow:dense;gap:.55rem}
+/* 6 columnas exactas: los 4 cuadrados + la foto ancha (span 2) suman
+   justo 6, asi que la rejilla siempre cierra completa y centrada.
+   Con auto-fill quedaba una columna suelta segun el ancho. */
+.proof__grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-flow:dense;gap:.55rem;justify-content:center;align-content:center}
 .proof__item{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--verde-menta);border:1px solid var(--linea);transition:transform .25s var(--ease),box-shadow .25s}
 .proof__item--wide{grid-column:span 2;aspect-ratio:2/1}
 .proof__item img{width:100%;height:100%;object-fit:cover;display:block}
@@ -656,4 +659,63 @@ mark.mk-yellow{
   .vpitch__slot{height:min(56vh,430px)}
   .secure-strip{gap:.35rem .6rem;padding:.55rem .7rem}
   .secure-strip span{font-size:.72rem}
+}
+
+/* ===================== SEO: LÍNEA DE PALABRA CLAVE EN EL H1 ===================== */
+.h1-kicker,
+.hero h1 .h1-kicker,
+.page-hero h1 .h1-kicker,
+.pitch-info h1 .h1-kicker{
+  display:block;
+  font-family:var(--f-body);
+  font-size:clamp(.8rem,1.6vw,.95rem);
+  font-weight:700;
+  line-height:1.4;
+  letter-spacing:.005em;
+  color:var(--verde-texto);
+  margin-bottom:.5rem;
+}
+
+/* Enlaces internos de apoyo bajo el FAQ y bajo el formulario */
+.faq-more{margin-top:1.9rem;text-align:center;font-size:.98rem;color:var(--gris-texto)}
+.faq-more a{color:var(--verde-texto);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.faq-more a:hover{color:var(--verde-brillante)}
+.form-help{margin-top:.55rem;text-align:center;font-size:.84rem;color:var(--gris-texto);line-height:1.5}
+.form-help a{color:var(--verde-texto);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.form-help a:hover{color:var(--verde-brillante)}
+
+/* La miga de pan de solicitar.html va en su propia línea, encima de la etiqueta */
+.pitch-info .breadcrumb{display:flex;width:max-content;max-width:100%;margin-bottom:.7rem}
+
+
+/* ===================== INTRO DE CARGA =====================
+   El velo SOLO existe si el script del <head> pone .con-intro en <html>.
+   Sin JS no aparece nunca, así que la página no se puede quedar tapada.
+   Y se va con una animación CSS (forwards), sin depender de más JS.
+   ========================================================== */
+.intro{display:none}
+html.con-intro .intro{
+  display:grid; place-items:center;
+  position:fixed; inset:0; z-index:9999;
+  background:linear-gradient(160deg,#fff 0%,var(--verde-nube) 55%,var(--verde-menta) 100%);
+  touch-action:none;
+  animation:introSale .5s var(--ease) 1.05s forwards;
+}
+html.con-intro .intro__marca{text-align:center;animation:introMarca .75s var(--ease-back) both}
+html.con-intro .intro__marca img{width:min(250px,54vw);height:auto;margin-inline:auto}
+.intro__barra{display:block;width:132px;height:3px;margin:1.25rem auto 0;border-radius:3px;background:rgba(124,180,29,.18);overflow:hidden}
+.intro__barra i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--verde-marca),var(--amarillo));transform:scaleX(0);transform-origin:0 50%}
+html.con-intro .intro__barra i{animation:introCarga .95s var(--ease) .1s forwards}
+@keyframes introMarca{from{opacity:0;transform:scale(.86) translateY(12px)}to{opacity:1;transform:none}}
+@keyframes introCarga{to{transform:scaleX(1)}}
+@keyframes introSale{to{opacity:0;visibility:hidden;transform:scale(1.03)}}
+
+/* La rejilla de fotos se compacta a 3 columnas en pantallas estrechas:
+   5 elementos = 6 unidades, que también cierran exacto en 3 columnas. */
+@media (max-width:700px){
+  .proof__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html.con-intro .intro{display:none}
 }
