@@ -1,0 +1,118 @@
+/* ===================================================================
+   BLOG — "Decisiones claras"
+   Hereda tokens y componentes de styles.css. Solo añade lo específico
+   del contenido editorial: hub de artículos y cuerpo de lectura larga.
+   =================================================================== */
+
+/* ===================== HUB: TERRITORIOS ===================== */
+.territorios{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-bottom:clamp(2.4rem,5vw,3.6rem)}
+.territorio{background:#fff;border:1px solid var(--linea);border-radius:var(--radius);padding:1.6rem 1.5rem;box-shadow:var(--shadow-sm);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.territorio:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift)}
+.territorio__ico{width:2.9rem;height:2.9rem;padding:.65rem;border-radius:14px;background:var(--verde-agua);color:var(--verde-texto);stroke:var(--verde-texto);margin-bottom:1rem}
+.territorio h3{font-size:1.12rem;margin-bottom:.55rem}
+.territorio p{font-size:.95rem;color:var(--gris-texto);line-height:1.6}
+
+/* ===================== HUB: TARJETAS DE ARTÍCULO ===================== */
+.posts{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.post-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--linea);border-radius:var(--radius);padding:1.8rem 1.7rem;box-shadow:var(--shadow-sm);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease)}
+.post-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);border-color:rgba(124,180,29,.4)}
+.post-card__tag{align-self:flex-start;font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--verde-texto);background:rgba(124,180,29,.13);padding:.35rem .8rem;border-radius:50px;margin-bottom:1rem}
+.post-card h3{font-size:1.25rem;line-height:1.25;margin-bottom:.75rem}
+.post-card h3 a{color:var(--tinta);text-decoration:none;transition:color .3s var(--ease)}
+.post-card:hover h3 a{color:var(--verde-texto)}
+.post-card p{font-size:.97rem;color:var(--gris-texto);line-height:1.65;margin-bottom:1.3rem;flex:1}
+.post-card__foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:.83rem;color:var(--gris-suave);border-top:1px solid var(--linea);padding-top:1rem}
+.post-card__leer{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;color:var(--verde-brillante);text-decoration:none}
+.post-card__leer .ico{width:1rem;height:1rem;color:currentColor;stroke:currentColor;transition:transform .35s var(--ease)}
+.post-card:hover .post-card__leer .ico{transform:translateX(4px)}
+
+/* ===================== ARTÍCULO: CABECERA ===================== */
+.post-hero{position:relative;overflow:hidden;background:radial-gradient(900px 420px at 50% -12%, var(--verde-menta), #fff 62%);padding:clamp(2.4rem,5.5vw,4rem) 0 clamp(1.6rem,3vw,2.4rem)}
+.post-hero__inner{position:relative;z-index:2;max-width:760px;margin:0 auto;text-align:center}
+.post-hero h1{font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.09;letter-spacing:-.03em;color:var(--tinta);margin-bottom:1.1rem}
+.post-hero__lead{font-size:clamp(1.02rem,1.6vw,1.16rem);color:var(--gris-texto);line-height:1.7;max-width:60ch;margin:0 auto}
+.post-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem 1.1rem;margin-top:1.5rem;font-size:.85rem;color:var(--gris-suave)}
+.post-meta span{display:inline-flex;align-items:center;gap:.4rem}
+.post-meta .ico{width:1rem;height:1rem;color:var(--verde-marca);stroke:var(--verde-marca)}
+
+/* ===================== ARTÍCULO: CUERPO ===================== */
+.post-body{max-width:720px;margin:0 auto}
+.post-body>*+*{margin-top:1.35rem}
+.post-body p{font-size:1.06rem;line-height:1.78;color:var(--gris-texto)}
+.post-body p strong{color:var(--tinta);font-weight:700}
+.post-body h2{font-size:clamp(1.5rem,3.2vw,2rem);line-height:1.18;margin-top:3rem;scroll-margin-top:6rem}
+.post-body h3{font-size:1.18rem;margin-top:2.2rem;color:var(--tinta)}
+.post-body ul,.post-body ol{padding-left:1.3rem;display:grid;gap:.7rem}
+.post-body li{font-size:1.03rem;line-height:1.7;color:var(--gris-texto)}
+.post-body li::marker{color:var(--verde-marca);font-weight:700}
+.post-body a{color:var(--verde-texto);font-weight:600;text-decoration:underline;text-decoration-color:rgba(124,180,29,.4);text-underline-offset:3px}
+.post-body a:hover{text-decoration-color:var(--verde-marca)}
+
+/* Índice de contenidos */
+.toc{background:var(--verde-nube);border:1px solid var(--linea);border-radius:var(--radius-sm);padding:1.5rem 1.7rem}
+.toc h2{font-size:.82rem !important;text-transform:uppercase;letter-spacing:.06em;color:var(--verde-texto);margin:0 0 .9rem !important}
+.toc ol{padding-left:1.15rem;gap:.5rem}
+.toc li{font-size:.97rem}
+.toc a{font-weight:500;text-decoration:none;color:var(--gris-texto)}
+.toc a:hover{color:var(--verde-texto);text-decoration:underline}
+
+/* Caso real anonimizado */
+.caso{background:#fff;border:1px solid var(--linea);border-left:6px solid var(--verde-marca);border-radius:var(--radius-sm);padding:1.7rem 1.8rem;box-shadow:var(--shadow-sm)}
+.caso__tag{display:inline-flex;align-items:center;gap:.45rem;font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--verde-texto);margin-bottom:.85rem}
+.caso__tag .ico{width:1rem;height:1rem;color:var(--verde-marca);stroke:var(--verde-marca)}
+.caso p{font-size:1.02rem;line-height:1.75;color:var(--tinta)}
+.caso p+p{margin-top:.9rem}
+.caso__fine{font-size:.83rem !important;color:var(--gris-suave) !important;font-style:italic}
+
+/* Idea clave / regla práctica */
+.idea{background:linear-gradient(135deg,var(--verde-menta),var(--verde-agua));border-radius:var(--radius-sm);padding:1.6rem 1.8rem;border:1px solid rgba(124,180,29,.22)}
+.idea__tag{display:block;font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--verde-texto);margin-bottom:.6rem}
+.idea p{font-size:1.12rem !important;line-height:1.6;color:var(--tinta) !important;font-weight:600}
+
+/* Advertencia / límite honesto */
+.limite{display:flex;gap:1.1rem;align-items:flex-start;background:#fff;border:1px solid var(--linea);border-left:6px solid var(--amarillo);border-radius:var(--radius-sm);padding:1.4rem 1.6rem;box-shadow:var(--shadow-sm)}
+.limite .ico{width:1.6rem;height:1.6rem;color:var(--amarillo);stroke:var(--amarillo);flex:none;margin-top:.2rem}
+.limite p{font-size:.99rem !important;line-height:1.7}
+
+/* Checklist de decisión */
+.checklist{background:#fff;border:1px solid var(--linea);border-radius:var(--radius-sm);padding:1.7rem 1.8rem;box-shadow:var(--shadow-sm)}
+.checklist h3{margin-top:0 !important;font-size:1.1rem;margin-bottom:1.1rem}
+.checklist ul{padding-left:0;list-style:none;gap:.85rem}
+.checklist li{display:flex;gap:.8rem;align-items:flex-start;font-size:1rem}
+.checklist li .ico{width:1.35rem;height:1.35rem;flex:none;margin-top:.15rem;color:#fff;stroke:#fff;stroke-width:2.6;background:var(--verde-marca);border-radius:50%;padding:4px;box-shadow:0 6px 14px -6px rgba(124,180,29,.9)}
+
+/* Preguntas dentro del artículo */
+.post-faq{margin-top:2rem;display:grid;gap:.9rem}
+.post-faq details{background:#fff;border:1px solid var(--linea);border-radius:var(--radius-sm);padding:1.15rem 1.4rem;box-shadow:var(--shadow-sm)}
+.post-faq summary{font-weight:700;color:var(--tinta);cursor:pointer;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.post-faq summary::-webkit-details-marker{display:none}
+.post-faq summary::after{content:"+";color:var(--verde-marca);font-size:1.5rem;font-weight:700;line-height:1;flex:none;transition:transform .3s var(--ease)}
+.post-faq details[open] summary::after{transform:rotate(45deg)}
+.post-faq details p{margin-top:.85rem;font-size:.99rem;line-height:1.72}
+
+/* Cierre editorial + CTA ético */
+.post-cierre{max-width:720px;margin:clamp(2.8rem,6vw,4rem) auto 0;background:var(--verde-nube);border:1px solid var(--linea);border-radius:var(--radius);padding:clamp(1.8rem,4vw,2.6rem)}
+.post-cierre h2{font-size:1.35rem;margin:0 0 .9rem}
+.post-cierre p{font-size:1.02rem;line-height:1.72;color:var(--gris-texto)}
+.post-cierre .btn{margin-top:1.4rem}
+.post-cierre__fine{font-size:.84rem !important;color:var(--gris-suave) !important;margin-top:1.1rem}
+
+/* Navegación entre artículos */
+.post-siguiente{max-width:720px;margin:clamp(2rem,4vw,3rem) auto 0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.post-siguiente a{display:block;background:#fff;border:1px solid var(--linea);border-radius:var(--radius-sm);padding:1.3rem 1.5rem;text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.post-siguiente a:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.post-siguiente span{display:block;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--verde-texto);margin-bottom:.5rem}
+.post-siguiente strong{display:block;font-size:1.03rem;line-height:1.35;color:var(--tinta)}
+
+@media (max-width:640px){
+  .caso,.idea,.checklist,.toc{padding:1.3rem 1.25rem}
+  .limite{padding:1.15rem 1.2rem;gap:.85rem}
+  .post-body p,.post-body li{font-size:1rem}
+}
+
+/* ===================== AJUSTES DE CIERRE DE SECCIÓN =====================
+   Cuando una cabecera o una rejilla es el último elemento de su sección,
+   su margen inferior se suma al padding y abre un hueco visible.
+   Solo aplica en el blog: este archivo no se carga en el resto del sitio. */
+.section__head:last-child{margin-bottom:0}
+.territorios:last-child{margin-bottom:0}

@@ -8,7 +8,7 @@
   <title>Solicita tu crédito por libranza sin anticipos – CrediAyudarte Cúcuta</title>
   <meta name="description" content="Solicita tu crédito por libranza sin anticipos: llena el formulario y un asesor real te escribe por WhatsApp. Revisamos tu caso sin costo ni compromiso." />
   <link rel="canonical" href="https://crediayudarte.com/solicitar.html" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="CrediAyudarte" />
   <meta name="geo.region" content="CO-NSA" />
   <meta name="geo.placename" content="Cúcuta, Norte de Santander" />
@@ -37,8 +37,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260818c" />
-  <link rel="stylesheet" href="css/motion.css?v=20260818c" />
+  <link rel="preload" as="image" href="assets/video/poster.jpg?v=20260819" fetchpriority="high" />
+  <link rel="stylesheet" href="css/styles.css?v=20260819" />
+  <link rel="stylesheet" href="css/motion.css?v=20260819" />
 
   <!-- ===================== DATOS ESTRUCTURADOS (schema.org) ===================== -->
   <script type="application/ld+json">
@@ -58,7 +59,10 @@
       "about": {
         "@id": "https://crediayudarte.com/#organizacion"
       },
-      "primaryImageOfPage": "https://crediayudarte.com/assets/og-crediayudarte.jpg"
+      "primaryImageOfPage": "https://crediayudarte.com/assets/og-solicitar.jpg",
+      "video": {
+        "@id": "https://crediayudarte.com/solicitar.html#video"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -113,6 +117,24 @@
           "telephone": "+57 315 247 4348"
         }
       }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://crediayudarte.com/solicitar.html#video",
+      "name": "Mensaje de CrediAyudarte: qué hacemos y cómo te acompañamos",
+      "description": "Mensaje en video de CrediAyudarte para pensionados, docentes del estado y empleados del gobierno: qué revisamos antes de pedir un crédito por libranza y por qué nunca cobramos anticipos.",
+      "thumbnailUrl": "https://crediayudarte.com/assets/video/poster.jpg",
+      "contentUrl": "https://crediayudarte.com/assets/video/mensaje.mp4",
+      "uploadDate": "2026-08-19",
+      "duration": "PT26S",
+      "width": 720,
+      "height": 1280,
+      "inLanguage": "es-CO",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
+      "regionsAllowed": "CO"
     }
   ]
 }
@@ -184,6 +206,7 @@
         <a href="index.html#servicios">Servicios</a>
         <a href="index.html#proceso">Cómo funciona</a>
         <a href="testimonios.html">Testimonios</a>
+        <a href="blog/index.html">Blog</a>
         <a href="index.html#preguntas">Preguntas</a>
       </nav>
       <div class="header__actions">
@@ -212,11 +235,11 @@
           <div class="vpitch__slot" id="vpitchSlot">
             <div class="vpitch__stage" id="vpitchStage">
               <video id="pitchVideo"
-                     poster="assets/video/poster.jpg"
+                     poster="assets/video/poster.jpg?v=20260819"
                      preload="metadata" playsinline webkit-playsinline muted autoplay
                      disablepictureinpicture disableremoteplayback
                      aria-label="Mensaje de CrediAyudarte">
-                <source src="assets/video/mensaje.mp4" type="video/mp4">
+                <source src="assets/video/mensaje.mp4?v=20260819" type="video/mp4">
                 Tu navegador no puede reproducir este video.
               </video>
 
@@ -232,7 +255,7 @@
                 <div class="vpitch__track" id="vpitchTrack" role="progressbar" aria-label="Avance del video" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
                   <span class="vpitch__bar" id="vpitchBar"></span>
                 </div>
-                <span class="vpitch__time" id="vpitchTime">0:51</span>
+                <span class="vpitch__time" id="vpitchTime">0:26</span>
                 <button type="button" class="vpitch__btn" id="vpitchMute" aria-label="Activar el sonido"><svg class="ico"><use href="#i-volume-x"/></svg></button>
               </div>
 
@@ -606,6 +629,7 @@
         <a href="index.html#servicios">Servicios</a>
         <a href="index.html#proceso">Cómo funciona</a>
         <a href="testimonios.html">Testimonios</a>
+        <a href="blog/index.html">Blog</a>
       </div>
       <div class="footer__col">
         <h4>Contacto</h4>
@@ -633,9 +657,9 @@
     <span>Subiendo tu desprendible de forma segura… 📎</span>
   </div>
 
-  <script defer src="js/pitch.js?v=20260818"></script>
-  <script defer src="js/script.js?v=20260818"></script>
-  <script defer src="js/solicitar.js?v=20260818"></script>
-  <script defer src="js/motion.js?v=20260818c"></script>
+  <script defer src="js/pitch.js?v=20260819"></script>
+  <script defer src="js/script.js?v=20260819"></script>
+  <script defer src="js/solicitar.js?v=20260819"></script>
+  <script defer src="js/motion.js?v=20260819"></script>
 </body>
 </html>

@@ -94,8 +94,23 @@ mark.mk-yellow{
 .header__inner{display:flex;align-items:center;gap:1.2rem;padding:.55rem 0;min-height:70px}
 .header__logo img{height:46px;width:auto;transition:transform .3s var(--ease)}
 .header__logo:hover img{transform:scale(1.04)}
-.nav{display:flex;gap:1.35rem;margin-left:auto}
-.nav a{font-weight:500;font-size:.94rem;color:var(--gris-texto);position:relative;padding:.25rem 0}
+.nav{display:flex;gap:1.35rem;margin-left:auto;flex-wrap:nowrap}
+.nav a{font-weight:500;font-size:.94rem;color:var(--gris-texto);position:relative;padding:.25rem 0;white-space:nowrap}
+/* El menu crecio a 7 enlaces. Nunca debe partir una palabra en dos lineas:
+   antes de llegar al menu movil (980px) se aprieta el espaciado por tramos. */
+@media (min-width:981px) and (max-width:1320px){
+  .nav{gap:1rem}
+  .nav a{font-size:.9rem}
+  .header__inner{gap:.9rem}
+  .btn-wa{padding:.45rem .75rem}
+  .header__cta{padding:.65rem 1rem;font-size:.88rem}
+}
+@media (min-width:981px) and (max-width:1120px){
+  .nav{gap:.7rem}
+  .nav a{font-size:.86rem}
+  .header__logo img{height:40px}
+  .btn-wa small{display:none}
+}
 .nav a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--verde-marca);border-radius:2px;transition:width .25s var(--ease)}
 .nav a:hover{color:var(--verde-texto)}
 .nav a:hover::after{width:100%}

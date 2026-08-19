@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <url>
     <loc>https://crediayudarte.com/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -15,20 +16,125 @@
 
   <url>
     <loc>https://crediayudarte.com/solicitar.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://crediayudarte.com/assets/video/poster.jpg</video:thumbnail_loc>
+      <video:title>Mensaje de CrediAyudarte: qué hacemos y cómo te acompañamos</video:title>
+      <video:description>Mensaje en video de CrediAyudarte para pensionados, docentes del estado y empleados del gobierno: qué revisamos antes de pedir un crédito por libranza y por qué nunca cobramos anticipos.</video:description>
+      <video:content_loc>https://crediayudarte.com/assets/video/mensaje.mp4</video:content_loc>
+      <video:duration>26</video:duration>
+      <video:publication_date>2026-08-19</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+    </video:video>
   </url>
 
   <url>
     <loc>https://crediayudarte.com/testimonios.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://crediayudarte.com/assets/testigos/foto-3.jpeg</image:loc>
       <image:title>Clientas frente a la oficina de CrediAyudarte en Cúcuta</image:title>
     </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://crediayudarte.com/assets/testigos/poster-1.jpg</video:thumbnail_loc>
+      <video:title>Testimonio de un cliente de CrediAyudarte sobre su crédito por libranza</video:title>
+      <video:description>Testimonio de un cliente de CrediAyudarte sobre su crédito por libranza. Grabado en la oficina de CrediAyudarte en Cúcuta y publicado con su consentimiento.</video:description>
+      <video:content_loc>https://crediayudarte.com/assets/testigos/video-1.mp4</video:content_loc>
+      <video:duration>15</video:duration>
+      <video:publication_date>2026-07-27</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://crediayudarte.com/assets/testigos/poster-2.jpg</video:thumbnail_loc>
+      <video:title>Testimonio de una clienta atendida en la oficina de Cúcuta</video:title>
+      <video:description>Testimonio de una clienta atendida en la oficina de Cúcuta. Grabado en la oficina de CrediAyudarte en Cúcuta y publicado con su consentimiento.</video:description>
+      <video:content_loc>https://crediayudarte.com/assets/testigos/video-2.mp4</video:content_loc>
+      <video:duration>12</video:duration>
+      <video:publication_date>2026-07-27</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://crediayudarte.com/assets/testigos/poster-3.jpg</video:thumbnail_loc>
+      <video:title>Testimonio de una clienta pensionada sobre su crédito de libranza</video:title>
+      <video:description>Testimonio de una clienta pensionada sobre su crédito de libranza. Grabado en la oficina de CrediAyudarte en Cúcuta y publicado con su consentimiento.</video:description>
+      <video:content_loc>https://crediayudarte.com/assets/testigos/video-3.mp4</video:content_loc>
+      <video:duration>9</video:duration>
+      <video:publication_date>2026-07-27</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://crediayudarte.com/assets/testigos/poster-4.jpg</video:thumbnail_loc>
+      <video:title>Testimonio breve de un cliente del sector público</video:title>
+      <video:description>Testimonio breve de un cliente del sector público. Grabado en la oficina de CrediAyudarte en Cúcuta y publicado con su consentimiento.</video:description>
+      <video:content_loc>https://crediayudarte.com/assets/testigos/video-4.mp4</video:content_loc>
+      <video:duration>5</video:duration>
+      <video:publication_date>2026-07-27</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://crediayudarte.com/assets/testigos/poster-5.jpg</video:thumbnail_loc>
+      <video:title>Testimonio de un cliente atendido por el equipo de CrediAyudarte</video:title>
+      <video:description>Testimonio de un cliente atendido por el equipo de CrediAyudarte. Grabado en la oficina de CrediAyudarte en Cúcuta y publicado con su consentimiento.</video:description>
+      <video:content_loc>https://crediayudarte.com/assets/testigos/video-5.mp4</video:content_loc>
+      <video:duration>5</video:duration>
+      <video:publication_date>2026-07-27</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://crediayudarte.com/assets/testigos/poster-6.jpg</video:thumbnail_loc>
+      <video:title>Testimonio completo de un cliente sobre la asesoría en libranza</video:title>
+      <video:description>Testimonio completo de un cliente sobre la asesoría en libranza. Grabado en la oficina de CrediAyudarte en Cúcuta y publicado con su consentimiento.</video:description>
+      <video:content_loc>https://crediayudarte.com/assets/testigos/video-6.mp4</video:content_loc>
+      <video:duration>44</video:duration>
+      <video:publication_date>2026-07-27</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://crediayudarte.com/blog/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://crediayudarte.com/blog/tasa-mas-baja-no-siempre-es-el-credito-mas-barato.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://crediayudarte.com/blog/pago-al-dia-y-me-niegan-el-credito.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://crediayudarte.com/blog/pagar-una-deuda-antigua-puede-empeorar-tu-historial.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
