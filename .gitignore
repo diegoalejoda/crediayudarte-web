@@ -2,3 +2,9 @@
 # Este repo se sirve tal cual (GitHub Pages), asi que cualquier archivo
 # versionado queda descargable desde crediayudarte.com.
 crediayudarte conocimiento/
+
+# Exports de workflows de n8n: el bloque pinData suele traer datos reales
+# de ejecuciones (leads, telefonos, desprendibles). Por la misma razon de
+# arriba, nunca deben quedar versionados.
+.scratch_lead.json
+*.workflow.json

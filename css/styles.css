@@ -208,6 +208,17 @@ mark.mk-yellow{
 .who-card h3{font-size:1.13rem;margin-bottom:.4rem;color:var(--verde-texto)}
 .who-card p{font-size:.92rem;color:var(--gris-texto)}
 
+/* ---- Tarjeta que es un enlace a su página temática ----
+   La tarjeta completa es clickeable y muestra su propia llamada
+   a la acción abajo, alineada entre hermanas gracias al flex. */
+a.who-card,a.svc-card{display:flex;flex-direction:column;text-decoration:none}
+a.who-card p,a.svc-card p{flex:1}
+a.who-card:focus-visible,a.svc-card:focus-visible{outline:3px solid var(--verde-marca);outline-offset:3px}
+.card-mas{display:flex;align-items:center;gap:.4rem;margin-top:1.1rem;font-size:.9rem;font-weight:700;color:var(--verde-brillante)}
+a.who-card .card-mas{justify-content:center}
+.card-mas .ico{width:1rem;height:1rem;color:currentColor;stroke:currentColor;transition:transform .35s var(--ease)}
+a.who-card:hover .card-mas .ico,a.svc-card:hover .card-mas .ico{transform:translateX(4px)}
+
 .svc-card{position:relative;z-index:1;background:#fff;border:1px solid var(--linea);border-radius:var(--radius);padding:1.9rem 1.6rem;transition:transform .28s var(--ease),box-shadow .28s;border-top:4px solid var(--verde-marca)}
 .svc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-sm)}
 .svc-card__ico{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:1rem;background:linear-gradient(150deg,var(--verde-marca),#93cb2c);color:#fff;box-shadow:0 12px 22px -12px rgba(124,180,29,.95)}
@@ -373,6 +384,8 @@ mark.mk-yellow{
 .page-hero h1{font-size:clamp(2.1rem,4.8vw,3.2rem);line-height:1.06;color:var(--tinta);margin-bottom:1rem;letter-spacing:-.03em}
 .page-hero h1 span{color:var(--verde-brillante)}
 .page-hero p{font-size:1.08rem;color:var(--gris-texto)}
+.page-hero__cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-top:1.7rem}
+.page-hero__fine{font-size:.86rem !important;color:var(--gris-suave) !important;margin-top:1.1rem}
 .breadcrumb{display:inline-flex;gap:.4rem;align-items:center;font-size:.85rem;color:var(--gris-suave);margin-bottom:1rem}
 .breadcrumb a{color:var(--verde-brillante);font-weight:600}
 

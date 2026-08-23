@@ -1,0 +1,69 @@
+/* ===================================================================
+   LANDINGS TEMÁTICAS — páginas de servicio
+   Hereda tokens y componentes de styles.css y los bloques editoriales
+   de blog.css (.post-body, .idea, .limite, .checklist, .post-faq…).
+   Aquí SOLO vive lo que no existía: tablas de comparación, CTA del
+   hero, rejilla de páginas hermanas y bloque de recursos.
+   No redefine colores, tipografías ni componentes existentes.
+   =================================================================== */
+
+/* Nota: .page-hero__cta y .page-hero__fine viven en styles.css, junto a
+   .page-hero, porque tambien los usa el blog, que no carga este archivo. */
+
+/* ===================== RESPUESTA DIRECTA =====================
+   El bloque que contesta la búsqueda en las primeras líneas. */
+.respuesta{max-width:720px;margin:0 auto;background:var(--verde-nube);border:1px solid var(--linea);border-left:6px solid var(--verde-marca);border-radius:var(--radius-sm);padding:1.7rem 1.8rem;box-shadow:var(--shadow-sm)}
+.respuesta__tag{display:block;font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--verde-texto);margin-bottom:.7rem}
+.respuesta p{font-size:1.06rem;line-height:1.75;color:var(--tinta)}
+.respuesta p+p{margin-top:.9rem}
+
+/* ===================== TABLA DE COMPARACIÓN =====================
+   Siempre dentro de .tabla para que pueda desplazarse en móvil
+   sin romper el ancho de la página. */
+.tabla{max-width:720px;margin-inline:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--linea);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);background:#fff}
+.tabla table{width:100%;border-collapse:collapse;font-size:.98rem;min-width:min(100%,460px)}
+.tabla caption{caption-side:top;text-align:left;padding:1.1rem 1.4rem .2rem;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--verde-texto)}
+.tabla th,.tabla td{text-align:left;padding:.95rem 1.4rem;border-bottom:1px solid var(--linea);line-height:1.6;vertical-align:top}
+.tabla thead th{font-size:.86rem;font-weight:700;color:var(--tinta);background:var(--verde-menta);border-bottom:1px solid rgba(124,180,29,.25);white-space:nowrap}
+.tabla tbody th{font-weight:700;color:var(--tinta);width:34%}
+.tabla tbody td{color:var(--gris-texto)}
+.tabla tbody tr:last-child th,.tabla tbody tr:last-child td{border-bottom:0}
+.tabla tbody tr:hover{background:var(--verde-nube)}
+
+/* ===================== PÁGINAS HERMANAS ===================== */
+.rutas{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}
+.ruta{display:flex;flex-direction:column;background:#fff;border:1px solid var(--linea);border-radius:var(--radius-sm);padding:1.5rem 1.6rem;box-shadow:var(--shadow-sm);text-decoration:none;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease)}
+.ruta:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);border-color:rgba(124,180,29,.4)}
+.ruta__ico{width:2.7rem;height:2.7rem;padding:.62rem;border-radius:14px;background:var(--verde-agua);color:var(--verde-texto);stroke:var(--verde-texto);margin-bottom:.95rem}
+.ruta h3{font-size:1.1rem;line-height:1.3;margin-bottom:.5rem;color:var(--tinta)}
+.ruta p{font-size:.94rem;color:var(--gris-texto);line-height:1.62;flex:1}
+.ruta__mas{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.9rem;font-weight:700;color:var(--verde-brillante)}
+.ruta__mas .ico{width:1rem;height:1rem;transition:transform .35s var(--ease)}
+.ruta:hover .ruta__mas .ico{transform:translateX(4px)}
+
+/* ===================== RECURSOS RELACIONADOS ===================== */
+.recursos{max-width:720px;margin-inline:auto;display:grid;gap:.8rem}
+.recursos a{display:flex;gap:.9rem;align-items:flex-start;background:#fff;border:1px solid var(--linea);border-radius:var(--radius-sm);padding:1.1rem 1.3rem;box-shadow:var(--shadow-sm);text-decoration:none;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.recursos a:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.recursos .ico{width:1.25rem;height:1.25rem;flex:none;margin-top:.2rem;color:var(--verde-marca);stroke:var(--verde-marca)}
+.recursos strong{display:block;font-size:1rem;line-height:1.35;color:var(--tinta);margin-bottom:.25rem}
+.recursos span{display:block;font-size:.9rem;color:var(--gris-texto);line-height:1.55}
+
+/* ===================== CUÁNDO SÍ / CUÁNDO NO ===================== */
+.balanza{max-width:720px;margin-inline:auto;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.balanza__col{background:#fff;border:1px solid var(--linea);border-radius:var(--radius-sm);padding:1.6rem 1.7rem;box-shadow:var(--shadow-sm)}
+.balanza__col--si{border-top:5px solid var(--verde-marca)}
+.balanza__col--no{border-top:5px solid var(--amarillo)}
+.balanza__col h3{margin-top:0 !important;font-size:1.08rem;margin-bottom:1rem;color:var(--tinta)}
+.balanza__col ul{padding-left:0;list-style:none;display:grid;gap:.75rem}
+.balanza__col li{display:flex;gap:.7rem;align-items:flex-start;font-size:.97rem;line-height:1.62;color:var(--gris-texto)}
+.balanza__col li::before{content:"";width:.45rem;height:.45rem;border-radius:50%;flex:none;margin-top:.6rem}
+.balanza__col--si li::before{background:var(--verde-marca)}
+.balanza__col--no li::before{background:var(--amarillo)}
+
+@media (max-width:640px){
+  .respuesta{padding:1.35rem 1.3rem}
+  .tabla th,.tabla td{padding:.85rem 1.1rem}
+  .tabla tbody th{width:auto}
+  .balanza__col{padding:1.35rem 1.3rem}
+}

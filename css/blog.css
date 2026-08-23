@@ -113,6 +113,8 @@
 /* ===================== AJUSTES DE CIERRE DE SECCIÓN =====================
    Cuando una cabecera o una rejilla es el último elemento de su sección,
    su margen inferior se suma al padding y abre un hueco visible.
-   Solo aplica en el blog: este archivo no se carga en el resto del sitio. */
+   Este archivo se carga en el blog y en las landings temáticas
+   (que reutilizan .post-body, .idea, .limite, .checklist y .post-faq),
+   no en el resto del sitio. */
 .section__head:last-child{margin-bottom:0}
 .territorios:last-child{margin-bottom:0}
