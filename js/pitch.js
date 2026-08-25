@@ -37,7 +37,7 @@
   /* ---- Si el cliente navega con ahorro de datos, versión ligera ---- */
   var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   if (conn && (conn.saveData || /^(slow-)?2g$/.test(conn.effectiveType || ''))) {
-    video.src = 'assets/video/mensaje-sd.mp4?v=20260819';
+    video.src = 'assets/video/mensaje-sd.mp4?v=20260824';
     video.load();
   }
 
