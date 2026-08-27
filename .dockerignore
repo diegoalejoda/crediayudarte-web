@@ -1,0 +1,8 @@
+.git
+.gitignore
+.dockerignore
+Dockerfile
+nginx.conf
+crediayudarte conocimiento
+.scratch_lead.json
+*.workflow.json
