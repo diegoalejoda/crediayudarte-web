@@ -16,6 +16,14 @@
   var errorBox = document.getElementById('formError');
   if (!form) return;
 
+  var formStarted = false;
+  form.addEventListener('focusin', function () {
+    if (!formStarted) {
+      formStarted = true;
+      if (typeof fbq === 'function') fbq('trackCustom', 'FormStart');
+    }
+  });
+
   /* ---------- Mostrar/ocultar el panel de subida según Sí/No ---------- */
   var uploadPanel = document.getElementById('uploadPanel');
   var fileInput = document.getElementById('archivoDesprendible');
@@ -186,6 +194,7 @@
     var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lineas.join('\n'));
 
     function goToWhatsApp() {
+      if (typeof fbq === 'function') fbq('track', 'Lead');
       window.location.href = url;
       setTimeout(function () {
         if (btn) { btn.style.pointerEvents = ''; btn.style.opacity = ''; btn.innerHTML = '<svg class="ico solid"><use href="#i-whatsapp"/></svg> Enviar por WhatsApp'; }
