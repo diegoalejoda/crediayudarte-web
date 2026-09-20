@@ -16,9 +16,9 @@
   --ease-glide:    cubic-bezier(.4,0,.2,1);
 
   /* Tintes de marca para las auroras (mismos verdes/amarillo del sistema) */
-  --aurora-verde:    rgba(124,180,29,.26);
-  --aurora-lima:     rgba(154,203,44,.20);
-  --aurora-amarillo: rgba(249,194,5,.18);
+  --aurora-verde:    rgba(124,180,29,.10);
+  --aurora-lima:     rgba(154,203,44,.07);
+  --aurora-amarillo: rgba(249,194,5,.07);
 
   /* Lo escribe el JS: 0 → 1 según el avance del scroll */
   --scroll-progreso: 0;
@@ -69,9 +69,10 @@ body::after{
 .nav a:focus-visible::after{width:100%; transform:scaleX(1); transform-origin:0 50%}
 
 /* ===================================================================
-   4. AURORA DEL HERO — capa de color que respira detrás del titular
+   4. AURORA — capa de color que respira detrás del titular.
+   El hero de la portada ya NO la usa: lleva fotografía a sangre
+   completa con su propio velo (.hero__veil en styles.css).
    =================================================================== */
-.hero::before,
 .page-hero::before,
 .form-wrap::before{
   content:"";
@@ -98,19 +99,38 @@ body::after{
 /* ===================================================================
    5. ENTRADA DEL HERO — escalonada, una sola vez, al cargar
    =================================================================== */
-.hero__copy > *,
 .page-hero__inner > *,
-.pitch-info > *{
+.camino__paso[data-paso="0"] > *{
   animation:entradaHero .62s var(--ease-out-soft) both;
 }
-.hero__copy > :nth-child(1), .page-hero__inner > :nth-child(1), .pitch-info > :nth-child(1){animation-delay:.03s}
-.hero__copy > :nth-child(2), .page-hero__inner > :nth-child(2), .pitch-info > :nth-child(2){animation-delay:.08s}
-.hero__copy > :nth-child(3), .page-hero__inner > :nth-child(3), .pitch-info > :nth-child(3){animation-delay:.13s}
-.hero__copy > :nth-child(4), .page-hero__inner > :nth-child(4), .pitch-info > :nth-child(4){animation-delay:.18s}
-.hero__copy > :nth-child(5), .page-hero__inner > :nth-child(5), .pitch-info > :nth-child(5){animation-delay:.23s}
-.hero__copy > :nth-child(6), .pitch-info > :nth-child(6){animation-delay:.28s}
+.page-hero__inner > :nth-child(1), .camino__paso[data-paso="0"] > :nth-child(1){animation-delay:.03s}
+.page-hero__inner > :nth-child(2), .camino__paso[data-paso="0"] > :nth-child(2){animation-delay:.08s}
+.page-hero__inner > :nth-child(3), .camino__paso[data-paso="0"] > :nth-child(3){animation-delay:.13s}
+.page-hero__inner > :nth-child(4), .camino__paso[data-paso="0"] > :nth-child(4){animation-delay:.18s}
+.page-hero__inner > :nth-child(5), .camino__paso[data-paso="0"] > :nth-child(5){animation-delay:.23s}
+.camino__paso[data-paso="0"] > :nth-child(6){animation-delay:.28s}
 @keyframes entradaHero{
   from{opacity:0; transform:translateY(22px)}
+  to  {opacity:1; transform:none}
+}
+/* En la portada el copy entra después de que enciende el video: más lento,
+   con desenfoque, y escalonado de arriba abajo. */
+.hero__copy > *{animation:entradaHeroCine 1s var(--ease-out-soft) both}
+.hero__copy > :nth-child(1){animation-delay:.55s}
+.hero__copy > :nth-child(2){animation-delay:.75s}
+.hero__copy > :nth-child(3){animation-delay:1s}
+.hero__copy > :nth-child(4){animation-delay:1.2s}
+@keyframes entradaHeroCine{
+  from{opacity:0; transform:translateY(28px); filter:blur(6px)}
+  to  {opacity:1; transform:none; filter:blur(0)}
+}
+/* La frase clave del hero "se enciende": arranca apagada y sube el halo */
+.hero h1 .mk-luz{animation:luzHero 2.2s var(--ease-glide) 1.3s both}
+@keyframes luzHero{
+  0%{color:#b08a12;text-shadow:0 0 0 rgba(255,214,69,0)}
+  55%{color:#fff3b0;text-shadow:0 0 18px rgba(255,214,69,.95), 0 0 60px rgba(249,194,5,.7), 0 0 120px rgba(124,180,29,.45)}
+  100%{color:var(--amarillo-suave);text-shadow:0 0 12px rgba(255,214,69,.55), 0 0 36px rgba(249,194,5,.35), 0 0 80px rgba(124,180,29,.25)}
+}to{background-position:-60% 0}}
   to  {opacity:1; transform:none}
 }
 
@@ -137,7 +157,7 @@ mark.mk-yellow{background-repeat:no-repeat}
   background-size:0% 100%;
   transition:background-size .85s var(--ease-out-soft) .35s;
 }
-.motion-viva .titulo-anim.is-visible mark.mk-yellow{background-size:100% 100%}
+.motion-viva .titulo-anim.is-visible mark.mk-yellow:not(.mk-luz){background-size:100% 100%}
 
 /* El verde de los titulares entra con un barrido de luz */
 .hl-green{
@@ -244,7 +264,7 @@ mark.mk-yellow{background-repeat:no-repeat}
 .trust-strip::before{
   content:"";
   position:absolute; inset:0;
-  background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.22) 50%,transparent 80%);
+  background:linear-gradient(100deg,transparent 20%,rgba(124,180,29,.10) 50%,transparent 80%);
   transform:translateX(-100%);
   animation:brilloTira 6s var(--ease-glide) infinite;
 }
@@ -351,9 +371,9 @@ mark.mk-yellow{background-repeat:no-repeat}
 .collage:hover .tc-badge{transform:scale(1.06) translateY(-4px)}
 
 .masonry__item img, .masonry__item video,
-.tstrip__item img, .proof__item img{transition:transform .6s var(--ease-out-soft)}
+.tstrip__item img, .camino__proof img{transition:transform .6s var(--ease-out-soft)}
 .masonry__item:hover img, .masonry__item:hover video,
-.tstrip__item:hover img, .proof__item:hover img{transform:scale(1.06)}
+.tstrip__item:hover img, .camino__proof a:hover img{transform:scale(1.06)}
 .play-badge span{transition:transform .35s var(--ease-spring), background .3s var(--ease)}
 .masonry__item:hover .play-badge span,
 .tstrip__item:hover .play-badge span{transform:scale(1.14)}
@@ -414,7 +434,11 @@ mark.mk-yellow{background-repeat:no-repeat}
     scroll-behavior:auto !important;
   }
   .pal,.pal-lista{opacity:1 !important; transform:none !important}
-  mark.mk-yellow{background-size:100% 100% !important}
+  .hero__copy > *{animation:none !important;opacity:1 !important;filter:none !important}
+  .manuscrito li{animation:none !important;clip-path:none !important;opacity:1 !important}
+  .stack__panel .stack__q,.stack__panel .stack__copy h2,.stack__panel .stack__copy p,.stack__panel--marco .stack__media,.ui-icono{opacity:1 !important;transform:none !important}
+  .ui-icono{transform:translate(-50%,-50%) !important}
+  mark.mk-yellow:not(.mk-luz){background-size:100% 100% !important}
   .reveal{filter:none !important}
   .steps::before{transform:scaleX(1) !important}
   .svc-card::after{transform:scaleX(1) !important}

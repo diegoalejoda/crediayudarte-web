@@ -79,7 +79,7 @@
 .checklist h3{margin-top:0 !important;font-size:1.1rem;margin-bottom:1.1rem}
 .checklist ul{padding-left:0;list-style:none;gap:.85rem}
 .checklist li{display:flex;gap:.8rem;align-items:flex-start;font-size:1rem}
-.checklist li .ico{width:1.35rem;height:1.35rem;flex:none;margin-top:.15rem;color:#fff;stroke:#fff;stroke-width:2.6;background:var(--verde-marca);border-radius:50%;padding:4px;box-shadow:0 6px 14px -6px rgba(124,180,29,.9)}
+.checklist li .ico{width:1.35rem;height:1.35rem;flex:none;margin-top:.15rem;color:#fff;stroke:#fff;stroke-width:2.6;background:var(--verde-marca);border-radius:50%;padding:4px}
 
 /* Preguntas dentro del artículo */
 .post-faq{margin-top:2rem;display:grid;gap:.9rem}

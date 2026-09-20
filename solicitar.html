@@ -36,10 +36,11 @@
   <link rel="apple-touch-icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/video/poster.jpg?v=20260824" fetchpriority="high" />
-  <link rel="stylesheet" href="css/styles.css?v=20260819" />
-  <link rel="stylesheet" href="css/motion.css?v=20260819" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,700..900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/generative/camino/poster.jpg" imagesrcset="assets/generative/camino/poster-m.jpg 720w, assets/generative/camino/poster.jpg 1440w" imagesizes="100vw" fetchpriority="high" />
+  <link rel="stylesheet" href="css/styles.css?v=20260920" />
+  <link rel="stylesheet" href="css/motion.css?v=20260920" />
+  <link rel="stylesheet" href="css/camino.css?v=20260920" />
 
   <!-- ===================== DATOS ESTRUCTURADOS (schema.org) ===================== -->
   <script type="application/ld+json">
@@ -59,10 +60,7 @@
       "about": {
         "@id": "https://crediayudarte.com/#organizacion"
       },
-      "primaryImageOfPage": "https://crediayudarte.com/assets/og-solicitar.jpg",
-      "video": {
-        "@id": "https://crediayudarte.com/solicitar.html#video"
-      }
+      "primaryImageOfPage": "https://crediayudarte.com/assets/og-solicitar.jpg"
     },
     {
       "@type": "BreadcrumbList",
@@ -117,24 +115,6 @@
           "telephone": "+57 315 247 4348"
         }
       }
-    },
-    {
-      "@type": "VideoObject",
-      "@id": "https://crediayudarte.com/solicitar.html#video",
-      "name": "Mensaje de CrediAyudarte: qué hacemos y cómo te acompañamos",
-      "description": "Mensaje en video de CrediAyudarte para pensionados, docentes del estado y empleados del gobierno: qué revisamos antes de pedir un crédito por libranza y por qué nunca cobramos anticipos.",
-      "thumbnailUrl": "https://crediayudarte.com/assets/video/poster.jpg",
-      "contentUrl": "https://crediayudarte.com/assets/video/mensaje.mp4",
-      "uploadDate": "2026-08-24",
-      "duration": "PT38S",
-      "width": 720,
-      "height": 1280,
-      "inLanguage": "es-CO",
-      "isFamilyFriendly": true,
-      "publisher": {
-        "@id": "https://crediayudarte.com/#organizacion"
-      },
-      "regionsAllowed": "CO"
     }
   ]
 }
@@ -239,92 +219,86 @@
     </div>
   </header>
 
-  <!-- ===================== HERO + VIDEO + FORMULARIO ===================== -->
+  <!-- ===================== EL CAMINO DEL CRÉDITO (hero controlado por el scroll) =====================
+       Cinco tramos: dolor → tensión → experiencia → cómo lo ordenamos → confianza y CTA.
+       Fotogramas en assets/generative/camino/{d,m}/NNN.webp; js/camino.js los pinta según el avance. -->
+  <section class="camino" id="camino" data-frames="94" aria-label="El camino del crédito: de la deuda a un plan claro">
+    <div class="camino__panel">
+      <div class="camino__marco">
+        <picture class="camino__poster">
+          <source media="(max-width:860px)" srcset="assets/generative/camino/poster-m.jpg">
+          <img src="assets/generative/camino/poster.jpg" alt="Pensionado revisando sus recibos en la mesa de su casa" width="1440" height="810" fetchpriority="high" decoding="async">
+        </picture>
+        <canvas class="camino__lienzo" id="caminoLienzo" aria-hidden="true"></canvas>
+        <span class="camino__veil" aria-hidden="true"></span>
+        <ol class="camino__progreso" aria-hidden="true">
+          <li class="camino__seg is-done is-actual"></li><li class="camino__seg"></li><li class="camino__seg"></li><li class="camino__seg"></li><li class="camino__seg"></li>
+        </ol>
+      </div>
+
+      <div class="camino__copy">
+          <!-- 0 · Dolor -->
+          <article class="camino__paso is-on" data-paso="0">
+            <span class="breadcrumb"><a href="index.html">Crédito de libranza en Colombia</a> / Solicita tu análisis</span>
+            <h1><span class="h1-kicker">Análisis gratuito de crédito de libranza · Sin anticipos</span>Llegó la nómina. Pagaste cuotas, mercado, servicios… <mark class="mk-yellow">y otra vez falta mes.</mark></h1>
+            <p>Si eres <strong>pensionado</strong> o trabajas con <strong>nómina del Gobierno</strong>, esto te interesa.</p>
+            <span class="camino__pista">Sigue bajando <svg class="ico"><use href="#i-arrow-down"/></svg></span>
+          </article>
+
+          <!-- 1 · Tensión -->
+          <article class="camino__paso" data-paso="1">
+            <h2>Entonces aparece la tarjeta o el préstamo rápido.</h2>
+            <p>Tapas el hueco de este mes… pero el próximo puede llegar <strong>más comprometido</strong>. Cada descuento nuevo le quita otro pedazo a lo que recibes.</p>
+          </article>
+
+          <!-- 2 · Experiencia -->
+          <article class="camino__paso" data-paso="2">
+            <h2>Llevamos años atendiendo <mark class="mk-yellow">casos como el tuyo.</mark></h2>
+            <p>Personas con buena pensión o buen salario, pero cuyos descuentos les drenan lo que reciben. Las hemos escuchado una por una, en nuestra oficina y por WhatsApp en toda Colombia.</p>
+            <div class="camino__proof">
+              <a href="testimonios.html"><img src="assets/testigos/foto-1.jpeg" alt="Clienta pensionada atendida por una asesora de libranza de CrediAyudarte" width="900" height="1600" loading="lazy" decoding="async"></a>
+              <a href="testimonios.html"><img src="assets/testigos/poster-4.jpg" alt="Pensionado esperando su turno en la oficina de CrediAyudarte en Cúcuta" width="478" height="850" loading="lazy" decoding="async"></a>
+              <a href="testimonios.html"><img src="assets/testigos/poster-6.jpg" alt="Asesora revisando el caso de libranza de una clienta" width="478" height="850" loading="lazy" decoding="async"></a>
+              <a href="testimonios.html"><img src="assets/testigos/poster-1.jpg" alt="Cliente firmando su solicitud de crédito de libranza con una asesora" width="478" height="850" loading="lazy" decoding="async"></a>
+              <a href="testimonios.html"><img src="assets/testigos/foto-3.jpeg" alt="Clientas frente a la oficina de CrediAyudarte, asesoría de libranza en Cúcuta" width="1600" height="900" loading="lazy" decoding="async"></a>
+            </div>
+            <a href="testimonios.html" class="camino__enlace">Ver sus testimonios <svg class="ico"><use href="#i-arrow-right"/></svg> <small>· fotos reales, compartidas con su permiso</small></a>
+          </article>
+
+          <!-- 3 · Cómo lo ordenamos -->
+          <article class="camino__paso" data-paso="3">
+            <h2>La solución no es otro crédito. Es <mark class="mk-yellow">conocer tu caso</mark> y saber cómo ordenarlo.</h2>
+            <ol class="camino__pasos">
+              <li><svg class="ico"><use href="#i-search"/></svg><div><b>Analizamos</b><span>tu caso, sin costo y sin compromiso</span></div></li>
+              <li><svg class="ico"><use href="#i-trending"/></svg><div><b>Comparamos</b><span>entidades con convenio de libranza</span></div></li>
+              <li><svg class="ico"><use href="#i-file"/></svg><div><b>Explicamos</b><span>el costo real antes de que firmes</span></div></li>
+              <li><svg class="ico"><use href="#i-heart"/></svg><div><b>Acompañamos</b><span>hasta que el dinero esté en tu cuenta</span></div></li>
+            </ol>
+          </article>
+
+          <!-- 4 · Confianza + CTA -->
+          <article class="camino__paso" data-paso="4">
+            <h2>¿Esto sí será real? <mark class="mk-yellow">Te hablamos claro.</mark></h2>
+            <ul class="camino__confianza">
+              <li><svg class="ico"><use href="#i-check"/></svg> No te pedimos dinero por adelantado, claves ni datos bancarios.</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> Llenas unos datos básicos y de inmediato recibes por WhatsApp la confirmación de que tu caso entró a revisión.</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> La gerencia de CrediAyudarte te contacta en 24 a 48 horas hábiles.</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> Si tu caso no tiene opción, también te lo decimos, con respeto y sin hacerte perder tiempo.</li>
+            </ul>
+            <a href="#creditForm" class="btn btn-primary camino__cta">Solicita tu análisis gratuito <svg class="ico"><use href="#i-arrow-right"/></svg></a>
+            <small class="camino__lema">La peor diligencia es la que no se hace.</small>
+          </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FORMULARIO ===================== -->
   <section class="form-wrap">
     <span class="blob blob--green anim-drift" aria-hidden="true"></span>
     <span class="blob blob--yellow anim-float2" aria-hidden="true"></span>
     <span class="dots dots--br dots--soft" aria-hidden="true"></span>
 
     <div class="container">
-      <div class="pitch-grid">
-        <!-- ---------- Video de presentación ---------- -->
-        <figure class="vpitch" id="vpitch">
-          <div class="vpitch__slot" id="vpitchSlot">
-            <div class="vpitch__stage" id="vpitchStage">
-              <video id="pitchVideo"
-                     poster="assets/video/poster.jpg?v=20260824"
-                     preload="metadata" playsinline webkit-playsinline muted autoplay
-                     disablepictureinpicture disableremoteplayback
-                     aria-label="Mensaje de CrediAyudarte">
-                <source src="assets/video/mensaje.mp4?v=20260824" type="video/mp4">
-                Tu navegador no puede reproducir este video.
-              </video>
-
-              <!-- capa para activar el sonido cuando el navegador bloquea el autoplay -->
-              <button type="button" class="vpitch__sound" id="vpitchSound" hidden>
-                <span class="vpitch__sound-ico"><svg class="ico"><use href="#i-volume"/></svg></span>
-                <span class="vpitch__sound-txt"><strong>Toca para escuchar</strong><small>Tu navegador silenció el video al abrir</small></span>
-              </button>
-
-              <!-- controles mínimos, siempre visibles -->
-              <div class="vpitch__ui">
-                <button type="button" class="vpitch__btn" id="vpitchPlay" aria-label="Pausar el video"><svg class="ico solid"><use href="#i-pause"/></svg></button>
-                <div class="vpitch__track" id="vpitchTrack" role="progressbar" aria-label="Avance del video" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                  <span class="vpitch__bar" id="vpitchBar"></span>
-                </div>
-                <span class="vpitch__time" id="vpitchTime">0:38</span>
-                <button type="button" class="vpitch__btn" id="vpitchMute" aria-label="Activar el sonido"><svg class="ico"><use href="#i-volume-x"/></svg></button>
-              </div>
-
-              <!-- tarjeta final -->
-              <div class="vpitch__end" id="vpitchEnd" hidden>
-                <strong>¿Te suena tu caso?</strong>
-                <p>Escribe tus datos y una persona real te responde por WhatsApp.</p>
-                <button type="button" class="btn btn-primary btn-sm" id="vpitchToForm">Llenar el formulario <svg class="ico"><use href="#i-arrow-right"/></svg></button>
-                <button type="button" class="vpitch__replay" id="vpitchReplay">Ver el video otra vez</button>
-              </div>
-
-              <button type="button" class="vpitch__close" id="vpitchClose" aria-label="Cerrar el video"><svg class="ico"><use href="#i-x"/></svg></button>
-            </div>
-          </div>
-        </figure>
-
-        <!-- ---------- Qué es CrediAyudarte (breve) ---------- -->
-        <div class="pitch-info">
-          <span class="breadcrumb"><a href="index.html">Crédito de libranza en Colombia</a> / Solicita tu análisis</span>
-          <span class="tag">Solicita tu crédito</span>
-          <h1><span class="h1-kicker">Solicita tu análisis de crédito de libranza, en toda Colombia y sin anticipos</span>Cuéntanos tu caso y <span>te contactamos hoy mismo</span></h1>
-          <p class="pitch-info__lead">Somos una <strong>asesoría financiera independiente</strong> con personal de más de 10 años acompañando a pensionados y empleados del gobierno. No somos un banco: estudiamos tu caso, buscamos las entidades que tienen convenio de libranza con la entidad que paga tu pensión o salario y te explicamos el costo real antes de que firmes.</p>
-          <ul class="pitch-info__list">
-            <li><svg class="ico"><use href="#i-check"/></svg> Escríbenos y responderemos inmediatamente todas tus dudas</li>
-            <li><svg class="ico"><use href="#i-check"/></svg> Evaluación sin costo y sin compromiso</li>
-            <li><svg class="ico"><use href="#i-check"/></svg> Si estás mal reportado o embargado, revisaremos tu caso y buscaremos una opción para ayudarte</li>
-            <li><svg class="ico"><use href="#i-check"/></svg> Si la tasa que tienes está muy alta, buscaremos mejores condiciones de tasa</li>
-            <li><svg class="ico"><use href="#i-check"/></svg> Si no te conviene, también te lo decimos</li>
-          </ul>
-          <span class="pitch-info__seal"><svg class="ico"><use href="#i-shield"/></svg> No cobramos ningún dinero por adelantado</span>
-        </div>
-
-        <!-- ---------- Clientes reales atendidos ---------- -->
-        <aside class="proof">
-          <div class="proof__head">
-            <svg class="ico"><use href="#i-users"/></svg>
-            <div>
-              <strong>Personas como tú, en nuestra oficina</strong>
-              <small>Fotos reales de Cúcuta, compartidas con su permiso</small>
-            </div>
-          </div>
-          <div class="proof__grid">
-            <a href="testimonios.html" class="proof__item"><img src="assets/testigos/foto-1.jpeg" alt="Clienta pensionada atendida por una asesora de libranza de CrediAyudarte" width="900" height="1600" loading="lazy" decoding="async"></a>
-            <a href="testimonios.html" class="proof__item"><img src="assets/testigos/poster-4.jpg" alt="Pensionado esperando su turno en la oficina de CrediAyudarte en Cúcuta" width="478" height="850" loading="lazy" decoding="async"></a>
-            <a href="testimonios.html" class="proof__item"><img src="assets/testigos/poster-6.jpg" alt="Asesora revisando el caso de libranza de una clienta" width="478" height="850" loading="lazy" decoding="async"></a>
-            <a href="testimonios.html" class="proof__item"><img src="assets/testigos/poster-1.jpg" alt="Cliente firmando su solicitud de crédito de libranza con una asesora" width="478" height="850" loading="lazy" decoding="async"></a>
-            <a href="testimonios.html" class="proof__item proof__item--wide"><img src="assets/testigos/foto-3.jpeg" alt="Clientas frente a la oficina de CrediAyudarte, asesoría de libranza en Cúcuta" width="1600" height="900" loading="lazy" decoding="async"></a>
-          </div>
-          <a href="testimonios.html" class="proof__link">Conoce los testimonios de clientes atendidos en nuestra oficina <svg class="ico"><use href="#i-arrow-right"/></svg></a>
-        </aside>
-      </div>
-
       <a href="#creditForm" class="pitch-jump" id="pitchJump">
         <span>Ahora sí, llena el formulario</span>
         <svg class="ico"><use href="#i-arrow-down"/></svg>
@@ -679,9 +653,9 @@
     <span>Subiendo tu desprendible de forma segura… 📎</span>
   </div>
 
-  <script defer src="js/pitch.js?v=20260819"></script>
+  <script defer src="js/camino.js?v=20260920"></script>
   <script defer src="js/script.js?v=20260819"></script>
   <script defer src="js/solicitar.js?v=20260819"></script>
-  <script defer src="js/motion.js?v=20260819"></script>
+  <script defer src="js/motion.js?v=20260920"></script>
 </body>
 </html>

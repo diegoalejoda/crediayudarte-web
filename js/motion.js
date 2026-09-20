@@ -25,7 +25,15 @@
   (function progresoYHeader() {
     var header = document.querySelector('.header');
     var raiz = document.documentElement;
+    var heroCine = document.querySelector('.hero--cine');
     var pendiente = false;
+
+    /* Sobre un hero fotográfico el header flota como píldora oscura y solo
+       se convierte en barra clara cuando el hero ya salió de pantalla. */
+    function umbral() {
+      if (!heroCine) return 40;
+      return Math.max(40, heroCine.offsetHeight - 110);
+    }
 
     function pintar() {
       pendiente = false;
@@ -33,7 +41,7 @@
       var y = window.scrollY || window.pageYOffset || 0;
       var avance = alto > 0 ? Math.min(1, Math.max(0, y / alto)) : 0;
       raiz.style.setProperty('--scroll-progreso', avance.toFixed(4));
-      if (header) header.classList.toggle('is-stuck', y > 40);
+      if (header) header.classList.toggle('is-stuck', y > umbral());
     }
 
     function alScroll() {
@@ -61,7 +69,7 @@
      --------------------------------------------------------------- */
   (function titularesAnimados() {
     var titulares = document.querySelectorAll(
-      '.hero h1, .page-hero h1, .pitch-info h1, .section__head h2, ' +
+      '.hero h1, .page-hero h1, .camino h1, .section__head h2, ' +
       '.testimonios__copy h2, .codigo__intro h2, .fb__copy h2, ' +
       '.mapa__copy h2, .contacto__copy h2'
     );
