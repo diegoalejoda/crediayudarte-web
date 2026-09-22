@@ -64,15 +64,42 @@
     });
   });
 
+  /* El hero tiene dos videos (uno de escritorio, uno de celular) pero un
+     celular solo debe cargar el suyo: si al de escritorio (4K, pesado) le
+     queda "autoplay" aunque esté oculto, compite por el ancho de banda con
+     todo lo demás y hace que el resto de la página cargue a medias.
+     Aquí se elige por ancho de pantalla, se reproduce solo ese y al otro
+     se le quita cualquier intento de carga (preload="none"). */
+  var heroD = document.querySelector('.hero__v-d');
+  var heroM = document.querySelector('.hero__v-m');
+  var heroVideos = Array.prototype.slice.call(document.querySelectorAll('.hero video'));
+  if (heroD && heroM) {
+    var mqMovil = window.matchMedia('(max-width:860px)');
+    var ajustando = false;
+    function elegirVideoHero() {
+      if (ajustando) return; ajustando = true;
+      var activo = mqMovil.matches ? heroM : heroD;
+      var inactivo = mqMovil.matches ? heroD : heroM;
+      if (!inactivo.paused) inactivo.pause();
+      inactivo.preload = 'none';
+      activo.preload = 'auto';
+      reproducir(activo);
+      ajustando = false;
+    }
+    elegirVideoHero();
+    if (mqMovil.addEventListener) mqMovil.addEventListener('change', elegirVideoHero);
+    else if (mqMovil.addListener) mqMovil.addListener(elegirVideoHero);
+  }
+
   /* El video del hero se reproduce una vez; si el usuario vuelve arriba,
      se reinicia para que la escena se vea de nuevo. */
-  var heroVideos = Array.prototype.slice.call(document.querySelectorAll('.hero video'));
   if (heroVideos.length && hayIO) {
     var fuera = false;
     var ioHero = new IntersectionObserver(function (entradas) {
       var e = entradas[0];
       if (!e.isIntersecting) { fuera = true; heroVideos.forEach(function (v) { if (!v.paused) v.pause(); }); return; }
       heroVideos.forEach(function (v) {
+        if (v.preload === 'none') return; // es el que no corresponde a este ancho de pantalla
         if (fuera) { try { v.currentTime = 0; } catch (err) {} }
         reproducir(v);
       });

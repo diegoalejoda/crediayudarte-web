@@ -1016,9 +1016,9 @@ html.con-intro .intro__barra i{animation:introCarga .95s var(--ease) .1s forward
 .ui-chip .ico{width:.9rem;height:.9rem;color:var(--verde-marca);stroke:var(--verde-marca)}
 
 @media (max-width:860px){
-  .stack__panel{flex-direction:column;align-items:stretch;justify-content:flex-end;padding-bottom:4.5rem}
+  .stack__panel{flex-direction:column;align-items:stretch;justify-content:flex-start;padding-bottom:4.5rem}
   .stack__panel .container{width:min(100% - 2.4rem,var(--container))}
-  .stack__veil{background:linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.3) 30%, rgba(255,255,255,.96) 58%, #fff 100%)}
+  .stack__veil{display:none}
   .stack__copy{max-width:none}
   .stack__copy p{margin-bottom:1.3rem}
   .ui{display:none}
@@ -1029,6 +1029,17 @@ html.con-intro .intro__barra i{animation:introCarga .95s var(--ease) .1s forward
   .stack__index li{font-size:0;width:8px;height:8px;border-radius:50%;background:rgba(43,51,39,.25)}
   .stack__index li::before,.stack__index li b{display:none}
   .stack__index li.is-active{background:var(--verde-marca)}
+  /* Paneles sin marco (01/03/04): la foto/video vive en una caja arriba
+     (como el hero y el camino en móvil) en vez de fondo a pantalla completa,
+     porque el material es horizontal y "cover" a pantalla completa lo recorta
+     casi todo. */
+  .stack__panel:not(.stack__panel--marco) .stack__media{
+    position:relative;inset:auto;width:calc(100% - 2.4rem);margin:5.4rem auto 1rem;
+    aspect-ratio:4/3;max-height:48svh;border-radius:var(--radius-lg);overflow:hidden;
+    box-shadow:0 40px 80px -40px rgba(43,51,39,.35);flex:none;
+  }
+  .stack__panel:not(.stack__panel--marco) .stack__media video,
+  .stack__panel:not(.stack__panel--marco) .stack__media img{object-position:center}
   /* Panel con marco en móvil: el marco arriba a ancho completo, texto abajo */
   .stack__panel--marco::before{display:none}
   .stack__panel--marco .stack__media{inset:auto;position:relative;width:calc(100% - 2.4rem);margin:5.4rem auto 1rem;aspect-ratio:9/10;max-height:52svh;flex:none}

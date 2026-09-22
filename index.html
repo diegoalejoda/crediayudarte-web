@@ -446,11 +446,11 @@
   <section class="hero hero--cine">
     <div class="hero__marco">
       <div class="hero__bg" aria-hidden="true">
-        <video class="hero__v-d" autoplay muted playsinline preload="metadata" poster="assets/generative/hero-home.webp" width="3840" height="2160">
+        <video class="hero__v-d" muted playsinline preload="none" poster="assets/generative/hero-home.webp" width="3840" height="2160">
           <source src="assets/generative/hero-home.webm" type="video/webm" />
           <source src="assets/generative/hero-home.mp4" type="video/mp4" />
         </video>
-        <video class="hero__v-m" autoplay muted playsinline preload="metadata" poster="assets/generative/hero-home-sm.webp" width="1920" height="1440">
+        <video class="hero__v-m" muted playsinline preload="none" poster="assets/generative/hero-home-sm.webp" width="1920" height="1440">
           <source src="assets/generative/hero-home-m.webm" type="video/webm" />
           <source src="assets/generative/hero-home-m.mp4" type="video/mp4" />
         </video>
@@ -499,7 +499,7 @@
 
     <article class="stack__panel" data-n="01">
       <div class="stack__media" aria-hidden="true">
-        <video autoplay muted loop playsinline preload="metadata" poster="assets/generative/p01-poster.webp" width="1920" height="1080">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/generative/p01-poster.webp" width="1920" height="1080">
           <source src="assets/generative/p01.webm" type="video/webm" />
           <source src="assets/generative/p01.mp4" type="video/mp4" />
         </video>
@@ -535,8 +535,7 @@
     <article class="stack__panel stack__panel--marco" data-n="02" style="--foco:50% 50%">
       <div class="stack__media" aria-hidden="true">
         <div class="marco-foto">
-          <img src="assets/generative/p02.webp" alt="" width="1080" height="1200" loading="lazy" decoding="async" />
-          <img class="ui-icono" src="assets/icono.png" alt="" width="240" height="240" loading="lazy" decoding="async" style="--ix:50%;--iy:40%;--iw:14%" />
+          <img src="assets/generative/p02.webp" alt="" width="1080" height="1200" loading="eager" decoding="async" />
           <ul class="manuscrito" aria-hidden="true">
             <li style="--mx:8%;--my:14%;--mr:-7deg">Te decimos la verdad</li>
             <li style="--mx:54%;--my:16%;--mr:5deg">No prometemos milagros</li>
@@ -563,7 +562,7 @@
 
     <article class="stack__panel stack__panel--der" data-n="03" style="--foco:100% center">
       <div class="stack__media" aria-hidden="true">
-        <video muted loop playsinline preload="metadata" poster="assets/generative/p03-poster.webp" width="1920" height="1080">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/generative/p03-poster.webp" width="1920" height="1080">
           <source src="assets/generative/p03.webm" type="video/webm" />
           <source src="assets/generative/p03.mp4" type="video/mp4" />
         </video>
@@ -584,7 +583,7 @@
 
     <article class="stack__panel stack__panel--verde" data-n="04" style="--foco:center 40%">
       <div class="stack__media" aria-hidden="true">
-        <img src="assets/generative/p04.webp" alt="" width="1600" height="900" loading="lazy" decoding="async" />
+        <img src="assets/generative/p04.webp" alt="" width="1600" height="900" loading="eager" decoding="async" />
       </div>
       <span class="stack__veil" aria-hidden="true"></span>
       <div class="ui" style="--ux:auto;--uy:auto;right:clamp(1rem,4vw,4rem);bottom:clamp(5.4rem,10vh,7rem);width:auto" aria-hidden="true">
