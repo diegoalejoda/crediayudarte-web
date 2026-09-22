@@ -11,4 +11,23 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# Rastreadores de IA — acceso permitido al contenido público
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
 Sitemap: https://crediayudarte.com/sitemap.xml
