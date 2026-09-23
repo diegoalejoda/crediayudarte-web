@@ -15,11 +15,11 @@
 
   var pasos = sec.querySelectorAll('.camino__paso');
   var segs = sec.querySelectorAll('.camino__seg');
-  var N = parseInt(sec.getAttribute('data-frames'), 10) || 100;
+  var N = parseInt(sec.getAttribute('data-frames'), 10) || 143;
   // Dónde arranca cada tramo (fracción del recorrido). Coinciden con el
-  // momento en que cada fundido entre escenas termina (video de 10s: recibimos
-  // 0-3s, orientamos 3-4.7s, opciones 4.7-7s, escenarios 7-10s).
-  var TRAMOS = [0, 0.30, 0.53, 0.77];
+  // momento en que cada fundido entre escenas termina (video de 14.33s: agobio
+  // 0-5s, recibimos 5-6.7s, orientamos 6.7-9s, opciones 9-11.3s, escenarios 11.3-14.33s).
+  var TRAMOS = [0, 0.35, 0.47, 0.63, 0.79];
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;

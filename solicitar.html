@@ -221,33 +221,40 @@
   </header>
 
   <!-- ===================== EL CAMINO DEL CRÉDITO (hero controlado por el scroll) =====================
-       Cuatro tramos: te recibimos → te orientamos → te explicamos tus opciones → tú eliges el camino.
-       Fotogramas en assets/generative/camino/{d,m}/NNN.webp; js/camino.js los pinta según el avance. -->
-  <section class="camino" id="camino" data-frames="100" aria-label="El camino del crédito: de la deuda a un plan claro">
+       Cinco tramos: tu angustia con el caso → te recibimos → te orientamos → te explicamos tus
+       opciones → tú eliges el camino. Fotogramas en assets/generative/camino/{d,m}/NNN.webp;
+       js/camino.js los pinta según el avance. -->
+  <section class="camino" id="camino" data-frames="143" aria-label="El camino del crédito: de la deuda a un plan claro">
     <div class="camino__panel">
       <div class="camino__marco">
         <picture class="camino__poster">
           <source media="(max-width:860px)" srcset="assets/generative/camino/poster-m.jpg">
-          <img src="assets/generative/camino/poster.jpg" alt="Un pensionado, una docente, un empleado público y un militar son recibidos por una asesora en la oficina de CrediAyudarte" width="1440" height="810" fetchpriority="high" decoding="async">
+          <img src="assets/generative/camino/poster.jpg" alt="Un pensionado, una docente, un empleado público y un militar agobiados por sus deudas frente a la recepción de CrediAyudarte" width="1440" height="810" fetchpriority="high" decoding="async">
         </picture>
         <canvas class="camino__lienzo" id="caminoLienzo" aria-hidden="true"></canvas>
         <span class="camino__veil" aria-hidden="true"></span>
         <ol class="camino__progreso" aria-hidden="true">
-          <li class="camino__seg is-done is-actual"></li><li class="camino__seg"></li><li class="camino__seg"></li><li class="camino__seg"></li>
+          <li class="camino__seg is-done is-actual"></li><li class="camino__seg"></li><li class="camino__seg"></li><li class="camino__seg"></li><li class="camino__seg"></li>
         </ol>
       </div>
 
       <div class="camino__copy">
-          <!-- 0 · Te recibimos -->
+          <!-- 0 · Dolor / recepción agobiada -->
           <article class="camino__paso is-on" data-paso="0">
             <span class="breadcrumb"><a href="index.html">Crédito de libranza en Colombia</a> / Solicita tu análisis</span>
             <h1><span class="h1-kicker">Análisis gratuito de crédito de libranza · Sin anticipos</span>Llegó la nómina. Pagaste cuotas, mercado, servicios… <mark class="mk-yellow">y otra vez falta mes.</mark></h1>
-            <p>Si eres <strong>pensionado</strong> o trabajas con <strong>nómina del Gobierno</strong>, te recibimos con tu caso — sin filas ni citas eternas.</p>
+            <p>Si eres <strong>pensionado</strong> o trabajas con <strong>nómina del Gobierno</strong>, esto te interesa.</p>
             <span class="camino__pista">Sigue bajando <svg class="ico"><use href="#i-arrow-down"/></svg></span>
           </article>
 
-          <!-- 1 · Te orientamos -->
+          <!-- 1 · Te recibimos -->
           <article class="camino__paso" data-paso="1">
+            <h2>Aquí te recibimos <mark class="mk-yellow">con tu caso.</mark></h2>
+            <p>Sin filas eternas ni citas a ciegas. Nos sentamos contigo, revisamos lo que traes y empezamos por entender tu situación real.</p>
+          </article>
+
+          <!-- 2 · Te orientamos -->
+          <article class="camino__paso" data-paso="2">
             <h2>Te orientamos y te informamos, <mark class="mk-yellow">sin letra pequeña.</mark></h2>
             <p>Antes de pedirte un solo papel, te explicamos con calma cómo funciona tu pagaduría, qué te están descontando y cuánto margen real tienes. Llevamos años escuchando casos como el tuyo.</p>
             <div class="camino__proof">
@@ -260,8 +267,8 @@
             <a href="testimonios.html" class="camino__enlace">Ver sus testimonios <svg class="ico"><use href="#i-arrow-right"/></svg> <small>· fotos reales, compartidas con su permiso</small></a>
           </article>
 
-          <!-- 2 · Te explicamos tus opciones -->
-          <article class="camino__paso" data-paso="2">
+          <!-- 3 · Te explicamos tus opciones -->
+          <article class="camino__paso" data-paso="3">
             <h2>Te explicamos tus opciones y <mark class="mk-yellow">cuál te conviene más.</mark></h2>
             <ol class="camino__pasos">
               <li><svg class="ico"><use href="#i-search"/></svg><div><b>Analizamos</b><span>tu caso, sin costo y sin compromiso</span></div></li>
@@ -271,8 +278,8 @@
             </ol>
           </article>
 
-          <!-- 3 · Tú eliges + CTA -->
-          <article class="camino__paso" data-paso="3">
+          <!-- 4 · Tú eliges + CTA -->
+          <article class="camino__paso" data-paso="4">
             <h2>Te mostramos todos los escenarios. <mark class="mk-yellow">Tú eliges por dónde ir.</mark></h2>
             <ul class="camino__confianza">
               <li><svg class="ico"><use href="#i-check"/></svg> No te pedimos dinero por adelantado, claves ni datos bancarios.</li>
