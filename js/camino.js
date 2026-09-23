@@ -15,10 +15,11 @@
 
   var pasos = sec.querySelectorAll('.camino__paso');
   var segs = sec.querySelectorAll('.camino__seg');
-  var N = parseInt(sec.getAttribute('data-frames'), 10) || 94;
-  // Dónde arranca cada tramo (fracción del recorrido). El 2 coincide con
-  // el fundido a blanco que separa la casa de la oficina.
-  var TRAMOS = [0, 0.22, 0.47, 0.66, 0.84];
+  var N = parseInt(sec.getAttribute('data-frames'), 10) || 100;
+  // Dónde arranca cada tramo (fracción del recorrido). Coinciden con el
+  // momento en que cada fundido entre escenas termina (video de 10s: recibimos
+  // 0-3s, orientamos 3-4.7s, opciones 4.7-7s, escenarios 7-10s).
+  var TRAMOS = [0, 0.30, 0.53, 0.77];
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;

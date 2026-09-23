@@ -158,3 +158,31 @@
   .camino__pista .ico{animation:none}
   @media (max-width:860px){.camino.is-js .camino__paso{transform:none}}
 }
+
+/* ===================== CLIENTES REALES (carrusel continuo) =====================
+   Franja horizontal de fotos reales que se desliza sola de derecha a izquierda,
+   en bucle infinito: la lista de fotos está duplicada una vez y la animación
+   recorre exactamente la primera mitad, así el empalme no se nota. */
+.creeles{padding:clamp(2.4rem,5vw,3.6rem) 0;background:var(--blanco);overflow:hidden}
+.creeles__tag{
+  text-align:center;font-family:var(--f-display);font-weight:500;
+  font-size:var(--fs-heading-sm);color:var(--tinta);letter-spacing:var(--track-tight);
+  margin-bottom:clamp(1.4rem,3vw,2rem);
+}
+.creeles__pista{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
+.creeles__tren{display:flex;gap:1rem;width:max-content;animation:creelesDesliza 38s linear infinite}
+.creeles__tren img{
+  height:280px;width:auto;flex:none;border-radius:var(--radius);object-fit:cover;
+  box-shadow:var(--shadow-subtle);background:var(--niebla);
+}
+.creeles__pista:hover .creeles__tren{animation-play-state:paused}
+@keyframes creelesDesliza{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+@media (max-width:860px){
+  .creeles__tren img{height:200px}
+  .creeles__tren{animation-duration:26s}
+}
+@media (prefers-reduced-motion:reduce){
+  .creeles__tren{animation:none}
+  .creeles__pista{overflow-x:auto}
+}
