@@ -4,6 +4,19 @@
 
 CrediAyudarte es una asesoría financiera independiente con oficina en Cúcuta, Colombia, y atención virtual por WhatsApp a todo el país. Trabajamos exclusivamente con crédito de libranza: el que se descuenta directo de la nómina o la mesada pensional. **No somos un banco ni una entidad financiera: no aprobamos ni desembolsamos créditos.**
 
+## Antes de firmar, revisa
+
+No importa solo cuánto recibes. Importa cuánto pagas, durante cuánto tiempo y bajo qué condiciones.
+
+- **Lo primero que ves no es todo.** Una decisión de crédito tiene más capas que una cuota o un desembolso.
+- **Una decisión tiene más de una variable.** Cuota, plazo, costo total, dinero neto y condiciones: antes de avanzar, hay que mirar el conjunto.
+- **Entender cambia la decisión.** Revisamos lo que recibes, lo que pagas y lo que todavía depende de terceros.
+- **Que se pueda hacer no significa que convenga.** Primero entendemos la operación completa.
+- **Mira el panorama completo.** Una cuota más baja puede aliviar hoy y extender el compromiso durante más tiempo.
+- **Cada perfil se revisa distinto.** Pensionados, docentes públicos, empleados del gobierno y Fuerza Pública no parten de las mismas condiciones.
+- **Claridad antes de avanzar.** No cobramos por adelantado. La aprobación final depende de la entidad. Los costos se explican antes de avanzar.
+- **Y si no te conviene, también te lo decimos.**
+
 ## Qué hacemos
 
 - Analizamos el desprendible de nómina o pensión y el perfil de cada persona.
@@ -24,7 +37,7 @@ El preanálisis no tiene costo ni compromiso. Nunca pedimos anticipos ni pagos p
 
 ## Cómo es el proceso
 
-1. **Nos escribes.** Cuentas tu situación por WhatsApp, sin formularios largos ni datos sensibles en frío.
+1. **Nos cuentas tu caso.** Por WhatsApp o con una solicitud corta, sin formularios largos ni datos sensibles en frío.
 2. **Revisamos tu caso.** Analizamos tu desprendible y tu perfil frente a las entidades con convenio.
 3. **Te explicamos las opciones.** Cuota, plazo, costo total y si realmente conviene firmar.
 4. **Decides tú.** Acompañamos el trámite solo si decides avanzar.

@@ -1,0 +1,256 @@
+/* ===================================================================
+   CrediAyudarte — Solicitar (landing del formulario)
+   Misma gramática visual que la Home (home.css): verde del logo en
+   titulares con la frase clave en marcador amarillo, cápsula de vidrio
+   arriba, botones de vidrio y superficies claras con luz de marca.
+   Orden: hero en marco redondeado → recorrido 01–04 (js/recorrido.js)
+   → clientes reales → formulario (intocable) → secciones de apoyo.
+   Base: styles.css + motion.css + home.css.
+   =================================================================== */
+
+body.sol{background:#fff}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body.sol [id]{scroll-margin-top:calc(var(--nav-h) + 12px)}
+body.sol :focus-visible{outline:3px solid var(--c-green);outline-offset:3px}
+
+/* Titulares con la fuente de la marca: Archivo pesada, ancha y en mayúsculas,
+   en el verde del logo con la frase clave en marcador amarillo */
+body.sol .shero h1,body.sol .stack__copy h2,body.sol .section__head h2,body.sol .fb__copy h2,
+body.sol .mapa__copy h2,body.sol .creeles__tag,body.sol .cfinal h2{
+  font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 108;
+  text-transform:uppercase;letter-spacing:-.018em;word-spacing:normal;line-height:.95;color:var(--c-green);text-wrap:balance;
+}
+body.sol .cfinal h2{color:#fff}
+body.sol .shero h1 mark,body.sol .stack__copy h2 mark,body.sol .section__head h2 mark,body.sol .fb__copy h2 mark,
+body.sol .mapa__copy h2 mark,body.sol .creeles__tag mark,body.sol .cfinal h2 mark{background-position:0 58%;background-size:100% 82%;padding:0 .08em}
+
+/* ===================== HERO =====================
+   La imagen va dentro de un marco redondeado con margen blanco alrededor
+   (mismos bordes del hero anterior); la cápsula de navegación flota
+   dentro del marco. Escritorio: las cuatro personas a la derecha y el
+   texto a la izquierda sobre el cielo. Teléfono: texto arriba y el recorte
+   de las personas abajo, sin nada encima de sus caras. */
+.shero{position:relative;background:#fff;padding:clamp(.6rem,1.2vw,1.2rem)}
+.shero__marco{
+  --pad:clamp(1.4rem,4.2vw,4.4rem);
+  position:relative;overflow:hidden;isolation:isolate;
+  border-radius:var(--radius-lg);background:#EEF3F7;
+  min-height:calc(100svh - 2 * clamp(.6rem,1.2vw,1.2rem));
+  display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:1fr auto;
+  padding:calc(var(--nav-h) + 1.4rem) var(--pad) clamp(1.4rem,3vw,2.4rem);
+  box-shadow:0 30px 70px -40px rgba(46,42,48,.45);
+}
+.shero__bg{position:absolute;inset:0;z-index:-2;display:block;overflow:hidden}
+.shero__bg img{width:100%;height:100%;object-fit:cover;object-position:60% 40%;display:block;
+  transform-origin:75% 45%;animation:shDeriva 28s ease-in-out infinite alternate}
+@keyframes shDeriva{from{transform:scale(1.01)}to{transform:scale(1.06)}}
+/* Velo blanco solo del lado del texto: se apaga antes de llegar al pensionado */
+.shero__veil{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.8) 26%,rgba(255,255,255,.3) 38%,rgba(255,255,255,0) 46%),
+    linear-gradient(0deg,rgba(255,255,255,.5) 0%,rgba(255,255,255,0) 20%)}
+
+.shero__copy{align-self:center;max-width:min(560px,40vw);color:var(--c-text)}
+.shero .breadcrumb{display:block;font-size:.84rem;color:var(--c-muted);margin-bottom:1rem}
+.shero .breadcrumb a{color:var(--c-ink);font-weight:650;text-decoration:underline;text-decoration-color:var(--c-green);text-decoration-thickness:2px;text-underline-offset:3px}
+.shero__kick{margin-bottom:1rem}
+.shero h1{font-size:clamp(1.9rem,.8rem + 2.2vw,3.2rem)}
+.shero h1 mark{background-size:0% 82%;animation:shMarca .9s var(--e-out) .75s forwards}
+@keyframes shMarca{to{background-size:100% 82%}}
+.shero__lead{margin-top:1.2rem;max-width:min(44ch,34vw);font-size:clamp(1.02rem,.96rem + .28vw,1.18rem);line-height:1.6;color:var(--c-text)}
+.shero__lead strong{color:var(--c-ink);font-weight:700}
+.shero__cta{display:flex;align-items:center;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.shero__cta .cbtn .ico{width:1.1rem;height:1.1rem;stroke:#fff}
+.cround{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;color:#1FA855;flex:none;
+  transition:transform .25s var(--e-spring)}
+.cround .ico{width:26px;height:26px;fill:currentColor}
+.cround:hover{transform:translateY(-2px) scale(1.05)}
+/* compromisos en una línea bajo el CTA (la tarjeta flotante tapaba a las personas) */
+.shero__checks{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin:1.3rem 0 0;padding:0;list-style:none}
+.shero__checks li{display:inline-flex;align-items:center;gap:.45rem;font-size:.92rem;font-weight:600;color:var(--c-ink)}
+.shero__checks .ico{width:1.2rem;height:1.2rem;flex:none;padding:3px;border-radius:50%;background:var(--c-green);stroke:#fff;stroke-width:2.8}
+
+/* Pista de scroll, misma gramática del cierre de la Home */
+.shero__pista{grid-column:1;grid-row:2;align-self:end;display:inline-flex;align-items:center;gap:.8rem;
+  font-size:.74rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink);width:max-content}
+.shero__pista::before{content:"";width:48px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--c-green),var(--c-yellow))}
+.shero__pista .ico{width:1rem;height:1rem;stroke:var(--c-green);animation:pitchDown 1.8s ease-in-out infinite}
+
+/* Entrada escalonada del copy */
+.shero__copy > *,.shero__pista{animation:shEntra .9s var(--e-out) both}
+.shero__copy > :nth-child(2){animation-delay:.08s}
+.shero__copy > :nth-child(3){animation-delay:.16s}
+.shero__copy > :nth-child(4){animation-delay:.26s}
+.shero__copy > :nth-child(5){animation-delay:.36s}
+.shero__copy > :nth-child(6){animation-delay:.46s}
+.shero__pista{animation-delay:.7s}
+@keyframes shEntra{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* La cápsula de navegación vive dentro del marco: se alinea con él */
+body.sol .cnav{top:clamp(.6rem,1.2vw,1.2rem)}
+
+/* En pantallas 16:9 amplias (1920×1080 y similares) el marco es casi tan ancho
+   como la foto: se ve el grupo completo sin recortar los lados y el policía
+   queda lejos del texto.
+   En portátiles 16:10 (1440×900, 1280×800…) el marco es apenas más angosto que
+   la foto: por sí solo el "cover" recorta muy poco de los lados, así que
+   moverle el object-position casi no cambia nada. Aquí además se acerca el
+   zoom (scale) para recortar de verdad al policía, que es quien le queda más
+   cerca al texto; por debajo de 1100 el texto ya ocupa medio marco y el
+   recorte es directamente agresivo (88%, sin zoom porque ahí sí hay margen). */
+@media (max-width:1600px) and (min-width:1201px){
+  .shero__bg img{object-position:100% 44%;transform:scale(1.22);transform-origin:85% 45%;animation:none}
+}
+@media (max-width:1200px) and (min-width:861px){
+  .shero__copy{max-width:44vw}
+  .shero__bg img{object-position:88% 40%}
+}
+@media (max-width:860px){
+  .shero__marco{grid-template-rows:auto auto;padding:calc(var(--nav-h) + 1rem) 1.25rem 0;
+    background:linear-gradient(180deg,#EAF2FA 0%,#F6F9FC 55%,#fff 100%)}
+  /* las personas van abajo, en su propio recorte y sin velo encima */
+  .shero__bg{position:relative;inset:auto;z-index:0;grid-row:2;margin:1.4rem -1.25rem 0;aspect-ratio:900/770;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 16%);mask-image:linear-gradient(to bottom,transparent 0,#000 16%)}
+  .shero__bg img{object-position:50% 30%;animation:none}
+  .shero__veil{display:none}
+  .shero__copy{align-self:start;max-width:none}
+  .shero__lead{max-width:none}
+  .shero .breadcrumb{display:none}
+  .shero h1{font-size:clamp(1.75rem,7.6vw,2.5rem)}
+  .shero__lead{font-size:1rem;margin-top:1rem}
+  .shero__cta{margin-top:1.4rem;flex-wrap:nowrap}
+  .shero__cta .cbtn{flex:1 1 auto;min-width:0}
+  .shero__kick{letter-spacing:.1em}
+  .shero__checks{flex-direction:column;gap:.5rem}
+  .shero__pista{display:none}
+}
+/* en teléfono ya está el WhatsApp flotante: el botón redondo sobra */
+@media (max-width:480px){
+  .shero__cta .cround{display:none}
+  .shero__cta .cbtn{padding-inline:1.2rem;font-size:1.02rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .shero__bg img,.shero__pista .ico{animation:none}
+  .shero__copy > *,.shero__pista{animation:none}
+  .shero h1 mark{animation:none;background-size:100% 82%}
+}
+
+/* ===================== RECORRIDO 01–04 (videos de la home anterior) =====================
+   La estructura y el comportamiento vienen de styles.css (.stack) y
+   js/recorrido.js; aquí solo se alinea con la tipografía y el verde del logo. */
+body.sol .stack__copy h2{font-size:clamp(1.9rem,1rem + 2.2vw,3.2rem);margin-bottom:1rem}
+body.sol .stack__copy p{color:var(--c-text)}
+.stack__kick{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1rem;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--c-ink)}
+.stack__kick b{color:var(--c-green);font-variant-numeric:tabular-nums}
+.stack__kick::after{content:"";width:22px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--c-green),var(--c-yellow))}
+body.sol .stack__panel .stack__copy .stack__kick{opacity:0;transform:translateY(14px);transition:opacity .7s var(--e-out),transform .7s var(--e-out)}
+body.sol .stack__panel.is-visible .stack__copy .stack__kick{opacity:1;transform:none}
+/* marcador que se pinta al entrar el panel */
+body.sol .stack__copy h2 mark{background-size:0% 82%;transition:background-size .85s var(--e-out) .35s}
+body.sol .stack__panel.is-visible .stack__copy h2 mark{background-size:100% 82%}
+/* índice lateral en vidrio (sin la clase .lg: su position:relative anularía el fixed) */
+body.sol .stack__index{
+  background:linear-gradient(160deg,rgba(255,255,255,.82),rgba(255,255,255,.55));
+  -webkit-backdrop-filter:blur(18px) saturate(185%);backdrop-filter:blur(18px) saturate(185%);
+  border:1px solid rgba(255,255,255,.7);border-radius:22px;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.95),0 18px 40px -22px rgba(46,42,48,.4);
+}
+body.sol .stack__index li.is-active b{color:#B58F00}
+body.sol .stack__index li::before{background:var(--c-green)}
+/* fichas de pregunta: vidrio en reposo, verde del logo al pasar */
+body.sol .stack__q{background:linear-gradient(160deg,rgba(255,255,255,.92),rgba(255,255,255,.7));-webkit-backdrop-filter:blur(12px) saturate(170%);backdrop-filter:blur(12px) saturate(170%)}
+body.sol .stack__q::before{background:var(--c-green)}
+/* panel 02 y 04: el verde institucional pasa a ser el del logo */
+body.sol .stack__panel--marco.is-visible{background:var(--c-green)}
+body.sol .stack__panel--verde{background:var(--c-green)}
+body.sol .stack__panel--verde .stack__veil{background:
+  linear-gradient(90deg,rgba(92,148,38,.96) 0%,rgba(111,170,49,.88) 32%,rgba(111,170,49,.35) 54%,rgba(111,170,49,0) 68%),
+  linear-gradient(180deg,rgba(111,170,49,.35) 0%,rgba(111,170,49,0) 22%)}
+/* (el 02 conserva su franja blanca a la izquierda: texto oscuro; solo el 04 va en blanco) */
+body.sol .stack__panel--verde .stack__copy h2{color:#fff;text-shadow:0 2px 20px rgba(40,70,10,.25)}
+body.sol .stack__panel--verde .stack__kick,body.sol .stack__panel--verde .stack__kick b{color:#fff}
+body.sol .stack__panel--verde .stack__copy p{color:rgba(255,255,255,.94)}
+body.sol .stack__copy h2 mark{text-shadow:none}
+@media (max-width:860px){
+  /* en teléfono el contenido no cabe en una pantalla: los paneles fluyen a su alto natural
+     (fijos a 100svh recortaban las preguntas del 04) */
+  body.sol .stack__panel{position:relative;height:auto;min-height:100svh}
+  body.sol .stack__panel--verde .stack__veil{display:block;background:linear-gradient(180deg,rgba(111,170,49,.15) 0%,rgba(111,170,49,.45) 30%,rgba(92,148,38,.96) 58%,var(--c-green-lo) 100%)}
+}
+
+/* ===================== CLIENTES REALES (carrusel continuo) =====================
+   Franja de fotos reales que se desliza sola; la lista va duplicada y la
+   animación recorre exactamente la primera mitad, así el empalme no se nota. */
+.creeles{padding:clamp(3rem,6vw,4.6rem) 0;overflow:hidden;background:
+  radial-gradient(40% 60% at 8% 30%,rgba(111,170,49,.12),rgba(111,170,49,0) 70%),
+  radial-gradient(36% 60% at 94% 70%,rgba(241,195,0,.13),rgba(241,195,0,0) 70%),#fff}
+.creeles__tag{text-align:center;font-size:clamp(1.6rem,1rem + 1.8vw,2.6rem);margin-bottom:clamp(1.4rem,3vw,2.2rem)}
+.creeles__pista{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
+.creeles__tren{display:flex;gap:1rem;width:max-content;animation:creelesDesliza 38s linear infinite}
+.creeles__tren img{
+  height:280px;width:auto;flex:none;border-radius:22px;object-fit:cover;
+  border:1px solid rgba(255,255,255,.8);box-shadow:0 18px 36px -24px rgba(46,42,48,.45);background:var(--niebla);
+}
+.creeles__pista:hover .creeles__tren{animation-play-state:paused}
+@keyframes creelesDesliza{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:860px){
+  .creeles__tren img{height:200px}
+  .creeles__tren{animation-duration:26s}
+}
+@media (prefers-reduced-motion:reduce){
+  .creeles__tren{animation:none}
+  .creeles__pista{overflow-x:auto}
+}
+
+/* ===================== FORMULARIO: solo su entorno =====================
+   La tarjeta, los campos y solicitar.js no se tocan (decisión del dueño). */
+/* El aviso de subida quedaba asomando 4 px abajo al estar oculto */
+body.sol .toast{transform:translate(-50%,calc(100% + 40px));visibility:hidden;transition:transform .4s var(--ease-back),visibility 0s .4s}
+body.sol .toast.is-visible{transform:translate(-50%,0);visibility:visible;transition:transform .4s var(--ease-back),visibility 0s}
+body.sol .form-wrap{background:
+  radial-gradient(40% 40% at 0% 10%,rgba(111,170,49,.12),rgba(111,170,49,0) 70%),
+  radial-gradient(36% 40% at 100% 60%,rgba(241,195,0,.12),rgba(241,195,0,0) 70%),
+  radial-gradient(50% 50% at 50% 100%,rgba(180,195,207,.25),rgba(180,195,207,0) 70%),#F8F9F7}
+body.sol .pitch-jump{
+  background:linear-gradient(180deg,#8CCB4C 0%,var(--c-green) 52%,var(--c-green-lo) 100%);
+  border:1px solid rgba(255,255,255,.35);text-shadow:0 1px 1px rgba(40,70,10,.45);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.65),inset 0 -3px 8px rgba(40,70,10,.28),0 12px 26px -12px rgba(92,148,38,.75);
+}
+
+/* ===================== SECCIONES DE APOYO: gramática de la Home ===================== */
+body.sol .section__head h2,body.sol .fb__copy h2,body.sol .mapa__copy h2{font-size:clamp(1.8rem,1rem + 2.2vw,3.1rem)}
+body.sol .section__head p,body.sol .fb__copy p,body.sol .mapa__copy p{color:var(--c-text)}
+/* etiqueta de sección = .kick de la Home */
+body.sol .tag{background:none;padding:0;border-radius:0;display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--c-ink)}
+body.sol .tag::before{content:"";width:22px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--c-green),var(--c-yellow))}
+/* luz de marca detrás del vidrio */
+body.sol .section--mint{background:
+  radial-gradient(42% 46% at 6% 8%,rgba(111,170,49,.13),rgba(111,170,49,0) 70%),
+  radial-gradient(36% 40% at 96% 18%,rgba(241,195,0,.14),rgba(241,195,0,0) 70%),
+  radial-gradient(46% 50% at 70% 100%,rgba(180,195,207,.28),rgba(180,195,207,0) 70%),#fff}
+body.sol .section--cream{background:
+  radial-gradient(44% 50% at 92% 12%,rgba(111,170,49,.14),rgba(111,170,49,0) 70%),
+  radial-gradient(40% 44% at 4% 90%,rgba(241,195,0,.16),rgba(241,195,0,0) 70%),
+  radial-gradient(50% 60% at 40% 40%,rgba(180,195,207,.22),rgba(180,195,207,0) 70%),#F8F9F7}
+
+/* tarjetas en vidrio (la clase .lg pone el material; aquí forma y estados) */
+body.sol .who-card.lg,body.sol .perfil-card.lg{border-radius:28px;border-color:rgba(255,255,255,.6);transition:transform .35s var(--e-spring),box-shadow .35s var(--e-out)}
+body.sol .who-card.lg:hover,body.sol .perfil-card.lg:hover{transform:translateY(-6px);box-shadow:inset 0 1px 1px #fff,0 30px 50px -28px rgba(92,148,38,.55)}
+body.sol .who-card__ico,body.sol .perfil-card__ico{width:56px;height:56px;border-radius:50%;color:var(--c-green);
+  background:radial-gradient(circle at 32% 28%,#fff 0 12%,rgba(255,255,255,.6) 40%,rgba(111,170,49,.16) 100%);
+  border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 -6px 12px rgba(111,170,49,.18),0 10px 20px -12px rgba(92,148,38,.6);
+  transition:transform .4s var(--e-spring)}
+body.sol .who-card:hover .who-card__ico{background:radial-gradient(circle at 32% 28%,#fff 0 12%,rgba(255,255,255,.6) 40%,rgba(111,170,49,.16) 100%);color:var(--c-green);transform:rotate(-8deg) scale(1.08)}
+body.sol .who-card:nth-child(2) .who-card__ico{color:#C99A00;background:radial-gradient(circle at 32% 28%,#fff 0 12%,rgba(255,255,255,.6) 40%,rgba(241,195,0,.22) 100%)}
+body.sol .who-card:nth-child(3) .who-card__ico{color:#6D8292;background:radial-gradient(circle at 32% 28%,#fff 0 12%,rgba(255,255,255,.6) 40%,rgba(180,195,207,.38) 100%)}
+body.sol .who-card h3,body.sol .perfil-card h3{color:var(--c-ink);font-weight:750;letter-spacing:-.02em}
+body.sol .who-card h3{font-size:1.25rem}
+body.sol .perfil-card li .ico{color:var(--c-green);stroke:var(--c-green)}
+body.sol .tstrip__item{border-radius:22px}
+body.sol .fb-card,body.sol .mapa__frame{border-radius:28px}
+
+/* ===================== CIERRE ===================== */
+body.sol .cfinal .cbtn .ico{width:1.1rem;height:1.1rem}
+body.sol .footer{position:relative;z-index:2}

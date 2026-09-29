@@ -8,3 +8,7 @@ crediayudarte conocimiento/
 # arriba, nunca deben quedar versionados.
 .scratch_lead.json
 *.workflow.json
+
+# Originales pesados de medios (videos 4K, PNG fuente). El sitio usa las
+# versiones procesadas de assets/; estos quedan solo en local.
+assets-src/

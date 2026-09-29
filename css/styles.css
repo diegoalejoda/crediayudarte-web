@@ -162,17 +162,20 @@ mark.mk-yellow{
 .header--over:not(.is-stuck)::after{opacity:0}
 .header--over.is-stuck{position:fixed;background:rgba(255,255,255,.93);border-bottom:1px solid var(--linea)}
 .header__logo:hover img{transform:scale(1.04)}
-.nav{display:flex;gap:1.35rem;margin-left:auto;flex-wrap:nowrap}
-.nav a{font-weight:500;font-size:.94rem;color:var(--gris-texto);position:relative;padding:.25rem 0;white-space:nowrap}
-/* El menu crecio a 7 enlaces. Nunca debe partir una palabra en dos lineas:
-   antes de llegar al menu movil (980px) se aprieta el espaciado por tramos. */
-@media (min-width:981px) and (max-width:1320px){
-  .nav{gap:1rem}
-  .nav a{font-size:.9rem}
-  .header__inner{gap:.9rem}
-  .btn-wa{padding:.45rem .75rem}
-  .header__cta{padding:.65rem 1rem;font-size:.88rem}
-}
+/* El menú creció a 7 enlaces. El contenedor del header queda fijo en
+   --container (1180px) sin importar el ancho de pantalla, así que este
+   espaciado "apretado" (antes solo vivía en la franja 981–1320px) hace
+   falta SIEMPRE en escritorio: a 1180px de ancho real, hasta en una
+   pantalla de 1920px los 7 enlaces + WhatsApp + CTA no caben con el
+   espaciado suelto original (le quitaban ancho al logo y lo deformaban). */
+.nav{display:flex;gap:1rem;margin-left:auto;flex-wrap:nowrap}
+.nav a{font-weight:500;font-size:.9rem;color:var(--gris-texto);position:relative;padding:.25rem 0;white-space:nowrap}
+.header__inner{gap:.9rem}
+.btn-wa{padding:.45rem .75rem}
+.header__cta{padding:.65rem 1rem;font-size:.88rem}
+/* El logo nunca debe encogerse: si algo no cabe, que ceda el espaciado de
+   arriba, no la imagen (antes se deformaba en vez de simplemente apretar). */
+.header__logo{flex:none}
 @media (min-width:981px) and (max-width:1120px){
   .nav{gap:.7rem}
   .nav a{font-size:.86rem}
@@ -708,8 +711,11 @@ a.who-card:hover .card-mas .ico,a.svc-card:hover .card-mas .ico{transform:transl
   .form-card{position:static}
   .tstrip{grid-template-columns:repeat(2,1fr)}
 }
-/* El menú móvil entra a 980px: entre 761 y 980 el header completo no cabe */
-@media (max-width:980px){
+/* El menú móvil entra a 1220px: con 7-8 enlaces + WhatsApp + CTA, por debajo
+   de eso el header en fila no cabe aunque se apriete el espaciado (el logo o
+   los botones terminaban deformados) — el contenedor (--container:1180px)
+   solo llega a su ancho máximo real pasados ~1220px de viewport. */
+@media (max-width:1220px){
   .nav{position:fixed;inset:70px 0 auto 0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--linea);padding:.5rem 1.2rem 1rem;margin:0;transform:translateY(-160%);transition:transform .35s var(--ease);box-shadow:var(--shadow-sm)}
   .nav.is-open{transform:none}
   .nav a{padding:.9rem 0;border-bottom:1px solid var(--linea)}

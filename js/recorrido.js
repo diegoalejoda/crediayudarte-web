@@ -1,4 +1,5 @@
 /* CrediAyudarte — Recorrido apilado (01–04) y modal de preguntas.
+   Hoy vive en solicitar.html (antes estaba en la home).
    Solo actúa si existe .stack en la página. */
 (function () {
   'use strict';
@@ -9,7 +10,6 @@
   var paneles = Array.prototype.slice.call(stack.querySelectorAll('.stack__panel'));
   var indice = document.querySelector('.stack__index');
   var items = indice ? Array.prototype.slice.call(indice.querySelectorAll('li')) : [];
-  var hayIO = 'IntersectionObserver' in window;
 
   /* ---------------------------------------------------------------
      1. Panel activo por posición de scroll.
@@ -47,10 +47,15 @@
     var alto = window.innerHeight || 1;
     var top = stack.getBoundingClientRect().top;          // ≤ 0 mientras el recorrido está pegado
     var enPantalla = top < alto && top + stack.offsetHeight > 0;
-    if (indice) indice.classList.toggle('is-on', enPantalla);
+    // El índice solo aparece cuando el recorrido ya llena la pantalla (no encima del hero)
+    if (indice) indice.classList.toggle('is-on', top < alto * 0.35 && top + stack.offsetHeight > alto * 0.65);
     if (!enPantalla) return;
-    var n = Math.floor((-top) / alto + 0.65);             // activa al asomar ~35 %
-    n = Math.max(0, Math.min(paneles.length - 1, n));
+    // Activo = el último panel que ya asoma más de ~35 %. Se mide cada panel porque en
+    // teléfono no son sticky y tienen alto propio (no sirve "panel i = i pantallas").
+    var n = 0;
+    for (var i = 1; i < paneles.length; i++) {
+      if (paneles[i].getBoundingClientRect().top < alto * 0.65) n = i;
+    }
     activar(n);
   }
   function alScroll() { if (!pendiente) { pendiente = true; requestAnimationFrame(medir); } }
@@ -60,53 +65,9 @@
 
   items.forEach(function (li, i) {
     li.addEventListener('click', function () {
-      window.scrollTo({ top: stack.offsetTop + i * window.innerHeight, behavior: 'smooth' });
+      window.scrollTo({ top: stack.offsetTop + paneles[i].offsetTop, behavior: 'smooth' });
     });
   });
-
-  /* El hero tiene dos videos (uno de escritorio, uno de celular) pero un
-     celular solo debe cargar el suyo: si al de escritorio (4K, pesado) le
-     queda "autoplay" aunque esté oculto, compite por el ancho de banda con
-     todo lo demás y hace que el resto de la página cargue a medias.
-     Aquí se elige por ancho de pantalla, se reproduce solo ese y al otro
-     se le quita cualquier intento de carga (preload="none"). */
-  var heroD = document.querySelector('.hero__v-d');
-  var heroM = document.querySelector('.hero__v-m');
-  var heroVideos = Array.prototype.slice.call(document.querySelectorAll('.hero video'));
-  if (heroD && heroM) {
-    var mqMovil = window.matchMedia('(max-width:860px)');
-    var ajustando = false;
-    function elegirVideoHero() {
-      if (ajustando) return; ajustando = true;
-      var activo = mqMovil.matches ? heroM : heroD;
-      var inactivo = mqMovil.matches ? heroD : heroM;
-      if (!inactivo.paused) inactivo.pause();
-      inactivo.preload = 'none';
-      activo.preload = 'auto';
-      reproducir(activo);
-      ajustando = false;
-    }
-    elegirVideoHero();
-    if (mqMovil.addEventListener) mqMovil.addEventListener('change', elegirVideoHero);
-    else if (mqMovil.addListener) mqMovil.addListener(elegirVideoHero);
-  }
-
-  /* El video del hero se reproduce una vez; si el usuario vuelve arriba,
-     se reinicia para que la escena se vea de nuevo. */
-  if (heroVideos.length && hayIO) {
-    var fuera = false;
-    var ioHero = new IntersectionObserver(function (entradas) {
-      var e = entradas[0];
-      if (!e.isIntersecting) { fuera = true; heroVideos.forEach(function (v) { if (!v.paused) v.pause(); }); return; }
-      heroVideos.forEach(function (v) {
-        if (v.preload === 'none') return; // es el que no corresponde a este ancho de pantalla
-        if (fuera) { try { v.currentTime = 0; } catch (err) {} }
-        reproducir(v);
-      });
-      fuera = false;
-    }, { threshold: 0.35 });
-    ioHero.observe(heroVideos[0].closest('.hero') || heroVideos[0]);
-  }
 
   /* ---------------------------------------------------------------
      2. Modal de preguntas. El texto es el mismo del FAQ del sitio.
@@ -225,6 +186,9 @@
     if (origen && origen.focus) origen.focus();
   });
   modal.querySelector('.faq-modal__close').addEventListener('click', cerrar);
+  // El CTA lleva a un ancla de la misma página: hay que cerrar el modal para que se vea
+  var cta = modal.querySelector('.faq-modal__cta a[href^="#"]');
+  if (cta) cta.addEventListener('click', function () { origen = null; cerrar(); });
   modal.addEventListener('click', function (e) {
     // clic fuera de la tarjeta y fuera del carril
     if (e.target === modal || e.target.classList.contains('faq-modal__wrap')) cerrar();

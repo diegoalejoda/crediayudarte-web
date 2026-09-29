@@ -34,20 +34,29 @@
   <header class="header" id="top">
     <div class="container header__inner">
       <a href="/" class="header__logo" aria-label="CrediAyudarte - inicio">
-        <img src="assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" fetchpriority="high" decoding="async" />
+        <img src="/assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" fetchpriority="high" decoding="async" />
       </a>
+      <!-- El 404 se sirve para cualquier ruta rota (nginx internal), así que aquí SÍ
+           van rutas absolutas ("/...") en vez de relativas: una ruta relativa se
+           resolvería contra la URL rota que el visitante escribió, no contra /404.html.
+           "Inicio" se deja como primer ítem extra: en una página de error conviene un
+           enlace explícito, no solo confiar en que el logo también lleva al inicio. -->
       <nav class="nav" id="nav">
         <a href="/">Inicio</a>
-        <a href="credito-de-libranza/">Crédito de libranza</a>
-        <a href="blog/index.html">Blog</a>
-        <a href="/#contacto">Contacto</a>
+        <a href="/credito-de-libranza/">Crédito de libranza</a>
+        <a href="/index.html#para-quien">Para quién</a>
+        <a href="/index.html#como-funciona">Cómo funciona</a>
+        <a href="/testimonios.html">Testimonios</a>
+        <a href="/blog/index.html">Blog</a>
+        <a href="/index.html#preguntas">Preguntas</a>
+        <a href="/index.html#contacto">Contacto</a>
       </nav>
       <div class="header__actions">
         <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="btn-wa" aria-label="Escríbenos por WhatsApp">
           <svg class="ico"><use href="#i-whatsapp"/></svg>
           <span>Escríbenos<small>Te orientamos</small></span>
         </a>
-        <a href="solicitar.html" class="btn btn-primary header__cta">Solicita tu análisis</a>
+        <a href="/solicitar.html" class="btn btn-primary header__cta">Solicita tu análisis</a>
       </div>
     </div>
   </header>

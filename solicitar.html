@@ -37,11 +37,13 @@
   <link rel="apple-touch-icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,700..900&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/generative/camino/poster.jpg" imagesrcset="assets/generative/camino/poster-m.jpg 720w, assets/generative/camino/poster.jpg 1440w" imagesizes="100vw" fetchpriority="high" />
-  <link rel="stylesheet" href="css/styles.css?v=20260920" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Archivo:wdth,wght@100..125,700..900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/solicitar/hero-d.webp?v=20260929b" media="(min-width:861px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/solicitar/hero-m.webp?v=20260929b" media="(max-width:860px)" fetchpriority="high" />
+  <link rel="stylesheet" href="css/styles.css?v=20260922" />
   <link rel="stylesheet" href="css/motion.css?v=20260920" />
-  <link rel="stylesheet" href="css/camino.css?v=20260920" />
+  <link rel="stylesheet" href="css/home.css?v=20260929g" />
+  <link rel="stylesheet" href="css/solicitar.css?v=20260929g" />
 
   <!-- ===================== DATOS ESTRUCTURADOS (schema.org) ===================== -->
   <script type="application/ld+json">
@@ -149,7 +151,7 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 </head>
-<body>
+<body class="sol">
 
   <!-- ===================== INTRO DE CARGA ===================== -->
   <div class="intro" aria-hidden="true">
@@ -193,111 +195,191 @@
     <symbol id="i-cc" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 10.5a2.2 2.2 0 1 0 0 3"/><path d="M17 10.5a2.2 2.2 0 1 0 0 3"/></symbol>
   </svg>
 
-  <!-- ===================== HEADER ===================== -->
-  <header class="header" id="top">
-    <div class="container header__inner">
-      <a href="index.html" class="header__logo" aria-label="CrediAyudarte - inicio">
-        <img src="assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" fetchpriority="high" decoding="async" />
+  <!-- ===================== NAVEGACIÓN (misma cápsula de la Home) ===================== -->
+  <header class="cnav" id="top">
+    <div class="cnav__inner">
+      <a href="index.html" class="cnav__logo" aria-label="CrediAyudarte - inicio">
+        <img src="assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" decoding="async" />
       </a>
-      <nav class="nav" id="nav">
+      <!-- Menú único del sitio: mismos 7 enlaces y mismo orden en todas las páginas -->
+      <nav class="cnav__links" id="nav" aria-label="Principal">
         <a href="credito-de-libranza/">Crédito de libranza</a>
         <a href="index.html#para-quien">Para quién</a>
-        <a href="index.html#proceso">Cómo funciona</a>
+        <a href="index.html#como-funciona">Cómo funciona</a>
         <a href="testimonios.html">Testimonios</a>
         <a href="blog/index.html">Blog</a>
         <a href="index.html#preguntas">Preguntas</a>
+        <a href="index.html#contacto">Contacto</a>
       </nav>
-      <div class="header__actions">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="btn-wa" aria-label="Escríbenos por WhatsApp">
-          <svg class="ico"><use href="#i-whatsapp"/></svg>
-          <span>Escríbenos<small>Te orientamos</small></span>
-        </a>
-        <a href="index.html" class="btn btn-ghost header__cta"><svg class="ico"><use href="#i-arrow-left"/></svg> Inicio</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." class="cnav__tel" target="_blank" rel="noopener"><span>WhatsApp</span> 315 247 4348</a>
+      <a href="solicitar.html" class="cbtn cbtn--primary cbtn--sm cnav__cta">Solicita tu análisis</a>
+      <button class="cnav__toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- ===================== EL CAMINO DEL CRÉDITO (hero controlado por el scroll) =====================
-       Cinco tramos: tu angustia con el caso → te recibimos → te orientamos → te explicamos tus
-       opciones → tú eliges el camino. Fotogramas en assets/generative/camino/{d,m}/NNN.webp;
-       js/camino.js los pinta según el avance. -->
-  <section class="camino" id="camino" data-frames="143" aria-label="El camino del crédito: de la deuda a un plan claro">
-    <div class="camino__panel">
-      <div class="camino__marco">
-        <picture class="camino__poster">
-          <source media="(max-width:860px)" srcset="assets/generative/camino/poster-m.jpg">
-          <img src="assets/generative/camino/poster.jpg" alt="Un pensionado, una docente, un empleado público y un militar agobiados por sus deudas frente a la recepción de CrediAyudarte" width="1440" height="810" fetchpriority="high" decoding="async">
-        </picture>
-        <canvas class="camino__lienzo" id="caminoLienzo" aria-hidden="true"></canvas>
-        <span class="camino__veil" aria-hidden="true"></span>
-        <ol class="camino__progreso" aria-hidden="true">
-          <li class="camino__seg is-done is-actual"></li><li class="camino__seg"></li><li class="camino__seg"></li><li class="camino__seg"></li><li class="camino__seg"></li>
-        </ol>
+  <main>
+
+  <!-- ===================== HERO =====================
+       Imagen clara (cintas de vidrio verde/amarillo sobre las nubes) dentro de
+       un marco redondeado con margen blanco, como el hero anterior. La cápsula
+       de navegación flota dentro del marco. Original: assets-src/solicitar/. -->
+  <section class="shero" aria-labelledby="sheroTitulo">
+    <div class="shero__marco">
+      <!-- Escritorio: escena completa detrás del texto · teléfono: recorte de las cinco personas bajo el texto -->
+      <picture class="shero__bg">
+        <source media="(max-width:860px)" srcset="assets/solicitar/hero-m.webp?v=20260929d" width="900" height="770" />
+        <img src="assets/solicitar/hero-d.webp?v=20260929d" alt="Un policía, un pensionado, un militar, una docente y un empleado público sonriendo con los brazos cruzados frente a un cielo despejado" width="1672" height="941" fetchpriority="high" decoding="async" />
+      </picture>
+      <span class="shero__veil" aria-hidden="true"></span>
+
+      <div class="shero__copy">
+        <span class="breadcrumb"><a href="index.html">Crédito de libranza en Colombia</a> / Solicita tu análisis</span>
+        <p class="kick shero__kick">Análisis gratuito de libranza · Sin anticipos</p>
+        <h1 id="sheroTitulo">Llegó la nómina. Pagaste cuotas, mercado, servicios… <mark>y otra vez falta mes.</mark></h1>
+        <p class="shero__lead">Si eres <strong>pensionado</strong> o trabajas con <strong>nómina del Gobierno</strong>, revisamos tu caso sin costo y te decimos, con la verdad, si un crédito de libranza te conviene… <strong>antes de que firmes.</strong></p>
+        <div class="shero__cta">
+          <a href="#creditForm" class="cbtn cbtn--primary cbtn--lg">Solicita tu análisis gratuito <svg class="ico" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
+          <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="cround lg" aria-label="Escríbenos por WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+        </div>
+        <ul class="shero__checks" aria-label="Nuestro compromiso">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Sin anticipos ni claves</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Costo total claro antes de firmar</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Si no te conviene, te lo decimos</li>
+        </ul>
       </div>
 
-      <div class="camino__copy">
-          <!-- 0 · Dolor / recepción agobiada -->
-          <article class="camino__paso is-on" data-paso="0">
-            <span class="breadcrumb"><a href="index.html">Crédito de libranza en Colombia</a> / Solicita tu análisis</span>
-            <h1><span class="h1-kicker">Análisis gratuito de crédito de libranza · Sin anticipos</span>Llegó la nómina. Pagaste cuotas, mercado, servicios… <mark class="mk-yellow">y otra vez falta mes.</mark></h1>
-            <p>Si eres <strong>pensionado</strong> o trabajas con <strong>nómina del Gobierno</strong>, esto te interesa.</p>
-            <span class="camino__pista">Sigue bajando <svg class="ico"><use href="#i-arrow-down"/></svg></span>
-          </article>
-
-          <!-- 1 · Te recibimos -->
-          <article class="camino__paso" data-paso="1">
-            <h2>Aquí te recibimos <mark class="mk-yellow">con tu caso.</mark></h2>
-            <p>Sin filas eternas ni citas a ciegas. Nos sentamos contigo, revisamos lo que traes y empezamos por entender tu situación real.</p>
-          </article>
-
-          <!-- 2 · Te orientamos -->
-          <article class="camino__paso" data-paso="2">
-            <h2>Te orientamos y te informamos, <mark class="mk-yellow">sin letra pequeña.</mark></h2>
-            <p>Antes de pedirte un solo papel, te explicamos con calma cómo funciona tu pagaduría, qué te están descontando y cuánto margen real tienes. Llevamos años escuchando casos como el tuyo.</p>
-            <div class="camino__proof">
-              <a href="testimonios.html"><img src="assets/testigos/foto-1.jpeg" alt="Clienta pensionada atendida por una asesora de libranza de CrediAyudarte" width="900" height="1600" loading="lazy" decoding="async"></a>
-              <a href="testimonios.html"><img src="assets/testigos/poster-4.jpg" alt="Pensionado esperando su turno en la oficina de CrediAyudarte en Cúcuta" width="478" height="850" loading="lazy" decoding="async"></a>
-              <a href="testimonios.html"><img src="assets/testigos/poster-6.jpg" alt="Asesora revisando el caso de libranza de una clienta" width="478" height="850" loading="lazy" decoding="async"></a>
-              <a href="testimonios.html"><img src="assets/testigos/poster-1.jpg" alt="Cliente firmando su solicitud de crédito de libranza con una asesora" width="478" height="850" loading="lazy" decoding="async"></a>
-              <a href="testimonios.html"><img src="assets/testigos/foto-3.jpeg" alt="Clientas frente a la oficina de CrediAyudarte, asesoría de libranza en Cúcuta" width="1600" height="900" loading="lazy" decoding="async"></a>
-            </div>
-            <a href="testimonios.html" class="camino__enlace">Ver sus testimonios <svg class="ico"><use href="#i-arrow-right"/></svg> <small>· fotos reales, compartidas con su permiso</small></a>
-          </article>
-
-          <!-- 3 · Te explicamos tus opciones -->
-          <article class="camino__paso" data-paso="3">
-            <h2>Te explicamos tus opciones y <mark class="mk-yellow">cuál te conviene más.</mark></h2>
-            <ol class="camino__pasos">
-              <li><svg class="ico"><use href="#i-search"/></svg><div><b>Analizamos</b><span>tu caso, sin costo y sin compromiso</span></div></li>
-              <li><svg class="ico"><use href="#i-trending"/></svg><div><b>Comparamos</b><span>entidades con convenio de libranza</span></div></li>
-              <li><svg class="ico"><use href="#i-file"/></svg><div><b>Explicamos</b><span>el costo real antes de que firmes</span></div></li>
-              <li><svg class="ico"><use href="#i-heart"/></svg><div><b>Acompañamos</b><span>hasta que el dinero esté en tu cuenta</span></div></li>
-            </ol>
-          </article>
-
-          <!-- 4 · Tú eliges + CTA -->
-          <article class="camino__paso" data-paso="4">
-            <h2>Te mostramos todos los escenarios. <mark class="mk-yellow">Tú eliges por dónde ir.</mark></h2>
-            <ul class="camino__confianza">
-              <li><svg class="ico"><use href="#i-check"/></svg> No te pedimos dinero por adelantado, claves ni datos bancarios.</li>
-              <li><svg class="ico"><use href="#i-check"/></svg> Llenas unos datos básicos y de inmediato recibes por WhatsApp la confirmación de que tu caso entró a revisión.</li>
-              <li><svg class="ico"><use href="#i-check"/></svg> La gerencia de CrediAyudarte te contacta en 24 a 48 horas hábiles.</li>
-              <li><svg class="ico"><use href="#i-check"/></svg> Si tu caso no tiene opción, también te lo decimos, con respeto y sin hacerte perder tiempo.</li>
-            </ul>
-            <a href="#creditForm" class="btn btn-primary camino__cta">Solicita tu análisis gratuito <svg class="ico"><use href="#i-arrow-right"/></svg></a>
-            <small class="camino__lema">La peor diligencia es la que no se hace.</small>
-          </article>
-      </div>
+      <a href="#recorrido" class="shero__pista">Así trabajamos contigo <svg class="ico" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
     </div>
+  </section>
+
+  <!-- ===================== RECORRIDO APILADO 01–04 =====================
+       Los videos de la home anterior (assets/generative/p01–p04). Paneles
+       sticky que se cubren uno a otro; js/recorrido.js marca el activo,
+       reproduce solo su video y abre el modal de preguntas. -->
+  <section class="stack" id="recorrido" aria-label="Cómo trabajamos contigo">
+    <ol class="stack__index" aria-hidden="true">
+      <li class="is-active">Un análisis honesto <b>01</b></li>
+      <li>Tu pagaduría, clara <b>02</b></li>
+      <li>Tus opciones <b>03</b></li>
+      <li>Acompañamiento <b>04</b></li>
+    </ol>
+
+    <article class="stack__panel" data-n="01">
+      <div class="stack__media" aria-hidden="true">
+        <video muted loop playsinline preload="none" poster="assets/generative/p01-poster.webp" width="1920" height="1080">
+          <source src="assets/generative/p01.webm" type="video/webm" />
+          <source src="assets/generative/p01.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <span class="stack__veil" aria-hidden="true"></span>
+      <div class="ui" style="--ux:62%;--uy:56%;--uw:min(300px,22vw)" aria-hidden="true">
+        <div class="ui-card">
+          <div class="ui-card__head"><span class="dot"></span> Tu preanálisis · dos opciones</div>
+          <table class="ui-tabla">
+            <thead><tr><th></th><th>Opción A</th><th>Opción B</th></tr></thead>
+            <tbody>
+              <tr><td>Cuota</td><td class="ok">$ 412.000</td><td>$ 389.000</td></tr>
+              <tr><td>Plazo</td><td class="ok">72 meses</td><td class="no">120 meses</td></tr>
+              <tr><td>Costo total</td><td class="ok">$ 29,6 M</td><td class="no">$ 46,7 M</td></tr>
+            </tbody>
+            <tfoot><tr><td colspan="3">✓ Te conviene la A: pagas 17 M menos</td></tr></tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="container">
+        <div class="stack__copy">
+          <p class="stack__kick"><b>01</b> Así trabajamos contigo</p>
+          <h2>Un análisis <mark>honesto</mark> de tu caso</h2>
+          <p>Revisamos tu perfil y tu pagaduría sin costo, comparamos opciones reales y te decimos si vale la pena avanzar… o si es mejor no hacerlo.</p>
+          <div class="stack__qs">
+            <button type="button" class="stack__q" data-pregunta="que-es-libranza">¿Qué es un crédito por libranza? <i>+</i></button>
+            <button type="button" class="stack__q" data-pregunta="cuanto-cuesta">¿Cuánto cuesta que revisen mi caso? <i>+</i></button>
+            <button type="button" class="stack__q" data-pregunta="garantizan">¿Me garantizan que me aprueban? <i>+</i></button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stack__panel stack__panel--marco" data-n="02" style="--foco:50% 50%">
+      <div class="stack__media" aria-hidden="true">
+        <div class="marco-foto">
+          <img src="assets/generative/p02.webp" alt="" width="1080" height="1200" loading="lazy" decoding="async" />
+          <ul class="manuscrito" aria-hidden="true">
+            <li style="--mx:8%;--my:14%;--mr:-7deg">Te decimos la verdad</li>
+            <li style="--mx:54%;--my:16%;--mr:5deg">No prometemos milagros</li>
+            <li style="--mx:6%;--my:44%;--mr:-4deg">Te informamos</li>
+            <li style="--mx:6%;--my:58%;--mr:-3deg">Sin anticipos</li>
+            <li style="--mx:9%;--my:79%;--mr:-5deg">Tú decides al final</li>
+            <li style="--mx:36%;--my:4%;--mr:3deg">Sin letra pequeña</li>
+          </ul>
+        </div>
+      </div>
+      <span class="stack__veil" aria-hidden="true"></span>
+      <div class="container">
+        <div class="stack__copy">
+          <p class="stack__kick"><b>02</b> Antes de pedirte un papel</p>
+          <h2>Tu pagaduría y tus descuentos, <mark>claros</mark></h2>
+          <p>Todo empieza por saber quién te paga y cuánto ya te descuentan. Con eso vemos qué entidades tienen convenio contigo y cuánto espacio real tienes.</p>
+          <div class="stack__qs">
+            <button type="button" class="stack__q" data-pregunta="pagaduria">¿Qué es la pagaduría y por qué la preguntan? <i>+</i></button>
+            <button type="button" class="stack__q" data-pregunta="desprendible">¿Qué es un desprendible? <i>+</i></button>
+            <button type="button" class="stack__q" data-pregunta="datos">¿Qué datos me van a pedir? <i>+</i></button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stack__panel stack__panel--der" data-n="03" style="--foco:100% center">
+      <div class="stack__media" aria-hidden="true">
+        <video muted loop playsinline preload="none" poster="assets/generative/p03-poster.webp" width="1920" height="1080">
+          <source src="assets/generative/p03.webm" type="video/webm" />
+          <source src="assets/generative/p03.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <span class="stack__veil" aria-hidden="true"></span>
+      <div class="container">
+        <div class="stack__copy">
+          <p class="stack__kick"><b>03</b> Sin letra pequeña</p>
+          <h2>Tus opciones explicadas <mark>antes de firmar</mark></h2>
+          <p>Te mostramos cuota, plazo y costo total de cada camino, en palabras claras. Si una opción te deja peor, te lo decimos de frente.</p>
+          <div class="stack__qs">
+            <button type="button" class="stack__q" data-pregunta="compra-cartera">¿La compra de cartera siempre conviene? <i>+</i></button>
+            <button type="button" class="stack__q" data-pregunta="bajar-cuota">¿Me pueden ayudar a bajar la cuota? <i>+</i></button>
+            <button type="button" class="stack__q" data-pregunta="total">¿Cómo sé cuánto voy a pagar en total? <i>+</i></button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stack__panel stack__panel--verde" data-n="04" style="--foco:center 40%">
+      <div class="stack__media" aria-hidden="true">
+        <img src="assets/generative/p04.webp" alt="" width="1600" height="900" loading="lazy" decoding="async" />
+      </div>
+      <span class="stack__veil" aria-hidden="true"></span>
+      <div class="ui" style="--ux:auto;--uy:auto;right:clamp(1rem,4vw,4rem);bottom:clamp(5.4rem,10vh,7rem);width:auto" aria-hidden="true">
+        <span class="ui-chip"><svg class="ico"><use href="#i-map"/></svg> Nuestra oficina · C.C. International, Cúcuta</span>
+      </div>
+      <div class="container">
+        <div class="stack__copy">
+          <p class="stack__kick"><b>04</b> Una persona real</p>
+          <h2>Acompañamiento humano <mark>hasta el final</mark></h2>
+          <p>Detrás de cada caso hay una persona que te responde por WhatsApp, te explica con calma y te acompaña con la entidad si decides avanzar. Foto real de nuestra oficina, compartida con permiso.</p>
+          <div class="stack__qs">
+            <button type="button" class="stack__q" data-pregunta="despues">¿Qué pasa después de que les escribo? <i>+</i></button>
+            <button type="button" class="stack__q" data-pregunta="pais">¿Atienden en todo el país? <i>+</i></button>
+            <button type="button" class="stack__q" data-pregunta="seguro">¿Es seguro darles mi información? <i>+</i></button>
+          </div>
+        </div>
+      </div>
+    </article>
   </section>
 
   <!-- ===================== CLIENTES REALES (carrusel continuo) ===================== -->
   <section class="creeles" aria-label="Clientes reales de CrediAyudarte">
     <div class="container">
-      <p class="creeles__tag">No nos creas a nosotros, <span class="hl-green">créeles a ellos</span></p>
+      <p class="creeles__tag">No nos creas a nosotros, <mark>créeles a ellos.</mark></p>
     </div>
     <div class="creeles__pista" aria-hidden="true">
       <div class="creeles__tren">
@@ -453,27 +535,27 @@
     <div class="container">
       <header class="section__head reveal">
         <span class="tag">Quiénes somos</span>
-        <h2>¿Qué es <span class="hl-green">CrediAyudarte</span> y cómo te ayuda con tu libranza?</h2>
+        <h2>¿Qué es <mark>CrediAyudarte</mark> y cómo te ayuda con tu libranza?</h2>
         <p>CrediAyudarte es una <strong>asesoría independiente especializada en crédito de libranza para pensionados y empleados públicos en Colombia</strong>, con más de 10 años acompañando al sector público. No somos un banco: no prestamos el dinero directamente. Analizamos tu caso, buscamos entidades compatibles con tu perfil y pagaduría, te explicamos costos y riesgos, y <strong>revisamos si el crédito realmente te conviene antes de que firmes</strong>… incluso para decirte cuándo <strong>no</strong> te conviene.</p>
       </header>
 
       <div class="grid grid-4">
-        <article class="who-card reveal">
+        <article class="who-card lg reveal">
           <div class="who-card__ico"><svg class="ico"><use href="#i-search"/></svg></div>
           <h3>Analizamos</h3>
           <p>Estudiamos tu perfil, tu pagaduría y tu situación sin costo.</p>
         </article>
-        <article class="who-card reveal">
+        <article class="who-card lg reveal">
           <div class="who-card__ico"><svg class="ico"><use href="#i-shield"/></svg></div>
           <h3>Comparamos</h3>
           <p>Te mostramos opciones reales y seguras según tu caso.</p>
         </article>
-        <article class="who-card reveal">
+        <article class="who-card lg reveal">
           <div class="who-card__ico"><svg class="ico"><use href="#i-file"/></svg></div>
           <h3>Explicamos</h3>
           <p>Costos, plazo y consecuencias, antes de que tomes una decisión.</p>
         </article>
-        <article class="who-card reveal">
+        <article class="who-card lg reveal">
           <div class="who-card__ico"><svg class="ico"><use href="#i-heart"/></svg></div>
           <h3>Acompañamos</h3>
           <p>Estamos contigo hasta el desembolso o la decisión de no avanzar.</p>
@@ -487,12 +569,12 @@
     <div class="container">
       <header class="section__head reveal">
         <span class="tag">Para ti</span>
-        <h2>Libranza para pensionados y <span class="hl-green">empleados del gobierno</span></h2>
+        <h2>Libranza para pensionados y <mark>empleados del gobierno</mark></h2>
         <p>Conocemos tu realidad y tus descuentos. Esto es lo que revisamos contigo según tu perfil.</p>
       </header>
 
       <div class="perfil-cards">
-        <article class="perfil-card reveal reveal--left">
+        <article class="perfil-card lg reveal reveal--left">
           <div class="perfil-card__ico"><svg class="ico"><use href="#i-award"/></svg></div>
           <h3>Si eres pensionado</h3>
           <ul>
@@ -502,7 +584,7 @@
             <li><svg class="ico"><use href="#i-check"/></svg> Compra de cartera solo si de verdad mejoras después de costos.</li>
           </ul>
         </article>
-        <article class="perfil-card reveal reveal--right">
+        <article class="perfil-card lg reveal reveal--right">
           <div class="perfil-card__ico"><svg class="ico"><use href="#i-briefcase"/></svg></div>
           <h3>Si eres empleado del gobierno</h3>
           <ul>
@@ -521,7 +603,7 @@
     <div class="container">
       <header class="section__head reveal">
         <span class="tag">Testimonios reales</span>
-        <h2>Clientes de libranza en Cúcuta que hoy <span class="hl-green">respiran tranquilos</span></h2>
+        <h2>Clientes de libranza en Cúcuta que hoy <mark>respiran tranquilos</mark></h2>
         <p>Fotos y videos tomados en nuestra oficina de Cúcuta, compartidos con su permiso.</p>
       </header>
 
@@ -555,7 +637,7 @@
     <div class="container fb__grid">
       <div class="fb__copy reveal reveal--left">
         <span class="tag">Síguenos en Facebook</span>
-        <h2>Únete a nuestra comunidad <span class="hl-green">y aprende a decidir mejor</span></h2>
+        <h2>Únete a nuestra comunidad <mark>y aprende a decidir mejor</mark></h2>
         <p>Publicamos consejos claros, casos reales y todo lo que deberías revisar antes de firmar. Síguenos y no te pierdas nada.</p>
         <ul class="fb__perks">
           <li><svg class="ico"><use href="#i-check"/></svg> Tips para no endeudarte de más</li>
@@ -597,7 +679,7 @@
     <div class="container mapa__grid">
       <div class="mapa__copy reveal reveal--left">
         <span class="tag">Dónde estamos</span>
-        <h2>Asesoría de libranza en <span class="hl-green">Cúcuta</span>: visítanos o escríbenos</h2>
+        <h2>Asesoría de libranza en <mark>Cúcuta</mark>: visítanos o escríbenos</h2>
         <p>Estamos en el Centro Comercial International. Si prefieres, también te atendemos de forma virtual por WhatsApp desde cualquier ciudad del país.</p>
         <ul class="mapa__data">
           <li><svg class="ico"><use href="#i-map"/></svg> Calle 12 # 4–47, Local 4 · C.C. International, Cúcuta</li>
@@ -617,19 +699,20 @@
     </div>
   </section>
 
-  <!-- ===================== CTA FINAL ===================== -->
-  <section class="cta-band">
-    <span class="dots dots--tl" aria-hidden="true"></span>
-    <span class="dots dots--br" aria-hidden="true"></span>
-    <div class="container cta-band__inner">
-      <div class="cta-band__chat"><svg class="ico"><use href="#i-whatsapp"/></svg></div>
-      <div class="cta-band__copy">
-        <h2>¿Listo para empezar? <span>Sube y llena el formulario.</span></h2>
-        <p>Tus datos llegan por WhatsApp y un asesor real te orienta con la verdad.</p>
-      </div>
-      <a href="#top" class="btn btn-yellow btn-lg">Ir al formulario</a>
+  <!-- ===================== CTA FINAL (mismo cierre de la Home) ===================== -->
+  <section class="cfinal">
+    <span class="orb orb--y" style="--x:8%;--y:18%;--s:84px" aria-hidden="true"></span>
+    <span class="orb orb--b" style="--x:16%;--y:70%;--s:40px" aria-hidden="true"></span>
+    <span class="orb orb--w" style="--x:88%;--y:26%;--s:110px" aria-hidden="true"></span>
+    <span class="orb orb--y" style="--x:80%;--y:78%;--s:46px" aria-hidden="true"></span>
+    <div class="hsec__wrap cfinal__inner">
+      <h2>Antes de firmar, <mark>revisa.</mark></h2>
+      <p>Llena el formulario: tus datos llegan por WhatsApp y un asesor real te orienta con la verdad.</p>
+      <a href="#creditForm" class="cbtn cbtn--light cbtn--lg lg">Ir al formulario <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
     </div>
   </section>
+
+  </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
@@ -682,9 +765,31 @@
     <span>Subiendo tu desprendible de forma segura… 📎</span>
   </div>
 
-  <script defer src="js/camino.js?v=20260920"></script>
+  <!-- Modal de preguntas del recorrido (contenido en js/recorrido.js) -->
+  <dialog class="faq-modal" aria-labelledby="faqModalTitulo">
+    <div class="faq-modal__wrap">
+      <nav class="faq-modal__rail" aria-label="Todas las preguntas"></nav>
+      <div class="faq-modal__card">
+        <div class="faq-modal__shot"><img src="" alt="" width="1600" height="800" /></div>
+        <button type="button" class="faq-modal__close" aria-label="Cerrar">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+        <div class="faq-modal__body">
+          <h3 id="faqModalTitulo"></h3>
+          <div class="faq-modal__texto"></div>
+          <ol class="faq-modal__pasos"></ol>
+          <div class="faq-modal__cta">
+            <a href="#creditForm" class="cbtn cbtn--primary">Llenar el formulario</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
   <script defer src="js/script.js?v=20260819"></script>
   <script defer src="js/solicitar.js?v=20260819"></script>
   <script defer src="js/motion.js?v=20260920"></script>
+  <script defer src="js/recorrido.js?v=20260929"></script>
+  <script defer src="js/home.js?v=20260929c"></script>
 </body>
 </html>
