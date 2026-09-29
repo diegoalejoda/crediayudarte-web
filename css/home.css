@@ -483,32 +483,36 @@ html:not(.js) .cnav__inner,.cnav.is-solid .cnav__inner{background:linear-gradien
   .js .capas{width:15rem}
 }
 
-/* ---------- Retrato (móvil y tablet vertical): banda visual abajo, copy en columna ---------- */
+/* ---------- Retrato (móvil y tablet vertical) ----------
+   Arriba, el video COMPLETO en un cuadro 16:9 (sin recortes); debajo, el copy
+   y las piezas animadas de cada capítulo. (Antes el video iba recortado en una
+   banda abajo y el texto encima; decisión del dueño 2026-09-29.) */
 @media (max-aspect-ratio:1/1){
-  .cine{--gx:1.25rem;--gb:clamp(1rem,3vh,1.8rem)}
+  .cine{--gx:1.25rem;--gb:clamp(1rem,3vh,1.8rem);--mt:calc(var(--nav-h) + .35rem);--mh:calc((100vw - 1.5rem) * 9 / 16)}
   .js .cine__media{
-    top:auto;bottom:0;height:58%;transform-origin:50% 100%;
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%),linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%);
-    -webkit-mask-composite:source-in;
-    mask-image:linear-gradient(to bottom,transparent 0,#000 22%),linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%);
-    mask-composite:intersect;
+    top:var(--mt);left:.75rem;right:.75rem;bottom:auto;height:auto;aspect-ratio:16/9;
+    border-radius:20px;overflow:hidden;background:#fff;transform-origin:50% 0;
+    -webkit-mask-image:none;mask-image:none;
+    box-shadow:0 18px 40px -26px rgba(46,42,48,.45);
   }
-  .js .cine__img,.cine__vid{object-position:var(--pm,50%) 50%}
-  /* Cada capítulo es una columna: texto arriba, CTA abajo sobre el reflejo */
-  .js .cap{display:flex;flex-direction:column;align-items:flex-start;padding:calc(var(--nav-h) + 2vh) var(--gx) var(--gb)}
+  .js .cine__img,.cine__vid{object-position:50% 50%}
+  /* Cada capítulo es una columna debajo del cuadro del video; el CTA baja al final */
+  .js .cap{display:flex;flex-direction:column;align-items:flex-start;padding:calc(var(--mt) + var(--mh) + 1.1rem) var(--gx) var(--gb)}
   .js .cap > *,.js .cap--01 .hero__eyebrow,.js .hero__a,.js .hero__b,.js .hero__lead,.js .hero__cue,
   .js .cap .cap__box,.js .cap__aside,.js .capas,.js .fotos{position:static;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:none;height:auto;transform:none;text-align:left}
   .js .cap__veil,.js .cine__hud,.js .capas{display:none}
   .js .hero__eyebrow{font-size:.66rem;letter-spacing:.1em}
-  .js .hero__title{margin-top:.9rem;width:100%;font-size:min(12.4vw,7vh)}
+  .js .hero__title{margin-top:.6rem;width:100%;font-size:min(11vw,5.6vh)}
   .js .hero__b{text-align:left}
   .js .hero__lead{margin-top:1rem}
   .js .hero__tag{display:none}
   .js .hero__text{margin-top:0;font-size:clamp(.95rem,4vw,1.08rem);max-width:32ch}
   .js .hero__cta{position:static;margin-top:auto;align-self:center;transform:none}
   .js .hero__cue{display:none}
-  .cap__title,.js .cap--06 .cap__title,.js .cap--08 .cap__title{font-size:min(clamp(1.7rem,7vw,2.8rem),5.2vh)}
-  .js .cap--09 .cap__title{font-size:min(11.5vw,6.6vh)}
+  .cap__title,.js .cap--06 .cap__title,.js .cap--08 .cap__title{font-size:min(clamp(1.6rem,6.6vw,2.6rem),4.6vh)}
+  .js .cap--09 .cap__title{font-size:min(10vw,5.4vh)}
+  /* en el 04 la consola ya nombra las cinco variables: los chips sobran aquí */
+  .js .cap--04 .cap__chips{display:none}
   .cbtn--hero{min-height:58px;padding:.95rem 2rem;font-size:1.12rem}
   .hero__cta .cround{width:58px;height:58px}
   .mixer{margin-top:.9rem;max-width:none;width:100%}
@@ -543,10 +547,19 @@ html:not(.js) .cnav__inner,.cnav.is-solid .cnav__inner{background:linear-gradien
   .js .fotos li:nth-child(2){rotate:3deg;top:-10px}
   .js .fotos li:nth-child(3){rotate:-3deg}
 }
+/* Retrato con poca altura (iPhone SE y similares): solo lo esencial bajo el video */
+@media (max-aspect-ratio:1/1) and (max-height:720px){
+  .js .hero__text{display:none}
+  .js .cap--08 .fotos{display:none}
+  .mixer i{height:56px}
+  .mixer{padding:.7rem .9rem .8rem}
+  .anios{padding:.7rem .9rem}
+  .anios__n span{font-size:2.8rem}
+}
 @media (max-aspect-ratio:1/1) and (min-width:700px){
   .cine{--gx:8%}
-  .js .hero__title{font-size:min(12vw,7.4vh)}
-  .cap__title,.js .cap--06 .cap__title,.js .cap--08 .cap__title{font-size:min(clamp(2.4rem,5.6vw,3.8rem),5vh)}
+  .js .hero__title{font-size:min(9vw,5.4vh)}
+  .cap__title,.js .cap--06 .cap__title,.js .cap--08 .cap__title{font-size:min(clamp(2.2rem,5.2vw,3.4rem),4.4vh)}
   .scan,.check,.barras,.anios{max-width:34rem}
 }
 

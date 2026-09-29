@@ -29,18 +29,17 @@
              Los tramos lentos coinciden con la lectura del copy.
      seq   = ventana en que aparecen, de a uno, los hijos de .seq
              (capas, revisión, variables, perfiles, claridad, fotos)
-     pm    = encuadre horizontal en retrato (object-position x)
-     bs    = escala de la banda visual en retrato (el isotipo entra completo) */
+     (en retrato el video va entero en un cuadro 16:9 arriba del texto) */
   var CFG = [
-    { len: 150, h: 0,   b: 0,   c: 0,   out: .42, tv: [[0, 0], [.38, .2], [1, 2.25]], bs: .84 },
-    { len: 175, h: .1,  b: .2,          out: .76, tv: [[0, 2.25], [.18, 2.83], [.74, 3.67], [1, 5.1]], seq: [.28, .5], bs: .9 },
+    { len: 150, h: 0,   b: 0,   c: 0,   out: .42, tv: [[0, 0], [.38, .2], [1, 2.25]] },
+    { len: 175, h: .1,  b: .2,          out: .76, tv: [[0, 2.25], [.18, 2.83], [.74, 3.67], [1, 5.1]], seq: [.28, .5] },
     { len: 165, h: .12, b: .22,         out: .78, tv: [[0, 5.1], [.22, 5.65], [.78, 5.92], [1, 6.3]], seq: [.32, .58] },
     { len: 175, h: .1,  b: .2,          out: .78, tv: [[0, 6.3], [.2, 7], [.78, 8.05], [1, 9.03]], seq: [.26, .5] },
     { len: 175, h: .12, b: .22, c: .32, out: .78, tv: [[0, 9.03], [.22, 10.4], [.78, 12.1], [1, 13.25]] },
-    { len: 180, h: .12, b: .22,         out: .8,  tv: [[0, 13.25], [.24, 14.2], [.8, 14.8], [1, 15.7]], seq: [.26, .5], pm: '50%' },
-    { len: 170, h: .1,  b: .16,         out: .82, tv: [[0, 15.7], [.16, 16.23], [.82, 16.9], [1, 17.48]], seq: [.24, .52], pm: '62%' },
-    { len: 200, h: .1,  b: .2,          out: .84, tv: [[0, 17.48], [.2, 18.15], [.84, 19.18], [1, 19.82]], seq: [.3, .52], pm: '60%' },
-    { len: 140, h: .2,  b: .32, c: .42, out: 9,   tv: [[0, 19.82], [.55, 21.27], [1, 21.45]], bs: .84 }
+    { len: 180, h: .12, b: .22,         out: .8,  tv: [[0, 13.25], [.24, 14.2], [.8, 14.8], [1, 15.7]], seq: [.26, .5] },
+    { len: 170, h: .1,  b: .16,         out: .82, tv: [[0, 15.7], [.16, 16.23], [.82, 16.9], [1, 17.48]], seq: [.24, .52] },
+    { len: 200, h: .1,  b: .2,          out: .84, tv: [[0, 17.48], [.2, 18.15], [.84, 19.18], [1, 19.82]], seq: [.3, .52] },
+    { len: 140, h: .2,  b: .32, c: .42, out: 9,   tv: [[0, 19.82], [.55, 21.27], [1, 21.45]] }
   ];
   var TAIL = 45;          // svh finales: el universo se despide mientras entra la página
   var K_BAND = 0.85;      // en retrato los capítulos son algo más cortos
@@ -73,12 +72,11 @@
   }
 
   /* ---------- Medidas ---------- */
-  var starts = [], lens = [], endCaps = 0, tailPx = 1, band = mqBand.matches, narrow = false;
+  var starts = [], lens = [], endCaps = 0, tailPx = 1, band = mqBand.matches;
   var perfiles = Array.prototype.slice.call(sec.querySelectorAll('.perfiles li'));
 
   function layout() {
     band = mqBand.matches;
-    narrow = window.innerWidth < 640;
     var unit = stage.offsetHeight / 100;
     var k = band ? K_BAND : 1;
     var acc = 0;
@@ -159,6 +157,14 @@
     v.addEventListener('error', function () { lite = true; release(); requestFrame(); });
     media.appendChild(v);
     vid = v;
+    // iOS Safari ignora preload="auto": no baja datos (y nunca dispara
+    // "loadeddata") hasta que alguien llama play(). Sin esto el iPhone se
+    // quedaba para siempre en los fotogramas fijos. Silenciado + playsinline
+    // se permite sin gesto; se pausa en cuanto arranca (sigue oculto hasta
+    // estar listo, así que no se ve reproducirse).
+    var kick = v.play();
+    if (kick && kick.then) kick.then(function () { v.pause(); }, function () {});
+    v.addEventListener('playing', function once() { v.removeEventListener('playing', once); v.pause(); });
   }
 
   function release() {
@@ -290,7 +296,7 @@
   }
 
   /* ---------- Visual ---------- */
-  var lastCam = null, lastPm = null;
+  var lastCam = null;
 
   function visual(i, p, tail) {
     var c = CFG[i];
@@ -318,30 +324,17 @@
       setImg(j, o, s);
     }
 
-    // Retrato: encuadre y escala de la banda viajan entre capítulos
-    var nx = CFG[i + 1] || c, f = i < N - 1 ? ease(clamp((p - 0.7) / 0.3)) : 0;
-    if (band) {
-      var pm = lerpPct(c.pm || '50%', nx.pm || '50%', f);
-      if (pm !== lastPm) {
-        lastPm = pm;
-        imgs.forEach(function (im) { im.style.objectPosition = pm + ' 50%'; });
-        if (v) v.style.objectPosition = pm + ' 50%';
-      }
-    }
-    var bs = band && narrow ? (c.bs || 1) + ((nx.bs || 1) - (c.bs || 1)) * f : 1;
+    // Cola: el universo sube y se desvanece mientras entra la página.
+    // (En retrato el video va entero en un cuadro 16:9 arriba: ya no se
+    // reencuadra ni se escala por capítulo.)
     var te = ease(tail);
-    var key = bs.toFixed(4) + '|' + te.toFixed(3);
+    var key = te.toFixed(3);
     if (key !== lastCam) {
       lastCam = key;
       var y = -6 * te;
-      media.style.transform = (y || bs !== 1) ? 'translate3d(0,' + y.toFixed(2) + '%,0)' + (bs !== 1 ? ' scale(' + bs.toFixed(4) + ')' : '') : '';
+      media.style.transform = y ? 'translate3d(0,' + y.toFixed(2) + '%,0)' : '';
       media.style.opacity = te > 0 ? (1 - 0.88 * te).toFixed(3) : '';
     }
-  }
-
-  function lerpPct(a, b, e) {
-    var x = parseFloat(a), y = parseFloat(b);
-    return (x + (y - x) * e).toFixed(1) + '%';
   }
 
   /* ---------- Carga anticipada de fotogramas ---------- */
