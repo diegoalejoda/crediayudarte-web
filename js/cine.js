@@ -2,7 +2,9 @@
    CrediAyudarte — Experiencia cinematográfica de la Home
    Un escenario sticky (100svh) que recorre con el scroll un solo video
    (assets/cine/v/d|m/hero.webm|mp4). Cada capítulo está anclado a un tramo del
-   video y decide cuándo entra y sale su copy. Mientras el video carga
+   video y decide cuándo entra y sale su copy. Cada gesto (un clic de la
+   rueda, un deslizamiento, una tecla) reproduce el video hasta la estación
+   siguiente y se detiene ahí (ver "Paso a paso"). Mientras el video carga
    (o con ahorro de datos / movimiento reducido) se ven fotogramas fijos.
    Sin librerías.
    =================================================================== */
@@ -28,18 +30,20 @@
      tv    = tramo del video: pares [progreso, segundo]; entre pares, lineal.
              Los tramos lentos coinciden con la lectura del copy.
      seq   = ventana en que aparecen, de a uno, los hijos de .seq
-             (capas, revisión, variables, perfiles, claridad, fotos)
+             (capas, variables + revisión, perfiles, claridad + fotos)
+     rest  = progreso en que se detiene la estación (todo su copy ya entró)
+     hold  = hasta dónde avanza despacio el recorrido automático al leerla
+     El túnel (5,1–6,3 s) abre el 03, las nubes (9,03–13,25 s) el 04 y el
+     escudo (15,7–17,48 s) el 05: son transiciones sin texto que se atraviesan
+     sin detenerse.
      (en retrato el video va entero en un cuadro 16:9 arriba del texto) */
   var CFG = [
-    { len: 150, h: 0,   b: 0,   c: 0,   out: .42, tv: [[0, 0], [.38, .2], [1, 2.25]] },
-    { len: 175, h: .1,  b: .2,          out: .76, tv: [[0, 2.25], [.18, 2.83], [.74, 3.67], [1, 5.1]], seq: [.28, .5] },
-    { len: 165, h: .12, b: .22,         out: .78, tv: [[0, 5.1], [.22, 5.65], [.78, 5.92], [1, 6.3]], seq: [.32, .58] },
-    { len: 175, h: .1,  b: .2,          out: .78, tv: [[0, 6.3], [.2, 7], [.78, 8.05], [1, 9.03]], seq: [.26, .5] },
-    { len: 175, h: .12, b: .22, c: .32, out: .78, tv: [[0, 9.03], [.22, 10.4], [.78, 12.1], [1, 13.25]] },
-    { len: 180, h: .12, b: .22,         out: .8,  tv: [[0, 13.25], [.24, 14.2], [.8, 14.8], [1, 15.7]], seq: [.26, .5] },
-    { len: 170, h: .1,  b: .16,         out: .82, tv: [[0, 15.7], [.16, 16.23], [.82, 16.9], [1, 17.48]], seq: [.24, .52] },
-    { len: 200, h: .1,  b: .2,          out: .84, tv: [[0, 17.48], [.2, 18.15], [.84, 19.18], [1, 19.82]], seq: [.3, .52] },
-    { len: 140, h: .2,  b: .32, c: .42, out: 9,   tv: [[0, 19.82], [.55, 21.27], [1, 21.45]] }
+    { len: 150, h: 0,   b: 0,   c: 0,   out: .42, rest: 0,   hold: 0,   tv: [[0, 0], [.38, .2], [1, 2.25]] },
+    { len: 175, h: .1,  b: .2,          out: .76, rest: .56, hold: .68, tv: [[0, 2.25], [.18, 2.83], [.74, 3.67], [1, 5.1]], seq: [.28, .5] },
+    { len: 300, h: .36, b: .42, c: .5,  out: .86, rest: .64, hold: .76, tv: [[0, 5.1], [.26, 6.3], [.4, 7], [.84, 8.05], [1, 9.03]], seq: [.44, .6] },
+    { len: 320, h: .44, b: .5,  c: .6,  out: .88, rest: .66, hold: .78, tv: [[0, 9.03], [.34, 13.25], [.46, 14.2], [.86, 14.8], [1, 15.7]], seq: [.5, .6] },
+    { len: 280, h: .34, b: .4,  c: .46, out: .88, rest: .68, hold: .78, tv: [[0, 15.7], [.24, 17.48], [.4, 18.15], [.86, 19.18], [1, 19.82]], seq: [.46, .62] },
+    { len: 140, h: .2,  b: .32, c: .42, out: 9,   rest: .5,  hold: .62, tv: [[0, 19.82], [.55, 21.27], [1, 21.45]] }
   ];
   var TAIL = 45;          // svh finales: el universo se despide mientras entra la página
   var K_BAND = 0.85;      // en retrato los capítulos son algo más cortos
@@ -90,25 +94,43 @@
     track.style.height = Math.round(endCaps + tailPx) + 'px';
     // La sección siguiente sube sobre la cola: el final se funde con la página
     sec.style.marginBottom = -Math.round(tailPx) + 'px';
-    sec.cineInfo = { starts: starts.slice(), lens: lens.slice(), end: endCaps, tail: tailPx };
+    // rest/hold en px desde el inicio de la sección (los usan el índice y el recorrido automático)
+    var rest = [], hold = [];
+    for (var r = 0; r < N; r++) {
+      rest[r] = starts[r] + lens[r] * CFG[r].rest;
+      hold[r] = starts[r] + lens[r] * CFG[r].hold;
+    }
+    sec.cineInfo = { starts: starts.slice(), lens: lens.slice(), rest: rest, hold: hold, end: endCaps, tail: tailPx };
     placeLabels();
   }
 
-  // Rótulos bajo cada pedestal: el video va en "cover", así que se recalcula su recorte
+  // Rótulos bajo cada pedestal: el video va en "cover", así que se recalcula su recorte.
+  // El panorama va justo debajo de los rótulos (sin salirse por abajo).
+  var panorama = sec.querySelector('.panorama');
   function placeLabels() {
     if (!perfiles.length) return;
     var W = stage.offsetWidth, H = stage.offsetHeight;
     var s = Math.max(W / VW, H / VH), dw = VW * s, dh = VH * s;
+    if (band) {
+      perfiles.forEach(function (li) { li.style.removeProperty('--lx'); li.style.removeProperty('--ly'); });
+      return;
+    }
+    var ly = Math.min((0.69 - 0.5) * dh + H / 2, H - 70), liH = 0;
     perfiles.forEach(function (li) {
-      if (band) { li.style.removeProperty('--lx'); li.style.removeProperty('--ly'); return; }
       var vx = parseFloat(li.style.getPropertyValue('--vx')) || 0.5;
       var x = (vx - 0.5) * dw + W / 2;
-      var y = (0.69 - 0.5) * dh + H / 2;
       // que ningún rótulo se salga por los lados
       x = Math.max(li.offsetWidth / 2 + 16, Math.min(W - li.offsetWidth / 2 - 16, x));
       li.style.setProperty('--lx', Math.round(x) + 'px');
-      li.style.setProperty('--ly', Math.round(Math.min(y, H - 70)) + 'px');
+      liH = Math.max(liH, li.offsetHeight);
     });
+    if (panorama) {
+      var top = ly + liH + 14, room = H - 16 - panorama.offsetHeight;
+      // pantalla ancha y baja: si el panorama no cabe, los rótulos suben un poco
+      if (top > room) { var up = Math.min(top - room, 80); ly -= up; top -= up; }
+      sec.style.setProperty('--pan-top', Math.round(Math.min(top, room)) + 'px');
+    }
+    perfiles.forEach(function (li) { li.style.setProperty('--ly', Math.round(ly) + 'px'); });
   }
 
   /* ---------- Fotogramas fijos: carga bajo demanda ---------- */
@@ -387,12 +409,169 @@
     if (!ticking) { ticking = true; requestAnimationFrame(frame); }
   }
 
-  // Teclado: si el foco cae en un capítulo que no está en pantalla, llevamos el scroll hasta él
+  /* ---------- Paso a paso ----------
+     Un gesto = una estación. Un clic de la rueda, un deslizamiento en pantalla
+     táctil o una tecla de avance no mueven el video fotograma a fotograma: lo
+     reproducen solo (animando el scroll) hasta la estación siguiente o la
+     anterior, y ahí se detiene. Mientras corre la transición se ignoran los
+     gestos, y la inercia del touchpad no cuenta como gesto nuevo: así nunca se
+     salta una estación. Solo aplica al video: desde la última estación el
+     siguiente gesto lleva a "Para quién" y de ahí en adelante el scroll es normal. */
+  var STEP_GAP = 180;   // ms sin eventos de rueda para considerar que empieza un gesto nuevo
+  var anim = null, wheelLock = false, lastWheel = 0, wheelAcc = 0, pressed = false, lastY = window.pageYOffset, lastDir = 1;
+
+  function navH() { var n = document.querySelector('.cnav'); return n ? n.offsetHeight : 0; }
+  function menuOpen() { var m = document.getElementById('nav'); return !!(m && m.classList.contains('is-open')); }
+
+  // Posiciones de scroll (px de página) de cada estación y, al final, la salida
+  function stations() {
+    var top = sec.getBoundingClientRect().top + window.pageYOffset, list = [];
+    for (var i = 0; i < N; i++) list.push(Math.round(top + starts[i] + lens[i] * CFG[i].rest));
+    var nx = sec.nextElementSibling;
+    var exit = nx ? nx.getBoundingClientRect().top + window.pageYOffset - navH() : top + endCaps + tailPx;
+    var maxY = document.documentElement.scrollHeight - window.innerHeight;
+    list.push(Math.round(Math.max(list[N - 1] + 1, Math.min(exit, maxY))));
+    return list;
+  }
+
+  // Estación a la que lleva un gesto en la dirección dir desde y; null = scroll normal
+  function stepTarget(dir, y) {
+    var st = stations(), last = st.length - 1, k;
+    if (dir > 0) {
+      if (y >= st[last] - 2) return null;
+      for (k = 0; k <= last; k++) if (st[k] > y + 2) return st[k];
+      return null;
+    }
+    if (y > st[last] + 2 || y <= st[0] + 2) return null;
+    for (k = last - 1; k >= 0; k--) if (st[k] < y - 2) return st[k];
+    return null;
+  }
+
+  // Segundo del video en una posición de scroll (para medir cuánto video recorre un paso)
+  function timeAtY(y) {
+    var d = y - (sec.getBoundingClientRect().top + window.pageYOffset);
+    if (d <= 0) return 0;
+    if (d >= endCaps) return timeAt(N - 1, 1);
+    var i = 0;
+    while (i < N - 1 && d >= starts[i + 1]) i++;
+    return timeAt(i, (d - starts[i]) / lens[i]);
+  }
+
+  function easeIO(k) { return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; }
+
+  function stopAnim() {
+    if (!anim) return;
+    cancelAnimationFrame(anim.raf);
+    anim = null;
+  }
+
+  function goTo(to) {
+    if (to == null) return;
+    var from = window.pageYOffset;
+    if (Math.abs(to - from) < 1) return;
+    stopAnim();
+    // ~0,3 s por segundo de video (el túnel y las nubes pasan rápido), entre 0,9 y 2,6 s
+    var dt = Math.abs(timeAtY(to) - timeAtY(from));
+    var dur = mqReduce.matches ? 1 : Math.max(900, Math.min(2600, 700 + dt * 300));
+    var a = { t0: performance.now(), raf: 0 };
+    anim = a;
+    armed = true;
+    (function step(now) {
+      if (anim !== a) return;
+      var k = clamp((now - a.t0) / dur);
+      window.scrollTo(0, Math.round(from + (to - from) * easeIO(k)));
+      if (k < 1) { a.raf = requestAnimationFrame(step); return; }
+      anim = null;
+      wheelLock = true; // la inercia que siga llegando no vale como gesto nuevo
+    })(a.t0);
+  }
+
+  // Rueda del mouse y touchpad
+  window.addEventListener('wheel', function (e) {
+    if (e.ctrlKey || e.defaultPrevented) return;
+    var dy = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1);
+    if (!dy || Math.abs(dy) < Math.abs(e.deltaX) || menuOpen()) return;
+    if (e.timeStamp - lastWheel > STEP_GAP) { wheelLock = false; wheelAcc = 0; }
+    lastWheel = e.timeStamp;
+    if (anim) { e.preventDefault(); return; }
+    var to = stepTarget(dy > 0 ? 1 : -1, window.pageYOffset);
+    if (to == null) return;
+    e.preventDefault();
+    if (wheelLock) return;
+    wheelAcc += Math.abs(dy);
+    if (wheelAcc < 8) return; // roce mínimo del touchpad: todavía no es un gesto
+    wheelAcc = 0;
+    goTo(to);
+  }, { passive: false });
+
+  // Teclas de avance (flechas, AvPág/RePág, espacio)
+  document.addEventListener('keydown', function (e) {
+    if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+    var k = e.key, dir = 0;
+    if (k === 'ArrowDown' || k === 'PageDown' || (k === ' ' && !e.shiftKey)) dir = 1;
+    else if (k === 'ArrowUp' || k === 'PageUp' || (k === ' ' && e.shiftKey)) dir = -1;
+    if (!dir || menuOpen()) return;
+    var t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || (k === ' ' && /^(A|BUTTON|SUMMARY)$/.test(t.tagName)))) return;
+    if (anim) { e.preventDefault(); return; }
+    var to = stepTarget(dir, window.pageYOffset);
+    if (to == null) return;
+    e.preventDefault();
+    goTo(to);
+  });
+
+  // Pantalla táctil: un deslizamiento vertical = una estación
+  var touch = null;
+  window.addEventListener('touchstart', function (e) {
+    touch = e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY, cap: anim ? true : null, used: false } : null;
+  }, { passive: true });
+  window.addEventListener('touchmove', function (e) {
+    if (!touch) return;
+    if (e.touches.length !== 1) { touch = null; return; }
+    var dx = touch.x - e.touches[0].clientX, dy = touch.y - e.touches[0].clientY;
+    if (touch.cap === null) {
+      if (!dx && !dy) return;
+      touch.cap = Math.abs(dy) >= Math.abs(dx) && !menuOpen() && stepTarget(dy > 0 ? 1 : -1, window.pageYOffset) != null;
+    }
+    if (!touch.cap) return;
+    if (e.cancelable) e.preventDefault();
+    if (!touch.used && !anim && Math.abs(dy) > 24) {
+      touch.used = true;
+      goTo(stepTarget(dy > 0 ? 1 : -1, window.pageYOffset));
+    }
+  }, { passive: false });
+  window.addEventListener('touchend', function () { touch = null; }, { passive: true });
+  window.addEventListener('touchcancel', function () { touch = null; }, { passive: true });
+
+  // Con el mouse presionado (p. ej. arrastrando la barra) manda la persona
+  window.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') { pressed = true; stopAnim(); } }, { passive: true });
+  window.addEventListener('pointerup', function () { pressed = false; settleSoon(); }, { passive: true });
+
+  // Si el scroll queda quieto entre dos estaciones (inercia del dedo, barra,
+  // Inicio/Fin…), se completa el paso en la dirección en que venía
+  var settleT = 0;
+  function settleSoon() {
+    clearTimeout(settleT);
+    settleT = setTimeout(function () {
+      if (anim || pressed || touch || root.classList.contains('tour-running')) return;
+      var y = window.pageYOffset, st = stations();
+      if (y <= st[0] + 2 || y >= st[st.length - 1] - 2) return;
+      for (var k = 0; k < st.length; k++) if (Math.abs(st[k] - y) <= 3) return;
+      goTo(stepTarget(lastDir, y));
+    }, 220);
+  }
+  window.addEventListener('scroll', function () {
+    var y = window.pageYOffset;
+    if (y !== lastY) { lastDir = y > lastY ? 1 : -1; lastY = y; }
+    if (!anim) settleSoon();
+  }, { passive: true });
+
+  // Teclado: si el foco cae en un capítulo que no está en pantalla, llevamos el scroll a su estación
   caps.forEach(function (el, j) {
     el.addEventListener('focusin', function () {
       if (cur === j) return;
-      var top = sec.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo(0, Math.round(top + starts[j] + lens[j] * (j === N - 1 ? 0.6 : 0.4)));
+      stopAnim();
+      window.scrollTo(0, stations()[j]);
     });
   });
 

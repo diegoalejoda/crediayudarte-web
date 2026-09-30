@@ -101,7 +101,7 @@
   }
 
   /* ---- Índice numerado de secciones ----
-     Los 9 capítulos de la experiencia no tienen posición propia en la página
+     Los 6 capítulos de la experiencia no tienen posición propia en la página
      (viven en un escenario sticky): su destino sale de los tramos que publica
      cine.js (sec.cineInfo). Las secciones normales usan su posición real. */
   var snav = document.getElementById('snav');
@@ -130,10 +130,8 @@
       var info = cine && cine.cineInfo;
       if (capIdx[i] >= 0 && info && root.classList.contains('cine-on')) {
         var top = cine.getBoundingClientRect().top + window.pageYOffset;
-        var j = capIdx[i];
-        if (j === 0) return top;
-        // mitad de la lectura del capítulo (el copy ya entró y aún no sale)
-        return top + info.starts[j] + info.lens[j] * (j === info.starts.length - 1 ? 0.6 : 0.42);
+        // la estación del capítulo: donde se detiene el paso a paso (todo el copy ya entró)
+        return top + info.rest[capIdx[i]];
       }
       var el = destinos[i];
       return el ? el.getBoundingClientRect().top + window.pageYOffset - navH() : 0;

@@ -47,7 +47,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Archivo:wdth,wght@100..125,700..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20260922" />
-  <link rel="stylesheet" href="css/home.css?v=20260929h" />
+  <link rel="stylesheet" href="css/home.css?v=20260930b" />
 
   <!-- Meta Pixel Code -->
   <script>
@@ -452,19 +452,16 @@
     <ol class="snav__list lg">
       <li><a href="#c-inicio"><span class="snav__t">Inicio</span><b>01</b></a></li>
       <li><a href="#c-capas"><span class="snav__t">Capas</span><b>02</b></a></li>
-      <li><a href="#c-analisis"><span class="snav__t">Análisis</span><b>03</b></a></li>
-      <li><a href="#c-variables"><span class="snav__t">Variables</span><b>04</b></a></li>
-      <li><a href="#c-panorama"><span class="snav__t">Panorama</span><b>05</b></a></li>
-      <li><a href="#c-perfiles"><span class="snav__t">Perfiles</span><b>06</b></a></li>
-      <li><a href="#c-claridad"><span class="snav__t">Claridad</span><b>07</b></a></li>
-      <li><a href="#c-trayectoria"><span class="snav__t">Trayectoria</span><b>08</b></a></li>
-      <li><a href="#c-decision"><span class="snav__t">Decisión</span><b>09</b></a></li>
-      <li><a href="#para-quien"><span class="snav__t">Para quién</span><b>10</b></a></li>
-      <li><a href="#testimonios"><span class="snav__t">Testimonios</span><b>11</b></a></li>
-      <li><a href="#como-funciona"><span class="snav__t">Cómo funciona</span><b>12</b></a></li>
-      <li><a href="#codigo"><span class="snav__t">Nuestro código</span><b>13</b></a></li>
-      <li><a href="#preguntas"><span class="snav__t">Preguntas</span><b>14</b></a></li>
-      <li><a href="#empieza"><span class="snav__t">Empieza</span><b>15</b></a></li>
+      <li><a href="#c-variables"><span class="snav__t">Variables</span><b>03</b></a></li>
+      <li><a href="#c-perfiles"><span class="snav__t">Perfiles</span><b>04</b></a></li>
+      <li><a href="#c-trayectoria"><span class="snav__t">Trayectoria</span><b>05</b></a></li>
+      <li><a href="#c-decision"><span class="snav__t">Decisión</span><b>06</b></a></li>
+      <li><a href="#para-quien"><span class="snav__t">Para quién</span><b>07</b></a></li>
+      <li><a href="#testimonios"><span class="snav__t">Testimonios</span><b>08</b></a></li>
+      <li><a href="#como-funciona"><span class="snav__t">Cómo funciona</span><b>09</b></a></li>
+      <li><a href="#codigo"><span class="snav__t">Nuestro código</span><b>10</b></a></li>
+      <li><a href="#preguntas"><span class="snav__t">Preguntas</span><b>11</b></a></li>
+      <li><a href="#empieza"><span class="snav__t">Empieza</span><b>12</b></a></li>
     </ol>
   </nav>
 
@@ -474,6 +471,8 @@
        Un escenario sticky a pantalla completa que recorre con el scroll un
        solo video (isotipo → cristal → camino → nubes → perfiles → isotipo).
        Cada capítulo está anclado a un tramo del video; el copy es HTML real.
+       Cada gesto (rueda, deslizar, tecla) lleva a la estación siguiente; el
+       túnel, las nubes y el escudo quedan como transiciones sin texto.
        Las piezas en vidrio (.lg) son motion graphics que acompañan al copy.
        Sin JS o con ahorro de datos: fotogramas fijos por capítulo. -->
   <section class="cine" id="experiencia" aria-label="Antes de firmar, revisa">
@@ -481,11 +480,8 @@
       <div class="cine__media" aria-hidden="true">
         <img class="cine__img" src="assets/cine/v/d/k01.webp?v=20260929" srcset="assets/cine/v/m/k01.webp?v=20260929 1280w, assets/cine/v/d/k01.webp?v=20260929 1920w" sizes="100vw" alt="" width="1920" height="1082" fetchpriority="high" decoding="async" />
         <img class="cine__img" data-n="02" alt="" width="1920" height="1082" decoding="async" />
-        <img class="cine__img" data-n="03" alt="" width="1920" height="1082" decoding="async" />
         <img class="cine__img" data-n="04" alt="" width="1920" height="1082" decoding="async" />
-        <img class="cine__img" data-n="05" alt="" width="1920" height="1082" decoding="async" />
         <img class="cine__img" data-n="06" alt="" width="1920" height="1082" decoding="async" />
-        <img class="cine__img" data-n="07" alt="" width="1920" height="1082" decoding="async" />
         <img class="cine__img" data-n="08" alt="" width="1920" height="1082" decoding="async" />
         <img class="cine__img" data-n="09" alt="" width="1920" height="1082" decoding="async" />
       </div>
@@ -534,13 +530,21 @@
           </ul>
         </div>
 
-        <!-- 03 · Vórtice: entramos al análisis -->
-        <div class="cap cap--03" id="c-analisis" data-name="Análisis">
+        <!-- 03 · Tras el túnel (transición sin texto), el camino de cristal:
+                  el análisis y las variables en una sola estación -->
+        <div class="cap cap--04" id="c-variables" data-name="Variables">
           <span class="cap__veil" aria-hidden="true"></span>
           <div class="cap__box">
             <h2 class="cap__title cap__h split">Entender <mark>cambia la decisión.</mark></h2>
-            <p class="cap__text cap__b">Revisamos lo que recibes, lo que pagas y lo que todavía depende de terceros.</p>
-            <div class="scan lg cap__b" aria-label="Así revisamos tu caso">
+            <p class="cap__text cap__b">Una decisión tiene más de una variable. Antes de avanzar, hay que mirar el conjunto.</p>
+            <ul class="cap__chips seq" aria-label="Lo que se revisa">
+              <li class="lg">Cuota</li>
+              <li class="lg">Plazo</li>
+              <li class="lg">Costo total</li>
+              <li class="lg">Dinero neto</li>
+              <li class="lg">Condiciones</li>
+            </ul>
+            <div class="scan lg cap__c" aria-label="Así revisamos tu caso">
               <p class="scan__head"><span>Revisión de tu caso</span><i aria-hidden="true"></i></p>
               <ul class="scan__list seq">
                 <li><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><polyline points="7.5 12.5 10.8 15.6 16.6 9"/></svg><span>Lo que recibes <small>dinero neto</small></span></li>
@@ -551,50 +555,8 @@
           </div>
         </div>
 
-        <!-- 04 · Camino de cristal: las variables -->
-        <div class="cap cap--04" id="c-variables" data-name="Variables">
-          <span class="cap__veil" aria-hidden="true"></span>
-          <div class="cap__box">
-            <h2 class="cap__title cap__h split">Una decisión tiene <mark>más de una variable.</mark></h2>
-            <p class="cap__text cap__b">Antes de avanzar, hay que mirar el conjunto.</p>
-            <ul class="cap__chips seq" aria-label="Lo que se revisa">
-              <li class="lg">Cuota</li>
-              <li class="lg">Plazo</li>
-              <li class="lg">Costo total</li>
-              <li class="lg">Dinero neto</li>
-              <li class="lg">Condiciones</li>
-            </ul>
-            <figure class="mixer lg cap__b" aria-label="Las cinco variables se mueven juntas">
-              <figcaption>Si mueves una, <b>se mueven las demás</b></figcaption>
-              <ul aria-hidden="true">
-                <li style="--d:0s;--c:var(--c-green)"><i><s></s></i><span>Cuota</span></li>
-                <li style="--d:-1.1s;--c:var(--c-yellow)"><i><s></s></i><span>Plazo</span></li>
-                <li style="--d:-2.3s;--c:var(--c-blue)"><i><s></s></i><span>Costo total</span></li>
-                <li style="--d:-.6s;--c:var(--c-green)"><i><s></s></i><span>Dinero neto</span></li>
-                <li style="--d:-1.7s;--c:var(--c-yellow)"><i><s></s></i><span>Condiciones</span></li>
-              </ul>
-            </figure>
-          </div>
-        </div>
-
-        <!-- 05 · Sobre las nubes: el panorama -->
-        <div class="cap cap--05" id="c-panorama" data-name="Panorama">
-          <span class="cap__veil" aria-hidden="true"></span>
-          <div class="cap__box">
-            <h2 class="cap__title cap__h split">Mira el <mark>panorama completo.</mark></h2>
-            <p class="cap__text cap__b">Una cuota más baja puede aliviar hoy y extender el compromiso durante más tiempo.</p>
-            <figure class="barras lg cap__c">
-              <figcaption>Cuando la cuota baja…</figcaption>
-              <ul>
-                <li class="barras--down"><span>Cuota</span><i style="--v:.34"></i><b>baja</b></li>
-                <li class="barras--up"><span>Plazo</span><i style="--v:.9"></i><b>sube</b></li>
-                <li class="barras--up"><span>Costo total</span><i style="--v:.78"></i><b>sube</b></li>
-              </ul>
-            </figure>
-          </div>
-        </div>
-
-        <!-- 06 · Cuatro pedestales: los perfiles, rotulados bajo cada ícono -->
+        <!-- 04 · Tras las nubes (transición sin texto), cuatro pedestales: los perfiles,
+                  rotulados bajo cada ícono, y debajo el panorama de la cuota -->
         <div class="cap cap--06" id="c-perfiles" data-name="Perfiles">
           <span class="cap__veil" aria-hidden="true"></span>
           <div class="cap__box">
@@ -607,22 +569,24 @@
             <li style="--vx:.63"><a class="lg" href="credito-libranza-empleados-publicos/"><span>03</span>Empleados del gobierno</a></li>
             <li style="--vx:.88"><a class="lg" href="credito-libranza-fuerza-publica/"><span>04</span>Fuerza Pública</a></li>
           </ul>
-        </div>
-
-        <!-- 07 · Cinta y esfera: transparencia -->
-        <div class="cap cap--07" id="c-claridad" data-name="Claridad">
-          <span class="cap__veil" aria-hidden="true"></span>
-          <div class="cap__box">
-            <h2 class="cap__title cap__h split">Claridad <mark>antes de avanzar.</mark></h2>
-            <ul class="check lg seq cap__b">
-              <li><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><polyline points="7.5 12.5 10.8 15.6 16.6 9"/></svg>No cobramos por adelantado.</li>
-              <li><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><polyline points="7.5 12.5 10.8 15.6 16.6 9"/></svg>Los costos se explican antes de avanzar.</li>
-              <li><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><polyline points="7.5 12.5 10.8 15.6 16.6 9"/></svg>La aprobación final depende de la entidad.</li>
-            </ul>
+          <div class="panorama lg cap__c">
+            <div class="panorama__txt">
+              <h3 class="panorama__title">Mira el <mark>panorama completo.</mark></h3>
+              <p>Una cuota más baja puede aliviar hoy y extender el compromiso durante más tiempo.</p>
+            </div>
+            <figure class="barras">
+              <figcaption>Cuando la cuota baja…</figcaption>
+              <ul>
+                <li class="barras--down"><span>Cuota</span><i style="--v:.34"></i><b>baja</b></li>
+                <li class="barras--up"><span>Plazo</span><i style="--v:.9"></i><b>sube</b></li>
+                <li class="barras--up"><span>Costo total</span><i style="--v:.78"></i><b>sube</b></li>
+              </ul>
+            </figure>
           </div>
         </div>
 
-        <!-- 08 · Paneles de cristal: la postura + prueba humana (9 años, clientes reales) -->
+        <!-- 05 · Tras el escudo (transición sin texto), paneles de cristal: la postura,
+                  la prueba humana (9 años, clientes reales) y la claridad antes de avanzar -->
         <div class="cap cap--08" id="c-trayectoria" data-name="Trayectoria">
           <span class="cap__veil" aria-hidden="true"></span>
           <div class="cap__box">
@@ -642,6 +606,14 @@
               </p>
             </div>
           </div>
+          <div class="check lg cap__c">
+            <p class="check__head">Claridad antes de avanzar</p>
+            <ul class="seq">
+              <li><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><polyline points="7.5 12.5 10.8 15.6 16.6 9"/></svg>No cobramos por adelantado.</li>
+              <li><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><polyline points="7.5 12.5 10.8 15.6 16.6 9"/></svg>Los costos se explican antes de avanzar.</li>
+              <li><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><polyline points="7.5 12.5 10.8 15.6 16.6 9"/></svg>La aprobación final depende de la entidad.</li>
+            </ul>
+          </div>
           <ul class="fotos seq" aria-label="Clientes atendidos en nuestra oficina de Cúcuta">
             <li class="lg"><img src="assets/cine/v/clientes/c1.webp" alt="Cliente pensionado con su asesora en la oficina de CrediAyudarte" width="440" height="550" loading="lazy" decoding="async" /></li>
             <li class="lg"><img src="assets/cine/v/clientes/c2.webp" alt="Dos clientas felices frente al aviso de CrediAyudarte" width="440" height="550" loading="lazy" decoding="async" /></li>
@@ -649,7 +621,7 @@
           </ul>
         </div>
 
-        <!-- 09 · Cierre: el isotipo vuelve a formarse (misma gramática del hero) -->
+        <!-- 06 · Cierre: el isotipo vuelve a formarse (misma gramática del hero) -->
         <div class="cap cap--09" id="c-decision" data-name="Decisión">
           <span class="cap__veil" aria-hidden="true"></span>
           <div class="cap__box">
@@ -1006,8 +978,8 @@
   </div>
 
   <script defer src="js/script.js?v=20260919"></script>
-  <script defer src="js/cine.js?v=20260929c"></script>
-  <script defer src="js/home.js?v=20260929c"></script>
-  <script defer src="js/tour.js?v=20260929c"></script>
+  <script defer src="js/cine.js?v=20260930b"></script>
+  <script defer src="js/home.js?v=20260930b"></script>
+  <script defer src="js/tour.js?v=20260930b"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /* ===================================================================
    CrediAyudarte — Recorrido automático de la Home
    Un botón en el hero hace que la página avance sola, parada por parada,
-   por los mismos 15 destinos del índice numerado (#snav). Pensado para
+   por los mismos 12 destinos del índice numerado (#snav). Pensado para
    gente mayor: en cada parada se queda el tiempo necesario para leer
    (según cuánto texto hay), y cualquier gesto de la persona (rueda,
    toque, tecla de scroll, clic fuera del control) lo PAUSA en vez de
@@ -49,17 +49,14 @@
   function track(name) { if (typeof window.fbq === 'function') window.fbq('trackCustom', name); }
 
   // Tramo [desde, hasta] (scroll de página) en que se lee la parada i.
-  // Capítulo: entra al 30 % (titular y texto ya visibles) y avanza despacio
-  // hasta el 66 % (todas las piezas en pantalla, antes de que el copy salga).
+  // Capítulo: entra en su estación (la misma del paso a paso: todo el copy ya
+  // entró) y avanza despacio hasta "hold", antes de que el copy salga.
+  // Las transiciones sin texto (túnel, nubes) se cruzan en el desplazamiento.
   function span(i) {
     var s = stops[i], j = caps.indexOf(s.el), y = window.pageYOffset;
     if (j >= 0 && cineReady()) {
       var info = cine.cineInfo, top = cine.getBoundingClientRect().top + y;
-      if (j === 0) return [top, top];
-      var last = j === info.starts.length - 1;
-      // 0.38: a esa altura ya entraron titular, texto y piezas (fases h/b/c ≤ .32),
-      // así en paradas cortas no se llega a medio fundido
-      return [top + info.starts[j] + info.lens[j] * 0.38, top + info.starts[j] + info.lens[j] * (last ? 0.6 : 0.66)];
+      return [top + info.rest[j], top + info.hold[j]];
     }
     var t = s.el.getBoundingClientRect().top + y - navH() - 12;
     return [t, t];
