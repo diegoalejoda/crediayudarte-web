@@ -505,11 +505,11 @@ a.who-card:hover .card-mas .ico,a.svc-card:hover .card-mas .ico{transform:transl
 .footer__social a{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;transition:background .25s,transform .25s,color .25s;color:var(--verde-texto);box-shadow:var(--shadow-sm)}
 .footer__social a:hover{background:var(--verde-marca);transform:translateY(-3px);color:#fff}
 .footer__social .ico{width:1.25rem;height:1.25rem}
-.footer__col h4{color:var(--tinta);font-family:var(--f-head);font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem}
+.footer__col h4,.footer__col .footer__h{color:var(--tinta);font-family:var(--f-head);font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem}
 .footer__col a,.footer__col span{display:block;font-size:.9rem;padding:.28rem 0;color:var(--gris-texto)}
 .footer__col a:hover{color:var(--verde-marca)}
 .footer__legal{border-top:1px solid var(--linea);padding:1.6rem 0}
-.footer__legal p{font-size:.78rem;color:var(--gris-suave);margin-bottom:.5rem}
+.footer__legal p{font-size:.78rem;color:var(--gris-texto);margin-bottom:.5rem}
 
 /* ===================== WHATSAPP FLOTANTE ===================== */
 .wa-float{position:fixed;right:20px;bottom:20px;z-index:70;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(37,211,102,.75);transition:transform .25s var(--ease)}

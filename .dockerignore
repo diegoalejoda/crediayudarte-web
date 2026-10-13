@@ -4,3 +4,6 @@ crediayudarte conocimiento
 .scratch_lead.json
 *.workflow.json
 assets-src
+
+# Documentos de revisión (informe, capturas, propuesta de Perfil de Empresa): no se publican
+docs-revision

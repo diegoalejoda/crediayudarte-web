@@ -1,250 +1,160 @@
 /* ===================================================================
-   CrediAyudarte — Formulario de solicitud
-   Al enviar: abre WhatsApp con los datos escritos por el cliente Y,
-   si adjuntó su desprendible, lo sube a Google Drive (vía n8n) y
-   guarda el link en Supabase, al mismo tiempo.
+   CrediAyudarte — Formulario de solicitud (versión 2026-10)
+   Al enviar:
+   1) registra la solicitud en el CRM (n8n -> Supabase), sin bloquear;
+   2) abre WhatsApp con el mensaje armado con lo que escribió la persona;
+   3) muestra "Falta un paso: envía el mensaje en WhatsApp" (nunca un
+      "solicitud recibida": la conversación empieza cuando ella lo envía).
+   Ya no se piden edad ni archivos: el desprendible se solicita después,
+   por WhatsApp, solo si el caso lo necesita.
    =================================================================== */
 (function () {
   'use strict';
 
   var WHATSAPP = '573152474348'; // número de CrediAyudarte
   var LEAD_WEBHOOK = 'https://flujos.crediayudarte.co/webhook/landing-lead-score'; // n8n -> Supabase (lead + scoring)
-  var DOC_WEBHOOK = 'https://flujos.crediayudarte.co/webhook/landing-desprendible-web'; // n8n -> Drive + Supabase (documento)
-  var MAX_WAIT_DOC_MS = 4000; // tiempo máximo que esperamos la subida antes de abrir WhatsApp igual
+  var VERSION = 'form-2026-10';
+  var AUTORIZACION = 'Autorizo a Marilú Arévalo Toro (CrediAyudarte) a tratar mis datos para contactarme por WhatsApp y estudiar mi solicitud; si avanzo, podrán compartirse con entidades o financiadores que estudien mi caso, con mi autorización. Política: crediayudarte.com/privacy/';
 
   var form = document.getElementById('creditForm');
   var errorBox = document.getElementById('formError');
+  var next = document.getElementById('formNext');
+  var nextLink = document.getElementById('formNextLink');
   if (!form) return;
+
+  function medir(ev, datos) { if (typeof window.caMedir === 'function') window.caMedir(ev, datos); }
 
   var formStarted = false;
   form.addEventListener('focusin', function () {
-    if (!formStarted) {
-      formStarted = true;
-      if (typeof fbq === 'function') fbq('trackCustom', 'FormStart');
-    }
+    if (formStarted) return;
+    formStarted = true;
+    medir('form_start', { ubicacion: 'solicitar' });
   });
 
-  /* ---------- Mostrar/ocultar el panel de subida según Sí/No ---------- */
-  var uploadPanel = document.getElementById('uploadPanel');
-  var fileInput = document.getElementById('archivoDesprendible');
-  var dropzone = document.getElementById('dropzone');
-  var preview = document.getElementById('dropPreview');
-  var thumb = document.getElementById('dropThumb');
-  var nameEl = document.getElementById('dropName');
-  var sizeEl = document.getElementById('dropSize');
-  var removeBtn = document.getElementById('dropRemove');
-  var selectedFile = null;
-
-  form.querySelectorAll('input[name="desprendible"]').forEach(function (r) {
-    r.addEventListener('change', function () {
-      var quiere = form.querySelector('input[name="desprendible"]:checked');
-      var mostrar = quiere && quiere.value === 'Sí';
-      if (uploadPanel) uploadPanel.hidden = !mostrar;
-      if (!mostrar) clearFile();
-    });
-  });
-
-  function humanSize(bytes) {
-    if (bytes < 1024) return bytes + ' B';
-    if (bytes < 1048576) return (bytes / 1024).toFixed(0) + ' KB';
-    return (bytes / 1048576).toFixed(1) + ' MB';
-  }
-
-  function showFile(file) {
-    selectedFile = file;
-    nameEl.textContent = file.name;
-    sizeEl.textContent = humanSize(file.size) + ' · listo para enviar';
-    thumb.innerHTML = '';
-    if (file.type && file.type.indexOf('image/') === 0) {
-      var img = document.createElement('img');
-      img.src = URL.createObjectURL(file);
-      img.alt = 'Vista previa del desprendible';
-      img.style.width = '100%'; img.style.height = '100%'; img.style.objectFit = 'cover';
-      img.onload = function () { URL.revokeObjectURL(img.src); };
-      thumb.appendChild(img);
-    } else {
-      var use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-      use.setAttribute('href', '#i-file');
-      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      svg.setAttribute('class', 'ico');
-      svg.appendChild(use);
-      thumb.appendChild(svg);
-    }
-    if (dropzone) dropzone.hidden = true;
-    if (preview) preview.hidden = false;
-  }
-
-  function clearFile() {
-    selectedFile = null;
-    if (fileInput) fileInput.value = '';
-    if (preview) preview.hidden = true;
-    if (dropzone) dropzone.hidden = false;
-  }
-
-  if (fileInput) {
-    fileInput.addEventListener('change', function () {
-      if (fileInput.files && fileInput.files[0]) showFile(fileInput.files[0]);
-    });
-  }
-  if (removeBtn) removeBtn.addEventListener('click', clearFile);
-
-  if (dropzone) {
-    ['dragenter', 'dragover'].forEach(function (ev) {
-      dropzone.addEventListener(ev, function (e) { e.preventDefault(); dropzone.classList.add('is-drag'); });
-    });
-    ['dragleave', 'drop'].forEach(function (ev) {
-      dropzone.addEventListener(ev, function (e) { e.preventDefault(); dropzone.classList.remove('is-drag'); });
-    });
-    dropzone.addEventListener('drop', function (e) {
-      if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
-        fileInput.files = e.dataTransfer.files;
-        showFile(e.dataTransfer.files[0]);
-      }
-    });
-  }
-
-  function fileToBase64(file) {
-    return new Promise(function (resolve, reject) {
-      var reader = new FileReader();
-      reader.onload = function () { resolve(reader.result); };
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    });
-  }
-
-  function withTimeout(promise, ms) {
-    return Promise.race([
-      promise,
-      new Promise(function (resolve) { setTimeout(resolve, ms); })
-    ]);
-  }
-
-  /* ---------- Envío ---------- */
   form.addEventListener('input', hideError);
   form.addEventListener('change', hideError);
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var nombre = val('nombre');
-    var apellido = val('apellido');
-    var edad = val('edad');
-    var telefono = val('telefono');
     var perfil = checked('perfil');
-    var reporte = checked('reporte');
-    var desprendible = checked('desprendible');
+    var pagaduria = val('pagaduria');
+    var ciudad = val('ciudad');
+    var objetivo = val('objetivo');
+    var situacion = checked('situacion');
+    var nombre = val('nombre');
+    var telefono = val('telefono');
+    var autorizo = document.getElementById('autorizo');
 
-    if (!nombre || !apellido || !edad || !telefono || !perfil || !reporte || !desprendible) {
-      showError('Por favor completa todos los campos obligatorios (*) para continuar.');
+    // En orden de aparición: el foco va al primer campo que falta
+    var faltan = [
+      [!perfil, 'tu perfil', form.querySelector('input[name="perfil"]')],
+      [!pagaduria, 'tu pagaduría', document.getElementById('pagaduria')],
+      [!ciudad, 'tu ciudad', document.getElementById('ciudad')],
+      [!objetivo, 'qué necesitas', document.getElementById('objetivo')],
+      [!situacion, 'tu situación', form.querySelector('input[name="situacion"]')],
+      [!nombre, 'tu nombre', document.getElementById('nombre')],
+      [!telefono, 'tu número de WhatsApp', document.getElementById('telefono')]
+    ].filter(function (f) { return f[0]; });
+    if (faltan.length) {
+      showError('Falta completar: ' + faltan.map(function (f) { return f[1]; }).join(', ') + '.', faltan[0][2]);
       return;
     }
-    var edadNum = parseInt(edad, 10);
-    if (isNaN(edadNum) || edadNum < 18 || edadNum > 100) {
-      showError('Por favor escribe una edad válida (entre 18 y 100 años).');
-      document.getElementById('edad').focus();
-      return;
-    }
-    // El numero es la llave con la que el CRM une el lead web, el desprendible
-    // y la conversacion de WhatsApp posterior. Sin el se duplican los clientes.
+    // El número es la llave con la que el CRM une el lead web y la
+    // conversación de WhatsApp posterior. Celular colombiano de 10 dígitos, o
+    // un número internacional escrito con "+" (p. ej. familiares en el exterior).
     var telDigits = telefono.replace(/[^0-9]/g, '');
-    if (telDigits.length < 7) {
-      showError('Por favor escribe un número de WhatsApp válido.');
-      document.getElementById('telefono').focus();
+    var internacional = /^\s*\+/.test(telefono) && !/^573\d{9}$/.test(telDigits);
+    if (!internacional) telDigits = telDigits.replace(/^57(?=3\d{9}$)/, '');
+    if (internacional ? !/^\d{8,15}$/.test(telDigits) : !/^3\d{9}$/.test(telDigits)) {
+      showError('Escribe un celular de WhatsApp válido: 10 dígitos que empiezan por 3, o el número con "+" y el indicativo del país.', document.getElementById('telefono'));
       return;
     }
-    var tieneFile = desprendible === 'Sí';
-    if (tieneFile && !selectedFile) {
-      showError('Adjunta tu desprendible o selecciona "No" en la pregunta anterior.');
+    if (!autorizo || !autorizo.checked) {
+      showError('Para continuar necesitamos tu autorización para tratar tus datos.', autorizo);
       return;
     }
 
-    var btn = form.querySelector('.btn-submit');
+    hideError();
+    var origen = typeof window.caOrigen === 'function' ? window.caOrigen() : {};
 
-    // 1) Lead + scoring -> n8n -> Supabase (no bloquea, es texto plano y pequeño)
+    // 1) Solicitud -> n8n -> Supabase (no bloquea). Se conservan las claves que
+    //    ya recibía el flujo (nombre, nombres, apellido, edad, telefono, perfil,
+    //    vida_crediticia, tiene_desprendible, origen) y se agregan las nuevas.
     try {
       fetch(LEAD_WEBHOOK, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          nombre: nombre + ' ' + apellido,
+          nombre: nombre,
           nombres: nombre,
-          apellido: apellido,
-          edad: edadNum,
+          apellido: '',
+          edad: null,
           telefono: telDigits,
           perfil: perfil,
-          vida_crediticia: reporte,
-          tiene_desprendible: tieneFile,
-          origen: 'landing-web'
+          vida_crediticia: vidaCrediticia(situacion),
+          tiene_desprendible: false,
+          origen: 'landing-web',
+          pagaduria: pagaduria,
+          ciudad: ciudad,
+          objetivo: objetivo,
+          situacion: situacion,
+          autorizacion_datos: true,
+          autorizacion_texto: AUTORIZACION,
+          autorizacion_fecha: new Date().toISOString(),
+          formulario_version: VERSION,
+          utm_source: origen.utm_source || '',
+          utm_medium: origen.utm_medium || '',
+          utm_campaign: origen.utm_campaign || '',
+          utm_content: origen.utm_content || '',
+          utm_term: origen.utm_term || '',
+          pagina_entrada: origen.landing || '',
+          referrer: origen.referrer || ''
         }),
         keepalive: true
       }).catch(function () {});
     } catch (err) { /* no bloquear la experiencia si falla el envío */ }
+    medir('form_submit', { ubicacion: 'solicitar' });
 
-    // 2) Mensaje de WhatsApp con lo que escribió el cliente
+    // 2) Mensaje de WhatsApp con lo que escribió la persona
     var lineas = [
-      '¡Hola CrediAyudarte! Quiero que revisen mi caso 🙂',
+      'Hola, CrediAyudarte. Quiero que evalúen mi caso.',
       '',
-      '👤 Nombre: ' + nombre + ' ' + apellido,
-      '🎂 Edad: ' + edadNum + ' años',
-      '💼 Situación: ' + perfil,
-      '📊 En centrales de riesgo: ' + reporte,
-      '📎 Tengo mi desprendible a la mano: ' + desprendible
+      'Nombre: ' + nombre,
+      'Perfil: ' + perfil,
+      'Pagaduría: ' + pagaduria,
+      'Ciudad: ' + ciudad,
+      'Necesito: ' + objetivo,
+      'Situación: ' + situacion,
+      '',
+      'Envié mis datos desde el formulario de la página web.'
     ];
-    lineas.push('', 'Quedo atento(a) a su orientación. ¡Gracias!');
     var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lineas.join('\n'));
 
-    function goToWhatsApp() {
-      if (typeof fbq === 'function') fbq('track', 'Lead');
-      window.location.href = url;
-      setTimeout(function () {
-        if (btn) { btn.style.pointerEvents = ''; btn.style.opacity = ''; btn.innerHTML = '<svg class="ico solid"><use href="#i-whatsapp"/></svg> Enviar por WhatsApp'; }
-      }, 3000);
-    }
-
-    if (btn) { btn.style.pointerEvents = 'none'; btn.style.opacity = '.85'; }
-
-    // 3) Si hay desprendible: subirlo (Drive + Supabase) AL MISMO TIEMPO que se abre WhatsApp
-    if (tieneFile && selectedFile) {
-      if (btn) btn.innerHTML = 'Enviando tu documento…';
-      showToast();
-
-      var docPromise = fileToBase64(selectedFile).then(function (base64) {
-        return fetch(DOC_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            numero: telDigits,
-            nombres: nombre,
-            apellidos: apellido,
-            edad: edadNum,
-            perfil: perfil,
-            vida_crediticia: reporte,
-            origen: 'landing-web',
-            documento_nombre: selectedFile.name,
-            documento_tipo: selectedFile.type || 'application/octet-stream',
-            documento_base64: base64
-          })
-        });
-      }).catch(function () { /* si falla, igual dejamos avanzar a WhatsApp */ });
-
-      withTimeout(docPromise, MAX_WAIT_DOC_MS).then(goToWhatsApp);
-    } else {
-      goToWhatsApp();
-    }
+    // 3) Abrir WhatsApp. En pestaña nueva la página queda para recordar el
+    //    paso que falta; si el navegador lo bloquea, se navega en la misma.
+    var w = null;
+    try { w = window.open(url, '_blank'); } catch (err) { w = null; }
+    if (w) { try { w.opener = null; } catch (err) { /* nada */ } }
+    medir('whatsapp_open_form', { ubicacion: 'solicitar' });
+    if (nextLink) nextLink.href = url;
+    if (next) { next.hidden = false; next.focus(); }
+    if (!w) window.location.href = url;
   });
+
+  // Equivalencia con los valores que ya entendía el CRM ("Bien/Mal reportado")
+  function vidaCrediticia(s) {
+    if (s === 'Buen historial') return 'Bien reportado';
+    if (s === 'Tengo reportes o mora' || s === 'Tengo embargo') return 'Mal reportado';
+    return s;
+  }
 
   /* ---------- helpers ---------- */
   function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
   function checked(name) { var el = form.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; }
-  function showError(msg) { if (!errorBox) return; errorBox.textContent = msg; errorBox.classList.add('is-visible'); }
-  function hideError() { if (errorBox) errorBox.classList.remove('is-visible'); }
-
-  var toast = document.getElementById('toast');
-  var toastTimer;
-  function showToast() {
-    if (!toast) return;
-    toast.classList.add('is-visible');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.classList.remove('is-visible'); }, 6000);
+  function showError(msg, field) {
+    if (errorBox) { errorBox.textContent = msg; errorBox.classList.add('is-visible'); }
+    if (field && field.focus) field.focus();
   }
+  function hideError() { if (errorBox) errorBox.classList.remove('is-visible'); }
 })();

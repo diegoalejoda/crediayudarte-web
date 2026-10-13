@@ -78,7 +78,7 @@
     }, { passive: true });
   }
 
-  /* ---- "9 años": el número corre al entrar en pantalla ---- */
+  /* ---- contadores [data-count]: el número corre al entrar en pantalla ---- */
   var counters = document.querySelectorAll('.hsec [data-count]');
   if (counters.length && 'IntersectionObserver' in window && !still) {
     var co = new IntersectionObserver(function (entries) {

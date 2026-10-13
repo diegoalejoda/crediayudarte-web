@@ -416,7 +416,8 @@
      anterior, y ahí se detiene. Mientras corre la transición se ignoran los
      gestos, y la inercia del touchpad no cuenta como gesto nuevo: así nunca se
      salta una estación. Solo aplica al video: desde la última estación el
-     siguiente gesto lleva a "Para quién" y de ahí en adelante el scroll es normal. */
+     siguiente gesto lleva a "Para quién" y de ahí en adelante el scroll es normal.
+     Con "reducir movimiento" no se intercepta ningún gesto: scroll del navegador. */
   var STEP_GAP = 180;   // ms sin eventos de rueda para considerar que empieza un gesto nuevo
   var anim = null, wheelLock = false, lastWheel = 0, wheelAcc = 0, pressed = false, lastY = window.pageYOffset, lastDir = 1;
 
@@ -488,7 +489,7 @@
 
   // Rueda del mouse y touchpad
   window.addEventListener('wheel', function (e) {
-    if (e.ctrlKey || e.defaultPrevented) return;
+    if (e.ctrlKey || e.defaultPrevented || mqReduce.matches) return;
     var dy = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1);
     if (!dy || Math.abs(dy) < Math.abs(e.deltaX) || menuOpen()) return;
     if (e.timeStamp - lastWheel > STEP_GAP) { wheelLock = false; wheelAcc = 0; }
@@ -506,7 +507,7 @@
 
   // Teclas de avance (flechas, AvPág/RePág, espacio)
   document.addEventListener('keydown', function (e) {
-    if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || mqReduce.matches) return;
     var k = e.key, dir = 0;
     if (k === 'ArrowDown' || k === 'PageDown' || (k === ' ' && !e.shiftKey)) dir = 1;
     else if (k === 'ArrowUp' || k === 'PageUp' || (k === ' ' && e.shiftKey)) dir = -1;
@@ -526,7 +527,7 @@
     touch = e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY, cap: anim ? true : null, used: false } : null;
   }, { passive: true });
   window.addEventListener('touchmove', function (e) {
-    if (!touch) return;
+    if (!touch || mqReduce.matches) return;
     if (e.touches.length !== 1) { touch = null; return; }
     var dx = touch.x - e.touches[0].clientX, dy = touch.y - e.touches[0].clientY;
     if (touch.cap === null) {
@@ -553,7 +554,7 @@
   function settleSoon() {
     clearTimeout(settleT);
     settleT = setTimeout(function () {
-      if (anim || pressed || touch || root.classList.contains('tour-running')) return;
+      if (anim || pressed || touch || mqReduce.matches || root.classList.contains('tour-running')) return;
       var y = window.pageYOffset, st = stations();
       if (y <= st[0] + 2 || y >= st[st.length - 1] - 2) return;
       for (var k = 0; k < st.length; k++) if (Math.abs(st[k] - y) <= 3) return;
