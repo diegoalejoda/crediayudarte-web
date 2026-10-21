@@ -327,6 +327,7 @@ html:not(.js) .cnav__inner,.cnav.is-solid .cnav__inner{background:linear-gradien
 .anios{margin-top:1.6rem;max-width:27rem;padding:1.1rem 1.3rem 1.15rem;border-radius:26px;display:grid;grid-template-columns:auto 1fr;column-gap:1rem;align-items:center}
 .anios__n{display:flex;align-items:baseline;gap:.25rem;font-family:var(--f-head);font-weight:750;color:var(--c-green);line-height:.85}
 .anios__n span{font-size:clamp(3.6rem,2.4rem + 3vw,5.2rem);letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.anios__n--ico .ico{width:2.9rem;height:2.9rem;color:var(--c-green)}
 .anios__n small{font-size:1.05rem;font-weight:750;color:var(--c-ink);letter-spacing:-.01em}
 .anios__t{font-size:1.12rem;font-weight:650;line-height:1.25;color:var(--c-ink);letter-spacing:-.015em}
 .anios__t b{font-weight:750;background:linear-gradient(var(--c-yellow),var(--c-yellow)) no-repeat 0 82%/100% 38%}
@@ -366,15 +367,18 @@ html:not(.js) .cnav__inner,.cnav.is-solid .cnav__inner{background:linear-gradien
 .js .cap.is-h .cap__veil{opacity:1}
 .js .cap.is-out .cap__veil{opacity:0}
 
-/* ---------- 01 · Hero (distribución de la referencia) ---------- */
-.js .cap--01 .hero__eyebrow{position:absolute;left:var(--gx);top:calc(var(--nav-h) + 2.6vh)}
-/* Titular en un solo bloque arriba a la izquierda: "ANTES DE / FIRMAR," y justo
-   debajo "REVISA." (decisión del dueño 2026-09-29: ya no va partido en esquinas).
-   Queda a la izquierda de las esferas del isotipo. */
-.js .cap--01{--hf:min(clamp(2.6rem,4.2vw,6rem),9.6vh)}
-.js .hero__title{position:absolute;left:var(--gx);top:calc(var(--nav-h) + 7vh);margin:0;font-size:var(--hf)}
-/* botón del recorrido automático, justo debajo de "REVISA." (3 líneas de titular) */
-.js .tour-btn{position:absolute;left:var(--gx);top:calc(var(--nav-h) + 7vh + var(--hf) * 3 + 1.5rem);margin:0;pointer-events:auto}
+/* ---------- 01 · Hero comercial (2026-10) ----------
+   Columna izquierda (.hero__main): qué hacemos y para quién, apoyo, dos
+   acciones y la línea de confianza, todo en la primera pantalla.
+   Abajo a la derecha (.hero__paths): las tres entradas por situación. */
+.js .cap--01{--hf:min(clamp(1.9rem,2.55vw,3.7rem),6.2vh)}
+.js .hero__main{position:absolute;left:var(--gx);top:calc(var(--nav-h) + 2.2vh);width:min(38vw,640px);display:flex;flex-direction:column;align-items:flex-start;pointer-events:auto}
+.js .hero__title{margin:.9rem 0 0;font-size:var(--hf)}
+.js .hero__main .hero__text{margin-top:1.1rem;max-width:46ch;font-size:clamp(.98rem,.9rem + .2vw,1.1rem);color:var(--c-ink)}
+.js .hero__main .hero__cta{position:static;transform:none;margin-top:1.4rem;flex-wrap:wrap}
+.js .hero__paths{position:absolute;right:var(--gx);bottom:var(--gb);width:min(28vw,25rem);pointer-events:auto}
+/* deja libre la franja del índice numerado (.snav, visible desde 921px) */
+@media (min-width:921px) and (min-aspect-ratio:1/1){.js .hero__paths{right:calc(var(--gx) + 2.6rem)}}
 .js .hero__a,.js .hero__b{position:static;text-align:left}
 .js .hero__b{margin-top:.08em}
 .js .hero__lead{position:absolute;left:var(--gx);bottom:var(--gb);width:min(24vw,21rem);margin:0}
@@ -390,7 +394,26 @@ html:not(.js) .cnav__inner,.cnav.is-solid .cnav__inner{background:linear-gradien
 /* halo blanco: el titular puede cruzar el isotipo sin perder lectura */
 .js .hero__title,.js .cap--09 .cap__title{text-shadow:0 0 28px rgba(255,255,255,.8),0 0 2px rgba(255,255,255,.7)}
 .js .hero__title mark,.js .cap--09 .cap__title mark{text-shadow:none}
-.cap--01,.cap--09{--veil:radial-gradient(ellipse 62% 60% at 50% 46%,rgba(255,255,255,0) 52%,rgba(255,255,255,.55) 100%)}
+.cap--09{--veil:radial-gradient(ellipse 62% 60% at 50% 46%,rgba(255,255,255,0) 52%,rgba(255,255,255,.55) 100%)}
+/* el hero lleva más texto: velo blanco a la izquierda para que se lea sobre el isotipo */
+.cap--01{--veil:linear-gradient(100deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 30%,rgba(255,255,255,0) 50%),radial-gradient(ellipse 40% 50% at 100% 100%,rgba(255,255,255,.7),rgba(255,255,255,0) 70%)}
+
+/* Línea de confianza y entradas por situación (también sin JS, en flujo normal) */
+.hero__trust{margin-top:.9rem;font-size:.86rem;font-weight:600;line-height:1.5;color:var(--c-ink)}
+.hero__trust i{font-style:normal;color:var(--c-green);margin:0 .25rem}
+.cbtn .ico{width:1.15em;height:1.15em;flex:none}
+.cbtn--light{border:1px solid rgba(46,42,48,.14)}
+.hero__paths{margin-top:1.6rem}
+.hero__paths-t{font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--c-ink);margin-bottom:.6rem}
+.hero__paths ul{display:grid;gap:.5rem;margin:0;padding:0;list-style:none}
+.hero__paths a{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:.8rem;padding:.75rem .95rem .75rem 1.05rem;border-radius:18px;color:var(--c-ink);text-decoration:none;transition:transform .25s var(--e-spring)}
+.hero__paths a.lg{background:linear-gradient(160deg,rgba(255,255,255,.95),rgba(255,255,255,.78))}
+.hero__paths b{font-size:.98rem;font-weight:750;line-height:1.25;letter-spacing:-.01em}
+.hero__paths small{grid-column:1;margin-top:.15rem;font-size:.82rem;line-height:1.35;color:var(--c-muted)}
+.hero__paths .ico{grid-column:2;grid-row:1 / span 2;width:20px;height:20px;color:var(--c-green);transition:transform .22s var(--e-out)}
+.hero__paths a:hover{transform:translateY(-2px)}
+.hero__paths a:hover .ico{transform:translateX(3px)}
+.hero__paths .tour-btn{margin-top:.7rem}
 
 /* ---------- 02 · Estallido: titular abajo a la izquierda, capas a la derecha ---------- */
 .js .cap--02 .cap__box{top:auto;bottom:var(--gb);width:min(40vw,640px)}
@@ -505,16 +528,25 @@ html:not(.js) .cnav__inner,.cnav.is-solid .cnav__inner{background:linear-gradien
   .js .cine__img,.cine__vid{object-position:50% 50%}
   /* Cada capítulo es una columna debajo del cuadro del video; el CTA baja al final */
   .js .cap{display:flex;flex-direction:column;align-items:flex-start;padding:calc(var(--mt) + var(--mh) + 1.1rem) var(--gx) var(--gb)}
-  .js .cap > *,.js .cap--01 .hero__eyebrow,.js .hero__a,.js .hero__b,.js .hero__lead,.js .hero__cue,
+  .js .cap > *,.js .cap--01 .hero__eyebrow,.js .hero__a,.js .hero__b,.js .hero__lead,.js .hero__cue,.js .hero__main,.js .hero__paths,
   .js .cap .cap__box,.js .cap__aside,.js .capas,.js .fotos{position:static;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:none;height:auto;transform:none;text-align:left}
   .js .cap__veil,.js .cine__hud,.js .capas{display:none}
   .js .hero__eyebrow{font-size:.66rem;letter-spacing:.1em}
-  .js .hero__title{margin-top:.6rem;width:100%;font-size:min(11vw,5.6vh)}
+  .js .hero__title{margin-top:.5rem;width:100%;font-size:min(6.9vw,3.7vh)}
   .js .hero__b{text-align:left}
   .js .hero__lead{margin-top:1rem}
   .js .hero__tag{display:none}
-  .js .hero__text{margin-top:0;font-size:clamp(.95rem,4vw,1.08rem);max-width:32ch}
-  .js .hero__cta{position:static;margin-top:auto;align-self:center;transform:none}
+  .js .hero__main .hero__text{margin-top:.6rem;font-size:clamp(.9rem,3.7vw,1rem);line-height:1.45;max-width:none}
+  .js .hero__main .hero__cta{display:grid;grid-template-columns:1fr;gap:.45rem;width:100%;margin-top:.8rem}
+  .js .hero__main .hero__cta .cbtn{width:100%;min-height:50px;padding:.7rem 1rem;font-size:1rem}
+  .js .hero__trust{margin-top:.55rem;font-size:.76rem;line-height:1.4}
+  .js .hero__paths{width:100%;margin-top:.8rem}
+  .js .hero__paths-t{display:none}
+  /* en el teléfono las tres entradas van como fichas compactas: solo el título */
+  .js .hero__paths ul{grid-template-columns:repeat(3,1fr);gap:.35rem}
+  .js .hero__paths a{display:flex;align-items:center;min-height:56px;padding:.45rem .55rem;border-radius:14px}
+  .js .hero__paths b{font-size:.74rem;line-height:1.2}
+  .js .hero__paths small,.js .hero__paths .ico,.js .hero__paths .tour-btn{display:none}
   .js .hero__cue{display:none}
   .cap__title,.js .cap--06 .cap__title,.js .cap--08 .cap__title{font-size:min(clamp(1.6rem,6.6vw,2.6rem),4.6vh)}
   .js .cap--09 .cap__title{font-size:min(10vw,5.4vh)}
@@ -829,6 +861,13 @@ body.home .reveal.is-visible mark{background-size:100% 82%}
   transition:transform .25s var(--e-spring),box-shadow .25s var(--e-out);
 }
 .tour-btn.lg{background:linear-gradient(160deg,rgba(255,255,255,.96),rgba(255,255,255,.8))}
+/* 2026-10: en el hero comercial el recorrido es una opción discreta bajo las entradas */
+.tour-on .hero__paths .tour-btn{min-height:44px;gap:.6rem;padding:.2rem .8rem .2rem .2rem;background:none;border:0;box-shadow:none}
+.hero__paths .tour-btn__ico{width:36px;height:36px;animation:none}
+.hero__paths .tour-btn__ico svg{width:16px;height:16px}
+.hero__paths .tour-btn__txt{flex-direction:row;align-items:baseline;gap:.4rem}
+.hero__paths .tour-btn__txt b{font-size:.9rem}
+.hero__paths .tour-btn__txt small{margin:0;font-size:.8rem}
 .tour-btn:hover{transform:translateY(-2px) scale(1.02)}
 .tour-btn:active{transform:scale(.98)}
 .tour-btn__ico{
@@ -894,7 +933,7 @@ body.home .reveal.is-visible mark{background-size:100% 82%}
   .tour-running .cnav__links,.tour-running .cnav__tel{visibility:hidden}
 }
 @media (max-aspect-ratio:1/1){
-  .js .tour-btn{margin-top:1.1rem;align-self:stretch}
+  .js .tour-btn{margin-top:.7rem}
 }
 @media (max-width:920px){
   .tour{bottom:calc(clamp(1rem,3vh,1.8rem) + 76px)}
@@ -907,4 +946,23 @@ body.home .reveal.is-visible mark{background-size:100% 82%}
 @media (prefers-reduced-motion:reduce){
   .tour-btn__ico{animation:none}
   .tour{transition:opacity .2s linear}
+}
+
+/* ---------- Hero comercial en teléfonos bajos (2026-10) ----------
+   El escenario mide una pantalla y no hace scroll: lo que no cabe queda
+   fuera de alcance. Por altura se recorta primero el texto de apoyo (el
+   titular, las entradas y la línea de confianza ya dicen lo esencial). */
+.hero__paths .tour-btn__txt small{display:none}
+@media (max-aspect-ratio:1/1) and (max-height:800px){
+  .js .hero__main .hero__text{display:none}
+}
+@media (max-width:400px) and (max-aspect-ratio:1/1){
+  .js .hero__eyebrow span{display:none}
+}
+@media (max-aspect-ratio:1/1) and (max-height:700px){
+  .cine{--mh:calc((100vw - 1.5rem) / 2)}
+  .js .cine__media{aspect-ratio:2/1}
+  .js .hero__title{font-size:min(6.6vw,3.4vh)}
+  .js .hero__main .hero__cta .cbtn{min-height:44px;padding:.55rem 1rem;font-size:.95rem}
+  .js .hero__paths a{min-height:48px}
 }

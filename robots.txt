@@ -1,33 +1,44 @@
 # robots.txt — CrediAyudarte
-# Todo el sitio es público: no se bloquea ninguna página importante.
+# Todo el sitio es público: no se bloquea ninguna página.
+# robots.txt no oculta páginas de Google: para sacar una página del índice
+# se usa <meta name="robots" content="noindex"> (como en /home/ y el 404).
 
 User-agent: *
 Allow: /
 
-# Los rastreadores de IA/redes también pueden leer la página (quítalos si algún día no lo quieres)
+# ---------------------------------------------------------------------------
+# Rastreadores de BÚSQUEDA: muestran y enlazan el sitio en resultados.
+# Bloquearlos reduce la visibilidad del sitio en ese buscador o asistente.
+#   Googlebot ........ Google Search
+#   Bingbot .......... Bing (y búsquedas que se apoyan en Bing)
+#   OAI-SearchBot .... búsqueda de ChatGPT (OpenAI)
+#   Claude-SearchBot . búsqueda de Claude (Anthropic)
+#   PerplexityBot .... búsqueda de Perplexity
+# ---------------------------------------------------------------------------
 User-agent: Googlebot
-Allow: /
-
 User-agent: Bingbot
-Allow: /
-
-# Rastreadores de IA — acceso permitido al contenido público
-User-agent: GPTBot
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
+User-agent: Claude-SearchBot
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: anthropic-ai
-Allow: /
-
+# ---------------------------------------------------------------------------
+# ENTRENAMIENTO de modelos de IA. Hoy se permite (decisión del negocio).
+# Bloquearlos NO saca el sitio de Google Search ni de las búsquedas de arriba:
+#   Google-Extended .. uso del contenido para entrenar Gemini (no rastrea por
+#                      su cuenta y no afecta la inclusión ni el ranking en Google)
+#   GPTBot ........... entrenamiento de modelos de OpenAI
+#   ClaudeBot ........ entrenamiento de modelos de Anthropic
+# Para excluir el sitio del entrenamiento, cambiar "Allow: /" por
+# "Disallow: /" solo en este bloque.
+# ---------------------------------------------------------------------------
+User-agent: Google-Extended
+User-agent: GPTBot
 User-agent: ClaudeBot
 Allow: /
+
+# Visitas que dispara una persona desde un asistente (ChatGPT-User,
+# Claude-User, Perplexity-User): sus operadores indican que pueden no seguir
+# robots.txt porque no son rastreo automático.
 
 Sitemap: https://crediayudarte.com/sitemap.xml

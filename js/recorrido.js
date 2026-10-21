@@ -86,8 +86,8 @@
       puntos: ['La cuota sale de tu pensión o nómina, no la pagas tú cada mes', 'Que sea ordenado no significa que siempre convenga', 'Lo que importa es plazo, costo total y descuentos'] },
     { id: 'cuanto-cuesta', panel: 'analisis',
       titulo: '¿Cuánto cuesta que revisen mi caso?',
-      cuerpo: ['El preanálisis se hace sin costo y sin compromiso. Si una gestión tuviera costos u honorarios, te los explicamos con claridad antes de que decidas avanzar.'],
-      puntos: ['El preanálisis no tiene costo', 'Sin compromiso de avanzar', 'Cualquier costo se explica antes, nunca después'] },
+      cuerpo: ['El preanálisis no tiene costo ni compromiso, y no pedimos anticipos para tramitar tu crédito. Si una gestión tiene honorarios, o si tu caso requiere una financiación externa con costos propios, te lo explicamos por escrito antes de que decidas avanzar.'],
+      puntos: ['El preanálisis no tiene costo', 'Sin anticipos para tramitar tu crédito', 'Cualquier costo se explica antes, nunca después'] },
     { id: 'garantizan', panel: 'analisis',
       titulo: '¿Me garantizan que me aprueban el crédito?',
       cuerpo: ['No. Nadie serio puede garantizarte una aprobación. La decisión depende de tu perfil, pagaduría, capacidad, reporte y las políticas de cada entidad. Te decimos con honestidad qué tan viable se ve tu caso.'],
@@ -104,7 +104,7 @@
     { id: 'datos', panel: 'pagaduria',
       titulo: '¿Qué datos me van a pedir?',
       cuerpo: ['Solo lo necesario para orientarte, como tu pagaduría o entidad y tu situación general. No pedimos número de cédula, fecha de nacimiento, cuentas bancarias ni claves en el primer contacto.'],
-      puntos: ['Pagaduría y situación general, nada más al inicio', 'Sin cédula, cuentas ni claves en frío', 'Los datos sensibles, si hacen falta, los gestiona una persona'] },
+      puntos: ['Perfil, pagaduría, ciudad y situación general al inicio', 'Sin cédula, cuentas, claves ni documentos en el formulario', 'El desprendible se pide después, solo si el caso lo necesita'] },
 
     { id: 'compra-cartera', panel: 'opciones',
       titulo: '¿La compra de cartera siempre conviene?',
@@ -126,11 +126,11 @@
     { id: 'pais', panel: 'acompanamos',
       titulo: '¿Atienden en todo el país o solo en Cúcuta?',
       cuerpo: ['Tenemos oficina en Cúcuta y atendemos a todo el país de forma virtual por WhatsApp. Si estás en otra ciudad, te atendemos virtualmente. Escríbenos y coordinamos.'],
-      puntos: ['Oficina en Cúcuta, C.C. International', 'Todo el país por WhatsApp', 'Presencial si estás en Cúcuta y lo prefieres'] },
+      puntos: ['Oficina en Cúcuta, C.C. Internacional', 'Todo el país por WhatsApp', 'Presencial si estás en Cúcuta y lo prefieres'] },
     { id: 'seguro', panel: 'acompanamos',
       titulo: '¿Es seguro darles mi información?',
-      cuerpo: ['Sí. Pedimos solo lo indispensable y no compartimos tu información con terceros ajenos al proceso. Los datos sensibles, si algún día se requieren, los gestiona el equipo humano en el momento adecuado.'],
-      puntos: ['Solo lo indispensable', 'No se comparte con terceros ajenos al proceso', 'Lo sensible lo maneja una persona, en el momento adecuado'] }
+      cuerpo: ['Pedimos solo lo indispensable y lo usamos para orientar tu caso. Para estudiarlo con una entidad o un financiador es necesario compartir tu información con ellos, y eso lo hacemos solo con tu autorización. No vendemos datos. Los detalles están en nuestra política de privacidad.'],
+      puntos: ['Solo lo indispensable', 'Se comparte con entidades o financiadores solo con tu autorización', 'Puedes pedir consultar, corregir o eliminar tus datos'] }
   ];
 
   var modal = document.querySelector('.faq-modal');

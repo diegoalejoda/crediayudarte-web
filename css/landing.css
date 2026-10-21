@@ -67,3 +67,6 @@
   .tabla tbody th{width:auto}
   .balanza__col{padding:1.35rem 1.3rem}
 }
+
+/* .para-empezar__cta: acciones del bloque "Para empezar tu caso" (páginas por público) */
+.para-empezar__cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem}
