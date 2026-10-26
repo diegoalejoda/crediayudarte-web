@@ -33,17 +33,18 @@
   <meta name="twitter:image" content="https://crediayudarte.com/assets/og-solicitar.jpg" />
   <meta name="twitter:image:alt" content="Solicita tu análisis de crédito de libranza con CrediAyudarte, asesoría independiente en Colombia" />
 
-  <link rel="icon" href="assets/logo.png" type="image/png" />
-  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Archivo:wdth,wght@100..125,700..900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/solicitar/hero-d.webp?v=20260929b" media="(min-width:861px)" fetchpriority="high" />
   <link rel="preload" as="image" href="assets/solicitar/hero-m.webp?v=20260929b" media="(max-width:860px)" fetchpriority="high" />
-  <link rel="stylesheet" href="css/styles.css?v=20261013" />
+  <link rel="stylesheet" href="css/styles.css?v=20261025" />
   <link rel="stylesheet" href="css/motion.css?v=20260920" />
-  <link rel="stylesheet" href="css/home.css?v=20261013" />
-  <link rel="stylesheet" href="css/solicitar.css?v=20261013" />
+  <link rel="stylesheet" href="css/home.css?v=20261025" />
+  <link rel="stylesheet" href="css/solicitar.css?v=20261025" />
 
   <!-- ===================== DATOS ESTRUCTURADOS (schema.org) ===================== -->
   <script type="application/ld+json">
@@ -327,8 +328,8 @@
               <small class="field-help" id="pagaduriaAyuda">Aparece en tu desprendible. Si no la sabes, escribe "no sé".</small>
             </div>
             <div class="field">
-              <label for="ciudad">Ciudad donde vives <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="ciudad" name="ciudad" list="ciudades" placeholder="Ej: Cúcuta" autocomplete="address-level2" required>
+              <label for="ciudad">Ciudad donde vives <span class="opt">(opcional)</span></label>
+              <input type="text" id="ciudad" name="ciudad" list="ciudades" placeholder="Ej: Cúcuta" autocomplete="address-level2">
               <datalist id="ciudades">
                 <option value="Cúcuta"></option>
                 <option value="Villa del Rosario"></option>
@@ -404,6 +405,12 @@
             <input type="checkbox" id="autorizo" name="autorizo" required>
             <span>Autorizo a Marilú Arévalo Toro, quien opera con el nombre comercial CrediAyudarte, a tratar los datos de este formulario para contactarme por WhatsApp y estudiar mi solicitud. Si decido avanzar, mis datos podrán compartirse con las entidades o financiadores que estudien mi caso, con mi autorización. Leí la <a href="privacy/" target="_blank" rel="noopener">política de privacidad</a>. <span class="req" aria-hidden="true">*</span></span>
           </label>
+
+          <!-- Trampa anti-spam: invisible para las personas; si llega con texto, no se registra -->
+          <div class="hp" aria-hidden="true">
+            <label for="sitio_web">No llenes este campo</label>
+            <input type="text" id="sitio_web" name="sitio_web" tabindex="-1" autocomplete="off">
+          </div>
 
           <p class="form-error" id="formError" role="alert"></p>
 
@@ -832,10 +839,10 @@
   </dialog>
 
   <script defer src="js/medicion.js?v=20261013"></script>
-  <script defer src="js/script.js?v=20261013"></script>
-  <script defer src="js/solicitar.js?v=20261013"></script>
+  <script defer src="js/script.js?v=20261025"></script>
+  <script defer src="js/solicitar.js?v=20261025"></script>
   <script defer src="js/motion.js?v=20260920"></script>
   <script defer src="js/recorrido.js?v=20261013"></script>
-  <script defer src="js/home.js?v=20261013"></script>
+  <script defer src="js/home.js?v=20261025"></script>
 </body>
 </html>

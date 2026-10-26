@@ -6,7 +6,8 @@
    3) muestra "Falta un paso: envía el mensaje en WhatsApp" (nunca un
       "solicitud recibida": la conversación empieza cuando ella lo envía).
    Ya no se piden edad ni archivos: el desprendible se solicita después,
-   por WhatsApp, solo si el caso lo necesita.
+   por WhatsApp, solo si el caso lo necesita. La ciudad es opcional (2026-10)
+   y el CRM la recibe vacía si no se escribe.
    =================================================================== */
 (function () {
   'use strict';
@@ -24,7 +25,16 @@
 
   function medir(ev, datos) { if (typeof window.caMedir === 'function') window.caMedir(ev, datos); }
 
+  // Los botones flotantes (WhatsApp, volver arriba) se esconden mientras el
+  // formulario está en pantalla, para no tapar campos en el celular
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      document.body.classList.toggle('form-a-la-vista', entries[0].isIntersecting);
+    }, { threshold: 0.05 }).observe(form);
+  }
+
   var formStarted = false;
+  var ultimoEnvio = ''; // evita registrar dos veces la misma solicitud en el CRM
   form.addEventListener('focusin', function () {
     if (formStarted) return;
     formStarted = true;
@@ -50,7 +60,6 @@
     var faltan = [
       [!perfil, 'tu perfil', form.querySelector('input[name="perfil"]')],
       [!pagaduria, 'tu pagaduría', document.getElementById('pagaduria')],
-      [!ciudad, 'tu ciudad', document.getElementById('ciudad')],
       [!objetivo, 'qué necesitas', document.getElementById('objetivo')],
       [!situacion, 'tu situación', form.querySelector('input[name="situacion"]')],
       [!nombre, 'tu nombre', document.getElementById('nombre')],
@@ -78,10 +87,23 @@
     hideError();
     var origen = typeof window.caOrigen === 'function' ? window.caOrigen() : {};
 
+    // Trampa anti-spam: las personas no ven ese campo; un robot lo llena
+    var trampa = val('sitio_web');
+    // Mismo contenido enviado otra vez (doble clic, o volver a tocar el botón):
+    // solo se reabre WhatsApp, sin duplicar el registro en el CRM
+    var huella = [perfil, pagaduria, ciudad, objetivo, situacion, nombre, telDigits].join('|');
+    var repetido = huella === ultimoEnvio;
+    ultimoEnvio = huella;
+    var btn = form.querySelector('.btn-submit');
+    if (btn) {
+      btn.setAttribute('aria-busy', 'true');
+      setTimeout(function () { btn.removeAttribute('aria-busy'); }, 2500);
+    }
+
     // 1) Solicitud -> n8n -> Supabase (no bloquea). Se conservan las claves que
     //    ya recibía el flujo (nombre, nombres, apellido, edad, telefono, perfil,
     //    vida_crediticia, tiene_desprendible, origen) y se agregan las nuevas.
-    try {
+    if (!trampa && !repetido) try {
       fetch(LEAD_WEBHOOK, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -114,7 +136,7 @@
         keepalive: true
       }).catch(function () {});
     } catch (err) { /* no bloquear la experiencia si falla el envío */ }
-    medir('form_submit', { ubicacion: 'solicitar' });
+    if (!trampa && !repetido) medir('form_submit', { ubicacion: 'solicitar' });
 
     // 2) Mensaje de WhatsApp con lo que escribió la persona
     var lineas = [
@@ -123,7 +145,7 @@
       'Nombre: ' + nombre,
       'Perfil: ' + perfil,
       'Pagaduría: ' + pagaduria,
-      'Ciudad: ' + ciudad,
+      'Ciudad: ' + (ciudad || 'no la indiqué'),
       'Necesito: ' + objetivo,
       'Situación: ' + situacion,
       '',

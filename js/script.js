@@ -96,6 +96,30 @@
     if (nextBtn) nextBtn.addEventListener('click', function () { showPage(currentPage + 1); });
   }
 
+  /* ---- Botón "Volver arriba": aparece tras bajar más de dos pantallas.
+          Va encima del WhatsApp flotante para no taparlo. ---- */
+  var subir = document.createElement('button');
+  subir.type = 'button';
+  subir.className = 'subir';
+  subir.setAttribute('aria-label', 'Volver arriba');
+  subir.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 15 12 9 18 15"/></svg>';
+  subir.addEventListener('click', function () {
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: still ? 'auto' : 'smooth' });
+    var destino = document.querySelector('h1');
+    if (destino) { destino.setAttribute('tabindex', '-1'); destino.focus({ preventScroll: true }); }
+  });
+  document.body.appendChild(subir);
+  var subirTick = false;
+  window.addEventListener('scroll', function () {
+    if (subirTick) return;
+    subirTick = true;
+    requestAnimationFrame(function () {
+      subirTick = false;
+      subir.classList.toggle('is-on', window.pageYOffset > window.innerHeight * 2);
+    });
+  }, { passive: true });
+
   /* ---- Sombra del header al hacer scroll ---- */
   var header = document.querySelector('.header');
   if (header) {

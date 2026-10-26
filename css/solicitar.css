@@ -276,7 +276,17 @@ body.sol .consent input{width:22px;height:22px;margin-top:.1rem;accent-color:var
 body.sol .consent a{color:var(--verde-texto);font-weight:700;text-decoration:underline;text-underline-offset:2px}
 body.sol .consent:has(input:checked){border-color:var(--verde-marca);background:var(--verde-menta)}
 body.sol .form-error:not(:empty).is-visible{display:block}
-body.sol .form-fine{font-size:.84rem;color:var(--gris-texto);margin-top:.7rem}
+/* 2026-10: textos de ayuda, error y autorización legibles para personas mayores */
+body.sol .field-help{font-size:.9rem}
+body.sol .consent{font-size:.92rem}
+body.sol .form-error{margin:0 0 1rem;padding:.8rem 1rem;border-radius:12px;font-size:1rem;font-weight:600;background:#FDEDEC;border:1.5px solid #E5A29B}
+body.sol .field label .opt{font-weight:500;color:var(--gris-texto)}
+body.sol .btn-submit[aria-busy="true"]{opacity:.7;pointer-events:none}
+/* Trampa anti-spam: fuera de la vista y del lector de pantalla */
+body.sol .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* Mientras el formulario está en pantalla, los botones flotantes no tapan campos */
+body.sol.form-a-la-vista .wa-float,body.sol.form-a-la-vista .subir{opacity:0;visibility:hidden;pointer-events:none}
+body.sol .form-fine{font-size:.92rem;color:var(--gris-texto);margin-top:.7rem}
 body.sol .form-fine strong{color:var(--tinta)}
 body.sol .form-next{margin-top:1rem;padding:1.1rem 1.2rem;border-radius:16px;border:2px solid var(--verde-marca);background:var(--verde-menta)}
 body.sol .form-next:focus{outline:3px solid var(--c-green);outline-offset:3px}
