@@ -1,24 +1,24 @@
 /* ===================================================================
-   CrediAyudarte — Home: navegación, acordeón de preguntas,
+   CrediAyudarte — Home y /solicitar: navegación, acordeón de preguntas,
    línea de pasos, WhatsApp flotante y medición de CTA.
-   (Menú móvil, año y paginación de preguntas: js/script.js)
+   (Menú móvil, año, revelado y botón "volver arriba": js/script.js)
    =================================================================== */
 (function () {
   'use strict';
 
   var root = document.documentElement;
   var nav = document.querySelector('.cnav');
-  var cine = document.getElementById('experiencia');
+  var hero = document.getElementById('inicio');
   var wa = document.querySelector('.wa-float');
 
   /* ---- Navbar: pasa a superficie blanca al empezar el scroll;
-          WhatsApp flotante solo cuando termina la experiencia ---- */
+          WhatsApp flotante solo después del hero (que ya tiene su botón) ---- */
   var ticking = false;
   function onScroll() {
     ticking = false;
     if (nav) nav.classList.toggle('is-solid', window.pageYOffset > 24);
     if (wa) {
-      var hide = cine ? cine.getBoundingClientRect().bottom > window.innerHeight * 0.55 : false;
+      var hide = hero ? hero.getBoundingClientRect().bottom > window.innerHeight * 0.3 : false;
       wa.classList.toggle('is-hidden', hide);
     }
   }
@@ -98,92 +98,6 @@
       });
     }, { threshold: 0.6 });
     Array.prototype.forEach.call(counters, function (n) { co.observe(n); });
-  }
-
-  /* ---- Índice numerado de secciones ----
-     Los 6 capítulos de la experiencia no tienen posición propia en la página
-     (viven en un escenario sticky): su destino sale de los tramos que publica
-     cine.js (sec.cineInfo). Las secciones normales usan su posición real. */
-  var snav = document.getElementById('snav');
-  if (snav) {
-    var navH = function () { return nav ? nav.offsetHeight : 0; };
-    var enlaces = Array.prototype.slice.call(snav.querySelectorAll('a'));
-    var destinos = enlaces.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
-    var capIdx = destinos.map(function (el) { return el && el.classList.contains('cap') && cine ? Array.prototype.indexOf.call(cine.querySelectorAll('.cap'), el) : -1; });
-
-    // En teléfono el mismo índice va dentro del menú de la cápsula
-    var menu = document.getElementById('nav');
-    var copia = null;
-    if (menu) {
-      copia = document.createElement('div');
-      copia.className = 'cnav__secs';
-      copia.innerHTML = '<p>Secciones</p>';
-      var ol = snav.querySelector('ol').cloneNode(true);
-      ol.className = '';
-      copia.appendChild(ol);
-      menu.appendChild(copia);
-    }
-    var todos = enlaces.concat(copia ? Array.prototype.slice.call(copia.querySelectorAll('a')) : []);
-
-    // Scroll (en px de página) en que se ve el destino i
-    function yDe(i) {
-      var info = cine && cine.cineInfo;
-      if (capIdx[i] >= 0 && info && root.classList.contains('cine-on')) {
-        var top = cine.getBoundingClientRect().top + window.pageYOffset;
-        // la estación del capítulo: donde se detiene el paso a paso (todo el copy ya entró)
-        return top + info.rest[capIdx[i]];
-      }
-      var el = destinos[i];
-      return el ? el.getBoundingClientRect().top + window.pageYOffset - navH() : 0;
-    }
-
-    // Umbral (en scroll de página) desde el que cuenta cada destino: los capítulos cambian
-    // exactamente cuando cambia cine.js; las secciones, al pasar el 35 % superior de la pantalla
-    var activo = -1;
-    function marcar() {
-      var y = window.pageYOffset;
-      var info = cine && cine.cineInfo;
-      var conCine = info && root.classList.contains('cine-on');
-      var secTop = cine ? cine.getBoundingClientRect().top + y : 0;
-      var n = 0;
-      for (var i = 1; i < destinos.length; i++) {
-        var ini;
-        if (capIdx[i] >= 0 && conCine) ini = secTop + info.starts[capIdx[i]];
-        else if (destinos[i]) ini = destinos[i].getBoundingClientRect().top + y - window.innerHeight * 0.35;
-        else continue;
-        if (ini <= y) n = i;
-      }
-      if (n === activo) return;
-      activo = n;
-      var k = enlaces.length;
-      todos.forEach(function (a, idx) {
-        var on = idx % k === n;
-        a.classList.toggle('is-active', on);
-        if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
-      });
-    }
-
-    todos.forEach(function (a, idx) {
-      a.addEventListener('click', function (e) {
-        var i = idx % enlaces.length;
-        e.preventDefault();
-        if (copia && menu.classList.contains('is-open')) {
-          menu.classList.remove('is-open');
-          var tg = document.getElementById('navToggle');
-          if (tg) { tg.classList.remove('is-open'); tg.setAttribute('aria-expanded', 'false'); }
-        }
-        window.scrollTo({ top: Math.max(0, Math.round(yDe(i))), behavior: still ? 'auto' : 'smooth' });
-        if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
-      });
-    });
-
-    var mTick = false;
-    window.addEventListener('scroll', function () {
-      if (!mTick) { mTick = true; requestAnimationFrame(function () { mTick = false; marcar(); }); }
-    }, { passive: true });
-    window.addEventListener('resize', marcar, { passive: true });
-    window.addEventListener('load', marcar);
-    marcar();
   }
 
   /* ---- Medición: clic en "Solicita tu análisis" (sin datos personales) ---- */
