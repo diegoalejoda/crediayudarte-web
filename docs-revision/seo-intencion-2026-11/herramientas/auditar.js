@@ -9,7 +9,8 @@ const dec = s => s.replace(/&#(\d+);/g, (m, n) => String.fromCodePoint(+n)).repl
 const txt = h => dec(h.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
 const get = async (u, redirect = 'manual') => { const r = await fetch(u, { redirect }); return { status: r.status, loc: r.headers.get('location'), body: r.status === 200 ? await r.text() : '' }; };
 // Las promesas solo cuentan si no van negadas cerca (no, tampoco, nadie, «…»)
-const PROHIBIDO = [/(?<!(\bno\b|tampoco|nadie|desconf\w+|«)[^.]{0,80})aprobaci[oó]n (garantizada|segura|asegurada)/i, /(?<!(\bno\b|tampoco|nadie|«)[^.]{0,80})cr[eé]dito garantizado/i, /honorarios se pagan solo si/i, /AggregateRating/, /openingHours/, /ratingValue/, /reviewCount/, /International\b/, /24 ?[-–y] ?48 horas/i, /9 años|más de 10 años/i];
+// openingHours ya no se marca: el horario real (lun. a vie., 8:00–17:00) lo confirmó el dueño el 2026-11-13.
+const PROHIBIDO = [/(?<!(\bno\b|tampoco|nadie|desconf\w+|«)[^.]{0,80})aprobaci[oó]n (garantizada|segura|asegurada)/i, /(?<!(\bno\b|tampoco|nadie|«)[^.]{0,80})cr[eé]dito garantizado/i, /honorarios se pagan solo si/i, /AggregateRating/, /ratingValue/, /reviewCount/, /International\b/, /24 ?[-–y] ?48 horas/i, /9 años|más de 10 años/i];
 
 (async () => {
   const sm = (await get(BASE + '/sitemap.xml')).body;

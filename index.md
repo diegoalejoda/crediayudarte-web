@@ -4,7 +4,7 @@
 
 - **Revisar tu caso no cuesta.** No pedimos anticipos para tramitar tu crédito.
 - **No garantizamos la aprobación.** No somos un banco: la entidad financiera decide y desembolsa.
-- **Oficina en Cúcuta:** Calle 12 # 4–47, Local 4, C.C. Internacional. También atendemos por WhatsApp (+57 315 247 4348). Te responde una persona.
+- **Oficina en Cúcuta:** Calle 12 # 4–47, Local 4, C.C. Internacional. Lunes a viernes, de 8:00 a.m. a 5:00 p.m. También atendemos por WhatsApp (+57 315 247 4348). Te responde una persona.
 
 ## Qué revisamos contigo y qué decide la entidad
 
@@ -76,5 +76,6 @@ Para la primera consulta, ninguno. Si tu caso tiene opciones, te pediremos tu de
 
 - WhatsApp: [+57 315 247 4348](https://wa.me/573152474348)
 - Oficina: Calle 12 # 4-47, Local 4, Centro Comercial Internacional, Cúcuta, Norte de Santander, Colombia.
+- Horario: lunes a viernes, de 8:00 a.m. a 5:00 p.m.
 - Atención presencial en Cúcuta (con cita por WhatsApp) y virtual en todo el país.
 - [Política de privacidad](https://crediayudarte.com/privacy/) · [Quiénes somos](https://crediayudarte.com/about/) · [Testimonios](https://crediayudarte.com/testimonios.html) · [Blog](https://crediayudarte.com/blog/index.html)

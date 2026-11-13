@@ -178,3 +178,9 @@ Cambios propios de algunas páginas:
   - Pasar de "Sí" a "No" cierra la caja y quita el archivo.
   - "No" solo registra la solicitud.
   - 0 errores de JavaScript y sin desbordamiento. Auditoría: 24 URL, 0 problemas.
+- **Horario real** (confirmado por el dueño): lunes a viernes, de 8:00 a.m. a 5:00 p.m.
+  - Reemplaza "PENDIENTE DE DATO REAL" en `/credito-libranza-cucuta/`.
+  - Aparece en el pie de las 25 páginas, en la dirección del hero de la portada, en el bloque de mapa de Cúcuta y Solicitar, en la pregunta "¿Necesito cita?" de Cúcuta (visible y JSON-LD), en `llms.txt` y en `index.md`.
+  - El JSON-LD del negocio (portada y Cúcuta) lleva `openingHoursSpecification` de lunes a viernes, 08:00–17:00.
+  - **Ya no queda ningún dato pendiente que bloquee la publicación.**
+  - Hay que poner el mismo horario en el Perfil de Empresa de Google para que coincida.
