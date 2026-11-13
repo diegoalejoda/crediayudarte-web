@@ -21,7 +21,7 @@ body.sol .mapa__copy h2,body.sol .creeles__tag,body.sol .cfinal h2{
   font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 108;
   text-transform:uppercase;letter-spacing:-.018em;word-spacing:normal;line-height:.95;color:var(--c-green);text-wrap:balance;
 }
-body.sol .cfinal h2{color:#fff}
+body.sol .cfinal h2{color:#1B2410}
 body.sol .shero h1 mark,body.sol .stack__copy h2 mark,body.sol .section__head h2 mark,body.sol .fb__copy h2 mark,
 body.sol .mapa__copy h2 mark,body.sol .creeles__tag mark,body.sol .cfinal h2 mark{background-position:0 58%;background-size:100% 82%;padding:0 .08em}
 
@@ -297,3 +297,15 @@ body.sol .form-next p{margin:.35rem 0 .8rem;font-size:.9rem;line-height:1.5;colo
   body.sol .choices--4 .choice__box{padding:.7rem .7rem;gap:.5rem}
   body.sol .choices--4 .choice__box strong{font-size:.88rem}
 }
+/* Enlace de texto a WhatsApp bajo el botón del hero (canal humano visible en móvil) */
+body.sol .shero__wa{margin-top:.9rem;font-size:1.02rem;color:var(--c-ink)}
+body.sol .shero__wa a{color:#3F6B14;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* Formulario legible para personas mayores: ayudas y autorización a 16 px */
+body.sol .field-help,body.sol .consent{font-size:1rem}
+body.sol .shero__checks li{font-size:1.02rem}
+body.sol .form-help,body.sol .shero .breadcrumb{font-size:1rem}
+/* 2026-11: formulario corto — perfil en 2 opciones y reporte en 3 */
+body.sol .choices--2{grid-template-columns:1fr 1fr}
+body.sol .choices--3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){ body.sol .choices--3{grid-template-columns:1fr} }
+@media (max-width:520px){ body.sol .choices--2{gap:.5rem} body.sol .choices--2 .choice__box{padding:.75rem .7rem;gap:.5rem} }

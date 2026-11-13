@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Marca que JS está activo: sin JS todo el contenido queda visible -->
+  <script>document.documentElement.className += ' js';</script>
 
   <!-- ===================== SEO ===================== -->
-  <title>Crédito de libranza para la Fuerza Pública: activos y retirados</title>
+  <title>Crédito para Policía, Ejército y Fuerza Pública por libranza</title>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <meta name="description" content="Libranza para Policía, Ejército, Armada y Fuerza Aérea: qué cambia entre estar activo o con asignación de retiro y qué revisar antes de firmar." />
+  <meta name="description" content="Crédito de libranza para Policía, Ejército, Armada y Fuerza Aérea, en servicio activo o con asignación de retiro: qué se revisa y qué decide la entidad." />
   <link rel="canonical" href="https://crediayudarte.com/credito-libranza-fuerza-publica/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="author" content="CrediAyudarte" />
@@ -17,7 +19,7 @@
   <meta property="og:site_name" content="CrediAyudarte" />
   <meta property="og:locale" content="es_CO" />
   <meta property="og:url" content="https://crediayudarte.com/credito-libranza-fuerza-publica/" />
-  <meta property="og:title" content="Crédito de libranza para la Fuerza Pública: activos y retirados" />
+  <meta property="og:title" content="Crédito para Policía, Ejército y Fuerza Pública por libranza" />
   <meta property="og:description" content="Por qué estar en actividad o con asignación de retiro cambia el análisis, y qué revisar antes de firmar." />
   <meta property="og:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -25,7 +27,7 @@
   <meta property="og:image:alt" content="Asesoría de crédito de libranza para miembros de la Fuerza Pública en Colombia" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Crédito de libranza para la Fuerza Pública: activos y retirados" />
+  <meta name="twitter:title" content="Crédito para Policía, Ejército y Fuerza Pública por libranza" />
   <meta name="twitter:description" content="Por qué estar en actividad o con asignación de retiro cambia el análisis, y qué revisar antes de firmar." />
   <meta name="twitter:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
   <meta name="twitter:image:alt" content="Asesoría de crédito de libranza para miembros de la Fuerza Pública en Colombia" />
@@ -36,9 +38,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,700..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=20261025" />
+  <link rel="stylesheet" href="../css/styles.css?v=20261112" />
   <link rel="stylesheet" href="../css/motion.css?v=20260919" />
-  <link rel="stylesheet" href="../css/blog.css?v=20261013" />
+  <link rel="stylesheet" href="../css/blog.css?v=20261112" />
   <link rel="stylesheet" href="../css/landing.css?v=20261013" />
 
   <!-- ===================== DATOS ESTRUCTURADOS ===================== -->
@@ -50,8 +52,8 @@
       "@type": "WebPage",
       "@id": "https://crediayudarte.com/credito-libranza-fuerza-publica/#pagina",
       "url": "https://crediayudarte.com/credito-libranza-fuerza-publica/",
-      "name": "Crédito de libranza para la Fuerza Pública: activos y retirados",
-      "description": "Cómo funciona la libranza para personal de Policía, Ejército, Armada y Fuerza Aérea. Por qué estar en actividad o con asignación de retiro cambia el análisis y qué revisar antes de firmar.",
+      "name": "Crédito para Policía, Ejército y Fuerza Pública por libranza",
+      "description": "Crédito de libranza para Policía, Ejército, Armada y Fuerza Aérea, en servicio activo o con asignación de retiro: qué se revisa y qué decide la entidad.",
       "inLanguage": "es-CO",
       "isPartOf": {
         "@id": "https://crediayudarte.com/#sitio"
@@ -62,6 +64,27 @@
       "primaryImageOfPage": "https://crediayudarte.com/assets/og-crediayudarte.jpg",
       "breadcrumb": {
         "@id": "https://crediayudarte.com/credito-libranza-fuerza-publica/#migas"
+      },
+      "mainEntity": {
+        "@id": "https://crediayudarte.com/credito-libranza-fuerza-publica/#servicio"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://crediayudarte.com/credito-libranza-fuerza-publica/#servicio",
+      "name": "Asesoría en crédito de libranza para la Fuerza Pública",
+      "serviceType": "Asesoría en crédito de libranza",
+      "description": "Revisión de pagaduría, descuentos, margen libre, historial y costo total para Policía, Ejército, Armada y Fuerza Aérea, en servicio activo o con asignación de retiro. La aprobación depende de la entidad financiera.",
+      "provider": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Policía, Ejército, Armada y Fuerza Aérea"
       }
     },
     {
@@ -156,6 +179,14 @@
             "@type": "Answer",
             "text": "Sí, y es frecuente cuando el desprendible tiene varios descuentos entre fondos internos, cooperativas de la institución y libranzas anteriores. Lo importante es no aceptarla en bloque: hay obligaciones que conviene recoger y otras que conviene dejar quietas, sobre todo las que ya están avanzadas y en buenas condiciones."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Atienden a policías y militares de Cúcuta y Norte de Santander?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Puedes venir a la oficina en el Centro Comercial Internacional de Cúcuta, coordinando antes por WhatsApp, o hacer todo el análisis por WhatsApp desde donde estés destinado. La aprobación depende de la entidad financiera."
+          }
         }
       ]
     }
@@ -164,6 +195,7 @@
   </script>
 </head>
 <body>
+  <a class="skip" href="#principal">Saltar al contenido</a>
 
   <!-- ===================== SPRITE DE ICONOS ===================== -->
   <svg style="display:none" aria-hidden="true">
@@ -190,22 +222,22 @@
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="top">
     <div class="container header__inner">
-      <a href="../index.html" class="header__logo" aria-label="CrediAyudarte - inicio">
+      <a href="../" class="header__logo" aria-label="CrediAyudarte - inicio">
         <img src="../assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav" id="nav">
         <a href="../credito-de-libranza/">Crédito de libranza</a>
-        <a href="../index.html#para-quien">Para quién</a>
-        <a href="../index.html#como-funciona">Cómo funciona</a>
+        <a href="../#para-quien">Para quién</a>
+        <a href="../#como-funciona">Cómo funciona</a>
         <a href="../testimonios.html">Testimonios</a>
-        <a href="../blog/index.html">Blog</a>
-        <a href="../index.html#preguntas">Preguntas</a>
-        <a href="../index.html#contacto">Contacto</a>
+        <a href="../blog/">Blog</a>
+        <a href="../#preguntas">Preguntas</a>
+        <a href="../#contacto">Contacto</a>
       </nav>
       <div class="header__actions">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="btn-wa" aria-label="Escríbenos por WhatsApp">
+        <a href="../solicitar.html?perfil=empleado#solicitud" class="btn-wa" aria-label="Ir al formulario de solicitud">
           <svg class="ico"><use href="#i-whatsapp"/></svg>
-          <span>Escríbenos<small>Te orientamos</small></span>
+          <span>Solicitud<small>a WhatsApp</small></span>
         </a>
         <a href="../solicitar.html" class="btn btn-primary header__cta">Solicita tu análisis</a>
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -215,20 +247,22 @@
     </div>
   </header>
 
+  <main id="principal">
+
   <!-- ===================== HERO ===================== -->
   <section class="page-hero">
     <span class="blob blob--green anim-drift" aria-hidden="true"></span>
     <span class="blob blob--yellow anim-float2" aria-hidden="true"></span>
     <div class="container page-hero__inner">
       <nav class="breadcrumb" aria-label="Ruta de navegación">
-        <a href="../index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="../credito-de-libranza/">Crédito de libranza</a> <span aria-hidden="true">&rsaquo;</span> <span>Fuerza Pública</span>
+        <a href="../">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="../credito-de-libranza/">Crédito de libranza</a> <span aria-hidden="true">&rsaquo;</span> <span>Fuerza Pública</span>
       </nav>
-      <h1>Crédito de libranza para la Fuerza Pública: <span>qué cambia entre estar activo y estar pensionado</span></h1>
+      <h1>Crédito de libranza para Policía, Ejército y Fuerza Pública: <span>activos y con asignación de retiro</span></h1>
       <p>Policía, Ejército, Armada y Fuerza Aérea, en actividad o con asignación de retiro. La diferencia entre esas dos situaciones es el factor que más pesa en el análisis, y casi nunca se explica.</p>
       <div class="page-hero__cta">
-        <a href="../solicitar.html" class="btn btn-primary btn-lg">Quiero que revisen mi caso</a>
-        <a href="https://wa.me/573152474348?text=Hola%2C%20soy%20de%20la%20Fuerza%20P%C3%BAblica%20y%20quiero%20comparar%20una%20oferta%20que%20me%20hicieron." target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Ya tengo una oferta y quiero compararla</a>
+        <a href="../solicitar.html?perfil=empleado#solicitud" class="btn btn-primary btn-lg" data-ubic="credito-libranza-fuerza-publica-hero"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
       </div>
+      <p class="page-hero__paso">Te responde una persona. Revisar tu caso no cuesta y no te pedimos cédula ni claves en el primer mensaje.</p>
       <p class="page-hero__fine">CrediAyudarte es una asesoría independiente especializada en crédito de libranza para pensionados y empleados públicos en Colombia. No somos un banco y no aprobamos ni desembolsamos créditos: revisamos si el crédito realmente te conviene antes de que firmes. El preanálisis no tiene costo.</p>
     </div>
   </section>
@@ -251,12 +285,39 @@
             <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Qué se evalúa:</strong> la capacidad que queda en tu desprendible, los convenios de tu pagaduría, tu historial en centrales de riesgo, si hay embargos y las políticas de cada entidad. Estar en actividad o retirado cambia la pagaduría, el plazo y las entidades que pueden estudiar tu caso.</span></li>
             <li><svg class="ico"><use href="#i-check"/></svg><span><strong>Según tu situación:</strong> con buen historial comparamos <a href="../credito-de-libranza/">libranza</a> y <a href="../compra-de-cartera/">compra de cartera</a> buscando condiciones competitivas; con <a href="../credito-libranza-reportados/">reportes o mora</a> o con <a href="../credito-libranza-embargos/">embargo</a> buscamos quién pueda estudiar tu caso; y si no te queda cupo, evaluamos un <a href="../saneamiento-financiero/">saneamiento financiero</a>.</span></li>
           </ul>
-          <p class="para-empezar__cta"><a href="https://wa.me/573152474348?text=Hola%2C%20soy%20de%20la%20Fuerza%20P%C3%BAblica%20y%20quiero%20que%20eval%C3%BAen%20mi%20caso%20de%20libranza." target="_blank" rel="noopener" class="btn btn-primary" data-ubic="credito-libranza-fuerza-publica-para-empezar">Evaluar mi caso por WhatsApp</a> <a href="../solicitar.html#solicitud" class="btn btn-ghost" data-ubic="credito-libranza-fuerza-publica-para-empezar">Solicitar preanálisis gratuito</a></p>
+          <p class="para-empezar__cta"><a href="../solicitar.html?perfil=empleado#solicitud" class="btn btn-primary" data-ubic="credito-libranza-fuerza-publica-para-empezar">Solicitud a WhatsApp</a></p>
+        </div>
+
+        <!-- QUÉ REVISAMOS / QUÉ DECIDE LA ENTIDAD -->
+        <h2 id="que-revisamos">Qué revisamos contigo y qué decide la entidad</h2>
+        <div class="revisa">
+          <div class="revisa__col revisa__col--nos">
+            <h3>Lo que revisamos contigo</h3>
+            <ul>
+              <li><b>Si estás en servicio activo o con asignación de retiro.</b></li>
+              <li><b>Tu pagaduría:</b> tu fuerza, CASUR o CREMIL.</li>
+              <li><b>Tus descuentos actuales</b> en el desprendible.</li>
+              <li><b>El margen que te queda libre</b> según la ley.</li>
+              <li><b>Tu historial</b> y si hay embargos.</li>
+              <li><b>Cuota, plazo y costo total.</b></li>
+            </ul>
+          </div>
+          <div class="revisa__col revisa__col--entidad">
+            <h3>Lo que decide la entidad, no nosotros</h3>
+            <ul>
+              <li>Si aprueba o no el crédito.</li>
+              <li>El monto, la tasa y el plazo.</li>
+              <li>Los seguros y los costos del estudio.</li>
+              <li>Cuándo desembolsa.</li>
+            </ul>
+          </div>
+          <p class="revisa__nota">Ser pensionado o tener nómina pública ayuda a que tu caso se pueda estudiar, pero <strong>no garantiza la aprobación</strong>. Revisar tu caso no cuesta y no pedimos anticipos.</p>
         </div>
 
         <nav class="toc" aria-label="Contenido de la página">
           <h2>En esta página</h2>
           <ol>
+            <li><a href="#que-revisamos">Qué revisamos y qué decide la entidad</a></li>
             <li><a href="#situacion">La operación que se decide en un turno</a></li>
             <li><a href="#activo-retiro">Activo o con asignación de retiro: la diferencia que más pesa</a></li>
             <li><a href="#pagaduria">Tu pagaduría y por qué define las opciones</a></li>
@@ -265,6 +326,8 @@
             <li><a href="#traslados">Traslados, cambios de unidad y retiro</a></li>
             <li><a href="#conviene">Cuándo puede convenir y cuándo no</a></li>
             <li><a href="#antes">Qué revisar antes de firmar</a></li>
+            <li><a href="#palabras">Palabras que vas a escuchar</a></li>
+            <li><a href="#documentos">Qué documentos pueden pedirte</a></li>
             <li><a href="#limites">Lo que no podemos prometerte</a></li>
             <li><a href="#preguntas">Preguntas frecuentes</a></li>
           </ol>
@@ -405,6 +468,45 @@
           </ul>
         </div>
 
+        <!-- PALABRAS QUE VAS A ESCUCHAR -->
+        <h2 id="palabras">Palabras que vas a escuchar, explicadas</h2>
+        <dl class="glosario">
+          <div><dt>Asignación de retiro</dt><dd>El pago mensual del personal retirado de la Fuerza Pública. Lo pagan CASUR (Policía) o CREMIL (Fuerzas Militares).</dd></div>
+          <div><dt>Pagaduría</dt><dd>La entidad que te paga la pensión o el sueldo y aplica los descuentos: por ejemplo Colpensiones, FOPEP, Fiduprevisora, una Secretaría de Educación, CASUR o CREMIL. Si no tiene convenio con una entidad financiera, esa entidad no puede prestarte por libranza.</dd></div>
+          <div><dt>Desprendible</dt><dd>El comprobante de pago de tu pensión o tu sueldo. Muestra cuánto te pagan, qué te descuentan y cuánto recibes.</dd></div>
+          <div><dt>Capacidad de pago o margen</dt><dd>Lo que te queda libre después de los descuentos. Por ley, después de los descuentos de libranza debes recibir al menos el 50 % del neto de tu salario o pensión (Ley 1527 de 2012, art. 3).</dd></div>
+          <div><dt>Cuota y costo total</dt><dd>La cuota es lo que pagas cada mes. El costo total es lo que pagas al final: la cuota por todos los meses, más seguros y cargos. Una cuota baja con muchos años puede salir más cara.</dd></div>
+          <div><dt>Compra de cartera</dt><dd>Un crédito nuevo que paga los que ya tienes y te deja una sola cuota. Puede bajar la cuota, a veces solo porque alarga el plazo.</dd></div>
+        </dl>
+
+        <!-- DOCUMENTOS -->
+        <h2 id="documentos">Qué documentos pueden pedirte</h2>
+        <div class="tabla">
+          <table>
+            <caption>Qué se pide en cada momento</caption>
+            <thead>
+              <tr><th scope="col">Momento</th><th scope="col">Qué se pide</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Primer contacto por WhatsApp o formulario</th><td>Ninguno. Basta con contarnos tu perfil, quién te paga y qué necesitas.</td></tr>
+              <tr><th scope="row">Preanálisis, si tu caso tiene opciones</th><td>Tu desprendible de pago más reciente, legible. Con eso hacemos el preanálisis, que no cuesta.</td></tr>
+              <tr><th scope="row">Estudio en la entidad</th><td>Copia de tu cédula. Los formularios y la autorización de consulta en centrales de riesgo de la entidad. Un certificado de tu unidad o de tu asignación de retiro, si la entidad lo pide. Cada entidad define su lista.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Nunca te pedimos</strong> claves, contraseñas, códigos que te lleguen por mensaje, fotos de tus tarjetas ni pagos por adelantado. Los datos que nos compartes se tratan según nuestra <a href="../privacy/">política de privacidad</a>.</p>
+
+        <div class="alerta" id="estafas">
+          <h3><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg> Nunca pagues para que te presten</h3>
+          <p>Ningún trámite serio de libranza te cobra antes del desembolso. Desconfía si te piden:</p>
+          <ul>
+            <li>Dinero para «estudio», «seguro» o «liberar» el crédito.</li>
+            <li>Claves, códigos o acceso a tu banca en línea.</li>
+            <li>Decidir hoy mismo porque «se pierde el cupo».</li>
+          </ul>
+          <p>Si alguien te pide dinero en nombre de CrediAyudarte, no pagues y escríbenos al WhatsApp oficial <strong>315 247 4348</strong>. Más en <a href="../blog/te-piden-un-anticipo-para-desembolsar-el-credito.html">te piden un anticipo para desembolsar el crédito</a>.</p>
+        </div>
+
         <h2 id="limites">Lo que no podemos prometerte</h2>
 
         <ul>
@@ -450,6 +552,20 @@
             <summary>¿Puedo hacer compra de cartera?</summary>
             <p>Sí, y es frecuente cuando el desprendible tiene varios descuentos entre fondos internos, cooperativas de la institución y libranzas anteriores. Lo importante es no aceptarla en bloque: hay obligaciones que conviene recoger y otras que conviene dejar quietas, sobre todo las que ya están avanzadas y en buenas condiciones.</p>
           </details>
+          <details>
+            <summary>¿Atienden a policías y militares de Cúcuta y Norte de Santander?</summary>
+            <p>Sí. Puedes venir a la oficina en el Centro Comercial Internacional de Cúcuta, coordinando antes por WhatsApp, o hacer todo el análisis por WhatsApp desde donde estés destinado. La aprobación depende de la entidad financiera.</p>
+          </details>
+        </div>
+
+        <!-- FUENTES OFICIALES -->
+        <div class="fuentes" id="fuentes">
+          <h3>Fuentes oficiales</h3>
+          <ul>
+            <li><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=47213" target="_blank" rel="noopener">Ley 1527 de 2012, sobre la libranza</a> (Función Pública). El artículo 3 fija que debes recibir al menos el 50 % del neto de tu salario o pensión.</li>
+            <li><a href="https://www.superfinanciera.gov.co/publicaciones/10115254/tips-para-identificar-falsos-prestamistas/" target="_blank" rel="noopener">Cómo identificar falsos prestamistas</a> (Superintendencia Financiera).</li>
+          </ul>
+          <small>Enlaces revisados el 12 de noviembre de 2026. Es orientación general, no asesoría jurídica.</small>
         </div>
 
         <h2 id="recursos">Para seguir leyendo</h2>
@@ -479,11 +595,18 @@
       </div>
 
       <!-- ===================== CIERRE ===================== -->
-      <div class="post-cierre">
-        <h2>Si estás evaluando una libranza</h2>
-        <p>Mándanos tu desprendible y cuéntanos si estás en actividad o con asignación de retiro. Con eso te decimos qué margen real tienes, qué entidades pueden atender tu caso y cuánto te costaría en total. Si no te conviene, también te lo decimos.</p>
-        <a href="../solicitar.html" class="btn btn-primary btn-lg">Quiero que revisen mi caso</a>
-        <p class="post-cierre__fine">No cobramos nada por adelantado. Nuestros honorarios se pagan solo si hay desembolso.</p>
+      <div class="post-cierre siguiente" id="siguiente-paso">
+        <h2>Tu siguiente paso: revisar tu caso aunque estés lejos</h2>
+        <p>Cuéntanos si estás en servicio activo o retirado y quién te paga. Lo revisamos por WhatsApp desde donde estés destinado.</p>
+        <ol>
+          <li><span><strong>Llena la solicitud corta y envíala a nuestro WhatsApp.</strong> Tu nombre, tu edad, tu perfil y cómo está tu reporte. Sin cédula ni documentos.</span></li>
+          <li><span><strong>Te responde una persona.</strong> Si tu caso tiene opciones, te pide el desprendible para el preanálisis, que no cuesta.</span></li>
+          <li><span><strong>Te explicamos cuota, plazo y costo total antes de firmar.</strong> Tú decides; la entidad aprueba y desembolsa.</span></li>
+        </ol>
+        <div class="siguiente__cta">
+          <a href="../solicitar.html?perfil=empleado#solicitud" class="btn btn-primary btn-lg" data-ubic="credito-libranza-fuerza-publica-cierre"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
+        </div>
+        <p class="siguiente__fine">Preanálisis sin costo · Sin anticipos para tramitar · La aprobación depende de la entidad financiera · Oficina: Calle 12 # 4–47, Local 4, C.C. Internacional, Cúcuta.</p>
       </div>
 
     </div>
@@ -499,9 +622,11 @@
         <h2>¿Te ofrecieron algo en la unidad? <span>Compáralo antes de firmar.</span></h2>
         <p>Mándanos la propuesta y te decimos qué dice de verdad: plazo, costo total y cómo queda tu desprendible después.</p>
       </div>
-      <a href="https://wa.me/573152474348?text=Hola%2C%20me%20ofrecieron%20un%20cr%C3%A9dito%20por%20libranza%20y%20quiero%20revisarlo." target="_blank" rel="noopener" class="btn btn-yellow btn-lg">Quiero comparar mi oferta</a>
+      <a href="../solicitar.html?perfil=empleado#solicitud" class="btn btn-yellow btn-lg">Quiero comparar mi oferta</a>
     </div>
   </section>
+
+  </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
@@ -521,7 +646,7 @@
         <a href="../credito-libranza-pensionados/">Libranza para pensionados</a>
         <a href="../credito-libranza-empleados-publicos/">Libranza para empleados públicos</a>
         <a href="../credito-libranza-docentes/">Libranza para docentes</a>
-        <a href="index.html">Libranza para la Fuerza Pública</a>
+        <a href="./">Libranza para la Fuerza Pública</a>
         <a href="../credito-libranza-reportados/">Si estás reportado</a>
         <a href="../credito-libranza-embargos/">Libranza con embargo</a>
         <a href="../saneamiento-financiero/">Saneamiento financiero</a>
@@ -532,7 +657,7 @@
         <a href="../about/">Quiénes somos</a>
         <a href="../credito-libranza-cucuta/">Asesoría de libranza en Cúcuta</a>
         <a href="../testimonios.html">Testimonios de clientes</a>
-        <a href="../blog/index.html">Decisiones claras (blog)</a>
+        <a href="../blog/">Decisiones claras (blog)</a>
         <a href="../solicitar.html">Solicita tu análisis</a>
         <a href="../privacy/">Política de privacidad</a>
         <a href="https://wa.me/573152474348" target="_blank" rel="noopener">WhatsApp: 315 247 4348</a>
@@ -548,12 +673,12 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+  <a href="../solicitar.html?perfil=empleado#solicitud" class="wa-float" aria-label="Ir al formulario de solicitud">
     <svg class="ico"><use href="#i-whatsapp"/></svg>
     <span class="wa-float__pulse"></span>
   </a>
 
-  <script defer src="../js/medicion.js?v=20261013"></script>
+  <script defer src="../js/medicion.js?v=20261113"></script>
   <script defer src="../js/script.js?v=20261025"></script>
   <script defer src="../js/motion.js?v=20260820"></script>
 </body>

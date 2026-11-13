@@ -10,3 +10,7 @@ docs-revision
 
 # Documentación del remaster comercial (no se publica)
 docs
+
+# Base de conocimiento SEO y configuración local de Claude Code (no se publican)
+SEO_CONOCIMIENTO
+.claude

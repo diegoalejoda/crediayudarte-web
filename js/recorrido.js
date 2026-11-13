@@ -103,8 +103,8 @@
       puntos: ['Es tu comprobante de pago mensual', 'Ahí vemos tus descuentos reales', 'Solo lo pedimos cuando el caso lo amerita'] },
     { id: 'datos', panel: 'pagaduria',
       titulo: '¿Qué datos me van a pedir?',
-      cuerpo: ['Solo lo necesario para orientarte, como tu pagaduría o entidad y tu situación general. No pedimos número de cédula, fecha de nacimiento, cuentas bancarias ni claves en el primer contacto.'],
-      puntos: ['Perfil, pagaduría, ciudad y situación general al inicio', 'Sin cédula, cuentas, claves ni documentos en el formulario', 'El desprendible se pide después, solo si el caso lo necesita'] },
+      cuerpo: ['Solo lo necesario para orientarte, como tu nombre, tu edad, si eres pensionado o empleado del gobierno y cómo está tu reporte. No pedimos número de cédula, fecha de nacimiento, cuentas bancarias ni claves en el primer contacto.'],
+      puntos: ['Nombre, edad, perfil y reporte al inicio', 'Sin cédula, cuentas, claves ni documentos en el formulario', 'El desprendible se pide después, solo si el caso lo necesita'] },
 
     { id: 'compra-cartera', panel: 'opciones',
       titulo: '¿La compra de cartera siempre conviene?',

@@ -11,6 +11,8 @@
    - whatsapp_click ....... clic en un enlace a WhatsApp. NO es una conversación:
                             la persona puede no enviar ningún mensaje.
    - phone_click .......... clic en un enlace tel:.
+   - cta_formulario_click . clic en un botón que lleva al formulario de
+                            /solicitar (desde 2026-11 casi todos los botones).
    - form_start ........... primera interacción con el formulario de /solicitar.
    - form_submit .......... formulario válido y enviado al CRM. Es una solicitud
                             registrada, no un crédito ni un desembolso.
@@ -99,5 +101,6 @@
     var href = a.getAttribute('href') || '';
     if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(href)) window.caMedir('whatsapp_click', { ubicacion: ubicacion(a) });
     else if (/^tel:/.test(href)) window.caMedir('phone_click', { ubicacion: ubicacion(a) });
+    else if (/solicitar.html|^#solicitud$/.test(href)) window.caMedir('cta_formulario_click', { ubicacion: ubicacion(a) });
   }, true);
 })();

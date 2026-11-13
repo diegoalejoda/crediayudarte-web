@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Marca que JS está activo: sin JS todo el contenido queda visible -->
+  <script>document.documentElement.className += ' js';</script>
 
   <!-- ===================== SEO ===================== -->
-  <title>Saneamiento financiero para pensionados y empleados públicos</title>
+  <title>Sin cupo en el desprendible: saneamiento financiero</title>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <meta name="description" content="Sin cupo en el desprendible: estudiamos si una financiación externa puede pagar tus deudas y abrir paso a una libranza. Costos, riesgos y qué pasa si no sale." />
+  <meta name="description" content="¿No tienes cupo en el desprendible? Saneamiento financiero para pensionados y empleados públicos: cómo funciona, cuánto puede costar y qué riesgos tiene." />
   <link rel="canonical" href="https://crediayudarte.com/saneamiento-financiero/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="author" content="CrediAyudarte" />
@@ -17,18 +19,18 @@
   <meta property="og:site_name" content="CrediAyudarte" />
   <meta property="og:locale" content="es_CO" />
   <meta property="og:url" content="https://crediayudarte.com/saneamiento-financiero/" />
-  <meta property="og:title" content="Saneamiento financiero para pensionados y empleados públicos" />
-  <meta property="og:description" content="Sin cupo en el desprendible: estudiamos si una financiación externa puede pagar tus deudas y abrir paso a una libranza. Costos, riesgos y qué pasa si no sale." />
+  <meta property="og:title" content="Sin cupo en el desprendible: saneamiento financiero" />
+  <meta property="og:description" content="¿No tienes cupo en el desprendible? Saneamiento financiero para pensionados y empleados públicos: cómo funciona, cuánto puede costar y qué riesgos tiene." />
   <meta property="og:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Saneamiento financiero para pensionados y empleados públicos sin cupo en el desprendible" />
+  <meta property="og:image:alt" content="Sin cupo en el desprendible: saneamiento financiero sin cupo en el desprendible" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saneamiento financiero para pensionados y empleados públicos" />
-  <meta name="twitter:description" content="Sin cupo en el desprendible: estudiamos si una financiación externa puede pagar tus deudas y abrir paso a una libranza. Costos, riesgos y qué pasa si no sale." />
+  <meta name="twitter:title" content="Sin cupo en el desprendible: saneamiento financiero" />
+  <meta name="twitter:description" content="¿No tienes cupo en el desprendible? Saneamiento financiero para pensionados y empleados públicos: cómo funciona, cuánto puede costar y qué riesgos tiene." />
   <meta name="twitter:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
-  <meta name="twitter:image:alt" content="Saneamiento financiero para pensionados y empleados públicos sin cupo en el desprendible" />
+  <meta name="twitter:image:alt" content="Sin cupo en el desprendible: saneamiento financiero sin cupo en el desprendible" />
 
   <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="../assets/icon-192.png" type="image/png" sizes="192x192" />
@@ -36,9 +38,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,700..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=20261025" />
+  <link rel="stylesheet" href="../css/styles.css?v=20261112" />
   <link rel="stylesheet" href="../css/motion.css?v=20261013" />
-  <link rel="stylesheet" href="../css/blog.css?v=20261013" />
+  <link rel="stylesheet" href="../css/blog.css?v=20261112" />
   <link rel="stylesheet" href="../css/landing.css?v=20261013" />
 
   <!-- ===================== DATOS ESTRUCTURADOS ===================== -->
@@ -50,13 +52,19 @@
       "@type": "WebPage",
       "@id": "https://crediayudarte.com/saneamiento-financiero/#pagina",
       "url": "https://crediayudarte.com/saneamiento-financiero/",
-      "name": "Saneamiento financiero para pensionados y empleados públicos",
-      "description": "Sin cupo en el desprendible: estudiamos si una financiación externa puede pagar tus deudas y abrir paso a una libranza. Costos, riesgos y qué pasa si no sale.",
+      "name": "Sin cupo en el desprendible: saneamiento financiero",
+      "description": "¿No tienes cupo en el desprendible? Saneamiento financiero para pensionados y empleados públicos: cómo funciona, cuánto puede costar y qué riesgos tiene.",
       "inLanguage": "es-CO",
-      "isPartOf": { "@id": "https://crediayudarte.com/#sitio" },
-      "about": { "@id": "https://crediayudarte.com/#organizacion" },
+      "isPartOf": {
+        "@id": "https://crediayudarte.com/#sitio"
+      },
+      "about": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
       "primaryImageOfPage": "https://crediayudarte.com/assets/og-crediayudarte.jpg",
-      "breadcrumb": { "@id": "https://crediayudarte.com/saneamiento-financiero/#migas" }
+      "breadcrumb": {
+        "@id": "https://crediayudarte.com/saneamiento-financiero/#migas"
+      }
     },
     {
       "@type": "Service",
@@ -64,17 +72,40 @@
       "name": "Estudio de saneamiento financiero para pensionados y empleados públicos",
       "serviceType": "Asesoría financiera",
       "description": "Diagnóstico y estudio de viabilidad de una financiación externa para pagar obligaciones, gestionar su actualización y evaluar después una libranza bancaria. La financiación externa la otorga un tercero con sus propias condiciones y no garantiza la aprobación bancaria posterior.",
-      "provider": { "@id": "https://crediayudarte.com/#organizacion" },
-      "areaServed": { "@type": "Country", "name": "Colombia" },
-      "audience": { "@type": "Audience", "audienceType": "Pensionados, empleados públicos, docentes del Estado y Fuerza Pública" }
+      "provider": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Pensionados, empleados públicos, docentes del Estado y Fuerza Pública"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://crediayudarte.com/saneamiento-financiero/#migas",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://crediayudarte.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Crédito de libranza", "item": "https://crediayudarte.com/credito-de-libranza/" },
-        { "@type": "ListItem", "position": 3, "name": "Saneamiento financiero", "item": "https://crediayudarte.com/saneamiento-financiero/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://crediayudarte.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Crédito de libranza",
+          "item": "https://crediayudarte.com/credito-de-libranza/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Saneamiento financiero",
+          "item": "https://crediayudarte.com/saneamiento-financiero/"
+        }
       ]
     },
     {
@@ -85,42 +116,66 @@
         {
           "@type": "Question",
           "name": "¿Qué es el saneamiento financiero?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Es un estudio para personas con pagaduría que no tienen cupo inicial: se evalúa si una financiación externa puede pagar las obligaciones que bloquean el caso, gestionar su actualización y después estudiar una libranza bancaria. Es un estudio de viabilidad, no una aprobación." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es un estudio para personas con pagaduría que no tienen cupo inicial: se evalúa si una financiación externa puede pagar las obligaciones que bloquean el caso, gestionar su actualización y después estudiar una libranza bancaria. Es un estudio de viabilidad, no una aprobación."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Ustedes prestan el dinero para pagar mis deudas?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. CrediAyudarte no presta dinero propio. Si se consigue una financiación externa, la otorga un tercero con sus propias condiciones, que te explicamos por escrito antes de firmar." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. CrediAyudarte no presta dinero propio. Si se consigue una financiación externa, la otorga un tercero con sus propias condiciones, que te explicamos por escrito antes de firmar."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Me garantizan la libranza después del saneamiento?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. La financiación externa no garantiza que un banco apruebe después. La entidad decide si aprueba, por cuánto y en qué condiciones." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. La financiación externa no garantiza que un banco apruebe después. La entidad decide si aprueba, por cuánto y en qué condiciones."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Si pago mis deudas se borra el reporte?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No de inmediato. La obligación figura como pagada y la información negativa permanece el doble del tiempo de la mora, con un máximo de cuatro años desde el pago, según la Ley 1266 de 2008 modificada por la Ley 2157 de 2021." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No de inmediato. La obligación figura como pagada y la información negativa permanece el doble del tiempo de la mora, con un máximo de cuatro años desde el pago, según la Ley 1266 de 2008 modificada por la Ley 2157 de 2021."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Pagar la deuda levanta el embargo?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No automáticamente. La autoridad que ordenó el embargo debe comunicar el levantamiento a tu pagaduría, y hasta que esta lo registre el descuento puede seguir apareciendo." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No automáticamente. La autoridad que ordenó el embargo debe comunicar el levantamiento a tu pagaduría, y hasta que esta lo registre el descuento puede seguir apareciendo."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Cuánto cuesta?",
-          "acceptedAnswer": { "@type": "Answer", "text": "El diagnóstico no tiene costo y no pedimos anticipos para tramitar tu crédito. La financiación externa tiene costos propios que fija quien la otorga, y la libranza posterior tiene su tasa, seguros y plazo. Todo se explica por escrito antes de avanzar." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El diagnóstico no tiene costo y no pedimos anticipos para tramitar tu crédito. La financiación externa tiene costos propios que fija quien la otorga, y la libranza posterior tiene su tasa, seguros y plazo. Todo se explica por escrito antes de avanzar."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Qué pasa si el banco no aprueba la libranza?",
-          "acceptedAnswer": { "@type": "Answer", "text": "La financiación externa sigue siendo una deuda tuya y debes pagarla según lo pactado. Por eso, antes de empezar, revisamos si podrías responder por ella con tus ingresos." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La financiación externa sigue siendo una deuda tuya y debes pagarla según lo pactado. Por eso, antes de empezar, revisamos si podrías responder por ella con tus ingresos."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Sirve si soy independiente?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. El saneamiento que estudiamos está pensado para personas con pagaduría: pensionados, empleados públicos, docentes del Estado y Fuerza Pública." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El saneamiento que estudiamos está pensado para personas con pagaduría: pensionados, empleados públicos, docentes del Estado y Fuerza Pública."
+          }
         }
       ]
     }
@@ -149,22 +204,22 @@
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="top">
     <div class="container header__inner">
-      <a href="../index.html" class="header__logo" aria-label="CrediAyudarte - inicio">
+      <a href="../" class="header__logo" aria-label="CrediAyudarte - inicio">
         <img src="../assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav" id="nav">
         <a href="../credito-de-libranza/">Crédito de libranza</a>
-        <a href="../index.html#para-quien">Para quién</a>
-        <a href="../index.html#como-funciona">Cómo funciona</a>
+        <a href="../#para-quien">Para quién</a>
+        <a href="../#como-funciona">Cómo funciona</a>
         <a href="../testimonios.html">Testimonios</a>
-        <a href="../blog/index.html">Blog</a>
-        <a href="../index.html#preguntas">Preguntas</a>
-        <a href="../index.html#contacto">Contacto</a>
+        <a href="../blog/">Blog</a>
+        <a href="../#preguntas">Preguntas</a>
+        <a href="../#contacto">Contacto</a>
       </nav>
       <div class="header__actions">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="btn-wa" aria-label="Escríbenos por WhatsApp">
+        <a href="../solicitar.html#solicitud" class="btn-wa" aria-label="Ir al formulario de solicitud">
           <svg class="ico"><use href="#i-whatsapp"/></svg>
-          <span>Escríbenos<small>Te orientamos</small></span>
+          <span>Solicitud<small>a WhatsApp</small></span>
         </a>
         <a href="../solicitar.html" class="btn btn-primary header__cta">Solicita tu análisis</a>
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -181,14 +236,14 @@
     <span class="blob blob--yellow anim-float2" aria-hidden="true"></span>
     <div class="container page-hero__inner">
       <nav class="breadcrumb" aria-label="Ruta de navegación">
-        <a href="../index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="../credito-de-libranza/">Crédito de libranza</a> <span aria-hidden="true">&rsaquo;</span> <span>Saneamiento financiero</span>
+        <a href="../">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="../credito-de-libranza/">Crédito de libranza</a> <span aria-hidden="true">&rsaquo;</span> <span>Saneamiento financiero</span>
       </nav>
-      <h1>Saneamiento financiero <span>para pensionados y empleados públicos</span></h1>
+      <h1>¿No tienes cupo en el desprendible? <span>Saneamiento financiero para pensionados y empleados públicos</span></h1>
       <p>Cuando tu desprendible ya no tiene cupo, o las deudas en mora cierran las puertas, a veces el camino no es un crédito nuevo de inmediato, sino ordenar primero. Te explicamos cómo funciona, qué hay que evaluar y qué riesgos tiene.</p>
       <div class="page-hero__cta">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20no%20me%20queda%20cupo%20en%20el%20desprendible%20y%20quiero%20estudiar%20un%20saneamiento." target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-ubic="saneamiento-financiero-hero"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Evaluar mi caso por WhatsApp</a>
-        <a href="../solicitar.html#solicitud" class="btn btn-ghost btn-lg" data-ubic="saneamiento-financiero-hero">Solicitar preanálisis gratuito</a>
+        <a href="../solicitar.html#solicitud" class="btn btn-primary btn-lg" data-ubic="saneamiento-financiero-hero"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
       </div>
+      <p class="page-hero__paso">Te responde una persona. Revisar tu caso no cuesta y no te pedimos cédula ni claves en el primer mensaje.</p>
       <p class="page-hero__fine">CrediAyudarte presta asesoría e intermediación: no presta dinero propio ni aprueba créditos. La financiación externa, cuando se consigue, la otorga un tercero con sus propias condiciones.</p>
     </div>
   </section>
@@ -205,13 +260,41 @@
           <p>Es para personas con pagaduría: pensionados, empleados públicos, docentes del Estado y miembros de la Fuerza Pública. No es un servicio para independientes.</p>
         </div>
 
+        <!-- QUÉ REVISAMOS / QUÉ DECIDE LA ENTIDAD -->
+        <h2 id="que-revisamos">Qué revisamos contigo y qué decide la entidad</h2>
+        <div class="revisa">
+          <div class="revisa__col revisa__col--nos">
+            <h3>Lo que revisamos contigo</h3>
+            <ul>
+              <li><b>Qué deudas te bloquean</b> el desprendible y sus saldos.</li>
+              <li><b>Si después del saneamiento quedaría capacidad</b> para una libranza.</li>
+              <li><b>Los costos de la financiación externa.</b></li>
+              <li><b>Los riesgos</b> si la libranza posterior no sale.</li>
+              <li><b>Tu historial</b> y si hay embargos.</li>
+            </ul>
+          </div>
+          <div class="revisa__col revisa__col--entidad">
+            <h3>Lo que decide la entidad, no nosotros</h3>
+            <ul>
+              <li>Si aprueba o no el crédito.</li>
+              <li>El monto, la tasa y el plazo.</li>
+              <li>Los seguros y los costos del estudio.</li>
+              <li>Cuándo desembolsa.</li>
+            </ul>
+          </div>
+          <p class="revisa__nota">Ser pensionado o tener nómina pública ayuda a que tu caso se pueda estudiar, pero <strong>no garantiza la aprobación</strong>. Revisar tu caso no cuesta y no pedimos anticipos.</p>
+        </div>
+
         <nav class="toc" aria-label="Contenido de la página">
           <h2>En esta página</h2>
           <ol>
+            <li><a href="#que-revisamos">Qué revisamos y qué decide la entidad</a></li>
             <li><a href="#cuando">Cuándo se estudia un saneamiento</a></li>
             <li><a href="#pasos">Cómo funciona, paso a paso</a></li>
             <li><a href="#costos">Costos que hay que evaluar</a></li>
             <li><a href="#si-no-sale">Qué pasa si la libranza no se concreta</a></li>
+            <li><a href="#palabras">Palabras que vas a escuchar</a></li>
+            <li><a href="#documentos">Qué documentos pueden pedirte</a></li>
             <li><a href="#no-hace">Lo que el saneamiento no hace</a></li>
             <li><a href="#necesitas">Qué se necesita para el diagnóstico</a></li>
             <li><a href="#preguntas">Preguntas frecuentes</a></li>
@@ -270,6 +353,45 @@
           <p>Si después del diagnóstico el riesgo de quedar con una deuda que no puedes pagar es alto, te recomendaremos no hacerlo. Un saneamiento solo tiene sentido si mejora tu situación incluso en el escenario difícil.</p>
         </div>
 
+        <!-- PALABRAS QUE VAS A ESCUCHAR -->
+        <h2 id="palabras">Palabras que vas a escuchar, explicadas</h2>
+        <dl class="glosario">
+          <div><dt>Saneamiento financiero</dt><dd>Pagar u ordenar deudas con una financiación externa, que tiene costos propios, para que después se pueda estudiar una libranza. No garantiza ese crédito posterior.</dd></div>
+          <div><dt>Desprendible</dt><dd>El comprobante de pago de tu pensión o tu sueldo. Muestra cuánto te pagan, qué te descuentan y cuánto recibes.</dd></div>
+          <div><dt>Capacidad de pago o margen</dt><dd>Lo que te queda libre después de los descuentos. Por ley, después de los descuentos de libranza debes recibir al menos el 50 % del neto de tu salario o pensión (Ley 1527 de 2012, art. 3).</dd></div>
+          <div><dt>Reporte negativo</dt><dd>El registro en Datacrédito o TransUnion de una deuda que no se pagó a tiempo. Una mora vigente es una deuda que sigue sin pagarse hoy; una deuda ya pagada puede seguir apareciendo un tiempo.</dd></div>
+          <div><dt>Embargo</dt><dd>Una orden de un juez o de una autoridad de cobro para retener parte de tu sueldo o pensión y pagar una deuda. Mientras exista, reduce lo que te queda libre.</dd></div>
+          <div><dt>Anticipo</dt><dd>Un pago que te piden antes de recibir el crédito. En la libranza no es normal y es la señal más clara de estafa.</dd></div>
+        </dl>
+
+        <!-- DOCUMENTOS -->
+        <h2 id="documentos">Qué documentos pueden pedirte</h2>
+        <div class="tabla">
+          <table>
+            <caption>Qué se pide en cada momento</caption>
+            <thead>
+              <tr><th scope="col">Momento</th><th scope="col">Qué se pide</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Primer contacto por WhatsApp o formulario</th><td>Ninguno. Basta con contarnos tu perfil, quién te paga y qué necesitas.</td></tr>
+              <tr><th scope="row">Preanálisis, si tu caso tiene opciones</th><td>Tu desprendible de pago más reciente, legible. Con eso hacemos el preanálisis, que no cuesta.</td></tr>
+              <tr><th scope="row">Estudio en la entidad</th><td>Copia de tu cédula. Los formularios y la autorización de consulta en centrales de riesgo de la entidad. Una relación de tus deudas con sus saldos, si la tienes. Cada entidad define su lista.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Nunca te pedimos</strong> claves, contraseñas, códigos que te lleguen por mensaje, fotos de tus tarjetas ni pagos por adelantado. Los datos que nos compartes se tratan según nuestra <a href="../privacy/">política de privacidad</a>.</p>
+
+        <div class="alerta" id="estafas">
+          <h3><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg> Nunca pagues para que te presten</h3>
+          <p>Ningún trámite serio de libranza te cobra antes del desembolso. Desconfía si te piden:</p>
+          <ul>
+            <li>Dinero para «estudio», «seguro» o «liberar» el crédito.</li>
+            <li>Claves, códigos o acceso a tu banca en línea.</li>
+            <li>Decidir hoy mismo porque «se pierde el cupo».</li>
+          </ul>
+          <p>Si alguien te pide dinero en nombre de CrediAyudarte, no pagues y escríbenos al WhatsApp oficial <strong>315 247 4348</strong>. Más en <a href="../blog/te-piden-un-anticipo-para-desembolsar-el-credito.html">te piden un anticipo para desembolsar el crédito</a>.</p>
+        </div>
+
         <h2 id="no-hace">Lo que el saneamiento no hace</h2>
 
         <ul>
@@ -320,14 +442,32 @@
           </details>
         </div>
 
+        <!-- FUENTES OFICIALES -->
+        <div class="fuentes" id="fuentes">
+          <h3>Fuentes oficiales</h3>
+          <ul>
+            <li><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=47213" target="_blank" rel="noopener">Ley 1527 de 2012, sobre la libranza</a> (Función Pública). El artículo 3 fija que debes recibir al menos el 50 % del neto de tu salario o pensión.</li>
+            <li><a href="https://normograma.mintic.gov.co/mintic/compilacion/docs/ley_2157_2021.htm" target="_blank" rel="noopener">Ley 2157 de 2021, sobre los datos en centrales de riesgo</a> (normograma del MinTIC).</li>
+            <li><a href="https://sedeelectronica.sic.gov.co/publicaciones/boletin-juridico/concepto/permanencia-del-dato-negativo-ley-2157-de-2021" target="_blank" rel="noopener">Permanencia del dato negativo</a> (Superintendencia de Industria y Comercio).</li>
+            <li><a href="https://www.superfinanciera.gov.co/publicaciones/10115254/tips-para-identificar-falsos-prestamistas/" target="_blank" rel="noopener">Cómo identificar falsos prestamistas</a> (Superintendencia Financiera).</li>
+          </ul>
+          <small>Enlaces revisados el 12 de noviembre de 2026. Es orientación general, no asesoría jurídica.</small>
+        </div>
       </div>
 
       <!-- ===================== CIERRE ===================== -->
-      <div class="post-cierre">
-        <h2>Si no te queda cupo y quieres saber si hay salida</h2>
-        <p>Cuéntanos tu perfil, tu pagaduría y qué obligaciones tienes. Hacemos el diagnóstico sin costo y te decimos con honestidad si un saneamiento tiene sentido en tu caso, qué costaría y qué riesgos tendría. Si no conviene, te lo decimos.</p>
-        <a href="https://wa.me/573152474348?text=Hola%2C%20no%20me%20queda%20cupo%20en%20el%20desprendible%20y%20quiero%20estudiar%20un%20saneamiento." target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-ubic="saneamiento-financiero-cierre"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Evaluar mi caso por WhatsApp</a>
-        <p class="post-cierre__fine">Preanálisis sin costo · Sin anticipos para tramitar tu crédito · Aprobación sujeta a estudio de la entidad.</p>
+      <div class="post-cierre siguiente" id="siguiente-paso">
+        <h2>Tu siguiente paso: un diagnóstico honesto</h2>
+        <p>Cuéntanos tu perfil, quién te paga y qué deudas tienes. Te decimos si un saneamiento tiene sentido, qué costaría y qué riesgos tendría. Si no conviene, también te lo decimos.</p>
+        <ol>
+          <li><span><strong>Llena la solicitud corta y envíala a nuestro WhatsApp.</strong> Tu nombre, tu edad, tu perfil y cómo está tu reporte. Sin cédula ni documentos.</span></li>
+          <li><span><strong>Te responde una persona.</strong> Si tu caso tiene opciones, te pide el desprendible para el preanálisis, que no cuesta.</span></li>
+          <li><span><strong>Te explicamos cuota, plazo y costo total antes de firmar.</strong> Tú decides; la entidad aprueba y desembolsa.</span></li>
+        </ol>
+        <div class="siguiente__cta">
+          <a href="../solicitar.html#solicitud" class="btn btn-primary btn-lg" data-ubic="saneamiento-financiero-cierre"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
+        </div>
+        <p class="siguiente__fine">Preanálisis sin costo · Sin anticipos para tramitar · La aprobación depende de la entidad financiera · Oficina: Calle 12 # 4–47, Local 4, C.C. Internacional, Cúcuta.</p>
       </div>
 
     </div>
@@ -363,7 +503,7 @@
         <a href="../about/">Quiénes somos</a>
         <a href="../credito-libranza-cucuta/">Asesoría de libranza en Cúcuta</a>
         <a href="../testimonios.html">Testimonios de clientes</a>
-        <a href="../blog/index.html">Decisiones claras (blog)</a>
+        <a href="../blog/">Decisiones claras (blog)</a>
         <a href="../solicitar.html">Solicita tu análisis</a>
         <a href="../privacy/">Política de privacidad</a>
         <a href="https://wa.me/573152474348" target="_blank" rel="noopener">WhatsApp: 315 247 4348</a>
@@ -379,12 +519,12 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+  <a href="../solicitar.html#solicitud" class="wa-float" aria-label="Ir al formulario de solicitud">
     <svg class="ico"><use href="#i-whatsapp"/></svg>
     <span class="wa-float__pulse"></span>
   </a>
 
-  <script defer src="../js/medicion.js?v=20261013"></script>
+  <script defer src="../js/medicion.js?v=20261113"></script>
   <script defer src="../js/script.js?v=20261025"></script>
   <script defer src="../js/motion.js?v=20261013"></script>
 </body>

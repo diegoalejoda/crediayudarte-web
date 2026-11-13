@@ -5,16 +5,18 @@
    2) abre WhatsApp con el mensaje armado con lo que escribió la persona;
    3) muestra "Falta un paso: envía el mensaje en WhatsApp" (nunca un
       "solicitud recibida": la conversación empieza cuando ella lo envía).
-   Ya no se piden edad ni archivos: el desprendible se solicita después,
-   por WhatsApp, solo si el caso lo necesita. La ciudad es opcional (2026-10)
-   y el CRM la recibe vacía si no se escribe.
+   Campos (2026-11): nombre, edad, perfil (pensionado / empleado del
+   gobierno) y reporte. El número de WhatsApp no se pregunta: el flujo lo
+   toma cuando la persona envía el mensaje (telefono llega vacío al CRM). Sin archivos: el desprendible se solicita
+   después, por WhatsApp, solo si el caso lo necesita. Pagaduría, ciudad y
+   objetivo ya no se preguntan: el CRM los recibe vacíos.
    =================================================================== */
 (function () {
   'use strict';
 
   var WHATSAPP = '573152474348'; // número de CrediAyudarte
   var LEAD_WEBHOOK = 'https://flujos.crediayudarte.co/webhook/landing-lead-score'; // n8n -> Supabase (lead + scoring)
-  var VERSION = 'form-2026-10';
+  var VERSION = 'form-2026-11';
   var AUTORIZACION = 'Autorizo a Marilú Arévalo Toro (CrediAyudarte) a tratar mis datos para contactarme por WhatsApp y estudiar mi solicitud; si avanzo, podrán compartirse con entidades o financiadores que estudien mi caso, con mi autorización. Política: crediayudarte.com/privacy/';
 
   var form = document.getElementById('creditForm');
@@ -22,6 +24,14 @@
   var next = document.getElementById('formNext');
   var nextLink = document.getElementById('formNextLink');
   if (!form) return;
+
+  // Perfil preseleccionado cuando se llega desde la página de un perfil
+  // (solicitar.html?perfil=pensionado|empleado)
+  try {
+    var pre = { pensionado: 'Pensionado', empleado: 'Empleado público' }[new URLSearchParams(location.search).get('perfil')];
+    var radio = pre && form.querySelector('input[name="perfil"][value="' + pre + '"]');
+    if (radio) radio.checked = true;
+  } catch (err) { /* navegadores sin URLSearchParams: no se preselecciona */ }
 
   function medir(ev, datos) { if (typeof window.caMedir === 'function') window.caMedir(ev, datos); }
 
@@ -47,36 +57,27 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var perfil = checked('perfil');
-    var pagaduria = val('pagaduria');
-    var ciudad = val('ciudad');
-    var objetivo = val('objetivo');
-    var situacion = checked('situacion');
     var nombre = val('nombre');
-    var telefono = val('telefono');
+    var edadTxt = val('edad');
+    var perfil = checked('perfil');
+    var situacion = checked('situacion');
+    var pagaduria = '', ciudad = '', objetivo = '';
     var autorizo = document.getElementById('autorizo');
 
     // En orden de aparición: el foco va al primer campo que falta
     var faltan = [
-      [!perfil, 'tu perfil', form.querySelector('input[name="perfil"]')],
-      [!pagaduria, 'tu pagaduría', document.getElementById('pagaduria')],
-      [!objetivo, 'qué necesitas', document.getElementById('objetivo')],
-      [!situacion, 'tu situación', form.querySelector('input[name="situacion"]')],
       [!nombre, 'tu nombre', document.getElementById('nombre')],
-      [!telefono, 'tu número de WhatsApp', document.getElementById('telefono')]
+      [!edadTxt, 'tu edad', document.getElementById('edad')],
+      [!perfil, 'si eres pensionado o empleado del gobierno', form.querySelector('input[name="perfil"]')],
+      [!situacion, 'cómo está tu reporte', form.querySelector('input[name="situacion"]')]
     ].filter(function (f) { return f[0]; });
     if (faltan.length) {
       showError('Falta completar: ' + faltan.map(function (f) { return f[1]; }).join(', ') + '.', faltan[0][2]);
       return;
     }
-    // El número es la llave con la que el CRM une el lead web y la
-    // conversación de WhatsApp posterior. Celular colombiano de 10 dígitos, o
-    // un número internacional escrito con "+" (p. ej. familiares en el exterior).
-    var telDigits = telefono.replace(/[^0-9]/g, '');
-    var internacional = /^\s*\+/.test(telefono) && !/^573\d{9}$/.test(telDigits);
-    if (!internacional) telDigits = telDigits.replace(/^57(?=3\d{9}$)/, '');
-    if (internacional ? !/^\d{8,15}$/.test(telDigits) : !/^3\d{9}$/.test(telDigits)) {
-      showError('Escribe un celular de WhatsApp válido: 10 dígitos que empiezan por 3, o el número con "+" y el indicativo del país.', document.getElementById('telefono'));
+    var edad = parseInt(edadTxt.replace(/[^0-9]/g, ''), 10);
+    if (!(edad >= 18 && edad <= 100)) {
+      showError('Escribe tu edad en años, con números (por ejemplo: 62).', document.getElementById('edad'));
       return;
     }
     if (!autorizo || !autorizo.checked) {
@@ -91,7 +92,7 @@
     var trampa = val('sitio_web');
     // Mismo contenido enviado otra vez (doble clic, o volver a tocar el botón):
     // solo se reabre WhatsApp, sin duplicar el registro en el CRM
-    var huella = [perfil, pagaduria, ciudad, objetivo, situacion, nombre, telDigits].join('|');
+    var huella = [nombre, edad, perfil, situacion].join('|');
     var repetido = huella === ultimoEnvio;
     ultimoEnvio = huella;
     var btn = form.querySelector('.btn-submit');
@@ -111,8 +112,8 @@
           nombre: nombre,
           nombres: nombre,
           apellido: '',
-          edad: null,
-          telefono: telDigits,
+          edad: edad,
+          telefono: '', // lo toma el flujo de WhatsApp
           perfil: perfil,
           vida_crediticia: vidaCrediticia(situacion),
           tiene_desprendible: false,
@@ -143,11 +144,9 @@
       'Hola, CrediAyudarte. Quiero que evalúen mi caso.',
       '',
       'Nombre: ' + nombre,
-      'Perfil: ' + perfil,
-      'Pagaduría: ' + pagaduria,
-      'Ciudad: ' + (ciudad || 'no la indiqué'),
-      'Necesito: ' + objetivo,
-      'Situación: ' + situacion,
+      'Edad: ' + edad + ' años',
+      'Perfil: ' + (perfil === 'Empleado público' ? 'Empleado(a) del gobierno' : 'Pensionado(a)'),
+      'Reporte: ' + situacion,
       '',
       'Envié mis datos desde el formulario de la página web.'
     ];
@@ -166,8 +165,8 @@
 
   // Equivalencia con los valores que ya entendía el CRM ("Bien/Mal reportado")
   function vidaCrediticia(s) {
-    if (s === 'Buen historial') return 'Bien reportado';
-    if (s === 'Tengo reportes o mora' || s === 'Tengo embargo') return 'Mal reportado';
+    if (s === 'Buen reporte') return 'Bien reportado';
+    if (s === 'Mal reporte') return 'Mal reportado';
     return s;
   }
 

@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Marca que JS está activo: sin JS todo el contenido queda visible -->
+  <script>document.documentElement.className += ' js';</script>
 
   <!-- ===================== SEO ===================== -->
-  <title>Libranza para pensionados y empleados públicos reportados</title>
+  <title>Crédito para reportados por libranza: pensionados y empleados públicos</title>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <meta name="description" content="Si eres pensionado o empleado público y tienes reportes negativos o mora, revisamos tu capacidad y buscamos entidades que puedan estudiar tu caso. Sin promesas ni anticipos." />
+  <meta name="description" content="Crédito de libranza para reportados que son pensionados o empleados públicos: qué se estudia, qué no se puede prometer y qué dice la ley. Oficina en Cúcuta." />
   <link rel="canonical" href="https://crediayudarte.com/credito-libranza-reportados/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="author" content="CrediAyudarte" />
@@ -17,16 +19,16 @@
   <meta property="og:site_name" content="CrediAyudarte" />
   <meta property="og:locale" content="es_CO" />
   <meta property="og:url" content="https://crediayudarte.com/credito-libranza-reportados/" />
-  <meta property="og:title" content="Libranza para pensionados y empleados públicos reportados" />
-  <meta property="og:description" content="Si eres pensionado o empleado público y tienes reportes negativos o mora, revisamos tu capacidad y buscamos entidades que puedan estudiar tu caso. Sin promesas ni anticipos." />
+  <meta property="og:title" content="Crédito para reportados por libranza: pensionados y empleados públicos" />
+  <meta property="og:description" content="Crédito de libranza para reportados que son pensionados o empleados públicos: qué se estudia, qué no se puede prometer y qué dice la ley. Oficina en Cúcuta." />
   <meta property="og:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Asesoría en crédito de libranza para pensionados y empleados públicos con reportes negativos" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Libranza para pensionados y empleados públicos reportados" />
-  <meta name="twitter:description" content="Si eres pensionado o empleado público y tienes reportes negativos o mora, revisamos tu capacidad y buscamos entidades que puedan estudiar tu caso. Sin promesas ni anticipos." />
+  <meta name="twitter:title" content="Crédito para reportados por libranza: pensionados y empleados públicos" />
+  <meta name="twitter:description" content="Crédito de libranza para reportados que son pensionados o empleados públicos: qué se estudia, qué no se puede prometer y qué dice la ley. Oficina en Cúcuta." />
   <meta name="twitter:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
   <meta name="twitter:image:alt" content="Asesoría en crédito de libranza para pensionados y empleados públicos con reportes negativos" />
 
@@ -36,9 +38,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,700..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=20261025" />
+  <link rel="stylesheet" href="../css/styles.css?v=20261112" />
   <link rel="stylesheet" href="../css/motion.css?v=20261013" />
-  <link rel="stylesheet" href="../css/blog.css?v=20261013" />
+  <link rel="stylesheet" href="../css/blog.css?v=20261112" />
   <link rel="stylesheet" href="../css/landing.css?v=20261013" />
 
   <!-- ===================== DATOS ESTRUCTURADOS ===================== -->
@@ -50,13 +52,19 @@
       "@type": "WebPage",
       "@id": "https://crediayudarte.com/credito-libranza-reportados/#pagina",
       "url": "https://crediayudarte.com/credito-libranza-reportados/",
-      "name": "Libranza para pensionados y empleados públicos reportados",
-      "description": "Si eres pensionado o empleado público y tienes reportes negativos o mora, revisamos tu capacidad y buscamos entidades que puedan estudiar tu caso. Sin promesas ni anticipos.",
+      "name": "Crédito para reportados por libranza: pensionados y empleados públicos",
+      "description": "Crédito de libranza para reportados que son pensionados o empleados públicos: qué se estudia, qué no se puede prometer y qué dice la ley. Oficina en Cúcuta.",
       "inLanguage": "es-CO",
-      "isPartOf": { "@id": "https://crediayudarte.com/#sitio" },
-      "about": { "@id": "https://crediayudarte.com/#organizacion" },
+      "isPartOf": {
+        "@id": "https://crediayudarte.com/#sitio"
+      },
+      "about": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
       "primaryImageOfPage": "https://crediayudarte.com/assets/og-crediayudarte.jpg",
-      "breadcrumb": { "@id": "https://crediayudarte.com/credito-libranza-reportados/#migas" }
+      "breadcrumb": {
+        "@id": "https://crediayudarte.com/credito-libranza-reportados/#migas"
+      }
     },
     {
       "@type": "Service",
@@ -64,17 +72,40 @@
       "name": "Asesoría en libranza para pensionados y empleados públicos con reportes negativos",
       "serviceType": "Asesoría financiera",
       "description": "Revisión de capacidad, pagaduría e historial de pensionados, empleados públicos, docentes y Fuerza Pública con reportes negativos o mora, y búsqueda de entidades que puedan estudiar el caso. No incluye préstamos a independientes ni eliminación de reportes.",
-      "provider": { "@id": "https://crediayudarte.com/#organizacion" },
-      "areaServed": { "@type": "Country", "name": "Colombia" },
-      "audience": { "@type": "Audience", "audienceType": "Pensionados, empleados públicos, docentes del Estado y Fuerza Pública" }
+      "provider": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Pensionados, empleados públicos, docentes del Estado y Fuerza Pública"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://crediayudarte.com/credito-libranza-reportados/#migas",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://crediayudarte.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Crédito de libranza", "item": "https://crediayudarte.com/credito-de-libranza/" },
-        { "@type": "ListItem", "position": 3, "name": "Si estás reportado", "item": "https://crediayudarte.com/credito-libranza-reportados/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://crediayudarte.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Crédito de libranza",
+          "item": "https://crediayudarte.com/credito-de-libranza/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Si estás reportado",
+          "item": "https://crediayudarte.com/credito-libranza-reportados/"
+        }
       ]
     },
     {
@@ -85,47 +116,90 @@
         {
           "@type": "Question",
           "name": "Estoy reportado. ¿Puedo acceder a un crédito de libranza?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Depende. Si eres pensionado o empleado público y te queda capacidad en el desprendible, buscamos entidades, incluidas cooperativas, que puedan estudiar tu perfil. Influyen el tipo de reporte, tu pagaduría, tu edad y las políticas de cada entidad. Lo revisamos sin prometerte un resultado." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende. Si eres pensionado o empleado público y te queda capacidad en el desprendible, buscamos entidades, incluidas cooperativas, que puedan estudiar tu perfil. Influyen el tipo de reporte, tu pagaduría, tu edad y las políticas de cada entidad. Lo revisamos sin prometerte un resultado."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Ustedes prestan dinero a personas reportadas?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No prestamos dinero propio. Prestamos asesoría e intermediación: analizamos tu caso, identificamos qué entidades podrían estudiarlo y te acompañamos. La decisión final es de la entidad." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No prestamos dinero propio. Prestamos asesoría e intermediación: analizamos tu caso, identificamos qué entidades podrían estudiarlo y te acompañamos. La decisión final es de la entidad."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Pueden borrarme o limpiarme el reporte?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Un dato correcto permanece el tiempo que fija la ley. Si el reporte es incorrecto o está desactualizado, puedes pedir su corrección o actualización a la entidad que reportó o a la central de riesgo; la ley les da 15 días hábiles para responder, prorrogables por 8 más. Podemos ayudarte a entender tu reporte, pero la corrección la hacen ellos." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Un dato correcto permanece el tiempo que fija la ley. Si el reporte es incorrecto o está desactualizado, puedes pedir su corrección o actualización a la entidad que reportó o a la central de riesgo; la ley les da 15 días hábiles para responder, prorrogables por 8 más. Podemos ayudarte a entender tu reporte, pero la corrección la hacen ellos."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Si pago la deuda desaparece el reporte?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No de inmediato. La obligación pasa a figurar como pagada y la información negativa permanece el doble del tiempo de la mora, con un máximo de cuatro años desde el pago (Ley 1266 de 2008, art. 13, modificado por la Ley 2157 de 2021). Aun así, estar al día suele ser lo que permite que una entidad vuelva a estudiar tu caso." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No de inmediato. La obligación pasa a figurar como pagada y la información negativa permanece el doble del tiempo de la mora, con un máximo de cuatro años desde el pago (Ley 1266 de 2008, art. 13, modificado por la Ley 2157 de 2021). Aun así, estar al día suele ser lo que permite que una entidad vuelva a estudiar tu caso."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Todos los reportes pesan igual?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Una mora vigente suele pesar más que una obligación ya pagada, y una mora antigua y breve no se lee igual que una larga y reciente. Las consultas que hacen las entidades al estudiar solicitudes quedan registradas; consultar tu propia historia, en cambio, no disminuye tu calificación." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Una mora vigente suele pesar más que una obligación ya pagada, y una mora antigua y breve no se lee igual que una larga y reciente. Las consultas que hacen las entidades al estudiar solicitudes quedan registradas; consultar tu propia historia, en cambio, no disminuye tu calificación."
+          }
         },
         {
           "@type": "Question",
           "name": "No me queda cupo en el desprendible. ¿Hay algo que hacer?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Podemos estudiar un saneamiento financiero: evaluar si una financiación externa puede pagar las obligaciones que bloquean tu caso para luego estudiar una libranza bancaria. Tiene costos propios y no garantiza la aprobación posterior; te lo explicamos antes de empezar." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Podemos estudiar un saneamiento financiero: evaluar si una financiación externa puede pagar las obligaciones que bloquean tu caso para luego estudiar una libranza bancaria. Tiene costos propios y no garantiza la aprobación posterior; te lo explicamos antes de empezar."
+          }
         },
         {
           "@type": "Question",
           "name": "Tengo un embargo además del reporte. ¿Eso cierra todo?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No necesariamente, pero impone restricciones. Influyen el tipo de embargo, cuánto te retienen, tu pagaduría y las políticas de cada entidad. Pagar la deuda no levanta el embargo de forma automática. Lo explicamos en libranza con embargo." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No necesariamente, pero impone restricciones. Influyen el tipo de embargo, cuánto te retienen, tu pagaduría y las políticas de cada entidad. Pagar la deuda no levanta el embargo de forma automática. Lo explicamos en libranza con embargo."
+          }
         },
         {
           "@type": "Question",
           "name": "Soy independiente y estoy reportado. ¿Pueden ayudarme?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. No ofrecemos préstamos generales a independientes reportados. Trabajamos con créditos de libranza para personas con pagaduría: pensionados, empleados públicos, docentes del Estado y Fuerza Pública." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. No ofrecemos préstamos generales a independientes reportados. Trabajamos con créditos de libranza para personas con pagaduría: pensionados, empleados públicos, docentes del Estado y Fuerza Pública."
+          }
         },
         {
           "@type": "Question",
           "name": "Me negaron en un banco. ¿Pido en otro enseguida?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No es lo recomendable. Primero entiende el motivo de la negativa: pedir en varios lados seguidos sin corregir la causa suele repetir el resultado y deja registradas más consultas." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No es lo recomendable. Primero entiende el motivo de la negativa: pedir en varios lados seguidos sin corregir la causa suele repetir el resultado y deja registradas más consultas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay crédito para reportados en Cúcuta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Revisamos casos de pensionados, empleados públicos, docentes y Fuerza Pública con reportes, en nuestra oficina de Cúcuta (Calle 12 # 4–47, Local 4, C.C. Internacional) o por WhatsApp desde cualquier ciudad. Buscamos entidades que puedan estudiar el caso, pero no prometemos aprobación: decide la entidad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Ser pensionado o tener nómina pública me garantiza el crédito aunque esté reportado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. La pensión o la nómina del Estado ayudan a que el caso se pueda estudiar, porque la cuota se descuenta directamente. Pero la entidad mira también el tipo de reporte, tu capacidad, los embargos y sus propias políticas. Nadie puede garantizarte la aprobación."
+          }
         }
       ]
     }
@@ -154,22 +228,22 @@
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="top">
     <div class="container header__inner">
-      <a href="../index.html" class="header__logo" aria-label="CrediAyudarte - inicio">
+      <a href="../" class="header__logo" aria-label="CrediAyudarte - inicio">
         <img src="../assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav" id="nav">
         <a href="../credito-de-libranza/">Crédito de libranza</a>
-        <a href="../index.html#para-quien">Para quién</a>
-        <a href="../index.html#como-funciona">Cómo funciona</a>
+        <a href="../#para-quien">Para quién</a>
+        <a href="../#como-funciona">Cómo funciona</a>
         <a href="../testimonios.html">Testimonios</a>
-        <a href="../blog/index.html">Blog</a>
-        <a href="../index.html#preguntas">Preguntas</a>
-        <a href="../index.html#contacto">Contacto</a>
+        <a href="../blog/">Blog</a>
+        <a href="../#preguntas">Preguntas</a>
+        <a href="../#contacto">Contacto</a>
       </nav>
       <div class="header__actions">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="btn-wa" aria-label="Escríbenos por WhatsApp">
+        <a href="../solicitar.html#solicitud" class="btn-wa" aria-label="Ir al formulario de solicitud">
           <svg class="ico"><use href="#i-whatsapp"/></svg>
-          <span>Escríbenos<small>Te orientamos</small></span>
+          <span>Solicitud<small>a WhatsApp</small></span>
         </a>
         <a href="../solicitar.html" class="btn btn-primary header__cta">Solicita tu análisis</a>
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -186,14 +260,14 @@
     <span class="blob blob--yellow anim-float2" aria-hidden="true"></span>
     <div class="container page-hero__inner">
       <nav class="breadcrumb" aria-label="Ruta de navegación">
-        <a href="../index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="../credito-de-libranza/">Crédito de libranza</a> <span aria-hidden="true">&rsaquo;</span> <span>Si estás reportado</span>
+        <a href="../">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="../credito-de-libranza/">Crédito de libranza</a> <span aria-hidden="true">&rsaquo;</span> <span>Si estás reportado</span>
       </nav>
-      <h1>Libranza para pensionados y empleados públicos reportados: <span>qué se puede estudiar y qué no</span></h1>
+      <h1>Crédito de libranza para reportados: <span>qué se puede estudiar si eres pensionado o empleado público</span></h1>
       <p>Si recibes una pensión o un sueldo del Estado y tienes reportes negativos o mora, puede haber alternativas. Dependen de la capacidad de pago que te quede, de tu pagaduría, del tipo de reporte y de las políticas de cada entidad. Aquí te explicamos cuáles son y qué nadie puede prometerte.</p>
       <div class="page-hero__cta">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20tengo%20un%20reporte%20en%20centrales%20y%20quiero%20que%20eval%C3%BAen%20mi%20caso%20de%20libranza." target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-ubic="credito-libranza-reportados-hero"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Evaluar mi caso por WhatsApp</a>
-        <a href="../solicitar.html#solicitud" class="btn btn-ghost btn-lg" data-ubic="credito-libranza-reportados-hero">Solicitar preanálisis gratuito</a>
+        <a href="../solicitar.html#solicitud" class="btn btn-primary btn-lg" data-ubic="credito-libranza-reportados-hero"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
       </div>
+      <p class="page-hero__paso">Te responde una persona. Revisar tu caso no cuesta y no te pedimos cédula ni claves en el primer mensaje.</p>
       <p class="page-hero__fine">CrediAyudarte presta asesoría e intermediación en créditos de libranza. No somos un banco ni una cooperativa: no prestamos dinero propio, no aprobamos ni desembolsamos créditos y no borramos reportes.</p>
     </div>
   </section>
@@ -207,18 +281,50 @@
           <span class="respuesta__tag">Lo primero, sin rodeos</span>
           <p><strong>Estar reportado no significa que exista una aprobación, ni que no exista ninguna posibilidad.</strong> Si eres pensionado, empleado público, docente del Estado o miembro de la Fuerza Pública, tu ingreso llega por una pagaduría y eso permite estudiar alternativas que otras personas no tienen. Cada caso se analiza por separado.</p>
           <p><strong>CrediAyudarte no presta dinero.</strong> Revisamos tu situación completa y buscamos entidades que puedan estudiarla. La decisión siempre es de la entidad.</p>
+          <p><strong>Atendemos en Cúcuta y por WhatsApp en todo el país.</strong> Si estás buscando crédito para reportados en Cúcuta, puedes venir a la oficina con cita o escribirnos.</p>
           <p><strong>No ofrecemos préstamos generales a independientes reportados.</strong> Nuestro trabajo es la libranza: créditos que se descuentan de una nómina o una pensión. Si ese no es tu caso, preferimos decírtelo ahora.</p>
+        </div>
+
+        <!-- QUÉ REVISAMOS / QUÉ DECIDE LA ENTIDAD -->
+        <h2 id="que-revisamos">Qué revisamos contigo y qué decide la entidad</h2>
+        <div class="revisa">
+          <div class="revisa__col revisa__col--nos">
+            <h3>Lo que revisamos contigo</h3>
+            <ul>
+              <li><b>El tipo de reporte:</b> mora vigente o deuda ya pagada, y desde cuándo.</li>
+              <li><b>Tu capacidad de pago</b> en el desprendible.</li>
+              <li><b>Tu pagaduría</b> y sus convenios.</li>
+              <li><b>Si hay embargos</b> o retenciones.</li>
+              <li><b>Si el reporte podría estar mal</b> y conviene reclamar.</li>
+            </ul>
+          </div>
+          <div class="revisa__col revisa__col--entidad">
+            <h3>Lo que decide la entidad, no nosotros</h3>
+            <ul>
+              <li>Si aprueba o no el crédito.</li>
+              <li>El monto, la tasa y el plazo.</li>
+              <li>Los seguros y los costos del estudio.</li>
+              <li>Cuándo desembolsa.</li>
+            </ul>
+          </div>
+          <p class="revisa__nota">Ser pensionado o tener nómina pública ayuda a que tu caso se pueda estudiar, pero <strong>no garantiza la aprobación</strong>. Revisar tu caso no cuesta y no pedimos anticipos.</p>
         </div>
 
         <nav class="toc" aria-label="Contenido de la página">
           <h2>En esta página</h2>
           <ol>
+            <li><a href="#que-revisamos">Qué revisamos y qué decide la entidad</a></li>
             <li><a href="#alternativas">Qué alternativas pueden existir</a></li>
             <li><a href="#que-es">Qué es realmente un reporte</a></li>
             <li><a href="#tipos">No todos los reportes son iguales</a></li>
-            <li><a href="#ademas">Qué más pesa además del reporte</a></li>
-            <li><a href="#mal-reportado">Cuando el reporte es incorrecto o está desactualizado</a></li>
+            <li><a href="#ademas">Qué factores revisa una entidad</a></li>
+            <li><a href="#no-garantiza">Ser pensionado no garantiza la aprobación</a></li>
+            <li><a href="#mal-reportado">Qué se puede corregir legalmente</a></li>
             <li><a href="#cuanto-dura">Cuánto tiempo permanece un reporte</a></li>
+            <li><a href="#palabras">Palabras que vas a escuchar</a></li>
+            <li><a href="#documentos">Qué documentos pueden pedirte</a></li>
+            <li><a href="#no-prometer">Lo que nadie puede prometerte</a></li>
+            <li><a href="#cucuta">Si vives en Cúcuta o Norte de Santander</a></li>
             <li><a href="#que-hacemos">Qué hacemos y qué no hacemos</a></li>
             <li><a href="#desconfia">De qué desconfiar</a></li>
             <li><a href="#que-hacer">Qué puedes hacer hoy</a></li>
@@ -270,7 +376,7 @@
           </table>
         </div>
 
-        <h2 id="ademas">Qué más pesa además del reporte</h2>
+        <h2 id="ademas">Qué factores revisa una entidad además del reporte</h2>
 
         <ul>
           <li><strong>Tu capacidad real.</strong> Cuánto margen queda en tu desprendible después de los descuentos de ley y de lo que ya tienes comprometido.</li>
@@ -286,7 +392,12 @@
           <p>El reporte es una parte de la historia, no la historia completa. Un reporte limpio no es una llave, y uno negativo no es una puerta cerrada.</p>
         </div>
 
-        <h2 id="mal-reportado">Cuando el reporte es incorrecto o está desactualizado</h2>
+        <h2 id="no-garantiza">Estar pensionado o tener nómina pública no garantiza la aprobación</h2>
+
+        <p>Es una idea que circula mucho: «como me descuentan por nómina, me tienen que prestar». No es así.</p>
+        <p>La pensión o el sueldo del Estado ayudan porque la cuota se descuenta antes de que recibas el dinero, y eso hace que algunas entidades puedan estudiar perfiles con reporte. Pero cada entidad decide con sus propias reglas, mirando todo lo anterior. <strong>Ninguna ley obliga a una entidad a prestarte</strong>, y dos entidades pueden responder distinto al mismo caso.</p>
+
+        <h2 id="mal-reportado">Qué se puede corregir legalmente: reportes incorrectos o desactualizados</h2>
 
         <p>A veces el reporte no describe lo que pasó: la deuda se pagó y no se actualizó, el descuento sí se hizo por nómina pero la entidad no lo aplicó, o hay un error.</p>
 
@@ -296,7 +407,7 @@
 
         <h2 id="cuanto-dura">Cuánto tiempo permanece un reporte</h2>
 
-        <p>Según el artículo 13 de la Ley 1266 de 2008, modificado por la <a href="https://normograma.mintic.gov.co/mintic/compilacion/docs/ley_2157_2021.htm" target="_blank" rel="noopener">Ley 2157 de 2021</a>:</p>
+        <p>Según el artículo 13 de la Ley 1266 de 2008, modificado por la <a href="https://normograma.mintic.gov.co/mintic/compilacion/docs/ley_2157_2021.htm" target="_blank" rel="noopener">Ley 2157 de 2021</a> (la Superintendencia de Industria y Comercio lo explica en <a href="https://sedeelectronica.sic.gov.co/publicaciones/boletin-juridico/concepto/permanencia-del-dato-negativo-ley-2157-de-2021" target="_blank" rel="noopener">permanencia del dato negativo</a>):</p>
 
         <ul>
           <li><strong>Si pagas:</strong> la información negativa permanece el doble del tiempo que duró la mora, con un máximo de cuatro años, contados desde que se pagan las cuotas vencidas o se extingue la obligación.</li>
@@ -310,6 +421,61 @@
           <svg class="ico"><use href="#i-alert"/></svg>
           <p>Esto es orientación general basada en la ley vigente, no asesoría jurídica ni un análisis de tu caso. Si tu situación tiene implicaciones legales, consulta con un abogado.</p>
         </div>
+
+        <!-- PALABRAS QUE VAS A ESCUCHAR -->
+        <h2 id="palabras">Palabras que vas a escuchar, explicadas</h2>
+        <dl class="glosario">
+          <div><dt>Reporte negativo</dt><dd>El registro en Datacrédito o TransUnion de una deuda que no se pagó a tiempo. Una mora vigente es una deuda que sigue sin pagarse hoy; una deuda ya pagada puede seguir apareciendo un tiempo.</dd></div>
+          <div><dt>Pagaduría</dt><dd>La entidad que te paga la pensión o el sueldo y aplica los descuentos: por ejemplo Colpensiones, FOPEP, Fiduprevisora, una Secretaría de Educación, CASUR o CREMIL. Si no tiene convenio con una entidad financiera, esa entidad no puede prestarte por libranza.</dd></div>
+          <div><dt>Desprendible</dt><dd>El comprobante de pago de tu pensión o tu sueldo. Muestra cuánto te pagan, qué te descuentan y cuánto recibes.</dd></div>
+          <div><dt>Capacidad de pago o margen</dt><dd>Lo que te queda libre después de los descuentos. Por ley, después de los descuentos de libranza debes recibir al menos el 50 % del neto de tu salario o pensión (Ley 1527 de 2012, art. 3).</dd></div>
+          <div><dt>Saneamiento financiero</dt><dd>Pagar u ordenar deudas con una financiación externa, que tiene costos propios, para que después se pueda estudiar una libranza. No garantiza ese crédito posterior.</dd></div>
+          <div><dt>Anticipo</dt><dd>Un pago que te piden antes de recibir el crédito. En la libranza no es normal y es la señal más clara de estafa.</dd></div>
+        </dl>
+
+        <!-- DOCUMENTOS -->
+        <h2 id="documentos">Qué documentos pueden pedirte</h2>
+        <div class="tabla">
+          <table>
+            <caption>Qué se pide en cada momento</caption>
+            <thead>
+              <tr><th scope="col">Momento</th><th scope="col">Qué se pide</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Primer contacto por WhatsApp o formulario</th><td>Ninguno. Basta con contarnos tu perfil, quién te paga y qué necesitas.</td></tr>
+              <tr><th scope="row">Preanálisis, si tu caso tiene opciones</th><td>Tu desprendible de pago más reciente, legible. Con eso hacemos el preanálisis, que no cuesta.</td></tr>
+              <tr><th scope="row">Estudio en la entidad</th><td>Copia de tu cédula. Los formularios y la autorización de consulta en centrales de riesgo de la entidad. Tu historial de Datacrédito o TransUnion, si ya lo consultaste. Consultarlo es gratis y no baja tu calificación. Cada entidad define su lista.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Nunca te pedimos</strong> claves, contraseñas, códigos que te lleguen por mensaje, fotos de tus tarjetas ni pagos por adelantado. Los datos que nos compartes se tratan según nuestra <a href="../privacy/">política de privacidad</a>.</p>
+
+        <div class="alerta" id="estafas">
+          <h3><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg> Nunca pagues para que te presten</h3>
+          <p>Ningún trámite serio de libranza te cobra antes del desembolso. Desconfía si te piden:</p>
+          <ul>
+            <li>Dinero para «estudio», «seguro» o «liberar» el crédito.</li>
+            <li>Claves, códigos o acceso a tu banca en línea.</li>
+            <li>Decidir hoy mismo porque «se pierde el cupo».</li>
+          </ul>
+          <p>Si alguien te pide dinero en nombre de CrediAyudarte, no pagues y escríbenos al WhatsApp oficial <strong>315 247 4348</strong>. Más en <a href="../blog/te-piden-un-anticipo-para-desembolsar-el-credito.html">te piden un anticipo para desembolsar el crédito</a>.</p>
+        </div>
+
+        <h2 id="no-prometer">Lo que nadie puede prometerte si estás reportado</h2>
+
+        <p>Si alguien te promete alguna de estas cosas, desconfía. Nosotros tampoco podemos prometerlas:</p>
+        <ul>
+          <li><strong>Aprobación segura,</strong> sobre todo con una mora vigente o sin capacidad en el desprendible.</li>
+          <li><strong>Borrar un reporte que es correcto.</strong> Permanece el tiempo que fija la ley.</li>
+          <li><strong>Que pagar una deuda borre el reporte al día siguiente.</strong> Empieza a correr el tiempo de permanencia.</li>
+          <li><strong>Que un embargo se levante solo por pagar.</strong> Hace falta una orden de quien lo decretó.</li>
+          <li><strong>Un monto, una tasa o una fecha de desembolso</strong> antes de que la entidad estudie el caso.</li>
+          <li><strong>Que después de un saneamiento la libranza salga segura.</strong></li>
+        </ul>
+
+        <h2 id="cucuta">Si estás reportado y vives en Cúcuta o Norte de Santander</h2>
+
+        <p>Puedes revisar tu caso en nuestra <a href="../credito-libranza-cucuta/">oficina de Cúcuta</a>, en la Calle 12 # 4–47, Local 4, del Centro Comercial Internacional, coordinando antes por WhatsApp. Si estás en otra ciudad, lo hacemos por WhatsApp. El análisis y los límites son los mismos: revisamos, buscamos entidades que puedan estudiar el caso y te decimos con claridad si no vemos opción.</p>
 
         <h2 id="que-hacemos">Qué hacemos y qué no hacemos</h2>
 
@@ -390,6 +556,26 @@
             <summary>Me negaron en un banco. ¿Pido en otro enseguida?</summary>
             <p>No es lo recomendable. Primero entiende el motivo de la negativa: pedir en varios lados seguidos sin corregir la causa suele repetir el resultado y deja registradas más consultas.</p>
           </details>
+          <details>
+            <summary>¿Hay crédito para reportados en Cúcuta?</summary>
+            <p>Revisamos casos de pensionados, empleados públicos, docentes y Fuerza Pública con reportes, en nuestra oficina de Cúcuta (Calle 12 # 4–47, Local 4, C.C. Internacional) o por WhatsApp desde cualquier ciudad. Buscamos entidades que puedan estudiar el caso, pero no prometemos aprobación: decide la entidad.</p>
+          </details>
+          <details>
+            <summary>¿Ser pensionado o tener nómina pública me garantiza el crédito aunque esté reportado?</summary>
+            <p>No. La pensión o la nómina del Estado ayudan a que el caso se pueda estudiar, porque la cuota se descuenta directamente. Pero la entidad mira también el tipo de reporte, tu capacidad, los embargos y sus propias políticas. Nadie puede garantizarte la aprobación.</p>
+          </details>
+        </div>
+
+        <!-- FUENTES OFICIALES -->
+        <div class="fuentes" id="fuentes">
+          <h3>Fuentes oficiales</h3>
+          <ul>
+            <li><a href="https://normograma.mintic.gov.co/mintic/compilacion/docs/ley_2157_2021.htm" target="_blank" rel="noopener">Ley 2157 de 2021, sobre los datos en centrales de riesgo</a> (normograma del MinTIC).</li>
+            <li><a href="https://sedeelectronica.sic.gov.co/publicaciones/boletin-juridico/concepto/permanencia-del-dato-negativo-ley-2157-de-2021" target="_blank" rel="noopener">Permanencia del dato negativo</a> (Superintendencia de Industria y Comercio).</li>
+            <li><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=47213" target="_blank" rel="noopener">Ley 1527 de 2012, sobre la libranza</a> (Función Pública). El artículo 3 fija que debes recibir al menos el 50 % del neto de tu salario o pensión.</li>
+            <li><a href="https://www.superfinanciera.gov.co/publicaciones/10115254/tips-para-identificar-falsos-prestamistas/" target="_blank" rel="noopener">Cómo identificar falsos prestamistas</a> (Superintendencia Financiera).</li>
+          </ul>
+          <small>Enlaces revisados el 12 de noviembre de 2026. Es orientación general, no asesoría jurídica.</small>
         </div>
 
         <h2 id="recursos">Para seguir leyendo</h2>
@@ -415,11 +601,18 @@
       </div>
 
       <!-- ===================== CIERRE ===================== -->
-      <div class="post-cierre">
-        <h2>Si quieres entender tu situación real</h2>
-        <p>Cuéntanos tu perfil, tu pagaduría y lo que sabes de tu reporte. Te decimos con honestidad qué tan viable se ve tu caso, qué lo está complicando y si tiene sentido intentarlo ahora, estudiar un saneamiento o esperar. Si hoy no hay nada que hacer, también te lo decimos.</p>
-        <a href="https://wa.me/573152474348?text=Hola%2C%20tengo%20un%20reporte%20en%20centrales%20y%20quiero%20que%20eval%C3%BAen%20mi%20caso%20de%20libranza." target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-ubic="credito-libranza-reportados-cierre"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Evaluar mi caso por WhatsApp</a>
-        <p class="post-cierre__fine">Preanálisis sin costo · Sin anticipos para tramitar tu crédito · Aprobación sujeta a estudio de la entidad.</p>
+      <div class="post-cierre siguiente" id="siguiente-paso">
+        <h2>Tu siguiente paso: entender tu situación real</h2>
+        <p>Cuéntanos tu perfil, quién te paga y lo que sabes de tu reporte. Te decimos con honestidad si vemos una opción, qué la complica y si conviene esperar o sanear primero.</p>
+        <ol>
+          <li><span><strong>Llena la solicitud corta y envíala a nuestro WhatsApp.</strong> Tu nombre, tu edad, tu perfil y cómo está tu reporte. Sin cédula ni documentos.</span></li>
+          <li><span><strong>Te responde una persona.</strong> Si tu caso tiene opciones, te pide el desprendible para el preanálisis, que no cuesta.</span></li>
+          <li><span><strong>Te explicamos cuota, plazo y costo total antes de firmar.</strong> Tú decides; la entidad aprueba y desembolsa.</span></li>
+        </ol>
+        <div class="siguiente__cta">
+          <a href="../solicitar.html#solicitud" class="btn btn-primary btn-lg" data-ubic="credito-libranza-reportados-cierre"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
+        </div>
+        <p class="siguiente__fine">Preanálisis sin costo · Sin anticipos para tramitar · La aprobación depende de la entidad financiera · Oficina: Calle 12 # 4–47, Local 4, C.C. Internacional, Cúcuta.</p>
       </div>
 
     </div>
@@ -455,7 +648,7 @@
         <a href="../about/">Quiénes somos</a>
         <a href="../credito-libranza-cucuta/">Asesoría de libranza en Cúcuta</a>
         <a href="../testimonios.html">Testimonios de clientes</a>
-        <a href="../blog/index.html">Decisiones claras (blog)</a>
+        <a href="../blog/">Decisiones claras (blog)</a>
         <a href="../solicitar.html">Solicita tu análisis</a>
         <a href="../privacy/">Política de privacidad</a>
         <a href="https://wa.me/573152474348" target="_blank" rel="noopener">WhatsApp: 315 247 4348</a>
@@ -471,12 +664,12 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+  <a href="../solicitar.html#solicitud" class="wa-float" aria-label="Ir al formulario de solicitud">
     <svg class="ico"><use href="#i-whatsapp"/></svg>
     <span class="wa-float__pulse"></span>
   </a>
 
-  <script defer src="../js/medicion.js?v=20261013"></script>
+  <script defer src="../js/medicion.js?v=20261113"></script>
   <script defer src="../js/script.js?v=20261025"></script>
   <script defer src="../js/motion.js?v=20261013"></script>
 </body>

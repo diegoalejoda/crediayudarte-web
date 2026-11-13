@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Marca que JS está activo: sin JS todo el contenido queda visible -->
+  <script>document.documentElement.className += ' js';</script>
 
   <!-- ===================== SEO ===================== -->
   <title>Compra de cartera: cuándo conviene y cuándo solo alarga la deuda</title>
@@ -35,9 +37,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,700..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=20261025" />
+  <link rel="stylesheet" href="../css/styles.css?v=20261112" />
   <link rel="stylesheet" href="../css/motion.css?v=20260919" />
-  <link rel="stylesheet" href="../css/blog.css?v=20261013" />
+  <link rel="stylesheet" href="../css/blog.css?v=20261112" />
 
   <!-- ===================== DATOS ESTRUCTURADOS ===================== -->
   <script type="application/ld+json">
@@ -135,6 +137,7 @@
   </script>
 </head>
 <body>
+  <a class="skip" href="#principal">Saltar al contenido</a>
 
   <!-- ===================== SPRITE DE ICONOS ===================== -->
   <svg style="display:none" aria-hidden="true">
@@ -153,22 +156,22 @@
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="top">
     <div class="container header__inner">
-      <a href="../index.html" class="header__logo" aria-label="CrediAyudarte - inicio">
+      <a href="../" class="header__logo" aria-label="CrediAyudarte - inicio">
         <img src="../assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav" id="nav">
         <a href="../credito-de-libranza/">Crédito de libranza</a>
-        <a href="../index.html#para-quien">Para quién</a>
-        <a href="../index.html#como-funciona">Cómo funciona</a>
+        <a href="../#para-quien">Para quién</a>
+        <a href="../#como-funciona">Cómo funciona</a>
         <a href="../testimonios.html">Testimonios</a>
-        <a href="../blog/index.html">Blog</a>
-        <a href="../index.html#preguntas">Preguntas</a>
-        <a href="../index.html#contacto">Contacto</a>
+        <a href="../blog/">Blog</a>
+        <a href="../#preguntas">Preguntas</a>
+        <a href="../#contacto">Contacto</a>
       </nav>
       <div class="header__actions">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="btn-wa" aria-label="Escríbenos por WhatsApp">
+        <a href="../solicitar.html#solicitud" class="btn-wa" aria-label="Ir al formulario de solicitud">
           <svg class="ico"><use href="#i-whatsapp"/></svg>
-          <span>Escríbenos<small>Te orientamos</small></span>
+          <span>Solicitud<small>a WhatsApp</small></span>
         </a>
         <a href="../solicitar.html" class="btn btn-primary header__cta">Solicita tu análisis</a>
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -178,6 +181,8 @@
     </div>
   </header>
 
+  <main id="principal">
+
   <!-- ===================== CABECERA DEL ARTÍCULO ===================== -->
   <article>
   <section class="post-hero">
@@ -186,7 +191,7 @@
     <div class="container">
       <div class="post-hero__inner">
         <nav class="breadcrumb" aria-label="Ruta de navegación">
-          <a href="../index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="index.html">Decisiones claras</a> <span aria-hidden="true">&rsaquo;</span> <span>Compra de cartera</span>
+          <a href="../">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="./">Decisiones claras</a> <span aria-hidden="true">&rsaquo;</span> <span>Compra de cartera</span>
         </nav>
         <h1>Compra de cartera: cuándo conviene y cuándo solo alarga la deuda</h1>
         <p class="post-hero__lead">Te ofrecen unificar todas tus deudas en una sola cuota más baja y suena a respirar. A veces lo es. Otras veces es la misma deuda estirada tantos años que terminas pagando mucho más por el mismo alivio.</p>
@@ -343,8 +348,8 @@
       <div class="post-cierre">
         <h2>Si te ofrecieron una compra de cartera</h2>
         <p>Mándanos la propuesta y tus desprendibles, y te separamos obligación por obligación qué conviene recoger y qué conviene dejar quieto. Si las condiciones que ya tienes son mejores, también te lo decimos. El preanálisis es gratuito y sin compromiso.</p>
-        <a href="https://wa.me/573152474348?text=Hola%2C%20me%20ofrecieron%20una%20compra%20de%20cartera%20y%20quiero%20saber%20si%20me%20conviene." target="_blank" rel="noopener" class="btn btn-primary btn-lg">Quiero revisar si me conviene</a>
-        <p class="post-cierre__fine">No cobramos nada por adelantado. Nuestros honorarios se pagan solo si hay desembolso.</p>
+        <a href="../solicitar.html#solicitud" class="btn btn-primary btn-lg">Quiero revisar si me conviene</a>
+        <p class="post-cierre__fine">Preanálisis sin costo · Sin anticipos para tramitar · Si una gestión tiene honorarios, te los explicamos por escrito antes de avanzar.</p>
       </div>
 
       <!-- ===================== SIGUIENTE LECTURA ===================== -->
@@ -362,6 +367,8 @@
     </div>
   </section>
   </article>
+
+  </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
@@ -392,7 +399,7 @@
         <a href="../about/">Quiénes somos</a>
         <a href="../credito-libranza-cucuta/">Asesoría de libranza en Cúcuta</a>
         <a href="../testimonios.html">Testimonios de clientes en Cúcuta</a>
-        <a href="index.html">Decisiones claras (blog)</a>
+        <a href="./">Decisiones claras (blog)</a>
         <a href="../solicitar.html">Solicita el análisis de tu crédito de libranza</a>
         <a href="../privacy/">Política de privacidad</a>
         <a href="https://wa.me/573152474348" target="_blank" rel="noopener">WhatsApp: 315 247 4348</a>
@@ -408,12 +415,12 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+  <a href="../solicitar.html#solicitud" class="wa-float" aria-label="Ir al formulario de solicitud">
     <svg class="ico"><use href="#i-whatsapp"/></svg>
     <span class="wa-float__pulse"></span>
   </a>
 
-  <script defer src="../js/medicion.js?v=20261013"></script>
+  <script defer src="../js/medicion.js?v=20261113"></script>
   <script defer src="../js/script.js?v=20261025"></script>
   <script defer src="../js/motion.js?v=20260819"></script>
 </body>

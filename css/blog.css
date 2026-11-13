@@ -118,3 +118,76 @@
    no en el resto del sitio. */
 .section__head:last-child{margin-bottom:0}
 .territorios:last-child{margin-bottom:0}
+
+/* ===================================================================
+   BLOQUES DE DECISIÓN (rama seo-intencion-2026-11)
+   Pensados para pensionados con conocimientos tecnológicos básicos:
+   letra grande, párrafos cortos, una idea por bloque y el siguiente
+   paso siempre visible. Los usan las páginas de servicio y el blog.
+   =================================================================== */
+
+/* --- Legibilidad: texto de lectura a 18 px, nada de grises claros --- */
+.post-body p{font-size:1.125rem;line-height:1.75}
+.post-body li{font-size:1.1rem;line-height:1.7}
+.post-faq summary{font-size:1.1rem;line-height:1.45;padding:.2rem 0}
+.post-faq details p{font-size:1.06rem}
+.tabla table{font-size:1.04rem}
+.toc li{font-size:1.04rem}
+.respuesta p{font-size:1.14rem}
+
+/* --- Qué revisamos / qué depende de la entidad --- */
+.revisa{max-width:720px;margin-inline:auto;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.revisa__col{background:#fff;border:1px solid var(--linea);border-radius:var(--radius-sm);padding:1.5rem 1.6rem;box-shadow:var(--shadow-sm)}
+.revisa__col--nos{border-top:6px solid var(--verde-marca)}
+.revisa__col--entidad{border-top:6px solid var(--amarillo)}
+.revisa__col h3{margin:0 0 .9rem !important;font-size:1.15rem;color:var(--tinta)}
+.revisa__col ul{padding-left:0;list-style:none;display:grid;gap:.6rem}
+.revisa__col li{position:relative;padding-left:1.3rem;font-size:1.06rem;line-height:1.6;color:var(--gris-texto)}
+.revisa__col li::before{content:"";position:absolute;left:0;top:.62em;width:.5rem;height:.5rem;border-radius:50%;background:var(--verde-marca)}
+.revisa__col--entidad li::before{background:var(--amarillo)}
+.revisa__nota{grid-column:1/-1;font-size:1.02rem !important;color:var(--tinta) !important;background:var(--verde-nube);border:1px dashed rgba(124,180,29,.45);border-radius:var(--radius-sm);padding:.9rem 1.1rem}
+
+/* --- Palabras que vas a escuchar (glosario corto) --- */
+.glosario{max-width:720px;margin-inline:auto;display:grid;gap:.7rem}
+.glosario div{background:#fff;border:1px solid var(--linea);border-radius:var(--radius-sm);padding:1rem 1.25rem}
+.glosario dt{font-weight:800;color:var(--tinta);font-size:1.08rem}
+.glosario dd{margin:.3rem 0 0;font-size:1.06rem;line-height:1.65;color:var(--gris-texto)}
+
+/* --- Alerta contra estafas y anticipos --- */
+.alerta{max-width:720px;margin-inline:auto;background:#FFFBEA;border:2px solid var(--amarillo);border-radius:var(--radius-sm);padding:1.4rem 1.6rem}
+.alerta h3{margin:0 0 .6rem !important;font-size:1.2rem;color:var(--tinta);display:flex;align-items:center;gap:.55rem}
+.alerta h3 .ico{width:1.5rem;height:1.5rem;color:#9A7300;stroke:#9A7300}
+.alerta p{font-size:1.08rem !important;color:var(--tinta) !important}
+.alerta ul{margin-top:.7rem;padding-left:1.2rem;list-style:disc;display:grid;gap:.35rem}
+.alerta li{font-size:1.05rem;color:var(--tinta)}
+
+/* --- Fuentes oficiales --- */
+.fuentes{max-width:720px;margin-inline:auto;background:var(--niebla);border-radius:var(--radius-sm);padding:1.2rem 1.4rem}
+.fuentes h3{margin:0 0 .6rem !important;font-size:1rem;text-transform:uppercase;letter-spacing:.05em;color:var(--verde-texto)}
+.fuentes ul{padding-left:1.1rem;list-style:disc;display:grid;gap:.4rem}
+.fuentes li{font-size:1rem;line-height:1.55}
+.fuentes small{display:block;margin-top:.7rem;font-size:.92rem;color:var(--gris-texto)}
+
+/* --- Ejemplo ilustrativo de cifras --- */
+.ejemplo-tag{display:inline-block;font-size:.8rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tinta);background:var(--amarillo-suave);padding:.25rem .65rem;border-radius:6px}
+
+/* --- Tu siguiente paso --- */
+.siguiente{max-width:720px;margin-inline:auto;background:#fff;border:2px solid var(--verde-marca);border-radius:var(--radius);padding:clamp(1.4rem,3.5vw,2rem)}
+.siguiente h2{margin-top:0 !important;font-size:clamp(1.35rem,2.6vw,1.7rem)}
+.siguiente ol{list-style:none;padding-left:0;counter-reset:paso;display:grid;gap:.8rem;margin-top:1rem}
+.siguiente li{counter-increment:paso;display:flex;gap:.9rem;align-items:flex-start;font-size:1.08rem;line-height:1.6}
+.siguiente li::before{content:counter(paso);flex:none;display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--verde-agua);color:var(--verde-texto);font-weight:800}
+.siguiente__cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
+.siguiente__fine{font-size:.98rem !important;color:var(--gris-texto) !important;margin-top:1rem}
+
+@media (max-width:640px){
+  .post-body p{font-size:1.0625rem}
+  .post-body li{font-size:1.05rem}
+  .revisa__col,.alerta,.siguiente{padding:1.2rem 1.15rem}
+  .siguiente__cta .btn{width:100%}
+}
+.siguiente .btn{margin-top:0}
+.pendiente{background:#FFE08A;color:#3A2E00;font-weight:800;padding:0 .3em;border-radius:4px}
+/* Letra pequeña de lectura: mínimo 16 px (público mayor) */
+.page-hero__fine,.ruta p,.recursos span,.post-cierre__fine,.post-card p,.territorio p,.limite p,.post-card__foot,.balanza__col li,.checklist li{font-size:max(1rem,1em) !important}
+.siguiente__fine,.caso__fine,.form-help,.shero .breadcrumb{font-size:1rem !important}

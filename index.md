@@ -1,8 +1,16 @@
 # ¿Pensionado o empleado del Gobierno? Te ayudamos con tu crédito por libranza
 
-> Revisamos tu caso y buscamos opciones con entidades que trabajan con tu pagaduría. El análisis inicial no tiene costo y no pedimos pagos por adelantado para tramitar tu crédito.
+> Revisamos quién te paga (tu pagaduría), cuánto te descuentan hoy, cuánto te queda libre y tu historial de pagos. Con eso buscamos entidades que puedan estudiar tu caso y te explicamos si te conviene.
 
-Preanálisis sin costo · Sin anticipos para tramitar · Oficina en Cúcuta y atención en toda Colombia.
+- **Revisar tu caso no cuesta.** No pedimos anticipos para tramitar tu crédito.
+- **No garantizamos la aprobación.** No somos un banco: la entidad financiera decide y desembolsa.
+- **Oficina en Cúcuta:** Calle 12 # 4–47, Local 4, C.C. Internacional. También atendemos por WhatsApp (+57 315 247 4348). Te responde una persona.
+
+## Qué revisamos contigo y qué decide la entidad
+
+Revisamos tu pagaduría, tus descuentos actuales (en el desprendible de pago), tu capacidad de pago (por ley, después de los descuentos de libranza debes recibir al menos la mitad de tu sueldo o pensión neta: Ley 1527 de 2012, art. 3), tu historial y la diferencia entre cuota y costo total.
+
+La entidad decide si aprueba, el monto, la tasa, el plazo, los seguros, los costos del estudio y cuándo desembolsa. Por eso nadie serio puede garantizarte un crédito, ni siquiera si eres pensionado o tienes nómina pública.
 
 CrediAyudarte presta asesoría e intermediación en créditos de libranza: el crédito que se descuenta de la nómina o de la pensión. Atendemos a pensionados, empleados públicos, docentes del Estado y miembros de la Fuerza Pública. **No somos un banco: te asesoramos y te acompañamos. La aprobación, las condiciones y el desembolso los define la entidad que presta el dinero.**
 
@@ -10,7 +18,7 @@ CrediAyudarte es el nombre comercial con el que opera Marilú Arévalo Toro, com
 
 ## Cómo empezar
 
-- [Consultar mi caso por WhatsApp](https://wa.me/573152474348?text=Hola%2C%20quiero%20consultar%20mis%20opciones%20de%20cr%C3%A9dito%20por%20libranza.)
+- [Hablar con una persona por WhatsApp](https://wa.me/573152474348?text=Hola%2C%20quiero%20consultar%20mis%20opciones%20de%20cr%C3%A9dito%20por%20libranza.)
 - [Llenar una solicitud corta](https://crediayudarte.com/solicitar.html)
 
 ## ¿A quién podemos ayudar?
@@ -25,9 +33,9 @@ Nuestro foco es el sector público. Si trabajas en una empresa privada o eres in
 ## ¿Qué necesitas hacer?
 
 1. **Necesito un crédito.** Revisamos qué entidades trabajan con tu pagaduría y comparamos cuota, plazo y costo total. [Crédito de libranza](https://crediayudarte.com/credito-de-libranza/)
-2. **Quiero bajar mis cuotas o unir mis créditos.** Te mostramos si una compra de cartera de verdad te conviene. [Compra de cartera](https://crediayudarte.com/compra-de-cartera/)
+2. **Me ofrecieron bajar la cuota o unir mis créditos.** Te mostramos si una compra de cartera de verdad te conviene. [Compra de cartera](https://crediayudarte.com/compra-de-cartera/)
 3. **Estoy reportado o tengo un embargo.** Si te queda capacidad de pago, buscamos entidades que puedan estudiar tu perfil. [Si estás reportado](https://crediayudarte.com/credito-libranza-reportados/) · [Libranza con embargo](https://crediayudarte.com/credito-libranza-embargos/)
-4. **Ya no me queda cupo en el desprendible.** A veces se pueden ordenar primero las deudas con una financiación externa y después estudiar una libranza. [Saneamiento financiero](https://crediayudarte.com/saneamiento-financiero/)
+4. **No tengo cupo en el desprendible.** A veces se pueden ordenar primero las deudas con una financiación externa y después estudiar una libranza. [Saneamiento financiero](https://crediayudarte.com/saneamiento-financiero/)
 
 Cada caso depende de tu pagaduría, de tu capacidad de pago y de las políticas de cada entidad. No prometemos una solución para todos.
 

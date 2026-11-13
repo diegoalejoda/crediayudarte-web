@@ -112,7 +112,8 @@ mark{
 }
 /* Acción principal: vidrio tintado con el verde del logo */
 .cbtn--primary{
-  color:#fff;text-shadow:0 1px 1px rgba(40,70,10,.45);
+  /* Texto casi negro sobre el verde del logo: >=4,6:1 en todo el degradado (AA). */
+  color:#1B2410;text-shadow:0 1px 0 rgba(255,255,255,.3);
   background:linear-gradient(180deg,#8CCB4C 0%,var(--c-green) 52%,var(--c-green-lo) 100%);
   border:1px solid rgba(255,255,255,.35);
   box-shadow:inset 0 1px 1px rgba(255,255,255,.65),inset 0 -3px 8px rgba(40,70,10,.28),0 12px 26px -12px rgba(92,148,38,.75);
@@ -201,7 +202,7 @@ html:not(.js) .cnav__inner,.cnav.is-solid .cnav__inner{background:linear-gradien
 .cround:hover{transform:translateY(-2px) rotate(-10deg) scale(1.06);color:var(--c-green-lo)}
 .cbtn--hero{min-height:60px;padding:1rem 2rem;font-size:1.15rem}
 .cbtn .ico{width:1.3em;height:1.3em;flex:none}
-.cbtn--primary .ico.solid{fill:#fff;color:#fff}
+.cbtn--primary .ico.solid{fill:#1B2410;color:#1B2410}
 
 /* ===================================================================
    HERO COMERCIAL (2026-10)
@@ -425,20 +426,21 @@ body.home .inicio__title mark{background-position:0 58%;background-size:100% 82%
 .faq2__more{margin-top:2.2rem;font-size:.97rem;line-height:1.6}
 
 /* ---------- CTA final ---------- */
-.cfinal{position:relative;z-index:2;overflow:hidden;color:#fff;text-align:center;padding:clamp(5rem,11vw,9rem) 0;
+.cfinal{position:relative;z-index:2;overflow:hidden;color:#1B2410;text-align:center;padding:clamp(5rem,11vw,9rem) 0;
   background:radial-gradient(60% 80% at 50% 0%,#8CCB4C 0%,rgba(140,203,76,0) 70%),linear-gradient(160deg,#7AB83A 0%,var(--c-green) 50%,var(--c-green-lo) 100%)}
 .cfinal__inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
-.cfinal h2{color:#fff;font-size:clamp(2.5rem,1.4rem + 3.8vw,5.2rem);font-weight:750;letter-spacing:-.04em;line-height:1.02;text-shadow:0 2px 20px rgba(40,70,10,.25)}
+/* Texto oscuro sobre el verde del logo (AA); con blanco no llegaba a 4,5:1 */
+.cfinal h2{color:#1B2410;font-size:clamp(2.5rem,1.4rem + 3.8vw,5.2rem);font-weight:750;letter-spacing:-.04em;line-height:1.02}
 .cfinal h2 mark{color:var(--c-ink);text-shadow:none}
-.cfinal p{margin-top:1.2rem;max-width:46ch;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.55;color:#fff;text-shadow:0 1px 8px rgba(40,70,10,.3)}
+.cfinal p{margin-top:1.2rem;max-width:46ch;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.55;color:#1B2410}
 .cfinal .cbtn{margin-top:2.2rem}
 .cfinal__cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
 .cfinal__cta .cbtn{margin-top:2rem}
-.cfinal__cta .cbtn--ghost{color:#fff;background:transparent;border:2px solid rgba(255,255,255,.85)}
-.cfinal__cta .cbtn--ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.cfinal__cta .cbtn--ghost{color:#1B2410;background:rgba(255,255,255,.35);border:2px solid rgba(27,36,16,.75)}
+.cfinal__cta .cbtn--ghost:hover{background:rgba(255,255,255,.6);transform:translateY(-2px)}
 .cfinal__cta .ico.solid{fill:#1FA855;color:#1FA855}
 .cfinal .cfinal__dir{margin-top:1.6rem;font-size:1rem}
-.cfinal :focus-visible{outline-color:#fff}
+.cfinal :focus-visible{outline-color:#1B2410}
 
 /* ---------- Footer y WhatsApp en la Home ---------- */
 body.home .footer{position:relative;z-index:2}
@@ -481,3 +483,65 @@ body.home .cfinal h2{font-size:clamp(2.2rem,1.2rem + 3.2vw,4.6rem)}
 body.home .hsec h2 mark,body.home .cfinal h2 mark{background-position:0 58%;background-size:100% 82%;padding:0 .08em}
 .js body.home .reveal mark{background-size:0% 82%}
 .js body.home .reveal.is-visible mark{background-size:100% 82%}
+
+/* ===================================================================
+   SEO E INTENCIÓN (rama seo-intencion-2026-11)
+   Primera pantalla con las seis respuestas, "qué revisamos / qué decide
+   la entidad", persona detrás del contacto y alerta contra estafas.
+   =================================================================== */
+.inicio__paso{margin-top:.85rem;font-size:1rem;line-height:1.5;color:var(--c-ink);max-width:52ch}
+.inicio__resp{display:grid;gap:.6rem;margin-top:1.2rem;max-width:58ch}
+.inicio__resp li{display:flex;align-items:flex-start;gap:.65rem;font-size:1.05rem;line-height:1.5;color:#3D383F}
+.inicio__resp b{color:var(--c-ink);font-weight:750}
+.inicio__resp .ico{width:1.45rem;height:1.45rem;flex:none;margin-top:.05rem;padding:3px;border-radius:50%;stroke:#fff;background:var(--c-green-lo)}
+.inicio__resp li:last-child .ico{background:none;stroke:var(--c-green-lo);padding:0}
+
+.revisan{background:linear-gradient(180deg,#fff 0%,#FAFCF6 100%)}
+.revisan__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem;margin-top:2.2rem}
+.revisan__col{padding:1.6rem 1.7rem;border-radius:26px}
+.revisan__col--nos{border-top:6px solid var(--c-green)}
+.revisan__col--entidad{border-top:6px solid var(--c-yellow)}
+.revisan__col h3{font-size:1.3rem;font-weight:750;letter-spacing:-.015em;color:var(--c-ink)}
+.revisan__col ul{display:grid;gap:.75rem;margin-top:1rem}
+.revisan__col li{position:relative;padding-left:1.35rem;font-size:1.06rem;line-height:1.6}
+.revisan__col li::before{content:"";position:absolute;left:0;top:.6em;width:.55rem;height:.55rem;border-radius:50%;background:var(--c-green)}
+.revisan__col--entidad li::before{background:var(--c-yellow)}
+.revisan__col b{color:var(--c-ink)}
+.revisan__col p{margin-top:1.1rem;font-size:1.06rem;line-height:1.6;padding:.9rem 1rem;border-radius:16px;background:#FFFBEA}
+.revisan__fuente{margin-top:1.4rem;font-size:1rem;line-height:1.6;max-width:70ch}
+.revisan__fuente a,.estafa__fuente a,.caso__mini a,.porque__quien a{color:#3F6B14;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+.caso__mini{flex:0 !important;margin-top:.7rem !important;font-size:.98rem !important;line-height:1.5}
+.porque__quien{padding:1rem 1.15rem;border-radius:18px;background:#F4F8EC;border:1px solid rgba(111,170,49,.3);color:var(--c-ink)}
+
+.estafa{padding-block:clamp(2.5rem,6vw,4.5rem)}
+.estafa__box{padding:clamp(1.5rem,4vw,2.4rem);border-radius:28px;background:#FFFBEA;border:2px solid rgba(241,195,0,.7)}
+.estafa__box h2{font-size:clamp(1.5rem,1.1rem + 1.4vw,2.2rem);line-height:1.15;letter-spacing:-.02em;color:var(--c-ink);font-weight:750}
+.estafa__box ul{display:grid;gap:.7rem;margin-top:1.2rem}
+.estafa__box li{position:relative;padding-left:1.5rem;font-size:1.08rem;line-height:1.6;color:#3D383F}
+.estafa__box li::before{content:"!";position:absolute;left:0;top:.05em;font-weight:900;color:#9A7300}
+.estafa__fuente{margin-top:1.2rem;font-size:1rem;line-height:1.6}
+
+@media (max-width:760px){
+  .revisan__grid{grid-template-columns:1fr}
+  .revisan__col{padding:1.3rem 1.25rem}
+}
+@media (max-width:560px){
+  .inicio__resp li{font-size:1rem}
+}
+/* Teléfonos: titular algo más compacto para que el botón de WhatsApp
+   quede en la primera pantalla; el antetítulo conserva "Oficina en Cúcuta" */
+@media (max-width:560px){
+  body.home .inicio__title{font-size:1.72rem;line-height:1.04}
+  .inicio__lead{margin-top:.8rem;font-size:1.06rem;line-height:1.5}
+  .inicio__cta{margin-top:1.1rem}
+  .inicio__kick{font-size:.82rem}
+  .inicio__kick span{display:inline}
+}
+@media (max-width:560px){
+  .inicio__kick{flex-wrap:wrap;column-gap:.35rem;row-gap:0}
+  .inicio__kick span{white-space:nowrap}
+}
+/* Legibilidad para personas mayores: ningún texto de lectura por debajo de 16 px */
+.beneficios span,.paso p,.caso__mini,.inicio__perfiles p,.quien__card p,.quien__links,.casos__nota,.faq2__more,.acc__inner p,.prueba__office{font-size:max(1rem,1em) !important}
+.acc__inner p{line-height:1.65}

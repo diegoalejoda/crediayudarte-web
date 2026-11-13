@@ -1,0 +1,497 @@
+{
+  "movil": {
+    "/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-cucuta/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16.96,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-pensionados/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-reportados/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16.96,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/solicitar.html": {
+      "desborde": 0,
+      "letraMinParrafo": 14.72,
+      "letraMediana": 16.32,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-de-libranza/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-empleados-publicos/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-docentes/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-fuerza-publica/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-embargos/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16.96,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/saneamiento-financiero/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16.96,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/compra-de-cartera/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/testimonios.html": {
+      "desborde": 0,
+      "letraMinParrafo": 15.68,
+      "letraMediana": 16.32,
+      "botonesMenos44": [
+        "Todo",
+        "Fotos",
+        "Videos"
+      ],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/about/": {
+      "desborde": 0,
+      "letraMinParrafo": 16.32,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/privacy/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/blog/": {
+      "desborde": 0,
+      "letraMinParrafo": 15.68,
+      "letraMediana": 16,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/blog/que-documentos-piden-para-un-credito-de-libranza.html": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/blog/pagar-una-deuda-antigua-puede-empeorar-tu-historial.html": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    }
+  },
+  "escritorio": {
+    "/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-cucuta/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16.96,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-pensionados/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 18,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-reportados/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16.96,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/solicitar.html": {
+      "desborde": 0,
+      "letraMinParrafo": 14.72,
+      "letraMediana": 16.32,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-de-libranza/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 18,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-empleados-publicos/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17.28,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-docentes/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17.92,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-fuerza-publica/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 17.28,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/credito-libranza-embargos/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16.96,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/saneamiento-financiero/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 16.96,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/compra-de-cartera/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 18,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/testimonios.html": {
+      "desborde": 0,
+      "letraMinParrafo": 15.68,
+      "letraMediana": 16.32,
+      "botonesMenos44": [
+        "Todo",
+        "Fotos",
+        "Videos"
+      ],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/about/": {
+      "desborde": 0,
+      "letraMinParrafo": 16.32,
+      "letraMediana": 18,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/privacy/": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 18,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/blog/": {
+      "desborde": 0,
+      "letraMinParrafo": 15.68,
+      "letraMediana": 16,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/blog/que-documentos-piden-para-un-credito-de-libranza.html": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 18,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    },
+    "/blog/pagar-una-deuda-antigua-puede-empeorar-tu-historial.html": {
+      "desborde": 0,
+      "letraMinParrafo": 16,
+      "letraMediana": 18,
+      "botonesMenos44": [],
+      "h1Visible": true,
+      "waEnPrimeraPantalla": true
+    }
+  },
+  "sinJs": {
+    "/": {
+      "h1": "¿Pensionado o empleado del Gobierno? Te ayudamos con tu crédito por libranza",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 15
+    },
+    "/credito-libranza-cucuta/": {
+      "h1": "Crédito de libranza en Cúcuta: asesoría con oficina en el Centro Comercial Inter",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 7
+    },
+    "/credito-libranza-pensionados/": {
+      "h1": "Crédito para pensionados por libranza: qué revisar antes de comprometer tu mesad",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 8
+    },
+    "/credito-libranza-reportados/": {
+      "h1": "Crédito de libranza para reportados: qué se puede estudiar si eres pensionado o ",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 6
+    },
+    "/solicitar.html": {
+      "h1": "Solicita tu preanálisis de libranza, sin costo.",
+      "h1Visible": true,
+      "elementosOcultos": 3,
+      "ejemplosOcultos": [
+        "P: ",
+        "P: Abrimos WhatsApp con tu mensaje listo. Tu solicitu",
+        "A: Abrir WhatsApp de nuevo"
+      ],
+      "enlacesWhatsApp": 7
+    },
+    "/credito-de-libranza/": {
+      "h1": "Crédito de libranza: cómo funciona y cómo saber si te conviene",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 7
+    },
+    "/credito-libranza-empleados-publicos/": {
+      "h1": "Crédito de libranza para empleados públicos: cómo pesa tu tipo de vinculación",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 8
+    },
+    "/credito-libranza-docentes/": {
+      "h1": "Crédito de libranza para docentes del Estado: por qué tu desprendible manda",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 8
+    },
+    "/credito-libranza-fuerza-publica/": {
+      "h1": "Crédito de libranza para Policía, Ejército y Fuerza Pública: activos y con asign",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 8
+    },
+    "/credito-libranza-embargos/": {
+      "h1": "Crédito de libranza con embargo: qué influye y qué se puede estudiar",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 6
+    },
+    "/saneamiento-financiero/": {
+      "h1": "¿No tienes cupo en el desprendible? Saneamiento financiero para pensionados y em",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 6
+    },
+    "/compra-de-cartera/": {
+      "h1": "Compra de cartera por libranza: ¿te ofrecieron bajar la cuota? Revisa si de verd",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 6
+    },
+    "/testimonios.html": {
+      "h1": "Testimonios de crédito de libranza en Cúcuta y Norte de SantanderHistorias reale",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 4
+    },
+    "/about/": {
+      "h1": "Una asesoría que te dice la verdad antes de que firmes",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 6
+    },
+    "/privacy/": {
+      "h1": "Política de privacidad",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 7
+    },
+    "/blog/": {
+      "h1": "Decisiones claras",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 5
+    },
+    "/blog/que-documentos-piden-para-un-credito-de-libranza.html": {
+      "h1": "Qué documentos piden de verdad para un crédito de libranza",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 5
+    },
+    "/blog/pagar-una-deuda-antigua-puede-empeorar-tu-historial.html": {
+      "h1": "Pagar una deuda antigua puede empeorar tu historial",
+      "h1Visible": true,
+      "elementosOcultos": 0,
+      "ejemplosOcultos": [],
+      "enlacesWhatsApp": 5
+    }
+  },
+  "formulario": {
+    "vacio": {
+      "error": "Falta completar: tu perfil, tu pagaduría, qué necesitas, tu situación, tu nombre, tu número de WhatsApp.",
+      "foco": "perfil"
+    },
+    "telefonoInvalido": "Escribe un celular de WhatsApp válido: 10 dígitos que empiezan por 3, o el número con \"+\" y el indicativo del país.",
+    "sinAutorizacion": {
+      "premarcada": false,
+      "error": "Para continuar necesitamos tu autorización para tratar tus datos."
+    },
+    "envio": {
+      "leadCapturado": true,
+      "payload": {
+        "nombre": "Persona de Prueba",
+        "nombres": "Persona de Prueba",
+        "apellido": "",
+        "edad": null,
+        "telefono": "3000000000",
+        "perfil": "Pensionado",
+        "vida_crediticia": "Mal reportado",
+        "tiene_desprendible": false,
+        "origen": "landing-web",
+        "pagaduria": "Colpensiones",
+        "ciudad": "",
+        "objetivo": "Comprar cartera o unificar deudas",
+        "situacion": "Tengo reportes o mora",
+        "autorizacion_datos": true,
+        "autorizacion_texto": "Autorizo a Marilú Arévalo Toro (CrediAyudarte) a tratar mis datos para contactarme por WhatsApp y estudiar mi solicitud; si avanzo, podrán compartirse con entidades o financiadores que estudien mi caso, con mi autorización. Política: crediayudarte.com/privacy/",
+        "autorizacion_fecha": "2026-11-13T03:42:03.838Z",
+        "formulario_version": "form-2026-10",
+        "utm_source": "",
+        "utm_medium": "",
+        "utm_campaign": "",
+        "utm_content": "",
+        "utm_term": "",
+        "pagina_entrada": "/",
+        "referrer": ""
+      },
+      "whatsapp": "https://wa.me/573152474348?text=Hola, CrediAyudarte. Quiero que evalúen mi caso.\n\nNombre: Persona de Prueba\nPerfil: Pensionado\nPagaduría: Colpensiones\nCiudad: no la indiqué\nNecesito: Comprar cartera o unificar deudas\nSituación: Tengo reportes o mora\n\nEnvié mis datos desde el formulario de la página web.",
+      "mensajeVisible": "Falta un paso: envía el mensaje en WhatsApp Abrimos WhatsApp con tu mensaje listo. Tu solicitud queda completa cuando lo envías desde allí. Si no se abrió, usa ",
+      "capturasExternas": [
+        "fetch https://flujos.crediayudarte.co/webhook/landing-lead-score",
+        "open https://wa.me/573152474348?text=Hola%2C%20CrediAyudarte.%20Q"
+      ]
+    },
+    "reenvio": {
+      "fetchAntes": 1,
+      "fetchDespues": 1
+    },
+    "dataLayerSinPII": "sin datos personales"
+  },
+  "errores": [],
+  "salientesBloqueadas": [
+    "https://fonts.googleapis.com/css2",
+    "https://connect.facebook.net/en_US/fbevents.js",
+    "https://fonts.gstatic.com/l/font",
+    "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2",
+    "https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLmvDIaI.woff2",
+    "https://fonts.gstatic.com/s/caveat/v23/Wnz6HAc5bAfYB2Q7ZjYYiAzcPA.woff2",
+    "https://www.facebook.com/tr",
+    "https://maps.google.com/maps",
+    "https://www.google.com/maps/embed"
+  ]
+}
