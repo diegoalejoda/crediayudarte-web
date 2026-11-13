@@ -1,10 +1,10 @@
-# ¿Pensionado o empleado del Gobierno? Te ayudamos con tu crédito por libranza
+# Crédito para pensionados y empleados del gobierno
 
-> Revisamos quién te paga (tu pagaduría), cuánto te descuentan hoy, cuánto te queda libre y tu historial de pagos. Con eso buscamos entidades que puedan estudiar tu caso y te explicamos si te conviene.
+> Si eres pensionado o empleado del gobierno, te hacemos tu preanálisis sin importar tu reporte. Buscamos las mejores opciones para ti y tú decides cuál eliges.
 
 - **Revisar tu caso no cuesta.** No pedimos anticipos para tramitar tu crédito.
 - **No garantizamos la aprobación.** No somos un banco: la entidad financiera decide y desembolsa.
-- **Oficina en Cúcuta:** Calle 12 # 4–47, Local 4, C.C. Internacional. Lunes a viernes, de 8:00 a.m. a 5:00 p.m. También atendemos por WhatsApp (+57 315 247 4348). Te responde una persona.
+- **Oficina en Cúcuta:** Calle 12 # 4–47, Local 4, C.C. Internacional. Lunes a viernes, de 8:00 a.m. a 5:00 p.m. También atendemos por WhatsApp (+57 315 247 4348): un asistente virtual te atiende de inmediato.
 
 ## Qué revisamos contigo y qué decide la entidad
 
