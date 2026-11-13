@@ -494,7 +494,10 @@ body.home .hsec h2 mark,body.home .cfinal h2 mark{background-position:0 58%;back
 .inicio__resp li{display:flex;align-items:flex-start;gap:.65rem;font-size:1.05rem;line-height:1.5;color:#3D383F}
 .inicio__resp b{color:var(--c-ink);font-weight:750}
 .inicio__resp .ico{width:1.45rem;height:1.45rem;flex:none;margin-top:.05rem;padding:3px;border-radius:50%;stroke:#fff;background:var(--c-green-lo)}
-.inicio__resp li:last-child .ico{background:none;stroke:var(--c-green-lo);padding:0}
+.inicio__resp li.r-link .ico{background:none;stroke:var(--c-green-lo);padding:0}
+.inicio__resp li.r-link .ico.solid{fill:var(--c-green-lo);stroke:none;padding:2px}
+.inicio__resp a{color:#3F6B17;font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.inicio__resp a:hover{color:var(--c-ink)}
 
 .revisan{background:linear-gradient(180deg,#fff 0%,#FAFCF6 100%)}
 .revisan__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem;margin-top:2.2rem}
