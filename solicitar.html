@@ -44,7 +44,7 @@
   <link rel="stylesheet" href="css/styles.css?v=20261112" />
   <link rel="stylesheet" href="css/motion.css?v=20260920" />
   <link rel="stylesheet" href="css/home.css?v=20261112" />
-  <link rel="stylesheet" href="css/solicitar.css?v=20261113" />
+  <link rel="stylesheet" href="css/solicitar.css?v=20261113c" />
   <!-- Sin JavaScript no hay animaciones de entrada: todo el recorrido queda visible -->
   <noscript><style>body.sol .stack__panel .stack__copy .stack__kick,.stack__panel .stack__q,.stack__panel .stack__copy h2,.stack__panel .stack__copy p,.stack__panel .ui-op,.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
@@ -286,7 +286,7 @@
   <!-- ===================== FORMULARIO =====================
        Va justo después del hero: quien llega a /solicitar viene a esto.
        Clasificación inicial sin datos sensibles (2026-11): nombre, edad, perfil
-       (pensionado o empleado del gobierno), reporte. El número lo toma el flujo de WhatsApp cuando la persona escribe. Nada de cédula, fecha de
+       (pensionado o empleado del gobierno), reporte y desprendible opcional (si dice Sí, se adjunta). El número lo toma el flujo de WhatsApp cuando la persona escribe. Nada de cédula, fecha de
        nacimiento, datos bancarios ni archivos (el desprendible se pide después,
        por WhatsApp, si el caso lo necesita). js/solicitar.js arma el mensaje,
        registra la solicitud en el CRM (n8n) y abre WhatsApp. -->
@@ -309,7 +309,7 @@
         <div class="secure-strip">
           <span><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Conexión segura (HTTPS)</span>
           <span><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> Sin cédula, claves ni cuentas</span>
-          <span><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Sin documentos en este paso</span>
+          <span><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Desprendible opcional</span>
         </div>
 
         <form id="creditForm" novalidate>
@@ -357,23 +357,45 @@
             </div>
           </fieldset>
 
+          <fieldset class="fset">
+            <legend class="choice-label">¿Tienes a la mano tu desprendible de pago? <span class="req" aria-hidden="true">*</span></legend>
+            <div class="choices choices--2" data-group="desprendible">
+              <label class="choice">
+                <input type="radio" name="desprendible" value="Sí" required aria-controls="uploadPanel">
+                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><strong>Sí <small>lo adjunto ahora</small></strong></span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="desprendible" value="No" aria-controls="uploadPanel">
+                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><strong>No <small>sigo sin él</small></strong></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div id="uploadPanel" class="upload" hidden>
+            <label class="dropzone" id="dropzone" for="archivoDesprendible">
+              <input type="file" id="archivoDesprendible" name="archivoDesprendible" accept="image/*,application/pdf" aria-describedby="archivoAyuda">
+              <span class="dropzone__ico" aria-hidden="true"><svg class="ico"><use href="#i-upload"/></svg></span>
+              <span class="dropzone__txt"><strong>Toca aquí para elegir tu desprendible</strong><small id="archivoAyuda">En computador también puedes arrastrarlo aquí. Foto o PDF, hasta 10 MB.</small></span>
+            </label>
+            <div class="dropzone__preview" id="dropPreview" hidden>
+              <span class="dropzone__thumb" id="dropThumb"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg></span>
+              <span class="dropzone__info"><strong id="dropName">archivo</strong><small id="dropSize"></small></span>
+              <button type="button" class="dropzone__remove" id="dropRemove" aria-label="Quitar el archivo y elegir otro"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+            </div>
+          </div>
 
           <div class="trust-box">
             <span class="trust-box__ico" aria-hidden="true"><svg class="ico"><use href="#i-lock"/></svg></span>
             <div class="trust-box__body">
               <strong>Lo que no te pedimos aquí</strong>
               <ul>
-                <li>Cédula, fecha de nacimiento, cuentas bancarias, claves ni documentos.</li>
-                <li>Si más adelante el estudio necesita tu desprendible, te diremos para qué antes de pedirlo.</li>
+                <li>Cédula, fecha de nacimiento, cuentas bancarias ni claves.</li>
+                <li>El desprendible es opcional. Si lo adjuntas, solo lo revisa el equipo de CrediAyudarte para estudiar tu caso.</li>
                 <li>El preanálisis no tiene costo y no pedimos anticipos para tramitar tu crédito.</li>
               </ul>
             </div>
           </div>
 
-          <label class="consent" for="autorizo">
-            <input type="checkbox" id="autorizo" name="autorizo" required>
-            <span>Autorizo a Marilú Arévalo Toro, quien opera con el nombre comercial CrediAyudarte, a tratar los datos de este formulario para contactarme por WhatsApp y estudiar mi solicitud. Si decido avanzar, mis datos podrán compartirse con las entidades o financiadores que estudien mi caso, con mi autorización. Leí la <a href="privacy/" target="_blank" rel="noopener">política de privacidad</a>. <span class="req" aria-hidden="true">*</span></span>
-          </label>
 
           <!-- Trampa anti-spam: invisible para las personas; si llega con texto, no se registra -->
           <div class="hp" aria-hidden="true">
@@ -387,11 +409,13 @@
             <svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Continuar en WhatsApp
           </button>
           <p class="form-fine">Se abrirá WhatsApp con tu mensaje escrito. <strong>Recuerda tocar "Enviar" allí</strong> para que un asesor reciba tu caso.</p>
+          <p class="form-aviso">Al enviar, aceptas que CrediAyudarte use estos datos (y tu desprendible, si lo adjuntas) para contactarte por WhatsApp y estudiar tu caso. <a href="privacy/" target="_blank" rel="noopener">Política de privacidad</a>.</p>
 
           <!-- Se muestra después de abrir WhatsApp: no es un "solicitud recibida" -->
           <div class="form-next" id="formNext" hidden tabindex="-1">
             <strong>Falta un paso: envía el mensaje en WhatsApp</strong>
             <p>Abrimos WhatsApp con tu mensaje listo. Tu solicitud queda completa cuando lo envías desde allí. Si no se abrió, usa este botón:</p>
+            <p class="doc-estado" id="docEstado" role="status" hidden></p>
             <a class="btn btn-primary btn-block" id="formNextLink" href="https://wa.me/573152474348" target="_blank" rel="noopener"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Abrir WhatsApp de nuevo</a>
           </div>
 
@@ -783,7 +807,7 @@
 
   <script defer src="js/medicion.js?v=20261113"></script>
   <script defer src="js/script.js?v=20261025"></script>
-  <script defer src="js/solicitar.js?v=20261113b"></script>
+  <script defer src="js/solicitar.js?v=20261113c"></script>
   <script defer src="js/motion.js?v=20260920"></script>
   <script defer src="js/recorrido.js?v=20261113"></script>
   <script defer src="js/home.js?v=20261025"></script>

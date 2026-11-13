@@ -161,3 +161,20 @@ Cambios propios de algunas páginas:
   - `telefono` llega **vacío** al webhook de n8n.
   - Si el flujo usaba `telefono` para unir el registro de la web con la conversación, ahora debe unirlos de otra forma, por ejemplo por el nombre o por el texto "Envié mis datos desde el formulario".
   - Probado sin envío real: validación, payload, mensaje de WhatsApp y reenvío sin duplicar correctos.
+- **Foto nueva en el hero de la portada:** cliente real con la asesora frente al logo (`assets/home/cliente-oficina-*.webp`, recortada de `assets/testigos/foto-2.jpeg`). La foto anterior pasó al collage de la sección "por qué".
+- **Desprendible de vuelta (pedido del dueño):** el formulario pregunta "¿Tienes a la mano tu desprendible de pago?".
+  - **Sí** abre una caja para tocar y elegir, o arrastrar, la foto o el PDF (hasta 10 MB), con vista previa y botón para quitarlo.
+  - **No** sigue sin archivo.
+  - El archivo se sube al webhook que ya existía, `landing-desprendible-web`, con las mismas claves de antes. `numero` llega vacío.
+  - WhatsApp se abre en otra pestaña y la página muestra "Subiendo… / Desprendible recibido / No se pudo subir: envíalo como foto en el chat".
+- **Código de solicitud** (`solicitud_id`, por ejemplo `CA-WF2ABM`): va en el registro, en el envío del desprendible y en el mensaje de WhatsApp. Como ya no se pide el número, este código es lo que permite al flujo unir las tres cosas.
+- **Casilla "Autorizo a Marilú Arévalo Toro…" quitada** (pedido del dueño). La reemplaza un aviso bajo el botón: "Al enviar, aceptas que CrediAyudarte use estos datos (y tu desprendible, si lo adjuntas)… Política de privacidad".
+  - El CRM recibe `autorizacion_modo: "aviso-al-enviar"`.
+  - **Riesgo legal:** la Ley 1581 admite la autorización por conducta inequívoca, pero para un documento con datos financieros conviene que un abogado lo confirme.
+- **Prueba sin envío real**, con los webhooks bloqueados y `fetch` sustituido:
+  - "Sí" sin archivo lo pide y lleva el foco a la caja.
+  - Con archivo hay vista previa y se envían los dos webhooks con el mismo código.
+  - El reenvío no vuelve a registrar ni a subir.
+  - Pasar de "Sí" a "No" cierra la caja y quita el archivo.
+  - "No" solo registra la solicitud.
+  - 0 errores de JavaScript y sin desbordamiento. Auditoría: 24 URL, 0 problemas.

@@ -104,7 +104,7 @@
     { id: 'datos', panel: 'pagaduria',
       titulo: '¿Qué datos me van a pedir?',
       cuerpo: ['Solo lo necesario para orientarte, como tu nombre, tu edad, si eres pensionado o empleado del gobierno y cómo está tu reporte. No pedimos número de cédula, fecha de nacimiento, cuentas bancarias ni claves en el primer contacto.'],
-      puntos: ['Nombre, edad, perfil y reporte al inicio', 'Sin cédula, cuentas, claves ni documentos en el formulario', 'El desprendible se pide después, solo si el caso lo necesita'] },
+      puntos: ['Nombre, edad, perfil y reporte al inicio', 'Sin cédula, cuentas ni claves en el formulario', 'El desprendible es opcional: lo adjuntas en el formulario o lo envías después'] },
 
     { id: 'compra-cartera', panel: 'opciones',
       titulo: '¿La compra de cartera siempre conviene?',

@@ -1,0 +1,86 @@
+{
+  "casillaAutorizo": false,
+  "panelAntes": true,
+  "panelConSi": true,
+  "siSinArchivo": [
+    "Adjunta la foto o el PDF de tu desprendible, o marca \"No\" si no lo tienes a la mano.",
+    "archivoDesprendible"
+  ],
+  "vistaPrevia": [
+    false,
+    "desprendible-prueba.jpg",
+    "3 KB · listo para enviar",
+    false
+  ],
+  "estadoDuranteSubida": "Subiendo tu desprendible… no cierres esta página.",
+  "envioConArchivo": {
+    "envios": [
+      {
+        "url": "landing-lead-score",
+        "body": {
+          "solicitud_id": "CA-CF5KWH",
+          "nombre": "Prueba Local",
+          "nombres": "Prueba Local",
+          "apellido": "",
+          "edad": 64,
+          "telefono": "",
+          "perfil": "Pensionado",
+          "vida_crediticia": "Mal reportado",
+          "tiene_desprendible": true,
+          "origen": "landing-web",
+          "pagaduria": "",
+          "ciudad": "",
+          "objetivo": "",
+          "situacion": "Mal reporte",
+          "autorizacion_datos": true,
+          "autorizacion_modo": "aviso-al-enviar",
+          "autorizacion_texto": "Al enviar, la persona acepta que CrediAyudarte use estos datos (y el desprendible, si lo adjunta) para contactarla por WhatsApp y estudiar su caso. Política: crediayudarte.com/privacy/",
+          "autorizacion_fecha": "2026-11-13T13:38:33.206Z",
+          "formulario_version": "form-2026-11",
+          "utm_source": "",
+          "utm_medium": "",
+          "utm_campaign": "",
+          "utm_content": "",
+          "utm_term": "",
+          "pagina_entrada": "/solicitar.html",
+          "referrer": ""
+        }
+      },
+      {
+        "url": "landing-desprendible-web",
+        "body": {
+          "solicitud_id": "CA-CF5KWH",
+          "numero": "",
+          "nombres": "Prueba Local",
+          "apellidos": "",
+          "edad": 64,
+          "perfil": "Pensionado",
+          "vida_crediticia": "Mal reportado",
+          "origen": "landing-web",
+          "formulario_version": "form-2026-11",
+          "documento_nombre": "desprendible-prueba.jpg",
+          "documento_tipo": "image/jpeg",
+          "documento_base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA… (4115 car.)"
+        }
+      }
+    ],
+    "whatsapp": "Hola, CrediAyudarte. Quiero que evalúen mi caso.\n\nNombre: Prueba Local\nEdad: 64 años\nPerfil: Pensionado(a)\nReporte: Mal reporte\nDesprendible: lo adjunté en el formulario\n\nCódigo de solicitud: CA-CF5KWH",
+    "estado": "Desprendible recibido."
+  },
+  "reenvio": 2,
+  "siANo": [
+    true,
+    ""
+  ],
+  "vacio": "Falta completar: tu nombre, tu edad, si eres pensionado o empleado del gobierno, cómo está tu reporte, si tienes tu desprendible.",
+  "envioSinArchivo": {
+    "webhooks": [
+      "landing-lead-score"
+    ],
+    "tiene_desprendible": false,
+    "autorizacion_modo": "aviso-al-enviar",
+    "whatsapp": "Hola, CrediAyudarte. Quiero que evalúen mi caso.\n\nNombre: Prueba Local\nEdad: 64 años\nPerfil: Pensionado(a)\nReporte: Mal reporte\nDesprendible: no lo tengo a la mano\n\nCódigo de solicitud: CA-L7Q2CY"
+  },
+  "overflow": false,
+  "errores": []
+}
