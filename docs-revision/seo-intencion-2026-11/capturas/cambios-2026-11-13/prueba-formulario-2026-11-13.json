@@ -1,0 +1,76 @@
+{
+  "portada-movil": {
+    "botones": [
+      "Solicitud a WhatsApp → solicitar.html#solicitud"
+    ]
+  },
+  "orden-movil": [
+    "shero",
+    "creeles",
+    "form-wrap#solicitud"
+  ],
+  "overflow-movil": false,
+  "portada-escritorio": {
+    "botones": [
+      "Solicitud a WhatsApp → solicitar.html#solicitud"
+    ]
+  },
+  "orden-escritorio": [
+    "shero",
+    "creeles",
+    "form-wrap#solicitud"
+  ],
+  "overflow-escritorio": false,
+  "preseleccion": "Pensionado",
+  "campos": [
+    "nombre",
+    "edad",
+    "perfil=Pensionado",
+    "perfil=Empleado público",
+    "situacion=Buen reporte",
+    "situacion=Mal reporte",
+    "situacion=Sin cupo en el desprendible",
+    "autorizo"
+  ],
+  "vacio": [
+    "Falta completar: tu nombre, tu edad, si eres pensionado o empleado del gobierno, cómo está tu reporte.",
+    "nombre"
+  ],
+  "edadMala": [
+    "Escribe tu edad en años, con números (por ejemplo: 62).",
+    "edad"
+  ],
+  "envio": {
+    "envios": 1,
+    "payload": {
+      "nombre": "Prueba Local",
+      "nombres": "Prueba Local",
+      "apellido": "",
+      "edad": 64,
+      "telefono": "",
+      "perfil": "Pensionado",
+      "vida_crediticia": "Mal reportado",
+      "tiene_desprendible": false,
+      "origen": "landing-web",
+      "pagaduria": "",
+      "ciudad": "",
+      "objetivo": "",
+      "situacion": "Mal reporte",
+      "autorizacion_datos": true,
+      "autorizacion_texto": "Autorizo a Marilú Arévalo Toro (CrediAyudarte) a tratar mis datos para contactarme por WhatsApp y estudiar mi solicitud; si avanzo, podrán compartirse con entidades o financiadores que estudien mi caso, con mi autorización. Política: crediayudarte.com/privacy/",
+      "autorizacion_fecha": "2026-11-13T05:14:49.731Z",
+      "formulario_version": "form-2026-11",
+      "utm_source": "",
+      "utm_medium": "",
+      "utm_campaign": "",
+      "utm_content": "",
+      "utm_term": "",
+      "pagina_entrada": "/",
+      "referrer": ""
+    },
+    "whatsapp": "Hola, CrediAyudarte. Quiero que evalúen mi caso.\n\nNombre: Prueba Local\nEdad: 64 años\nPerfil: Pensionado(a)\nReporte: Mal reporte\n\nEnvié mis datos desde el formulario de la página web.",
+    "faltaPaso": true
+  },
+  "reenvio": 1,
+  "errores": []
+}

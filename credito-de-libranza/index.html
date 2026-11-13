@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Marca que JS está activo: sin JS todo el contenido queda visible -->
+  <script>document.documentElement.className += ' js';</script>
 
   <!-- ===================== SEO ===================== -->
-  <title>Crédito de libranza: cómo funciona y cómo saber si te conviene</title>
+  <title>Crédito de libranza: qué es, cómo funciona y si te conviene</title>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <meta name="description" content="Qué es el crédito de libranza, cómo se descuenta de tu nómina o pensión, quién decide qué y cómo distinguir una operación que se puede tramitar de una que realmente te conviene." />
+  <meta name="description" content="Qué es el crédito de libranza, cómo se descuenta de tu pensión o nómina, quién lo aprueba y cómo comparar cuota, plazo y costo total antes de firmar." />
   <link rel="canonical" href="https://crediayudarte.com/credito-de-libranza/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="author" content="CrediAyudarte" />
@@ -17,7 +19,7 @@
   <meta property="og:site_name" content="CrediAyudarte" />
   <meta property="og:locale" content="es_CO" />
   <meta property="og:url" content="https://crediayudarte.com/credito-de-libranza/" />
-  <meta property="og:title" content="Crédito de libranza: cómo funciona y cómo saber si te conviene" />
+  <meta property="og:title" content="Crédito de libranza: qué es, cómo funciona y si te conviene" />
   <meta property="og:description" content="Cómo se descuenta, quién decide qué y cómo distinguir una operación que se puede tramitar de una que realmente te conviene." />
   <meta property="og:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -25,7 +27,7 @@
   <meta property="og:image:alt" content="Asesoría independiente en crédito de libranza para el sector público" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Crédito de libranza: cómo funciona y cómo saber si te conviene" />
+  <meta name="twitter:title" content="Crédito de libranza: qué es, cómo funciona y si te conviene" />
   <meta name="twitter:description" content="Cómo se descuenta, quién decide qué y cómo distinguir una operación que se puede tramitar de una que realmente te conviene." />
   <meta name="twitter:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
 
@@ -35,9 +37,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,700..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=20261025" />
+  <link rel="stylesheet" href="../css/styles.css?v=20261112" />
   <link rel="stylesheet" href="../css/motion.css?v=20260919" />
-  <link rel="stylesheet" href="../css/blog.css?v=20261013" />
+  <link rel="stylesheet" href="../css/blog.css?v=20261112" />
   <link rel="stylesheet" href="../css/landing.css?v=20261013" />
 
   <!-- ===================== DATOS ESTRUCTURADOS ===================== -->
@@ -49,20 +51,57 @@
       "@type": "WebPage",
       "@id": "https://crediayudarte.com/credito-de-libranza/#pagina",
       "url": "https://crediayudarte.com/credito-de-libranza/",
-      "name": "Crédito de libranza: cómo funciona y cómo saber si te conviene",
-      "description": "Qué es el crédito de libranza, cómo se descuenta de tu nómina o pensión, quién decide qué y cómo distinguir una operación que se puede tramitar de una que realmente te conviene.",
+      "name": "Crédito de libranza: qué es, cómo funciona y si te conviene",
+      "description": "Qué es el crédito de libranza, cómo se descuenta de tu pensión o nómina, quién lo aprueba y cómo comparar cuota, plazo y costo total antes de firmar.",
       "inLanguage": "es-CO",
-      "isPartOf": { "@id": "https://crediayudarte.com/#sitio" },
-      "about": { "@id": "https://crediayudarte.com/#organizacion" },
+      "isPartOf": {
+        "@id": "https://crediayudarte.com/#sitio"
+      },
+      "about": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
       "primaryImageOfPage": "https://crediayudarte.com/assets/og-crediayudarte.jpg",
-      "breadcrumb": { "@id": "https://crediayudarte.com/credito-de-libranza/#migas" }
+      "breadcrumb": {
+        "@id": "https://crediayudarte.com/credito-de-libranza/#migas"
+      },
+      "mainEntity": {
+        "@id": "https://crediayudarte.com/credito-de-libranza/#servicio"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://crediayudarte.com/credito-de-libranza/#servicio",
+      "name": "Asesoría en crédito de libranza",
+      "serviceType": "Asesoría en crédito de libranza",
+      "description": "Revisión de pagaduría, descuentos, capacidad de pago e historial, y comparación de cuota, plazo, costo total y dinero neto antes de firmar. La aprobación y el desembolso dependen de la entidad financiera.",
+      "provider": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Pensionados, empleados públicos, docentes del Estado y Fuerza Pública"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://crediayudarte.com/credito-de-libranza/#migas",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://crediayudarte.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Crédito de libranza", "item": "https://crediayudarte.com/credito-de-libranza/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://crediayudarte.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Crédito de libranza",
+          "item": "https://crediayudarte.com/credito-de-libranza/"
+        }
       ]
     },
     {
@@ -73,47 +112,82 @@
         {
           "@type": "Question",
           "name": "¿Qué es un crédito de libranza?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Es un crédito cuya cuota no la pagas tú por ventanilla: se descuenta directamente de tu nómina o de tu mesada pensional antes de que el dinero llegue a tu cuenta. Ese descuento automático es lo que define la libranza y lo que explica por qué suele tener condiciones distintas a un crédito de consumo común." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es un crédito cuya cuota no la pagas tú por ventanilla: se descuenta directamente de tu nómina o de tu mesada pensional antes de que el dinero llegue a tu cuenta. Ese descuento automático es lo que define la libranza y lo que explica por qué suele tener condiciones distintas a un crédito de consumo común."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Qué es la pagaduría y por qué es tan importante?",
-          "acceptedAnswer": { "@type": "Answer", "text": "La pagaduría es la entidad que te paga la nómina o la pensión. Importa porque el descuento pasa por ella: si tu pagaduría no tiene convenio con una entidad financiera, esa entidad no puede prestarte por libranza aunque tu perfil sea bueno. Por eso es de lo primero que preguntamos." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La pagaduría es la entidad que te paga la nómina o la pensión. Importa porque el descuento pasa por ella: si tu pagaduría no tiene convenio con una entidad financiera, esa entidad no puede prestarte por libranza aunque tu perfil sea bueno. Por eso es de lo primero que preguntamos."
+          }
         },
         {
           "@type": "Question",
           "name": "¿CrediAyudarte presta el dinero?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Somos una asesoría financiera independiente: no somos un banco ni una cooperativa, no aprobamos créditos y no desembolsamos dinero. Analizamos tu perfil y tu pagaduría, gestionamos alternativas con entidades que puedan atender tu caso y te explicamos condiciones y costos antes de que decidas. La aprobación final siempre la define la entidad." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Somos una asesoría financiera independiente: no somos un banco ni una cooperativa, no aprobamos créditos y no desembolsamos dinero. Analizamos tu perfil y tu pagaduría, gestionamos alternativas con entidades que puedan atender tu caso y te explicamos condiciones y costos antes de que decidas. La aprobación final siempre la define la entidad."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Que un crédito se pueda tramitar significa que me conviene?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Son dos preguntas distintas. Viable significa que existe una entidad dispuesta a estudiarlo con tu perfil y tu pagaduría. Conveniente significa que, después de mirar cuota, plazo, costos asociados y cuánto recibes de verdad, tu situación queda mejor que antes. Una operación puede ser perfectamente viable y aun así dejarte peor." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Son dos preguntas distintas. Viable significa que existe una entidad dispuesta a estudiarlo con tu perfil y tu pagaduría. Conveniente significa que, después de mirar cuota, plazo, costos asociados y cuánto recibes de verdad, tu situación queda mejor que antes. Una operación puede ser perfectamente viable y aun así dejarte peor."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Cuánto me pueden prestar por libranza?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No hay una cifra que sirva para todos y desconfía de quien te dé un número antes de mirar tu caso. El monto depende de tu capacidad de descuento, de los descuentos que ya tienes activos, de tu edad, del plazo que la entidad te permita y de sus políticas. Por eso primero se revisa el desprendible y después se habla de cifras." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No hay una cifra que sirva para todos y desconfía de quien te dé un número antes de mirar tu caso. El monto depende de tu capacidad de descuento, de los descuentos que ya tienes activos, de tu edad, del plazo que la entidad te permita y de sus políticas. Por eso primero se revisa el desprendible y después se habla de cifras."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Puedo tener más de una libranza al mismo tiempo?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A veces sí, dependiendo de los descuentos que ya tengas y de que tu pagaduría lo permita. Lo que manda no es el número de créditos sino cuánto margen queda libre en tu desprendible después de los descuentos de ley y de las obligaciones vigentes." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A veces sí, dependiendo de los descuentos que ya tengas y de que tu pagaduría lo permita. Lo que manda no es el número de créditos sino cuánto margen queda libre en tu desprendible después de los descuentos de ley y de las obligaciones vigentes."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Qué necesitan para revisar mi caso?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Para el preanálisis basta con tus desprendibles de pago y tu fecha de nacimiento. Con eso vemos ingresos, descuentos y margen real. No pedimos número de cédula, claves ni datos bancarios en el primer contacto, y el preanálisis no tiene costo." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para el preanálisis basta con tus desprendibles de pago y tu fecha de nacimiento. Con eso vemos ingresos, descuentos y margen real. No pedimos número de cédula, claves ni datos bancarios en el primer contacto, y el preanálisis no tiene costo."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Cobran algo por adelantado?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Nunca pedimos dinero por adelantado, ni anticipos, ni seguros, ni pagos que condicionen un desembolso. Nuestros honorarios se pagan solo si hay desembolso. Si alguien te pide un anticipo en nuestro nombre, desconfía y avísanos." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Nunca pedimos dinero por adelantado, ni anticipos, ni seguros, ni pagos que condicionen un desembolso. Si una gestión tiene honorarios, te los explicamos por escrito antes de avanzar. Si alguien te pide un anticipo en nuestro nombre, desconfía y avísanos."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Cuánto se demora un crédito de libranza?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No damos fechas exactas y preferimos explicar por qué: el tiempo depende de la entidad, de las validaciones, de los documentos y, sobre todo, de la pagaduría, que tiene sus propios tiempos de visación. Lo que sí hacemos es contarte en qué etapa va tu caso." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No damos fechas exactas y preferimos explicar por qué: el tiempo depende de la entidad, de las validaciones, de los documentos y, sobre todo, de la pagaduría, que tiene sus propios tiempos de visación. Lo que sí hacemos es contarte en qué etapa va tu caso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué documentos piden para un crédito de libranza?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para la primera consulta, ninguno. Si tu caso tiene opciones, te pedimos el desprendible de pago más reciente para el preanálisis. Después, la entidad suele pedir copia de la cédula, un certificado de pensión o laboral y sus formularios. Nunca te pedimos claves, códigos ni pagos por adelantado. Lo explicamos en qué documentos piden para un crédito de libranza."
+          }
         }
       ]
     }
@@ -122,6 +196,7 @@
   </script>
 </head>
 <body>
+  <a class="skip" href="#principal">Saltar al contenido</a>
 
   <!-- ===================== SPRITE DE ICONOS ===================== -->
   <svg style="display:none" aria-hidden="true">
@@ -147,22 +222,22 @@
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="top">
     <div class="container header__inner">
-      <a href="../index.html" class="header__logo" aria-label="CrediAyudarte - inicio">
+      <a href="../" class="header__logo" aria-label="CrediAyudarte - inicio">
         <img src="../assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav" id="nav">
         <a href="../credito-de-libranza/">Crédito de libranza</a>
-        <a href="../index.html#para-quien">Para quién</a>
-        <a href="../index.html#como-funciona">Cómo funciona</a>
+        <a href="../#para-quien">Para quién</a>
+        <a href="../#como-funciona">Cómo funciona</a>
         <a href="../testimonios.html">Testimonios</a>
-        <a href="../blog/index.html">Blog</a>
-        <a href="../index.html#preguntas">Preguntas</a>
-        <a href="../index.html#contacto">Contacto</a>
+        <a href="../blog/">Blog</a>
+        <a href="../#preguntas">Preguntas</a>
+        <a href="../#contacto">Contacto</a>
       </nav>
       <div class="header__actions">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="btn-wa" aria-label="Escríbenos por WhatsApp">
+        <a href="../solicitar.html#solicitud" class="btn-wa" aria-label="Ir al formulario de solicitud">
           <svg class="ico"><use href="#i-whatsapp"/></svg>
-          <span>Escríbenos<small>Te orientamos</small></span>
+          <span>Solicitud<small>a WhatsApp</small></span>
         </a>
         <a href="../solicitar.html" class="btn btn-primary header__cta">Solicita tu análisis</a>
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -172,20 +247,22 @@
     </div>
   </header>
 
+  <main id="principal">
+
   <!-- ===================== HERO ===================== -->
   <section class="page-hero">
     <span class="blob blob--green anim-drift" aria-hidden="true"></span>
     <span class="blob blob--yellow anim-float2" aria-hidden="true"></span>
     <div class="container page-hero__inner">
       <nav class="breadcrumb" aria-label="Ruta de navegación">
-        <a href="../index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <span>Crédito de libranza</span>
+        <a href="../">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <span>Crédito de libranza</span>
       </nav>
       <h1>Crédito de libranza: cómo funciona y <span>cómo saber si te conviene</span></h1>
       <p>Guía completa para pensionados y empleados del sector público. Qué es, cómo se descuenta, quién decide qué, y la diferencia —que casi nunca se explica— entre un crédito que <em>se puede tramitar</em> y un crédito que <em>te deja mejor</em>.</p>
       <div class="page-hero__cta">
-        <a href="../solicitar.html" class="btn btn-primary btn-lg">Quiero que revisen mi caso</a>
-        <a href="https://wa.me/573152474348?text=Hola%2C%20ya%20tengo%20una%20oferta%20de%20cr%C3%A9dito%20y%20quiero%20compararla." target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Ya tengo una oferta y quiero compararla</a>
+        <a href="../solicitar.html#solicitud" class="btn btn-primary btn-lg" data-ubic="credito-de-libranza-hero"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
       </div>
+      <p class="page-hero__paso">Te responde una persona. Revisar tu caso no cuesta y no te pedimos cédula ni claves en el primer mensaje.</p>
       <p class="page-hero__fine">CrediAyudarte es una asesoría independiente especializada en crédito de libranza para pensionados y empleados públicos en Colombia. No somos un banco y no aprobamos ni desembolsamos créditos: revisamos si el crédito realmente te conviene antes de que firmes. El preanálisis no tiene costo.</p>
     </div>
   </section>
@@ -202,9 +279,35 @@
           <p>Pero eso no significa que cualquier libranza te convenga. La cuota puede bajar porque el crédito se abarató… o porque te pusieron años encima. Esta página explica cómo distinguir una cosa de la otra antes de firmar.</p>
         </div>
 
+        <!-- QUÉ REVISAMOS / QUÉ DECIDE LA ENTIDAD -->
+        <h2 id="que-revisamos">Qué revisamos contigo y qué decide la entidad</h2>
+        <div class="revisa">
+          <div class="revisa__col revisa__col--nos">
+            <h3>Lo que revisamos contigo</h3>
+            <ul>
+              <li><b>Tu pagaduría</b> y con qué entidades tiene convenio.</li>
+              <li><b>Tus descuentos actuales</b> en el desprendible.</li>
+              <li><b>Tu capacidad de pago:</b> lo que te queda libre según la ley.</li>
+              <li><b>Tu historial:</b> reportes, mora o embargos.</li>
+              <li><b>Cuota, plazo, costo total y dinero neto</b> que recibes.</li>
+            </ul>
+          </div>
+          <div class="revisa__col revisa__col--entidad">
+            <h3>Lo que decide la entidad, no nosotros</h3>
+            <ul>
+              <li>Si aprueba o no el crédito.</li>
+              <li>El monto, la tasa y el plazo.</li>
+              <li>Los seguros y los costos del estudio.</li>
+              <li>Cuándo desembolsa.</li>
+            </ul>
+          </div>
+          <p class="revisa__nota">Ser pensionado o tener nómina pública ayuda a que tu caso se pueda estudiar, pero <strong>no garantiza la aprobación</strong>. Revisar tu caso no cuesta y no pedimos anticipos.</p>
+        </div>
+
         <nav class="toc" aria-label="Contenido de la página">
           <h2>En esta página</h2>
           <ol>
+            <li><a href="#que-revisamos">Qué revisamos y qué decide la entidad</a></li>
             <li><a href="#como-funciona">Cómo funciona el descuento</a></li>
             <li><a href="#quien-decide">Quién decide qué: pagaduría, entidad, asesoría y tú</a></li>
             <li><a href="#viable">Viable no es lo mismo que conveniente</a></li>
@@ -213,6 +316,8 @@
             <li><a href="#quien-puede">Quién puede acceder</a></li>
             <li><a href="#proceso">Cómo es el proceso</a></li>
             <li><a href="#antes-de-firmar">Qué revisar antes de firmar</a></li>
+            <li><a href="#palabras">Palabras que vas a escuchar</a></li>
+            <li><a href="#documentos">Qué documentos pueden pedirte</a></li>
             <li><a href="#limites">Lo que no podemos prometerte</a></li>
             <li><a href="#preguntas">Preguntas frecuentes</a></li>
           </ol>
@@ -411,6 +516,45 @@
 
         <p>Ese último punto no es una recomendación general: es la señal de alarma más clara que existe en este sector, y la explicamos a fondo en <a href="../blog/te-piden-un-anticipo-para-desembolsar-el-credito.html">qué hacer si te piden un anticipo para desembolsarte el crédito</a>.</p>
 
+        <!-- PALABRAS QUE VAS A ESCUCHAR -->
+        <h2 id="palabras">Palabras que vas a escuchar, explicadas</h2>
+        <dl class="glosario">
+          <div><dt>Pagaduría</dt><dd>La entidad que te paga la pensión o el sueldo y aplica los descuentos: por ejemplo Colpensiones, FOPEP, Fiduprevisora, una Secretaría de Educación, CASUR o CREMIL. Si no tiene convenio con una entidad financiera, esa entidad no puede prestarte por libranza.</dd></div>
+          <div><dt>Desprendible</dt><dd>El comprobante de pago de tu pensión o tu sueldo. Muestra cuánto te pagan, qué te descuentan y cuánto recibes.</dd></div>
+          <div><dt>Capacidad de pago o margen</dt><dd>Lo que te queda libre después de los descuentos. Por ley, después de los descuentos de libranza debes recibir al menos el 50 % del neto de tu salario o pensión (Ley 1527 de 2012, art. 3).</dd></div>
+          <div><dt>Cuota y costo total</dt><dd>La cuota es lo que pagas cada mes. El costo total es lo que pagas al final: la cuota por todos los meses, más seguros y cargos. Una cuota baja con muchos años puede salir más cara.</dd></div>
+          <div><dt>Visación</dt><dd>El paso en que la pagaduría revisa y registra el descuento del crédito nuevo. Sus tiempos los pone la pagaduría.</dd></div>
+          <div><dt>Compra de cartera</dt><dd>Un crédito nuevo que paga los que ya tienes y te deja una sola cuota. Puede bajar la cuota, a veces solo porque alarga el plazo.</dd></div>
+        </dl>
+
+        <!-- DOCUMENTOS -->
+        <h2 id="documentos">Qué documentos pueden pedirte</h2>
+        <div class="tabla">
+          <table>
+            <caption>Qué se pide en cada momento</caption>
+            <thead>
+              <tr><th scope="col">Momento</th><th scope="col">Qué se pide</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Primer contacto por WhatsApp o formulario</th><td>Ninguno. Basta con contarnos tu perfil, quién te paga y qué necesitas.</td></tr>
+              <tr><th scope="row">Preanálisis, si tu caso tiene opciones</th><td>Tu desprendible de pago más reciente, legible. Con eso hacemos el preanálisis, que no cuesta.</td></tr>
+              <tr><th scope="row">Estudio en la entidad</th><td>Copia de tu cédula. Los formularios y la autorización de consulta en centrales de riesgo de la entidad. Un certificado de pensión o laboral, si la entidad lo pide. Cada entidad define su lista.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Nunca te pedimos</strong> claves, contraseñas, códigos que te lleguen por mensaje, fotos de tus tarjetas ni pagos por adelantado. Los datos que nos compartes se tratan según nuestra <a href="../privacy/">política de privacidad</a>.</p>
+
+        <div class="alerta" id="estafas">
+          <h3><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg> Nunca pagues para que te presten</h3>
+          <p>Ningún trámite serio de libranza te cobra antes del desembolso. Desconfía si te piden:</p>
+          <ul>
+            <li>Dinero para «estudio», «seguro» o «liberar» el crédito.</li>
+            <li>Claves, códigos o acceso a tu banca en línea.</li>
+            <li>Decidir hoy mismo porque «se pierde el cupo».</li>
+          </ul>
+          <p>Si alguien te pide dinero en nombre de CrediAyudarte, no pagues y escríbenos al WhatsApp oficial <strong>315 247 4348</strong>. Más en <a href="../blog/te-piden-un-anticipo-para-desembolsar-el-credito.html">te piden un anticipo para desembolsar el crédito</a>.</p>
+        </div>
+
         <h2 id="limites">Lo que no podemos prometerte</h2>
 
         <p>Somos una asesoría independiente, y eso significa límites reales que preferimos poner por delante:</p>
@@ -423,7 +567,7 @@
           <li><strong>No podemos garantizarte que exista una opción que te convenga.</strong> A veces la respuesta honesta después de revisar es que lo que ya tienes es mejor que lo disponible hoy.</li>
         </ul>
 
-        <p>Lo que sí podemos: mirar tu caso completo, explicarte los números antes de que firmes, y decirte cuando la mejor decisión es no hacer nada. No cobramos por adelantado; nuestros honorarios se pagan solo si hay desembolso.</p>
+        <p>Lo que sí podemos: mirar tu caso completo, explicarte los números antes de que firmes, y decirte cuando la mejor decisión es no hacer nada. No cobramos por adelantado; si una gestión tiene honorarios, te los explicamos por escrito antes de avanzar.</p>
 
         <h2 id="preguntas">Preguntas frecuentes</h2>
 
@@ -458,12 +602,26 @@
           </details>
           <details>
             <summary>¿Cobran algo por adelantado?</summary>
-            <p>No. Nunca pedimos dinero por adelantado, ni anticipos, ni seguros, ni pagos que condicionen un desembolso. Nuestros honorarios se pagan solo si hay desembolso. Si alguien te pide un anticipo en nuestro nombre, desconfía y avísanos.</p>
+            <p>No. Nunca pedimos dinero por adelantado, ni anticipos, ni seguros, ni pagos que condicionen un desembolso. Si una gestión tiene honorarios, te los explicamos por escrito antes de avanzar. Si alguien te pide un anticipo en nuestro nombre, desconfía y avísanos.</p>
           </details>
           <details>
             <summary>¿Cuánto se demora un crédito de libranza?</summary>
             <p>No damos fechas exactas y preferimos explicar por qué: el tiempo depende de la entidad, de las validaciones, de los documentos y, sobre todo, de la pagaduría, que tiene sus propios tiempos de visación. Lo que sí hacemos es contarte en qué etapa va tu caso.</p>
           </details>
+          <details>
+            <summary>¿Qué documentos piden para un crédito de libranza?</summary>
+            <p>Para la primera consulta, ninguno. Si tu caso tiene opciones, te pedimos el desprendible de pago más reciente para el preanálisis. Después, la entidad suele pedir copia de la cédula, un certificado de pensión o laboral y sus formularios. Nunca te pedimos claves, códigos ni pagos por adelantado. Lo explicamos en <a href="../blog/que-documentos-piden-para-un-credito-de-libranza.html">qué documentos piden para un crédito de libranza</a>.</p>
+          </details>
+        </div>
+
+        <!-- FUENTES OFICIALES -->
+        <div class="fuentes" id="fuentes">
+          <h3>Fuentes oficiales</h3>
+          <ul>
+            <li><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=47213" target="_blank" rel="noopener">Ley 1527 de 2012, sobre la libranza</a> (Función Pública). El artículo 3 fija que debes recibir al menos el 50 % del neto de tu salario o pensión.</li>
+            <li><a href="https://www.superfinanciera.gov.co/publicaciones/10115254/tips-para-identificar-falsos-prestamistas/" target="_blank" rel="noopener">Cómo identificar falsos prestamistas</a> (Superintendencia Financiera).</li>
+          </ul>
+          <small>Enlaces revisados el 12 de noviembre de 2026. Es orientación general, no asesoría jurídica.</small>
         </div>
 
         <h2 id="recursos">Para seguir leyendo</h2>
@@ -485,7 +643,7 @@
             <svg class="ico"><use href="#i-heart"/></svg>
             <div><strong>Nadie mayor debería firmar un crédito solo</strong><span>Por qué el acompañamiento familiar cambia la calidad de la decisión.</span></div>
           </a>
-          <a href="../blog/index.html">
+          <a href="../blog/">
             <svg class="ico"><use href="#i-chat"/></svg>
             <div><strong>Decisiones claras — todos los artículos</strong><span>Criterios para decidir mejor con dinero prestado, sin promesas.</span></div>
           </a>
@@ -494,11 +652,18 @@
       </div>
 
       <!-- ===================== CIERRE ===================== -->
-      <div class="post-cierre">
-        <h2>Si estás pensando en una libranza</h2>
-        <p>Mándanos tus desprendibles y te decimos qué margen real tienes, qué entidades pueden atender tu caso y qué te costaría en total. Si lo que ya tienes es mejor que lo disponible, también te lo decimos. El preanálisis no tiene costo ni compromiso.</p>
-        <a href="../solicitar.html" class="btn btn-primary btn-lg">Quiero que revisen mi caso</a>
-        <p class="post-cierre__fine">No cobramos nada por adelantado. Nuestros honorarios se pagan solo si hay desembolso.</p>
+      <div class="post-cierre siguiente" id="siguiente-paso">
+        <h2>Tu siguiente paso: revisar tu caso con una persona</h2>
+        <p>Cuéntanos quién te paga y qué necesitas. Te decimos qué margen tienes, qué entidades podrían estudiar tu caso y cuánto te costaría en total.</p>
+        <ol>
+          <li><span><strong>Llena la solicitud corta y envíala a nuestro WhatsApp.</strong> Tu nombre, tu edad, tu perfil y cómo está tu reporte. Sin cédula ni documentos.</span></li>
+          <li><span><strong>Te responde una persona.</strong> Si tu caso tiene opciones, te pide el desprendible para el preanálisis, que no cuesta.</span></li>
+          <li><span><strong>Te explicamos cuota, plazo y costo total antes de firmar.</strong> Tú decides; la entidad aprueba y desembolsa.</span></li>
+        </ol>
+        <div class="siguiente__cta">
+          <a href="../solicitar.html#solicitud" class="btn btn-primary btn-lg" data-ubic="credito-de-libranza-cierre"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
+        </div>
+        <p class="siguiente__fine">Preanálisis sin costo · Sin anticipos para tramitar · La aprobación depende de la entidad financiera · Oficina: Calle 12 # 4–47, Local 4, C.C. Internacional, Cúcuta.</p>
       </div>
 
     </div>
@@ -514,9 +679,11 @@
         <h2>¿Ya te ofrecieron algo? <span>Compáralo antes de firmar.</span></h2>
         <p>Mándanos la propuesta y te decimos qué dice de verdad: plazo, costo total y qué te queda después.</p>
       </div>
-      <a href="https://wa.me/573152474348?text=Hola%2C%20ya%20tengo%20una%20oferta%20de%20cr%C3%A9dito%20y%20quiero%20compararla." target="_blank" rel="noopener" class="btn btn-yellow btn-lg">Quiero comparar mi oferta</a>
+      <a href="../solicitar.html#solicitud" class="btn btn-yellow btn-lg">Quiero comparar mi oferta</a>
     </div>
   </section>
+
+  </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
@@ -532,7 +699,7 @@
       </div>
       <div class="footer__col">
         <h2 class="footer__h">Crédito de libranza</h2>
-        <a href="index.html">Cómo funciona la libranza</a>
+        <a href="./">Cómo funciona la libranza</a>
         <a href="../credito-libranza-pensionados/">Libranza para pensionados</a>
         <a href="../credito-libranza-empleados-publicos/">Libranza para empleados públicos</a>
         <a href="../credito-libranza-docentes/">Libranza para docentes</a>
@@ -547,12 +714,13 @@
         <a href="../about/">Quiénes somos</a>
         <a href="../credito-libranza-cucuta/">Asesoría de libranza en Cúcuta</a>
         <a href="../testimonios.html">Testimonios de clientes</a>
-        <a href="../blog/index.html">Decisiones claras (blog)</a>
+        <a href="../blog/">Decisiones claras (blog)</a>
         <a href="../solicitar.html">Solicita tu análisis</a>
         <a href="../privacy/">Política de privacidad</a>
         <a href="https://wa.me/573152474348" target="_blank" rel="noopener">WhatsApp: 315 247 4348</a>
         <span>Calle 12 # 4&ndash;47, Local 4</span>
         <span>C.C. Internacional &mdash; Cúcuta</span>
+        <span>Lun. a vie., 8:00 a.m. – 5:00 p.m.</span>
       </div>
     </div>
     <div class="footer__legal">
@@ -563,12 +731,12 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+  <a href="../solicitar.html#solicitud" class="wa-float" aria-label="Ir al formulario de solicitud">
     <svg class="ico"><use href="#i-whatsapp"/></svg>
     <span class="wa-float__pulse"></span>
   </a>
 
-  <script defer src="../js/medicion.js?v=20261013"></script>
+  <script defer src="../js/medicion.js?v=20261113"></script>
   <script defer src="../js/script.js?v=20261025"></script>
   <script defer src="../js/motion.js?v=20260820"></script>
 </body>

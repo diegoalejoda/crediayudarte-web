@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Marca que JS está activo: sin JS todo el contenido queda visible -->
+  <script>document.documentElement.className += ' js';</script>
 
   <!-- ===================== SEO ===================== -->
-  <title>Crédito de libranza con embargo: qué influye y qué se puede estudiar</title>
+  <title>Crédito con embargo: qué se puede estudiar en una libranza</title>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <meta name="description" content="Si tu nómina o pensión tiene un embargo, influyen el tipo de embargo, tu pagaduría, la capacidad que queda y las políticas de cada entidad. Qué se revisa, sin promesas." />
+  <meta name="description" content="Crédito de libranza con embargo en la nómina o la pensión: qué influye, por qué pagar no levanta el embargo solo y qué documentos ayudan. Sin promesas." />
   <link rel="canonical" href="https://crediayudarte.com/credito-libranza-embargos/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="author" content="CrediAyudarte" />
@@ -17,16 +19,16 @@
   <meta property="og:site_name" content="CrediAyudarte" />
   <meta property="og:locale" content="es_CO" />
   <meta property="og:url" content="https://crediayudarte.com/credito-libranza-embargos/" />
-  <meta property="og:title" content="Crédito de libranza con embargo: qué influye y qué se puede estudiar" />
-  <meta property="og:description" content="Si tu nómina o pensión tiene un embargo, influyen el tipo de embargo, tu pagaduría, la capacidad que queda y las políticas de cada entidad. Qué se revisa, sin promesas." />
+  <meta property="og:title" content="Crédito con embargo: qué se puede estudiar en una libranza" />
+  <meta property="og:description" content="Crédito de libranza con embargo en la nómina o la pensión: qué influye, por qué pagar no levanta el embargo solo y qué documentos ayudan. Sin promesas." />
   <meta property="og:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Crédito de libranza con embargo para pensionados y empleados públicos" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Crédito de libranza con embargo: qué influye y qué se puede estudiar" />
-  <meta name="twitter:description" content="Si tu nómina o pensión tiene un embargo, influyen el tipo de embargo, tu pagaduría, la capacidad que queda y las políticas de cada entidad. Qué se revisa, sin promesas." />
+  <meta name="twitter:title" content="Crédito con embargo: qué se puede estudiar en una libranza" />
+  <meta name="twitter:description" content="Crédito de libranza con embargo en la nómina o la pensión: qué influye, por qué pagar no levanta el embargo solo y qué documentos ayudan. Sin promesas." />
   <meta name="twitter:image" content="https://crediayudarte.com/assets/og-crediayudarte.jpg" />
   <meta name="twitter:image:alt" content="Crédito de libranza con embargo para pensionados y empleados públicos" />
 
@@ -36,9 +38,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,700..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=20261025" />
+  <link rel="stylesheet" href="../css/styles.css?v=20261112" />
   <link rel="stylesheet" href="../css/motion.css?v=20261013" />
-  <link rel="stylesheet" href="../css/blog.css?v=20261013" />
+  <link rel="stylesheet" href="../css/blog.css?v=20261112" />
   <link rel="stylesheet" href="../css/landing.css?v=20261013" />
 
   <!-- ===================== DATOS ESTRUCTURADOS ===================== -->
@@ -50,13 +52,19 @@
       "@type": "WebPage",
       "@id": "https://crediayudarte.com/credito-libranza-embargos/#pagina",
       "url": "https://crediayudarte.com/credito-libranza-embargos/",
-      "name": "Crédito de libranza con embargo: qué influye y qué se puede estudiar",
-      "description": "Si tu nómina o pensión tiene un embargo, influyen el tipo de embargo, tu pagaduría, la capacidad que queda y las políticas de cada entidad. Qué se revisa, sin promesas.",
+      "name": "Crédito con embargo: qué se puede estudiar en una libranza",
+      "description": "Crédito de libranza con embargo en la nómina o la pensión: qué influye, por qué pagar no levanta el embargo solo y qué documentos ayudan. Sin promesas.",
       "inLanguage": "es-CO",
-      "isPartOf": { "@id": "https://crediayudarte.com/#sitio" },
-      "about": { "@id": "https://crediayudarte.com/#organizacion" },
+      "isPartOf": {
+        "@id": "https://crediayudarte.com/#sitio"
+      },
+      "about": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
       "primaryImageOfPage": "https://crediayudarte.com/assets/og-crediayudarte.jpg",
-      "breadcrumb": { "@id": "https://crediayudarte.com/credito-libranza-embargos/#migas" }
+      "breadcrumb": {
+        "@id": "https://crediayudarte.com/credito-libranza-embargos/#migas"
+      }
     },
     {
       "@type": "Service",
@@ -64,17 +72,40 @@
       "name": "Asesoría en libranza para pensionados y empleados públicos con embargo",
       "serviceType": "Asesoría financiera",
       "description": "Revisión del tipo de embargo, la pagaduría, la capacidad disponible y las políticas de las entidades para estudiar alternativas de libranza. No incluye asesoría jurídica sobre el proceso ni gestión del levantamiento del embargo.",
-      "provider": { "@id": "https://crediayudarte.com/#organizacion" },
-      "areaServed": { "@type": "Country", "name": "Colombia" },
-      "audience": { "@type": "Audience", "audienceType": "Pensionados, empleados públicos, docentes del Estado y Fuerza Pública" }
+      "provider": {
+        "@id": "https://crediayudarte.com/#organizacion"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Pensionados, empleados públicos, docentes del Estado y Fuerza Pública"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://crediayudarte.com/credito-libranza-embargos/#migas",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://crediayudarte.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Crédito de libranza", "item": "https://crediayudarte.com/credito-de-libranza/" },
-        { "@type": "ListItem", "position": 3, "name": "Libranza con embargo", "item": "https://crediayudarte.com/credito-libranza-embargos/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://crediayudarte.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Crédito de libranza",
+          "item": "https://crediayudarte.com/credito-de-libranza/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Libranza con embargo",
+          "item": "https://crediayudarte.com/credito-libranza-embargos/"
+        }
       ]
     },
     {
@@ -85,32 +116,58 @@
         {
           "@type": "Question",
           "name": "¿Puedo sacar un crédito de libranza si tengo un embargo?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Algunos casos pueden estudiarse y otros no. Influyen el tipo de embargo, cuánto te retienen, la capacidad que queda en tu desprendible, tu pagaduría y las políticas de cada entidad. Lo revisamos sin prometer resultado." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Algunos casos pueden estudiarse y otros no. Influyen el tipo de embargo, cuánto te retienen, la capacidad que queda en tu desprendible, tu pagaduría y las políticas de cada entidad. Lo revisamos sin prometer resultado."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Qué entidades aceptan embargos?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No hay una lista válida para todos. Las políticas de las entidades no son públicas, cambian y dependen del tipo de embargo y de la capacidad disponible. Por eso revisamos cada caso." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No hay una lista válida para todos. Las políticas de las entidades no son públicas, cambian y dependen del tipo de embargo y de la capacidad disponible. Por eso revisamos cada caso."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Si pago la deuda se levanta el embargo?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No automáticamente. El proceso debe terminarse y la autoridad que ordenó el embargo tiene que comunicar el levantamiento a tu pagaduría. Hasta que esta lo registre, el descuento puede seguir." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No automáticamente. El proceso debe terminarse y la autoridad que ordenó el embargo tiene que comunicar el levantamiento a tu pagaduría. Hasta que esta lo registre, el descuento puede seguir."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Una libranza puede pagar la deuda que tiene embargada mi nómina?",
-          "acceptedAnswer": { "@type": "Answer", "text": "En algunos casos, si te queda capacidad, la operación puede incluir el pago de esa obligación. Aun así, el levantamiento depende de la autoridad que lo ordenó, y la aprobación depende de la entidad." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En algunos casos, si te queda capacidad, la operación puede incluir el pago de esa obligación. Aun así, el levantamiento depende de la autoridad que lo ordenó, y la aprobación depende de la entidad."
+          }
         },
         {
           "@type": "Question",
           "name": "Tengo embargo por alimentos. ¿Hay opciones?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Es el tipo de embargo más delicado y las opciones suelen ser más limitadas. Lo revisamos con cuidado y te decimos con honestidad si hay algo que estudiar." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es el tipo de embargo más delicado y las opciones suelen ser más limitadas. Lo revisamos con cuidado y te decimos con honestidad si hay algo que estudiar."
+          }
         },
         {
           "@type": "Question",
           "name": "¿Ustedes me ayudan con el proceso judicial?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. No damos asesoría jurídica ni gestionamos procesos. Para eso consulta con un abogado o con la autoridad que adelanta el cobro." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. No damos asesoría jurídica ni gestionamos procesos. Para eso consulta con un abogado o con la autoridad que adelanta el cobro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué documentos sirven si tengo un embargo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para empezar, ninguno: cuéntanos tu perfil y qué tipo de embargo tienes. Si hay opciones, ayudan tu desprendible más reciente y, si la tienes, la orden u oficio del embargo. Después, la entidad pedirá sus propios documentos. No te pedimos claves ni pagos por adelantado."
+          }
         }
       ]
     }
@@ -139,22 +196,22 @@
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="top">
     <div class="container header__inner">
-      <a href="../index.html" class="header__logo" aria-label="CrediAyudarte - inicio">
+      <a href="../" class="header__logo" aria-label="CrediAyudarte - inicio">
         <img src="../assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav" id="nav">
         <a href="../credito-de-libranza/">Crédito de libranza</a>
-        <a href="../index.html#para-quien">Para quién</a>
-        <a href="../index.html#como-funciona">Cómo funciona</a>
+        <a href="../#para-quien">Para quién</a>
+        <a href="../#como-funciona">Cómo funciona</a>
         <a href="../testimonios.html">Testimonios</a>
-        <a href="../blog/index.html">Blog</a>
-        <a href="../index.html#preguntas">Preguntas</a>
-        <a href="../index.html#contacto">Contacto</a>
+        <a href="../blog/">Blog</a>
+        <a href="../#preguntas">Preguntas</a>
+        <a href="../#contacto">Contacto</a>
       </nav>
       <div class="header__actions">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="btn-wa" aria-label="Escríbenos por WhatsApp">
+        <a href="../solicitar.html#solicitud" class="btn-wa" aria-label="Ir al formulario de solicitud">
           <svg class="ico"><use href="#i-whatsapp"/></svg>
-          <span>Escríbenos<small>Te orientamos</small></span>
+          <span>Solicitud<small>a WhatsApp</small></span>
         </a>
         <a href="../solicitar.html" class="btn btn-primary header__cta">Solicita tu análisis</a>
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -171,14 +228,14 @@
     <span class="blob blob--yellow anim-float2" aria-hidden="true"></span>
     <div class="container page-hero__inner">
       <nav class="breadcrumb" aria-label="Ruta de navegación">
-        <a href="../index.html">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="../credito-de-libranza/">Crédito de libranza</a> <span aria-hidden="true">&rsaquo;</span> <span>Libranza con embargo</span>
+        <a href="../">Inicio</a> <span aria-hidden="true">&rsaquo;</span> <a href="../credito-de-libranza/">Crédito de libranza</a> <span aria-hidden="true">&rsaquo;</span> <span>Libranza con embargo</span>
       </nav>
       <h1>Crédito de libranza con embargo: <span>qué influye y qué se puede estudiar</span></h1>
       <p>Un embargo en tu nómina o pensión no siempre cierra la puerta, pero tampoco hay una regla única. Te explicamos qué mira una entidad, por qué pagar la deuda no basta para levantarlo y cuándo una libranza puede ayudar.</p>
       <div class="page-hero__cta">
-        <a href="https://wa.me/573152474348?text=Hola%2C%20tengo%20un%20embargo%20y%20quiero%20que%20eval%C3%BAen%20mi%20caso%20de%20libranza." target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-ubic="credito-libranza-embargos-hero"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Evaluar mi caso por WhatsApp</a>
-        <a href="../solicitar.html#solicitud" class="btn btn-ghost btn-lg" data-ubic="credito-libranza-embargos-hero">Solicitar preanálisis gratuito</a>
+        <a href="../solicitar.html#solicitud" class="btn btn-primary btn-lg" data-ubic="credito-libranza-embargos-hero"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
       </div>
+      <p class="page-hero__paso">Te responde una persona. Revisar tu caso no cuesta y no te pedimos cédula ni claves en el primer mensaje.</p>
       <p class="page-hero__fine">CrediAyudarte presta asesoría e intermediación en créditos de libranza. No prestamos dinero propio, no damos asesoría jurídica sobre procesos judiciales y no levantamos embargos.</p>
     </div>
   </section>
@@ -194,14 +251,42 @@
           <p>Lo que sí hacemos: revisar tu desprendible, entender qué embargo tienes y buscar entidades que puedan estudiarlo. Si no te queda cupo, podemos evaluar un <a href="../saneamiento-financiero/">saneamiento financiero</a>.</p>
         </div>
 
+        <!-- QUÉ REVISAMOS / QUÉ DECIDE LA ENTIDAD -->
+        <h2 id="que-revisamos">Qué revisamos contigo y qué decide la entidad</h2>
+        <div class="revisa">
+          <div class="revisa__col revisa__col--nos">
+            <h3>Lo que revisamos contigo</h3>
+            <ul>
+              <li><b>El tipo de embargo:</b> por deuda, por alimentos u otro.</li>
+              <li><b>Cuánto te retienen</b> cada mes.</li>
+              <li><b>La capacidad que te queda</b> después del embargo.</li>
+              <li><b>Tu pagaduría</b> y sus convenios.</li>
+              <li><b>El estado del proceso</b> y si hay acuerdos de pago.</li>
+            </ul>
+          </div>
+          <div class="revisa__col revisa__col--entidad">
+            <h3>Lo que decide la entidad, no nosotros</h3>
+            <ul>
+              <li>Si aprueba o no el crédito.</li>
+              <li>El monto, la tasa y el plazo.</li>
+              <li>Los seguros y los costos del estudio.</li>
+              <li>Cuándo desembolsa.</li>
+            </ul>
+          </div>
+          <p class="revisa__nota">Ser pensionado o tener nómina pública ayuda a que tu caso se pueda estudiar, pero <strong>no garantiza la aprobación</strong>. Revisar tu caso no cuesta y no pedimos anticipos.</p>
+        </div>
+
         <nav class="toc" aria-label="Contenido de la página">
           <h2>En esta página</h2>
           <ol>
+            <li><a href="#que-revisamos">Qué revisamos y qué decide la entidad</a></li>
             <li><a href="#que-es">Qué es un embargo sobre tu nómina o pensión</a></li>
             <li><a href="#influye">Qué influye en que se pueda estudiar</a></li>
             <li><a href="#levantamiento">Pagar la deuda no levanta el embargo automáticamente</a></li>
             <li><a href="#libranza">Cuándo una libranza puede ayudar</a></li>
             <li><a href="#necesitas">Qué tener a mano</a></li>
+            <li><a href="#palabras">Palabras que vas a escuchar</a></li>
+            <li><a href="#documentos">Qué documentos pueden pedirte</a></li>
             <li><a href="#limites">Lo que no podemos prometerte</a></li>
             <li><a href="#preguntas">Preguntas frecuentes</a></li>
           </ol>
@@ -252,6 +337,44 @@
 
         <p>Para empezar basta con contarnos tu perfil, tu pagaduría y qué tipo de embargo tienes. Después, por WhatsApp y solo cuando te lo pidamos, revisaremos tu desprendible (donde se ve el embargo), los datos del proceso si los tienes (juzgado o entidad, y quién lo pidió) y el saldo de la deuda o el acuerdo de pago.</p>
 
+        <!-- PALABRAS QUE VAS A ESCUCHAR -->
+        <h2 id="palabras">Palabras que vas a escuchar, explicadas</h2>
+        <dl class="glosario">
+          <div><dt>Embargo</dt><dd>Una orden de un juez o de una autoridad de cobro para retener parte de tu sueldo o pensión y pagar una deuda. Mientras exista, reduce lo que te queda libre.</dd></div>
+          <div><dt>Pagaduría</dt><dd>La entidad que te paga la pensión o el sueldo y aplica los descuentos: por ejemplo Colpensiones, FOPEP, Fiduprevisora, una Secretaría de Educación, CASUR o CREMIL. Si no tiene convenio con una entidad financiera, esa entidad no puede prestarte por libranza.</dd></div>
+          <div><dt>Desprendible</dt><dd>El comprobante de pago de tu pensión o tu sueldo. Muestra cuánto te pagan, qué te descuentan y cuánto recibes.</dd></div>
+          <div><dt>Capacidad de pago o margen</dt><dd>Lo que te queda libre después de los descuentos. Por ley, después de los descuentos de libranza debes recibir al menos el 50 % del neto de tu salario o pensión (Ley 1527 de 2012, art. 3).</dd></div>
+          <div><dt>Saneamiento financiero</dt><dd>Pagar u ordenar deudas con una financiación externa, que tiene costos propios, para que después se pueda estudiar una libranza. No garantiza ese crédito posterior.</dd></div>
+        </dl>
+
+        <!-- DOCUMENTOS -->
+        <h2 id="documentos">Qué documentos pueden pedirte</h2>
+        <div class="tabla">
+          <table>
+            <caption>Qué se pide en cada momento</caption>
+            <thead>
+              <tr><th scope="col">Momento</th><th scope="col">Qué se pide</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Primer contacto por WhatsApp o formulario</th><td>Ninguno. Basta con contarnos tu perfil, quién te paga y qué necesitas.</td></tr>
+              <tr><th scope="row">Preanálisis, si tu caso tiene opciones</th><td>Tu desprendible de pago más reciente, legible. Con eso hacemos el preanálisis, que no cuesta.</td></tr>
+              <tr><th scope="row">Estudio en la entidad</th><td>Copia de tu cédula. Los formularios y la autorización de consulta en centrales de riesgo de la entidad. El oficio o la orden del embargo, si la tienes, para saber de qué proceso se trata. Cada entidad define su lista.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Nunca te pedimos</strong> claves, contraseñas, códigos que te lleguen por mensaje, fotos de tus tarjetas ni pagos por adelantado. Los datos que nos compartes se tratan según nuestra <a href="../privacy/">política de privacidad</a>.</p>
+
+        <div class="alerta" id="estafas">
+          <h3><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg> Nunca pagues para que te presten</h3>
+          <p>Ningún trámite serio de libranza te cobra antes del desembolso. Desconfía si te piden:</p>
+          <ul>
+            <li>Dinero para «estudio», «seguro» o «liberar» el crédito.</li>
+            <li>Claves, códigos o acceso a tu banca en línea.</li>
+            <li>Decidir hoy mismo porque «se pierde el cupo».</li>
+          </ul>
+          <p>Si alguien te pide dinero en nombre de CrediAyudarte, no pagues y escríbenos al WhatsApp oficial <strong>315 247 4348</strong>. Más en <a href="../blog/te-piden-un-anticipo-para-desembolsar-el-credito.html">te piden un anticipo para desembolsar el crédito</a>.</p>
+        </div>
+
         <h2 id="limites">Lo que no podemos prometerte</h2>
 
         <ul>
@@ -288,16 +411,36 @@
             <summary>¿Ustedes me ayudan con el proceso judicial?</summary>
             <p>No. No damos asesoría jurídica ni gestionamos procesos. Para eso consulta con un abogado o con la autoridad que adelanta el cobro.</p>
           </details>
+          <details>
+            <summary>¿Qué documentos sirven si tengo un embargo?</summary>
+            <p>Para empezar, ninguno: cuéntanos tu perfil y qué tipo de embargo tienes. Si hay opciones, ayudan tu desprendible más reciente y, si la tienes, la orden u oficio del embargo. Después, la entidad pedirá sus propios documentos. No te pedimos claves ni pagos por adelantado.</p>
+          </details>
         </div>
 
+        <!-- FUENTES OFICIALES -->
+        <div class="fuentes" id="fuentes">
+          <h3>Fuentes oficiales</h3>
+          <ul>
+            <li><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=47213" target="_blank" rel="noopener">Ley 1527 de 2012, sobre la libranza</a> (Función Pública). El artículo 3 fija que debes recibir al menos el 50 % del neto de tu salario o pensión.</li>
+            <li><a href="https://www.superfinanciera.gov.co/publicaciones/10115254/tips-para-identificar-falsos-prestamistas/" target="_blank" rel="noopener">Cómo identificar falsos prestamistas</a> (Superintendencia Financiera).</li>
+          </ul>
+          <small>Enlaces revisados el 12 de noviembre de 2026. Es orientación general, no asesoría jurídica.</small>
+        </div>
       </div>
 
       <!-- ===================== CIERRE ===================== -->
-      <div class="post-cierre">
-        <h2>Si tienes un embargo y quieres saber qué se puede hacer</h2>
-        <p>Cuéntanos tu perfil, tu pagaduría y qué tipo de embargo tienes. Revisamos cuánta capacidad te queda y si hay entidades que puedan estudiar tu caso. Si hoy no hay opción, te lo decimos y te explicamos qué tendría que cambiar.</p>
-        <a href="https://wa.me/573152474348?text=Hola%2C%20tengo%20un%20embargo%20y%20quiero%20que%20eval%C3%BAen%20mi%20caso%20de%20libranza." target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-ubic="credito-libranza-embargos-cierre"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Evaluar mi caso por WhatsApp</a>
-        <p class="post-cierre__fine">Preanálisis sin costo · Sin anticipos para tramitar tu crédito · Aprobación sujeta a estudio de la entidad.</p>
+      <div class="post-cierre siguiente" id="siguiente-paso">
+        <h2>Tu siguiente paso: saber qué capacidad te queda</h2>
+        <p>Cuéntanos tu perfil, quién te paga y qué tipo de embargo tienes. Si hoy no hay opción, te lo decimos y te explicamos qué tendría que cambiar.</p>
+        <ol>
+          <li><span><strong>Llena la solicitud corta y envíala a nuestro WhatsApp.</strong> Tu nombre, tu edad, tu perfil y cómo está tu reporte. Sin cédula ni documentos.</span></li>
+          <li><span><strong>Te responde una persona.</strong> Si tu caso tiene opciones, te pide el desprendible para el preanálisis, que no cuesta.</span></li>
+          <li><span><strong>Te explicamos cuota, plazo y costo total antes de firmar.</strong> Tú decides; la entidad aprueba y desembolsa.</span></li>
+        </ol>
+        <div class="siguiente__cta">
+          <a href="../solicitar.html#solicitud" class="btn btn-primary btn-lg" data-ubic="credito-libranza-embargos-cierre"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitud a WhatsApp</a>
+        </div>
+        <p class="siguiente__fine">Preanálisis sin costo · Sin anticipos para tramitar · La aprobación depende de la entidad financiera · Oficina: Calle 12 # 4–47, Local 4, C.C. Internacional, Cúcuta.</p>
       </div>
 
     </div>
@@ -333,12 +476,13 @@
         <a href="../about/">Quiénes somos</a>
         <a href="../credito-libranza-cucuta/">Asesoría de libranza en Cúcuta</a>
         <a href="../testimonios.html">Testimonios de clientes</a>
-        <a href="../blog/index.html">Decisiones claras (blog)</a>
+        <a href="../blog/">Decisiones claras (blog)</a>
         <a href="../solicitar.html">Solicita tu análisis</a>
         <a href="../privacy/">Política de privacidad</a>
         <a href="https://wa.me/573152474348" target="_blank" rel="noopener">WhatsApp: 315 247 4348</a>
         <span>Calle 12 # 4&ndash;47, Local 4</span>
         <span>C.C. Internacional &mdash; Cúcuta</span>
+        <span>Lun. a vie., 8:00 a.m. – 5:00 p.m.</span>
       </div>
     </div>
     <div class="footer__legal">
@@ -349,12 +493,12 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+  <a href="../solicitar.html#solicitud" class="wa-float" aria-label="Ir al formulario de solicitud">
     <svg class="ico"><use href="#i-whatsapp"/></svg>
     <span class="wa-float__pulse"></span>
   </a>
 
-  <script defer src="../js/medicion.js?v=20261013"></script>
+  <script defer src="../js/medicion.js?v=20261113"></script>
   <script defer src="../js/script.js?v=20261025"></script>
   <script defer src="../js/motion.js?v=20261013"></script>
 </body>

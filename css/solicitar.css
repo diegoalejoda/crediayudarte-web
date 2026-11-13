@@ -21,7 +21,7 @@ body.sol .mapa__copy h2,body.sol .creeles__tag,body.sol .cfinal h2{
   font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 108;
   text-transform:uppercase;letter-spacing:-.018em;word-spacing:normal;line-height:.95;color:var(--c-green);text-wrap:balance;
 }
-body.sol .cfinal h2{color:#fff}
+body.sol .cfinal h2{color:#1B2410}
 body.sol .shero h1 mark,body.sol .stack__copy h2 mark,body.sol .section__head h2 mark,body.sol .fb__copy h2 mark,
 body.sol .mapa__copy h2 mark,body.sol .creeles__tag mark,body.sol .cfinal h2 mark{background-position:0 58%;background-size:100% 82%;padding:0 .08em}
 
@@ -297,3 +297,32 @@ body.sol .form-next p{margin:.35rem 0 .8rem;font-size:.9rem;line-height:1.5;colo
   body.sol .choices--4 .choice__box{padding:.7rem .7rem;gap:.5rem}
   body.sol .choices--4 .choice__box strong{font-size:.88rem}
 }
+/* Enlace de texto a WhatsApp bajo el botón del hero (canal humano visible en móvil) */
+body.sol .shero__wa{margin-top:.9rem;font-size:1.02rem;color:var(--c-ink)}
+body.sol .shero__wa a{color:#3F6B14;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* Formulario legible para personas mayores: ayudas y autorización a 16 px */
+body.sol .field-help,body.sol .consent{font-size:1rem}
+body.sol .shero__checks li{font-size:1.02rem}
+body.sol .form-help,body.sol .shero .breadcrumb{font-size:1rem}
+/* 2026-11: formulario corto — perfil en 2 opciones y reporte en 3 */
+body.sol .choices--2{grid-template-columns:1fr 1fr}
+body.sol .choices--3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){ body.sol .choices--3{grid-template-columns:1fr} }
+@media (max-width:520px){ body.sol .choices--2{gap:.5rem} body.sol .choices--2 .choice__box{padding:.75rem .7rem;gap:.5rem} }
+/* 2026-11: desprendible opcional (Sí abre la caja para adjuntar) */
+body.sol .upload[hidden]{display:none}
+body.sol .upload{margin:-.2rem 0 1.1rem}
+body.sol .dropzone{position:relative;min-height:84px}
+body.sol .dropzone input[type=file]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+body.sol .dropzone:focus-within{outline:3px solid var(--c-green);outline-offset:2px;border-color:var(--verde-marca)}
+body.sol .dropzone[hidden]{display:none}
+body.sol .dropzone__txt strong{font-size:1.05rem}
+body.sol .dropzone__txt small{font-size:1rem;color:var(--gris-texto)}
+body.sol .form-aviso{margin:.6rem 0 0;font-size:1rem;line-height:1.5;color:var(--gris-texto);text-align:center}
+body.sol .form-aviso a{color:var(--verde-texto);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+body.sol .doc-estado{margin:0 0 .8rem;padding:.65rem .9rem;border-radius:12px;font-size:1rem;font-weight:600}
+body.sol .doc-estado[hidden]{display:none}
+body.sol .doc-estado--subiendo{background:#FFF6D6;border:1.5px solid #F2C94C;color:#5A4300}
+body.sol .doc-estado--ok{background:#fff;border:1.5px solid var(--verde-marca);color:var(--verde-texto)}
+body.sol .doc-estado--error{background:#FDEDEC;border:1.5px solid #E5A29B;color:#8A1F14}
+body.sol .dropzone__remove{width:44px;height:44px}

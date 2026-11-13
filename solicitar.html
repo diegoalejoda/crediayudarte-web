@@ -41,10 +41,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Archivo:wdth,wght@100..125,700..900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/solicitar/hero-d.webp?v=20260929b" media="(min-width:861px)" fetchpriority="high" />
   <link rel="preload" as="image" href="assets/solicitar/hero-m.webp?v=20260929b" media="(max-width:860px)" fetchpriority="high" />
-  <link rel="stylesheet" href="css/styles.css?v=20261025" />
+  <link rel="stylesheet" href="css/styles.css?v=20261112" />
   <link rel="stylesheet" href="css/motion.css?v=20260920" />
-  <link rel="stylesheet" href="css/home.css?v=20261025" />
-  <link rel="stylesheet" href="css/solicitar.css?v=20261025" />
+  <link rel="stylesheet" href="css/home.css?v=20261112" />
+  <link rel="stylesheet" href="css/solicitar.css?v=20261113c" />
+  <!-- Sin JavaScript no hay animaciones de entrada: todo el recorrido queda visible -->
+  <noscript><style>body.sol .stack__panel .stack__copy .stack__kick,.stack__panel .stack__q,.stack__panel .stack__copy h2,.stack__panel .stack__copy p,.stack__panel .ui-op,.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
   <!-- ===================== DATOS ESTRUCTURADOS (schema.org) ===================== -->
   <script type="application/ld+json">
@@ -147,7 +149,7 @@
   fbq('init', '3743285492485280');
   fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
+  <noscript><img height="1" width="1" alt="" style="display:none"
   src="https://www.facebook.com/tr?id=3743285492485280&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
@@ -199,18 +201,18 @@
   <!-- ===================== NAVEGACIÓN (misma cápsula de la Home) ===================== -->
   <header class="cnav" id="top">
     <div class="cnav__inner">
-      <a href="index.html" class="cnav__logo" aria-label="CrediAyudarte - inicio">
+      <a href="./" class="cnav__logo" aria-label="CrediAyudarte - inicio">
         <img src="assets/logo.png" alt="CrediAyudarte, asesoría en crédito de libranza en Cúcuta" width="454" height="120" decoding="async" />
       </a>
       <!-- Menú único del sitio: mismos 7 enlaces y mismo orden en todas las páginas -->
       <nav class="cnav__links" id="nav" aria-label="Principal">
         <a href="credito-de-libranza/">Crédito de libranza</a>
-        <a href="index.html#para-quien">Para quién</a>
-        <a href="index.html#como-funciona">Cómo funciona</a>
+        <a href="./#para-quien">Para quién</a>
+        <a href="./#como-funciona">Cómo funciona</a>
         <a href="testimonios.html">Testimonios</a>
-        <a href="blog/index.html">Blog</a>
-        <a href="index.html#preguntas">Preguntas</a>
-        <a href="index.html#contacto">Contacto</a>
+        <a href="blog/">Blog</a>
+        <a href="./#preguntas">Preguntas</a>
+        <a href="./#contacto">Contacto</a>
       </nav>
       <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." class="cnav__tel" target="_blank" rel="noopener"><span>WhatsApp</span> 315 247 4348</a>
       <a href="solicitar.html" class="cbtn cbtn--primary cbtn--sm cnav__cta">Solicita tu análisis</a>
@@ -236,13 +238,12 @@
       <span class="shero__veil" aria-hidden="true"></span>
 
       <div class="shero__copy">
-        <span class="breadcrumb"><a href="index.html">Crédito de libranza en Colombia</a> / Solicita tu preanálisis</span>
+        <span class="breadcrumb"><a href="./">Crédito de libranza en Colombia</a> / Solicita tu preanálisis</span>
         <p class="kick shero__kick">Llegó la nómina… y otra vez falta mes</p>
         <h1 id="sheroTitulo">Solicita tu preanálisis de libranza, <mark>sin costo.</mark></h1>
         <p class="shero__lead">Para <strong>pensionados, empleados públicos, docentes y Fuerza Pública</strong>. Buscamos alternativas según tu pagaduría, capacidad e historial, también si tienes reportes o embargos, y te decimos si te conviene <strong>antes de que firmes.</strong></p>
         <div class="shero__cta">
           <a href="#solicitud" class="cbtn cbtn--primary cbtn--lg" data-ubic="sol-hero">Llenar el formulario <svg class="ico" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
-          <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20eval%C3%BAen%20mi%20caso%20de%20libranza." target="_blank" rel="noopener" class="cround lg" aria-label="Escríbenos directo por WhatsApp" data-ubic="sol-hero"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
         </div>
         <ul class="shero__checks" aria-label="Nuestro compromiso">
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Preanálisis sin costo</li>
@@ -255,10 +256,37 @@
     </div>
   </section>
 
+  <!-- ===================== CLIENTES REALES (carrusel continuo) ===================== -->
+  <section class="creeles" aria-label="Clientes reales de CrediAyudarte">
+    <div class="container">
+      <p class="creeles__tag">No nos creas a nosotros, <mark>créeles a ellos.</mark></p>
+    </div>
+    <div class="creeles__pista" aria-hidden="true">
+      <div class="creeles__tren">
+        <img src="assets/testigos/poster-1.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
+        <img src="assets/testigos/poster-2.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
+        <img src="assets/testigos/poster-3.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
+        <img src="assets/testigos/poster-4.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
+        <img src="assets/testigos/poster-5.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
+        <img src="assets/testigos/poster-6.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
+        <img src="assets/testigos/foto-1.jpeg" alt="" width="900" height="1600" loading="lazy" decoding="async">
+        <img src="assets/testigos/foto-2.jpeg" alt="" width="900" height="1600" loading="lazy" decoding="async">
+        <img src="assets/testigos/poster-1.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
+        <img src="assets/testigos/poster-2.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
+        <img src="assets/testigos/poster-3.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
+        <img src="assets/testigos/poster-4.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
+        <img src="assets/testigos/poster-5.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
+        <img src="assets/testigos/poster-6.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
+        <img src="assets/testigos/foto-1.jpeg" alt="" width="900" height="1600" loading="lazy" decoding="async" aria-hidden="true">
+        <img src="assets/testigos/foto-2.jpeg" alt="" width="900" height="1600" loading="lazy" decoding="async" aria-hidden="true">
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== FORMULARIO =====================
        Va justo después del hero: quien llega a /solicitar viene a esto.
-       Clasificación inicial sin datos sensibles: perfil, pagaduría, ciudad,
-       objetivo y situación + nombre y WhatsApp. Nada de cédula, fecha de
+       Clasificación inicial sin datos sensibles (2026-11): nombre, edad, perfil
+       (pensionado o empleado del gobierno), reporte y desprendible opcional (si dice Sí, se adjunta). El número lo toma el flujo de WhatsApp cuando la persona escribe. Nada de cédula, fecha de
        nacimiento, datos bancarios ni archivos (el desprendible se pide después,
        por WhatsApp, si el caso lo necesita). js/solicitar.js arma el mensaje,
        registra la solicitud en el CRM (n8n) y abre WhatsApp. -->
@@ -281,94 +309,46 @@
         <div class="secure-strip">
           <span><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Conexión segura (HTTPS)</span>
           <span><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> Sin cédula, claves ni cuentas</span>
-          <span><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Sin documentos en este paso</span>
+          <span><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Desprendible opcional</span>
         </div>
 
         <form id="creditForm" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="nombre">Nombre <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej: María Pérez" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="edad">Edad <span class="req" aria-hidden="true">*</span></label>
+              <input type="number" id="edad" name="edad" placeholder="Ej: 62" inputmode="numeric" min="18" max="100" step="1" required aria-describedby="edadAyuda">
+              <small class="field-help" id="edadAyuda">En años cumplidos. La edad cambia el plazo que puede darte una entidad.</small>
+            </div>
+          </div>
+
           <fieldset class="fset">
-            <legend class="choice-label">¿Cuál es tu perfil? <span class="req" aria-hidden="true">*</span></legend>
-            <div class="choices choices--4" data-group="perfil">
+            <legend class="choice-label">¿Eres pensionado o empleado del gobierno? <span class="req" aria-hidden="true">*</span></legend>
+            <div class="choices choices--2" data-group="perfil">
               <label class="choice">
                 <input type="radio" name="perfil" value="Pensionado" required>
                 <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg><strong>Pensionado(a)</strong></span>
               </label>
               <label class="choice">
                 <input type="radio" name="perfil" value="Empleado público">
-                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg><strong>Empleado(a) público(a)</strong></span>
-              </label>
-              <label class="choice">
-                <input type="radio" name="perfil" value="Docente del Estado">
-                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><strong>Docente del Estado</strong></span>
-              </label>
-              <label class="choice">
-                <input type="radio" name="perfil" value="Fuerza Pública">
-                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><strong>Fuerza Pública <small>activo o retirado</small></strong></span>
+                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg><strong>Empleado(a) del gobierno <small>también docentes y Fuerza Pública</small></strong></span>
               </label>
             </div>
           </fieldset>
 
-          <div class="field-row">
-            <div class="field">
-              <label for="pagaduria">Pagaduría o entidad que te paga <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="pagaduria" name="pagaduria" list="pagadurias" placeholder="Ej: Colpensiones, FOPEP, Secretaría de Educación" autocomplete="off" required aria-describedby="pagaduriaAyuda">
-              <datalist id="pagadurias">
-                <option value="Colpensiones"></option>
-                <option value="FOPEP"></option>
-                <option value="Fiduprevisora (FOMAG)"></option>
-                <option value="CASUR"></option>
-                <option value="CREMIL"></option>
-                <option value="Secretaría de Educación"></option>
-                <option value="Policía Nacional"></option>
-                <option value="Ejército Nacional"></option>
-                <option value="Alcaldía"></option>
-                <option value="Gobernación"></option>
-                <option value="Rama Judicial"></option>
-                <option value="No estoy seguro(a)"></option>
-              </datalist>
-              <small class="field-help" id="pagaduriaAyuda">Aparece en tu desprendible. Si no la sabes, escribe "no sé".</small>
-            </div>
-            <div class="field">
-              <label for="ciudad">Ciudad donde vives <span class="opt">(opcional)</span></label>
-              <input type="text" id="ciudad" name="ciudad" list="ciudades" placeholder="Ej: Cúcuta" autocomplete="address-level2">
-              <datalist id="ciudades">
-                <option value="Cúcuta"></option>
-                <option value="Villa del Rosario"></option>
-                <option value="Los Patios"></option>
-                <option value="Pamplona"></option>
-                <option value="Ocaña"></option>
-                <option value="Valledupar"></option>
-                <option value="Arauca"></option>
-                <option value="Santa Marta"></option>
-              </datalist>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="objetivo">¿Qué necesitas? <span class="req" aria-hidden="true">*</span></label>
-            <select id="objetivo" name="objetivo" required>
-              <option value="">Elige una opción</option>
-              <option value="Dinero para libre inversión">Dinero para libre inversión</option>
-              <option value="Comprar cartera o unificar deudas">Comprar cartera o unificar deudas</option>
-              <option value="Mejorar las condiciones de un crédito">Mejorar las condiciones de un crédito</option>
-              <option value="Pagar deudas en mora o reportadas">Pagar deudas en mora o reportadas</option>
-              <option value="Orientación: no estoy seguro(a)">No estoy seguro(a), quiero orientación</option>
-            </select>
-          </div>
-
           <fieldset class="fset">
-            <legend class="choice-label">¿Cómo está tu situación hoy? <span class="req" aria-hidden="true">*</span></legend>
-            <div class="choices choices--4" data-group="situacion">
+            <legend class="choice-label">¿Cómo está tu reporte? <span class="req" aria-hidden="true">*</span></legend>
+            <div class="choices choices--3" data-group="situacion">
               <label class="choice">
-                <input type="radio" name="situacion" value="Buen historial" required>
-                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-smile"/></svg><strong>Buen historial <small>al día, sin reportes</small></strong></span>
+                <input type="radio" name="situacion" value="Buen reporte" required>
+                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-smile"/></svg><strong>Buen reporte <small>al día, sin reportes</small></strong></span>
               </label>
               <label class="choice">
-                <input type="radio" name="situacion" value="Tengo reportes o mora">
-                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-alert-tri"/></svg><strong>Tengo reportes o mora</strong></span>
-              </label>
-              <label class="choice">
-                <input type="radio" name="situacion" value="Tengo embargo">
-                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-alert-tri"/></svg><strong>Tengo embargo</strong></span>
+                <input type="radio" name="situacion" value="Mal reporte">
+                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-alert-tri"/></svg><strong>Mal reporte <small>reportes, mora o embargo</small></strong></span>
               </label>
               <label class="choice">
                 <input type="radio" name="situacion" value="Sin cupo en el desprendible">
@@ -377,15 +357,30 @@
             </div>
           </fieldset>
 
-          <div class="field-row">
-            <div class="field">
-              <label for="nombre">Nombre <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="nombre" name="nombre" placeholder="Ej: María Pérez" autocomplete="name" required>
+          <fieldset class="fset">
+            <legend class="choice-label">¿Tienes a la mano tu desprendible de pago? <span class="req" aria-hidden="true">*</span></legend>
+            <div class="choices choices--2" data-group="desprendible">
+              <label class="choice">
+                <input type="radio" name="desprendible" value="Sí" required aria-controls="uploadPanel">
+                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><strong>Sí <small>lo adjunto ahora</small></strong></span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="desprendible" value="No" aria-controls="uploadPanel">
+                <span class="choice__box"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><strong>No <small>sigo sin él</small></strong></span>
+              </label>
             </div>
-            <div class="field">
-              <label for="telefono">Número de WhatsApp <span class="req" aria-hidden="true">*</span></label>
-              <input type="tel" id="telefono" name="telefono" placeholder="Ej: 300 123 4567" inputmode="tel" autocomplete="tel-national" required aria-describedby="telefonoAyuda">
-              <small class="field-help" id="telefonoAyuda">El mismo desde el que nos vas a escribir.</small>
+          </fieldset>
+
+          <div id="uploadPanel" class="upload" hidden>
+            <label class="dropzone" id="dropzone" for="archivoDesprendible">
+              <input type="file" id="archivoDesprendible" name="archivoDesprendible" accept="image/*,application/pdf" aria-describedby="archivoAyuda">
+              <span class="dropzone__ico" aria-hidden="true"><svg class="ico"><use href="#i-upload"/></svg></span>
+              <span class="dropzone__txt"><strong>Toca aquí para elegir tu desprendible</strong><small id="archivoAyuda">En computador también puedes arrastrarlo aquí. Foto o PDF, hasta 10 MB.</small></span>
+            </label>
+            <div class="dropzone__preview" id="dropPreview" hidden>
+              <span class="dropzone__thumb" id="dropThumb"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg></span>
+              <span class="dropzone__info"><strong id="dropName">archivo</strong><small id="dropSize"></small></span>
+              <button type="button" class="dropzone__remove" id="dropRemove" aria-label="Quitar el archivo y elegir otro"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
             </div>
           </div>
 
@@ -394,17 +389,13 @@
             <div class="trust-box__body">
               <strong>Lo que no te pedimos aquí</strong>
               <ul>
-                <li>Cédula, fecha de nacimiento, cuentas bancarias, claves ni documentos.</li>
-                <li>Si más adelante el estudio necesita tu desprendible, te diremos para qué antes de pedirlo.</li>
+                <li>Cédula, fecha de nacimiento, cuentas bancarias ni claves.</li>
+                <li>El desprendible es opcional. Si lo adjuntas, solo lo revisa el equipo de CrediAyudarte para estudiar tu caso.</li>
                 <li>El preanálisis no tiene costo y no pedimos anticipos para tramitar tu crédito.</li>
               </ul>
             </div>
           </div>
 
-          <label class="consent" for="autorizo">
-            <input type="checkbox" id="autorizo" name="autorizo" required>
-            <span>Autorizo a Marilú Arévalo Toro, quien opera con el nombre comercial CrediAyudarte, a tratar los datos de este formulario para contactarme por WhatsApp y estudiar mi solicitud. Si decido avanzar, mis datos podrán compartirse con las entidades o financiadores que estudien mi caso, con mi autorización. Leí la <a href="privacy/" target="_blank" rel="noopener">política de privacidad</a>. <span class="req" aria-hidden="true">*</span></span>
-          </label>
 
           <!-- Trampa anti-spam: invisible para las personas; si llega con texto, no se registra -->
           <div class="hp" aria-hidden="true">
@@ -418,18 +409,20 @@
             <svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Continuar en WhatsApp
           </button>
           <p class="form-fine">Se abrirá WhatsApp con tu mensaje escrito. <strong>Recuerda tocar "Enviar" allí</strong> para que un asesor reciba tu caso.</p>
+          <p class="form-aviso">Al enviar, aceptas que CrediAyudarte use estos datos (y tu desprendible, si lo adjuntas) para contactarte por WhatsApp y estudiar tu caso. <a href="privacy/" target="_blank" rel="noopener">Política de privacidad</a>.</p>
 
           <!-- Se muestra después de abrir WhatsApp: no es un "solicitud recibida" -->
           <div class="form-next" id="formNext" hidden tabindex="-1">
             <strong>Falta un paso: envía el mensaje en WhatsApp</strong>
             <p>Abrimos WhatsApp con tu mensaje listo. Tu solicitud queda completa cuando lo envías desde allí. Si no se abrió, usa este botón:</p>
+            <p class="doc-estado" id="docEstado" role="status" hidden></p>
             <a class="btn btn-primary btn-block" id="formNextLink" href="https://wa.me/573152474348" target="_blank" rel="noopener"><svg class="ico solid" aria-hidden="true"><use href="#i-whatsapp"/></svg> Abrir WhatsApp de nuevo</a>
           </div>
 
           <a href="testimonios.html" class="btn btn-ghost btn-block doubt-btn">
             <svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg> ¿Aún dudas? Mira los testimonios
           </a>
-          <p class="form-help">¿Prefieres leer antes? Revisa las <a href="index.html#preguntas">preguntas frecuentes</a>, cómo estudiamos los <a href="credito-libranza-reportados/">casos con reporte</a> o qué es el <a href="saneamiento-financiero/">saneamiento financiero</a>.</p>
+          <p class="form-help">¿Prefieres leer antes? Revisa las <a href="./#preguntas">preguntas frecuentes</a>, cómo estudiamos los <a href="credito-libranza-reportados/">casos con reporte</a> o qué es el <a href="saneamiento-financiero/">saneamiento financiero</a>.</p>
         </form>
       </div>
       </div>
@@ -558,32 +551,6 @@
     </article>
   </section>
 
-  <!-- ===================== CLIENTES REALES (carrusel continuo) ===================== -->
-  <section class="creeles" aria-label="Clientes reales de CrediAyudarte">
-    <div class="container">
-      <p class="creeles__tag">No nos creas a nosotros, <mark>créeles a ellos.</mark></p>
-    </div>
-    <div class="creeles__pista" aria-hidden="true">
-      <div class="creeles__tren">
-        <img src="assets/testigos/poster-1.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
-        <img src="assets/testigos/poster-2.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
-        <img src="assets/testigos/poster-3.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
-        <img src="assets/testigos/poster-4.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
-        <img src="assets/testigos/poster-5.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
-        <img src="assets/testigos/poster-6.jpg" alt="" width="478" height="850" loading="lazy" decoding="async">
-        <img src="assets/testigos/foto-1.jpeg" alt="" width="900" height="1600" loading="lazy" decoding="async">
-        <img src="assets/testigos/foto-2.jpeg" alt="" width="900" height="1600" loading="lazy" decoding="async">
-        <img src="assets/testigos/poster-1.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
-        <img src="assets/testigos/poster-2.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
-        <img src="assets/testigos/poster-3.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
-        <img src="assets/testigos/poster-4.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
-        <img src="assets/testigos/poster-5.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
-        <img src="assets/testigos/poster-6.jpg" alt="" width="478" height="850" loading="lazy" decoding="async" aria-hidden="true">
-        <img src="assets/testigos/foto-1.jpeg" alt="" width="900" height="1600" loading="lazy" decoding="async" aria-hidden="true">
-        <img src="assets/testigos/foto-2.jpeg" alt="" width="900" height="1600" loading="lazy" decoding="async" aria-hidden="true">
-      </div>
-    </div>
-  </section>
 
   <!-- ===================== QUÉ ES CREDIAYUDARTE ===================== -->
   <section class="section section--mint" id="quienes">
@@ -739,7 +706,7 @@
         <ul class="mapa__data">
           <li><svg class="ico"><use href="#i-map"/></svg> Calle 12 # 4–47, Local 4 · C.C. Internacional, Cúcuta</li>
           <li><svg class="ico"><use href="#i-whatsapp"/></svg> WhatsApp: 315 247 4348</li>
-          <li><svg class="ico"><use href="#i-clock"/></svg> Atención con coordinación previa. Escríbenos y agendamos.</li>
+          <li><svg class="ico"><use href="#i-clock"/></svg> Horario: lunes a viernes, de 8:00 a.m. a 5:00 p.m.</li>
         </ul>
         <a href="https://www.google.com/maps/place/Centro+Comercial+Internacional/@7.8848234,-72.5027909,17z/data=!3m1!4b1!4m6!3m5!1s0x8e6645c8ff158ff3:0x2ce83ee8b298a790!8m2!3d7.8848234!4d-72.5027909!16s%2Fg%2F11gwm9t5lh" target="_blank" rel="noopener" class="btn btn-primary">
           <svg class="ico"><use href="#i-map"/></svg> Cómo llegar
@@ -801,6 +768,7 @@
         <a href="https://wa.me/573152474348" target="_blank" rel="noopener">WhatsApp: 315 247 4348</a>
         <span>Calle 12 # 4–47, Local 4</span>
         <span>C.C. Internacional — Cúcuta</span>
+        <span>Lun. a vie., 8:00 a.m. – 5:00 p.m.</span>
         <span>Atención nacional virtual</span>
       </div>
     </div>
@@ -812,7 +780,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/573152474348?text=Hola%2C%20quiero%20que%20revisen%20mi%20caso." target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+  <a href="#solicitud" class="wa-float" aria-label="Ir al formulario de solicitud">
     <svg class="ico"><use href="#i-whatsapp"/></svg>
     <span class="wa-float__pulse"></span>
   </a>
@@ -838,11 +806,11 @@
     </div>
   </dialog>
 
-  <script defer src="js/medicion.js?v=20261013"></script>
+  <script defer src="js/medicion.js?v=20261113"></script>
   <script defer src="js/script.js?v=20261025"></script>
-  <script defer src="js/solicitar.js?v=20261025"></script>
+  <script defer src="js/solicitar.js?v=20261113c"></script>
   <script defer src="js/motion.js?v=20260920"></script>
-  <script defer src="js/recorrido.js?v=20261013"></script>
+  <script defer src="js/recorrido.js?v=20261113"></script>
   <script defer src="js/home.js?v=20261025"></script>
 </body>
 </html>
