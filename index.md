@@ -2,9 +2,8 @@
 
 > Si eres pensionado o empleado del gobierno, te hacemos tu preanálisis sin importar tu reporte. Buscamos las mejores opciones para ti y tú decides cuál eliges.
 
-- **Revisar tu caso no cuesta.** No pedimos anticipos para tramitar tu crédito.
-- **No garantizamos la aprobación.** No somos un banco: la entidad financiera decide y desembolsa.
-- **Oficina en Cúcuta:** Calle 12 # 4–47, Local 4, C.C. Internacional. Lunes a viernes, de 8:00 a.m. a 5:00 p.m. También atendemos por WhatsApp (+57 315 247 4348): un asistente virtual te atiende de inmediato.
+- **Revisión gratuita.** No pedimos anticipos para tramitar tu crédito.
+- **Oficina en Cúcuta:** Calle 12 # 4–47, Local 4, C.C. Internacional. Lunes a viernes, de 8:00 a.m. a 5:00 p.m. También atendemos por WhatsApp (+57 315 247 4348): un asistente virtual te atiende de inmediato. [Ver en Google Maps](https://www.google.com/maps/place/Centro+Comercial+Internacional/@7.8848234,-72.5027909,17z) · [Facebook](https://www.facebook.com/crediayudarte/)
 
 ## Qué revisamos contigo y qué decide la entidad
 
